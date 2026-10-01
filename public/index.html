@@ -122,6 +122,33 @@ nav a:hover{
   border-color:var(--blue)
 }
 
+.menu-avatar{
+  width:30px;
+  height:30px;
+  min-width:30px;
+  border-radius:50%;
+  overflow:hidden;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:#172237;
+  border:1px solid #3a4d6d;
+  font-size:15px;
+}
+
+.menu-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
+#userMenuBtn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+}
+
 
 /* =====================================================
    USER MENU
@@ -837,7 +864,7 @@ footer{
         class="auth-btn"
         onclick="toggleUserMenu()">
 
-        👤
+        <span id="menuAvatar" class="menu-avatar">👤</span>
         <span id="menuUsername">
           User
         </span>
@@ -2579,6 +2606,10 @@ async function saveProfile(event){
 
     }
 
+    setMenuAvatar(
+      profile.avatar_url || ""
+    );
+
 
     document.getElementById(
       "profileHeaderName"
@@ -2897,6 +2928,74 @@ async function handleAuth(event){
    AUTH BUTTONS
 ===================================================== */
 
+function setMenuAvatar(url){
+
+  const avatar =
+    document.getElementById(
+      "menuAvatar"
+    );
+
+  if(!avatar){
+    return;
+  }
+
+  if(url){
+
+    avatar.innerHTML = `
+      <img
+        src="${esc(url)}"
+        alt="Avatar"
+        onerror="this.parentElement.textContent='👤'"
+      >
+    `;
+
+  }else{
+
+    avatar.textContent = "👤";
+
+  }
+
+}
+
+
+async function loadMenuAvatar(){
+
+  try{
+
+    const response =
+      await fetch(
+        "/api/profile",
+        {
+          method:"GET",
+          credentials:"same-origin",
+          cache:"no-store"
+        }
+      );
+
+    if(!response.ok){
+
+      setMenuAvatar("");
+
+      return;
+
+    }
+
+    const result =
+      await response.json();
+
+    setMenuAvatar(
+      result.profile?.avatar_url || ""
+    );
+
+  }catch(error){
+
+    setMenuAvatar("");
+
+  }
+
+}
+
+
 function updateAuthButtons(user){
 
   const loginBtn =
@@ -2943,6 +3042,8 @@ function updateAuthButtons(user){
 
     }
 
+    loadMenuAvatar();
+
   }else{
 
     if(loginBtn){
@@ -2959,6 +3060,8 @@ function updateAuthButtons(user){
         "none";
 
     }
+
+    setMenuAvatar("");
 
   }
 
