@@ -1,9 +1,77 @@
 <!doctype html>
-<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<html lang="uz">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UZB SERVERS — CS 1.6 Uzbekistan</title>
-<meta name="description" content="UZB SERVERS — O‘zbekiston CS 1.6 serverlari va online monitoring.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://uzbservers.uz/">
-<style>body{margin:0;background:#080b12;color:#eef2ff;font:16px Arial}.wrap{max-width:1100px;margin:auto;padding:60px 20px}.card{background:#111827;border:1px solid #263247;border-radius:18px;padding:28px;margin-top:24px}.online{color:#6ee7b7}</style>
-</head><body><main class="wrap"><h1>UZB SERVERS</h1><p>O‘zbekiston CS 1.6 serverlari va monitoring platformasi.</p>
-<div class="card"><h2>UZB SERVERS | Public</h2><p class="online">● ONLINE monitoring</p><p>CS 1.6 server ma'lumotlari shu yerda ko‘rsatiladi.</p></div></main></body></html>
+<meta name="description" content="UZB SERVERS — O‘zbekiston CS 1.6 serverlari va real vaqt monitoringi.">
+<style>
+:root{--bg:#070a10;--card:#101621;--line:#202b3c;--text:#edf3ff;--muted:#91a0b7;--green:#42e6a4;--red:#ff6b7a;--blue:#5ca8ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 20% 0%,#11213a 0,#070a10 38%);color:var(--text);font:15px Inter,Arial,sans-serif}
+.wrap{max-width:1180px;margin:auto;padding:28px 18px 70px}.nav{display:flex;justify-content:space-between;align-items:center;padding:10px 0 30px}.logo{font-weight:900;letter-spacing:2px;font-size:20px}.logo span{color:var(--blue)}
+.hero{padding:48px 0 30px}.eyebrow{color:var(--green);font-weight:800;letter-spacing:2px;font-size:12px}.hero h1{font-size:clamp(38px,7vw,76px);line-height:.95;margin:12px 0}.hero p{max-width:680px;color:var(--muted);font-size:17px;line-height:1.6}
+.status{display:inline-flex;gap:9px;align-items:center;border:1px solid var(--line);background:#0c121c;border-radius:999px;padding:9px 13px;color:#cbd5e1}.dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 14px #42e6a4}
+.toolbar{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.search{flex:1;min-width:220px;background:#0d141f;border:1px solid var(--line);border-radius:12px;padding:13px 15px;color:white;outline:none}.count{padding:12px 0;color:var(--muted)}
+.grid{display:grid;gap:14px}.server{background:linear-gradient(145deg,#111925,#0c121b);border:1px solid var(--line);border-radius:17px;padding:18px;display:grid;grid-template-columns:1.5fr .8fr .7fr auto;gap:16px;align-items:center}.name{font-weight:800;font-size:16px}.ip{color:#7e8da5;font-size:12px;margin-top:6px}.online{color:var(--green);font-weight:800}.offline{color:var(--red);font-weight:800}.meta{color:#b5c0d2}.meta b{color:white}.btn{border:1px solid #2b3a52;background:#111b29;color:#eaf1ff;padding:10px 13px;border-radius:10px;cursor:pointer;font-weight:700}.btn:hover{border-color:#5ca8ff}.empty{text-align:center;padding:45px;color:var(--muted)}
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;align-items:center;justify-content:center;padding:18px;z-index:10}.modal{width:min(600px,100%);max-height:80vh;overflow:auto;background:#0d141f;border:1px solid #2a374c;border-radius:18px;padding:20px;box-shadow:0 20px 80px #000}.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}.close{border:0;background:#182231;color:white;border-radius:9px;padding:8px 11px;cursor:pointer}.player{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #1d2838}.player:last-child{border-bottom:0}.score{color:#8ea0ba}
+@media(max-width:820px){.server{grid-template-columns:1fr 1fr}.server .action{grid-column:1/-1}.hero{padding-top:25px}}
+@media(max-width:520px){.server{grid-template-columns:1fr}.server .action{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav class="nav"><div class="logo">UZB <span>SERVERS</span></div><div class="status"><span class="dot"></span> LIVE MONITORING</div></nav>
+<section class="hero">
+<div class="eyebrow">COUNTER-STRIKE 1.6 • UZBEKISTAN</div>
+<h1>Serverlarni bir joyda.</h1>
+<p>O‘zbekiston CS 1.6 serverlari, online holati, xaritasi, ping va ayni vaqtda serverdagi o‘yinchilar nicklarini ko‘ring.</p>
+</section>
+<div class="toolbar"><input id="search" class="search" placeholder="Server nomi yoki IP bo‘yicha qidirish..."><div id="count" class="count">Yuklanmoqda...</div></div>
+<div id="grid" class="grid"></div>
+</div>
+
+<div id="overlay" class="overlay" onclick="if(event.target===this)closePlayers()">
+<div class="modal">
+<div class="modal-head"><div><div class="eyebrow">PLAYER LIST</div><h2 id="modalTitle" style="margin:7px 0 4px">Players</h2><div id="modalIp" class="ip"></div></div><button class="close" onclick="closePlayers()">Yopish</button></div>
+<div id="players" style="margin-top:18px"></div>
+</div>
+</div>
+
+<script>
+let data=[];
+const grid=document.getElementById('grid'), search=document.getElementById('search'), count=document.getElementById('count');
+
+async function load(){
+ try{
+   const r=await fetch('/servers.json?x='+Date.now(),{cache:'no-store'});
+   const j=await r.json(); data=j.servers||[]; render();
+ }catch(e){
+   grid.innerHTML='<div class="empty">Server ma’lumotlarini yuklab bo‘lmadi.</div>';
+   count.textContent='Xatolik';
+ }
+}
+function render(){
+ const q=search.value.trim().toLowerCase();
+ const list=data.filter(s=>(s.name+' '+s.ip+' '+s.map).toLowerCase().includes(q));
+ count.textContent=`${list.length} ta server`;
+ grid.innerHTML=list.map((s,i)=>`
+ <article class="server">
+  <div><div class="name">${esc(s.name)}</div><div class="ip">${esc(s.ip)}</div></div>
+  <div class="${s.online?'online':'offline'}">${s.online?'● ONLINE':'● OFFLINE'}</div>
+  <div class="meta"><b>${s.players}</b> / ${s.maxPlayers||0} players<br><span>${esc(s.map||'—')} • ${s.ping??'—'} ms</span></div>
+  <div class="action"><button class="btn" onclick="openPlayers(${data.indexOf(s)})">Players (${s.playerList?.length??0})</button></div>
+ </article>`).join('') || '<div class="empty">Mos server topilmadi.</div>';
+}
+function openPlayers(i){
+ const s=data[i]; document.getElementById('modalTitle').textContent=s.name;
+ document.getElementById('modalIp').textContent=s.ip+' • '+(s.online?'ONLINE':'OFFLINE');
+ const box=document.getElementById('players'), p=s.playerList||[];
+ box.innerHTML=p.length ? p.map(x=>`<div class="player"><div><b>${esc(x.name||'Unnamed')}</b></div><div class="score">Score: ${x.score}</div></div>`).join('') :
+   `<div class="empty">${s.online?'Hozir player ro‘yxati bo‘sh yoki server A2S_PLAYER javobini bermadi.':'Server offline.'}</div>`;
+ document.getElementById('overlay').style.display='flex';
+}
+function closePlayers(){document.getElementById('overlay').style.display='none'}
+function esc(x){return String(x??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]))}
+search.addEventListener('input',render); load(); setInterval(load,60000);
+</script>
+</body></html>
