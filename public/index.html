@@ -85,7 +85,7 @@ footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var
 <form id="authForm" onsubmit="handleAuth(event)">
 <div class="form-group"><label>Login</label><input id="authLogin" required minlength="3" autocomplete="username"></div>
 <div id="emailGroup" class="form-group" style="display:none"><label>Email</label><input id="authEmail" type="email" autocomplete="email"></div>
-<div class="form-group"><label>Parol</label><input id="authPassword" type="password" required minlength="6" autocomplete="current-password"></div>
+<div class="form-group"><label>Parol</label><input id="authPassword" type="password" required minlength="8" autocomplete="current-password"></div>
 <button class="form-submit" id="authSubmit">Kirish</button>
 </form>
 <div id="authSwitch" style="text-align:center;margin-top:15px;color:#91a0b8"></div>
@@ -119,10 +119,121 @@ async function copyIp(ip,btn){try{await navigator.clipboard.writeText(ip);const 
 function openPlayers(i){const s=data[i];if(!s)return;document.getElementById('modalTitle').textContent=s.name||'Players';document.getElementById('modalIp').textContent=s.ip||'';const p=s.playerList||[];document.getElementById('playerBox').innerHTML=p.length?p.map(x=>`<div class="player"><div><b>${esc(x.name||'Unnamed')}</b></div><div class="score">Score: ${x.score??0}</div></div>`).join(''):`<div class="empty">${s.online?'Hozir player ro‘yxati bo‘sh yoki server A2S_PLAYER javobini bermadi.':'Server offline.'}</div>`;document.getElementById('playersOverlay').style.display='flex'}
 function closePlayers(){document.getElementById('playersOverlay').style.display='none'}
 async function load(){try{const r=await fetch('/servers.json?x='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error();const j=await r.json();data=Array.isArray(j.servers)?j.servers:[];document.getElementById('serverCount').textContent=data.length;document.getElementById('playerCount').textContent=data.reduce((a,s)=>a+(Number(s.players)||0),0);document.getElementById('updatedAt').textContent=j.updatedAt?new Date(j.updatedAt*1000).toLocaleString('uz-UZ'):'—';document.getElementById('platformStatus').textContent='● ONLINE';document.getElementById('platformStatus').className='status ok';render()}catch(e){document.getElementById('platformStatus').textContent='● DATA ERROR';document.getElementById('platformStatus').className='status bad';list.innerHTML='<div class="empty">Server ma’lumotlarini yuklab bo‘lmadi. /servers.json mavjudligini tekshiring.</div>'}}
-function openAuth(mode){authMode=mode;document.getElementById('authOverlay').style.display='flex';document.getElementById('authTitle').textContent=mode==='login'?'Kirish':'Ro‘yxatdan o‘tish';document.getElementById('authSubmit').textContent=mode==='login'?'Kirish':'Akkaunt yaratish';document.getElementById('emailGroup').style.display=mode==='login'?'none':'block';document.getElementById('authSwitch').innerHTML=mode==='login'?'Akkauntingiz yo‘qmi? <button class="close" type="button" onclick="openAuth(\\'register\\')">Ro‘yxatdan o‘tish</button>':'Akkauntingiz bormi? <button class="close" type="button" onclick="openAuth(\\'login\\')">Kirish</button>'}
-function closeAuth(){document.getElementById('authOverlay').style.display='none'}
-function handleAuth(e){e.preventDefault();const login=document.getElementById('authLogin').value.trim();if(authMode==='register'){localStorage.setItem('uzb_demo_user',login);alert('Demo akkaunt yaratildi: '+login);closeAuth()}else{const saved=localStorage.getItem('uzb_demo_user');alert(saved&&saved===login?'Demo akkauntga kirildi.':'Demo rejim: login backendga ulanmagan.');closeAuth()}}
-search.addEventListener('input',render);sort.addEventListener('change',render);load();setInterval(load,60000);
+function openAuth(mode){
+  authMode=mode;
+  document.getElementById('authOverlay').style.display='flex';
+  document.getElementById('authTitle').textContent=mode==='login'?'Kirish':'Ro‘yxatdan o‘tish';
+  document.getElementById('authSubmit').textContent=mode==='login'?'Kirish':'Akkaunt yaratish';
+  document.getElementById('emailGroup').style.display=mode==='login'?'none':'block';
+  document.getElementById('authLogin').value='';
+  document.getElementById('authEmail').value='';
+  document.getElementById('authPassword').value='';
+
+  const sw=document.getElementById('authSwitch');
+  sw.innerHTML=mode==='login'
+    ? 'Akkauntingiz yo‘qmi? <button id="authSwitchBtn" class="close" type="button">Ro‘yxatdan o‘tish</button>'
+    : 'Akkauntingiz bormi? <button id="authSwitchBtn" class="close" type="button">Kirish</button>';
+  document.getElementById('authSwitchBtn').onclick=()=>openAuth(mode==='login'?'register':'login');
+}
+
+function closeAuth(){
+  document.getElementById('authOverlay').style.display='none';
+}
+
+async function handleAuth(e){
+  e.preventDefault();
+
+  const login=document.getElementById('authLogin').value.trim();
+  const email=document.getElementById('authEmail').value.trim();
+  const password=document.getElementById('authPassword').value;
+  const submit=document.getElementById('authSubmit');
+
+  submit.disabled=true;
+  submit.textContent='Yuklanmoqda...';
+
+  try{
+    const endpoint=authMode==='register'?'/api/register':'/api/login';
+    const body=authMode==='register'
+      ? {username:login,email,password}
+      : {login,password};
+
+    const r=await fetch(endpoint,{
+      method:'POST',
+      headers:{'content-type':'application/json'},
+      credentials:'same-origin',
+      body:JSON.stringify(body)
+    });
+
+    const result=await r.json().catch(()=>({error:'Server javobi noto‘g‘ri.'}));
+
+    if(!r.ok){
+      throw new Error(result.error||'Xatolik yuz berdi.');
+    }
+
+    closeAuth();
+
+    alert(
+      authMode==='register'
+        ? 'Akkaunt muvaffaqiyatli yaratildi: '+result.user.username
+        : 'Xush kelibsiz, '+result.user.username+'!'
+    );
+
+    updateAuthButtons(result.user);
+
+  }catch(err){
+    alert(err.message||'Xatolik yuz berdi.');
+  }finally{
+    submit.disabled=false;
+    submit.textContent=authMode==='login'?'Kirish':'Akkaunt yaratish';
+  }
+}
+
+async function updateAuthButtons(user){
+  const box=document.querySelector('.auth-nav');
+  if(!box)return;
+
+  if(user){
+    box.innerHTML=
+      '<span class="auth-btn" style="cursor:default">👤 '+esc(user.username)+'</span>'+
+      '<button id="logoutBtn" class="auth-btn">Chiqish</button>';
+
+    document.getElementById('logoutBtn').onclick=logoutUser;
+  }else{
+    box.innerHTML=
+      '<button id="loginBtn" class="auth-btn">Kirish</button>'+
+      '<button id="registerBtn" class="auth-btn primary">Ro‘yxatdan o‘tish</button>';
+
+    document.getElementById('loginBtn').onclick=()=>openAuth('login');
+    document.getElementById('registerBtn').onclick=()=>openAuth('register');
+  }
+}
+
+async function logoutUser(){
+  try{
+    await fetch('/api/logout',{
+      method:'POST',
+      credentials:'same-origin'
+    });
+  }finally{
+    updateAuthButtons(null);
+  }
+}
+
+async function checkAuth(){
+  try{
+    const r=await fetch('/api/me',{
+      credentials:'same-origin',
+      cache:'no-store'
+    });
+
+    if(!r.ok)return;
+
+    const j=await r.json();
+    updateAuthButtons(j.authenticated?j.user:null);
+  }catch{}
+}
+
+search.addEventListener('input',render);sort.addEventListener('change',render);load();checkAuth();setInterval(load,60000);
 </script>
 </body>
 </html>
