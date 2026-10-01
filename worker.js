@@ -140,7 +140,9 @@ async function currentUser(request, env) {
     SELECT
       users.id,
       users.username,
-      users.email
+      users.email,
+      users.role,
+      users.is_banned
     FROM sessions
     JOIN users
       ON users.id = sessions.user_id
@@ -317,7 +319,9 @@ async function login(request, env) {
       id,
       username,
       email,
-      password_hash
+      password_hash,
+      role,
+      is_banned
     FROM users
     WHERE username = ?
        OR email = ?
@@ -339,6 +343,12 @@ async function login(request, env) {
     return json({
       error: "Login yoki parol noto‘g‘ri."
     }, 401);
+  }
+
+  if (Number(user.is_banned) === 1) {
+    return json({
+      error: "Akkauntingiz sayt ma’muriyati tomonidan cheklangan."
+    }, 403);
   }
 
   const now = Math.floor(Date.now() / 1000);
@@ -371,7 +381,9 @@ async function login(request, env) {
       user: {
         id: user.id,
         username: user.username,
-        email: user.email
+        email: user.email,
+        role: user.role,
+        is_banned: !!user.is_banned
       }
     },
     200,
@@ -421,7 +433,9 @@ async function me(request, env) {
       ? {
           id: user.id,
           username: user.username,
-          email: user.email
+          email: user.email,
+          role: user.role,
+          is_banned: !!user.is_banned
         }
       : null
   });
@@ -440,9 +454,6 @@ async function profile(request, env) {
       error: "Kirish talab qilinadi."
     }, 401);
   }
-
-
-  /* GET */
 
   if (request.method === "GET") {
 
@@ -480,9 +491,6 @@ async function profile(request, env) {
         }
     });
   }
-
-
-  /* PUT */
 
   const body = await request
     .json()
@@ -529,7 +537,7 @@ async function profile(request, env) {
     avatar_url:
       String(body.avatar_url || "")
         .trim()
-        .slice(0, 500)
+        .slice(0, 100000)
   };
 
   const now = Math.floor(Date.now() / 1000);
@@ -551,25 +559,14 @@ async function profile(request, env) {
 
     ON CONFLICT(user_id)
     DO UPDATE SET
-
       first_name = excluded.first_name,
-
       last_name = excluded.last_name,
-
       telegram = excluded.telegram,
-
       phone = excluded.phone,
-
       steam_id = excluded.steam_id,
-
-      server_nickname =
-        excluded.server_nickname,
-
-      avatar_url =
-        excluded.avatar_url,
-
-      updated_at =
-        excluded.updated_at
+      server_nickname = excluded.server_nickname,
+      avatar_url = excluded.avatar_url,
+      updated_at = excluded.updated_at
   `)
     .bind(
       user.id,
@@ -592,39 +589,791 @@ async function profile(request, env) {
 
 
 /* =========================================================
+   PRESENCE
+========================================================= */
+
+async function presence(request, env) {
+  const user = await currentUser(request, env);
+
+  if (!user) {
+    return json({
+      error: "Kirish talab qilinadi."
+    }, 401);
+  }
+
+  if (Number(user.is_banned) === 1) {
+    return json({
+      error: "Akkaunt cheklangan."
+    }, 403);
+  }
+
+  const now = Math.floor(Date.now() / 1000);
+
+  await env.DB.prepare(`
+    INSERT INTO user_presence
+      (
+        user_id,
+        last_seen
+      )
+    VALUES (?, ?)
+
+    ON CONFLICT(user_id)
+    DO UPDATE SET
+      last_seen = excluded.last_seen
+  `)
+    .bind(user.id, now)
+    .run();
+
+  return json({
+    ok: true,
+    last_seen: now
+  });
+}
+
+
+/* =========================================================
+   ONLINE USERS
+========================================================= */
+
+async function onlineUsers(request, env) {
+  const user = await currentUser(request, env);
+
+  if (!user) {
+    return json({
+      error: "Kirish talab qilinadi."
+    }, 401);
+  }
+
+  const now = Math.floor(Date.now() / 1000);
+
+  const rows = await env.DB.prepare(`
+    SELECT
+      users.id,
+      users.username,
+      users.role,
+      profiles.avatar_url,
+      user_presence.last_seen
+    FROM user_presence
+    JOIN users
+      ON users.id = user_presence.user_id
+    LEFT JOIN profiles
+      ON profiles.user_id = users.id
+    WHERE
+      user_presence.last_seen >= ?
+      AND users.is_banned = 0
+    ORDER BY user_presence.last_seen DESC
+  `)
+    .bind(now - 90)
+    .all();
+
+  return json({
+    users: rows.results || [],
+    total: (rows.results || []).length
+  });
+}
+
+
+/* =========================================================
+   CHAT
+========================================================= */
+
+async function chat(request, env) {
+  const user = await currentUser(request, env);
+
+  if (!user) {
+    return json({
+      error: "Kirish talab qilinadi."
+    }, 401);
+  }
+
+  if (Number(user.is_banned) === 1) {
+    return json({
+      error: "Akkaunt cheklangan."
+    }, 403);
+  }
+
+  if (request.method === "GET") {
+
+    const url = new URL(request.url);
+
+    let limit = Number(url.searchParams.get("limit") || 100);
+
+    if (!Number.isInteger(limit)) {
+      limit = 100;
+    }
+
+    limit = Math.max(1, Math.min(limit, 200));
+
+    const rows = await env.DB.prepare(`
+      SELECT
+        chat_messages.id,
+        chat_messages.message,
+        chat_messages.created_at,
+        users.id AS user_id,
+        users.username,
+        users.role,
+        profiles.avatar_url
+      FROM chat_messages
+      JOIN users
+        ON users.id = chat_messages.user_id
+      LEFT JOIN profiles
+        ON profiles.user_id = users.id
+      ORDER BY chat_messages.id DESC
+      LIMIT ?
+    `)
+      .bind(limit)
+      .all();
+
+    const messages = (rows.results || []).reverse();
+
+    return json({
+      messages
+    });
+  }
+
+  if (request.method === "POST") {
+
+    const body = await request.json().catch(() => null);
+
+    if (!body) {
+      return json({
+        error: "Noto‘g‘ri JSON."
+      }, 400);
+    }
+
+    const message = String(body.message || "")
+      .trim()
+      .slice(0, 1000);
+
+    if (!message) {
+      return json({
+        error: "Xabar bo‘sh bo‘lishi mumkin emas."
+      }, 400);
+    }
+
+    const now = Math.floor(Date.now() / 1000);
+
+    const result = await env.DB.prepare(`
+      INSERT INTO chat_messages
+        (
+          user_id,
+          message,
+          created_at
+        )
+      VALUES (?, ?, ?)
+    `)
+      .bind(
+        user.id,
+        message,
+        now
+      )
+      .run();
+
+    return json({
+      ok: true,
+      id: result.meta.last_row_id
+    }, 201);
+  }
+
+  return json({
+    error: "Method qo‘llab-quvvatlanmaydi."
+  }, 405);
+}
+
+
+/* =========================================================
+   ADMIN HELPERS
+========================================================= */
+
+function isAdmin(user) {
+  return !!user &&
+    (
+      user.role === "admin" ||
+      user.role === "gl_admin"
+    );
+}
+
+function isGlAdmin(user) {
+  return !!user &&
+    user.role === "gl_admin";
+}
+
+
+/* =========================================================
+   ADMIN USERS
+========================================================= */
+
+async function adminUsers(request, env) {
+  const meUser = await currentUser(request, env);
+
+  if (!isAdmin(meUser)) {
+    return json({
+      error: "Admin huquqi talab qilinadi."
+    }, 403);
+  }
+
+  if (request.method !== "GET") {
+    return json({
+      error: "Method qo‘llab-quvvatlanmaydi."
+    }, 405);
+  }
+
+  const rows = await env.DB.prepare(`
+    SELECT
+      users.id,
+      users.username,
+      users.email,
+      users.role,
+      users.is_banned,
+      users.created_at,
+
+      profiles.first_name,
+      profiles.last_name,
+      profiles.telegram,
+      profiles.phone,
+      profiles.steam_id,
+      profiles.server_nickname,
+      profiles.avatar_url,
+      profiles.updated_at,
+
+      user_presence.last_seen
+
+    FROM users
+
+    LEFT JOIN profiles
+      ON profiles.user_id = users.id
+
+    LEFT JOIN user_presence
+      ON user_presence.user_id = users.id
+
+    ORDER BY users.id DESC
+  `).all();
+
+  const now = Math.floor(Date.now() / 1000);
+
+  const users = (rows.results || []).map(u => ({
+    ...u,
+
+    online:
+      !u.is_banned &&
+      Number(u.last_seen || 0) >= now - 90
+  }));
+
+  return json({
+    users,
+    total: users.length
+  });
+}
+
+
+/* =========================================================
+   ADMIN BAN / UNBAN
+========================================================= */
+
+async function adminBan(request, env) {
+  const meUser = await currentUser(request, env);
+
+  if (!isAdmin(meUser)) {
+    return json({
+      error: "Admin huquqi talab qilinadi."
+    }, 403);
+  }
+
+  if (request.method !== "POST") {
+    return json({
+      error: "Method qo‘llab-quvvatlanmaydi."
+    }, 405);
+  }
+
+  const body = await request.json().catch(() => null);
+
+  const targetId = Number(body?.user_id);
+
+  const banned = body?.banned ? 1 : 0;
+
+  if (!Number.isInteger(targetId) || targetId <= 0) {
+    return json({
+      error: "Foydalanuvchi ID noto‘g‘ri."
+    }, 400);
+  }
+
+  if (targetId === Number(meUser.id)) {
+    return json({
+      error: "O‘zingizni bloklay olmaysiz."
+    }, 400);
+  }
+
+  const target = await env.DB.prepare(`
+    SELECT
+      id,
+      username,
+      role,
+      is_banned
+    FROM users
+    WHERE id = ?
+    LIMIT 1
+  `)
+    .bind(targetId)
+    .first();
+
+  if (!target) {
+    return json({
+      error: "Foydalanuvchi topilmadi."
+    }, 404);
+  }
+
+  if (
+    meUser.role === "admin" &&
+    target.role !== "user"
+  ) {
+    return json({
+      error:
+        "Admin faqat user foydalanuvchilarni boshqara oladi."
+    }, 403);
+  }
+
+  if (target.role === "gl_admin") {
+    return json({
+      error:
+        "GL Admin akkauntini bloklash mumkin emas."
+    }, 403);
+  }
+
+  await env.DB.prepare(`
+    UPDATE users
+    SET is_banned = ?
+    WHERE id = ?
+  `)
+    .bind(
+      banned,
+      targetId
+    )
+    .run();
+
+  if (banned) {
+
+    await env.DB.prepare(`
+      DELETE FROM sessions
+      WHERE user_id = ?
+    `)
+      .bind(targetId)
+      .run();
+  }
+
+  return json({
+    ok: true,
+    user_id: targetId,
+    is_banned: !!banned
+  });
+}
+
+
+/* =========================================================
+   GL ADMIN ROLE MANAGEMENT
+========================================================= */
+
+async function glAdminRole(request, env) {
+  const meUser = await currentUser(request, env);
+
+  if (!isGlAdmin(meUser)) {
+    return json({
+      error:
+        "Bu amal faqat GL Admin uchun."
+    }, 403);
+  }
+
+  if (request.method !== "POST") {
+    return json({
+      error:
+        "Method qo‘llab-quvvatlanmaydi."
+    }, 405);
+  }
+
+  const body = await request.json().catch(() => null);
+
+  const targetId = Number(body?.user_id);
+
+  const makeAdmin = !!body?.make_admin;
+
+  if (
+    !Number.isInteger(targetId) ||
+    targetId <= 0
+  ) {
+    return json({
+      error:
+        "Foydalanuvchi ID noto‘g‘ri."
+    }, 400);
+  }
+
+  if (
+    targetId === Number(meUser.id)
+  ) {
+    return json({
+      error:
+        "GL Admin o‘z rolini o‘zgartira olmaydi."
+    }, 400);
+  }
+
+  const target = await env.DB.prepare(`
+    SELECT
+      id,
+      username,
+      role,
+      is_banned
+    FROM users
+    WHERE id = ?
+    LIMIT 1
+  `)
+    .bind(targetId)
+    .first();
+
+  if (!target) {
+    return json({
+      error:
+        "Foydalanuvchi topilmadi."
+    }, 404);
+  }
+
+  if (target.role === "gl_admin") {
+    return json({
+      error:
+        "GL Admin rolini boshqa foydalanuvchiga bera olmaysiz."
+    }, 403);
+  }
+
+  const newRole =
+    makeAdmin
+      ? "admin"
+      : "user";
+
+  await env.DB.prepare(`
+    UPDATE users
+    SET role = ?
+    WHERE id = ?
+  `)
+    .bind(
+      newRole,
+      targetId
+    )
+    .run();
+
+  return json({
+    ok: true,
+    user_id: targetId,
+    role: newRole
+  });
+}
+
+
+/* =========================================================
+   ADMIN STATS
+========================================================= */
+
+async function adminStats(request, env) {
+  const meUser = await currentUser(request, env);
+
+  if (!isAdmin(meUser)) {
+    return json({
+      error:
+        "Admin huquqi talab qilinadi."
+    }, 403);
+  }
+
+  const now =
+    Math.floor(Date.now() / 1000);
+
+  const total =
+    await env.DB.prepare(`
+      SELECT COUNT(*) AS count
+      FROM users
+    `).first();
+
+  const users =
+    await env.DB.prepare(`
+      SELECT COUNT(*) AS count
+      FROM users
+      WHERE role = 'user'
+    `).first();
+
+  const admins =
+    await env.DB.prepare(`
+      SELECT COUNT(*) AS count
+      FROM users
+      WHERE role = 'admin'
+    `).first();
+
+  const banned =
+    await env.DB.prepare(`
+      SELECT COUNT(*) AS count
+      FROM users
+      WHERE is_banned = 1
+    `).first();
+
+  const online =
+    await env.DB.prepare(`
+      SELECT COUNT(*) AS count
+      FROM user_presence
+      JOIN users
+        ON users.id =
+           user_presence.user_id
+      WHERE
+        user_presence.last_seen >= ?
+        AND users.is_banned = 0
+    `)
+      .bind(now - 90)
+      .first();
+
+  const messages =
+    await env.DB.prepare(`
+      SELECT COUNT(*) AS count
+      FROM chat_messages
+    `).first();
+
+  return json({
+
+    total_users:
+      Number(total?.count || 0),
+
+    users:
+      Number(users?.count || 0),
+
+    admins:
+      Number(admins?.count || 0),
+
+    banned:
+      Number(banned?.count || 0),
+
+    online:
+      Number(online?.count || 0),
+
+    chat_messages:
+      Number(messages?.count || 0)
+  });
+}
+
+
+/* =========================================================
+   ADMIN USER DETAILS
+========================================================= */
+
+async function adminUserDetails(request, env) {
+  const meUser =
+    await currentUser(request, env);
+
+  if (!isAdmin(meUser)) {
+    return json({
+      error:
+        "Admin huquqi talab qilinadi."
+    }, 403);
+  }
+
+  const url =
+    new URL(request.url);
+
+  const id =
+    Number(url.searchParams.get("id"));
+
+  if (
+    !Number.isInteger(id) ||
+    id <= 0
+  ) {
+    return json({
+      error:
+        "Foydalanuvchi ID noto‘g‘ri."
+    }, 400);
+  }
+
+  const row =
+    await env.DB.prepare(`
+      SELECT
+        users.id,
+        users.username,
+        users.email,
+        users.role,
+        users.is_banned,
+        users.created_at,
+
+        profiles.first_name,
+        profiles.last_name,
+        profiles.telegram,
+        profiles.phone,
+        profiles.steam_id,
+        profiles.server_nickname,
+        profiles.avatar_url,
+        profiles.updated_at,
+
+        user_presence.last_seen
+
+      FROM users
+
+      LEFT JOIN profiles
+        ON profiles.user_id =
+           users.id
+
+      LEFT JOIN user_presence
+        ON user_presence.user_id =
+           users.id
+
+      WHERE users.id = ?
+
+      LIMIT 1
+    `)
+      .bind(id)
+      .first();
+
+  if (!row) {
+    return json({
+      error:
+        "Foydalanuvchi topilmadi."
+    }, 404);
+  }
+
+  if (
+    meUser.role === "admin" &&
+    row.role !== "user"
+  ) {
+    return json({
+      error:
+        "Siz faqat user foydalanuvchilar ma’lumotlarini ko‘rishingiz mumkin."
+    }, 403);
+  }
+
+  return json({
+    user: row
+  });
+}
+
+
+/* =========================================================
    API ROUTER
 ========================================================= */
 
 async function api(request, env) {
 
-  const url = new URL(request.url);
+  const url =
+    new URL(request.url);
 
   if (
     request.method === "POST" &&
     url.pathname === "/api/register"
   ) {
-    return register(request, env);
+    return register(
+      request,
+      env
+    );
   }
 
   if (
     request.method === "POST" &&
     url.pathname === "/api/login"
   ) {
-    return login(request, env);
+    return login(
+      request,
+      env
+    );
   }
 
   if (
     request.method === "POST" &&
     url.pathname === "/api/logout"
   ) {
-    return logout(request, env);
+    return logout(
+      request,
+      env
+    );
   }
 
   if (
     request.method === "GET" &&
     url.pathname === "/api/me"
   ) {
-    return me(request, env);
+    return me(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "POST" &&
+    url.pathname === "/api/presence"
+  ) {
+    return presence(
+      request,
+      env
+    );
+  }
+
+  if (
+    (
+      request.method === "GET" ||
+      request.method === "POST"
+    ) &&
+    url.pathname === "/api/chat"
+  ) {
+    return chat(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "GET" &&
+    url.pathname === "/api/online-users"
+  ) {
+    return onlineUsers(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "GET" &&
+    url.pathname === "/api/admin/users"
+  ) {
+    return adminUsers(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "GET" &&
+    url.pathname === "/api/admin/user"
+  ) {
+    return adminUserDetails(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "POST" &&
+    url.pathname === "/api/admin/ban"
+  ) {
+    return adminBan(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "POST" &&
+    url.pathname === "/api/admin/role"
+  ) {
+    return glAdminRole(
+      request,
+      env
+    );
+  }
+
+  if (
+    request.method === "GET" &&
+    url.pathname === "/api/admin/stats"
+  ) {
+    return adminStats(
+      request,
+      env
+    );
   }
 
   if (
@@ -634,11 +1383,15 @@ async function api(request, env) {
     ) &&
     url.pathname === "/api/profile"
   ) {
-    return profile(request, env);
+    return profile(
+      request,
+      env
+    );
   }
 
   return json({
-    error: "API endpoint topilmadi."
+    error:
+      "API endpoint topilmadi."
   }, 404);
 }
 
@@ -651,14 +1404,20 @@ export default {
 
   async fetch(request, env) {
 
-    const url = new URL(request.url);
+    const url =
+      new URL(request.url);
 
     if (
       url.pathname.startsWith("/api/")
     ) {
-      return api(request, env);
+      return api(
+        request,
+        env
+      );
     }
 
-    return env.ASSETS.fetch(request);
+    return env.ASSETS.fetch(
+      request
+    );
   }
 };
