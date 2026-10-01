@@ -3,332 +3,2561 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>UZB SERVERS — CS 1.6 Uzbekistan</title>
-<meta name="description" content="O‘zbekiston CS 1.6 serverlari, real-time monitoring, playerlar va server katalogi.">
+
+<meta name="description"
+content="O‘zbekiston CS 1.6 serverlari, real-time monitoring, playerlar va server katalogi.">
+
 <style>
-:root{--bg:#070a10;--card:#101827;--line:#26344c;--text:#f5f7ff;--muted:#91a0b8;--blue:#5b8cff;--green:#35e6a0;--red:#ff5f6d;--black:#050505}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 20% 0%,#14203a 0,#070a10 42%);color:var(--text);font-family:Arial,Helvetica,sans-serif}
-.container{width:min(1150px,calc(100% - 30px));margin:auto}
-header{position:sticky;top:0;z-index:20;background:#070a10ee;backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
-.nav{min-height:70px;display:flex;align-items:center;justify-content:space-between;gap:18px}.logo{font-size:21px;font-weight:900;white-space:nowrap}.logo span{color:var(--blue)}
-nav{display:flex;gap:20px;align-items:center;color:var(--muted)}nav a{text-decoration:none;color:inherit}nav a:hover{color:#fff}
-.auth-nav{display:flex;gap:8px}.auth-btn{padding:9px 12px;border-radius:9px;border:1px solid var(--line);background:#111b2b;color:#fff;cursor:pointer}.auth-btn.primary{background:var(--blue);border-color:var(--blue)}
-.hero{padding:75px 0 45px;display:grid;grid-template-columns:1.4fr .8fr;gap:35px}.badge{display:inline-block;padding:8px 13px;border:1px solid var(--line);border-radius:30px;color:var(--muted);font-size:13px;background:#0d1522}
-h1{font-size:clamp(45px,7vw,76px);line-height:.95;margin:20px 0;letter-spacing:-3px}.hero p{color:var(--muted);font-size:18px;line-height:1.7}
-.btn{display:inline-block;padding:13px 18px;border-radius:10px;border:1px solid var(--line);background:#111b2b;color:#fff;text-decoration:none;font-weight:bold;margin-top:15px;cursor:pointer}.btn.primary{background:var(--blue);border-color:var(--blue)}
-.panel{background:linear-gradient(145deg,#111c2d,#0b111b);border:1px solid var(--line);border-radius:20px;padding:25px}.status{font-weight:bold;font-size:25px;margin:12px 0}.status.ok{color:var(--green)}.status.bad{color:var(--red)}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:20px}.stat{background:#09111d;border:1px solid var(--line);border-radius:12px;padding:15px}.stat b{font-size:25px}.stat small{display:block;color:var(--muted);margin-top:5px}
-section{padding:35px 0}.section-title{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.section-title h2{margin:0;font-size:30px}.section-title p{color:var(--muted)}
-.controls{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.search,.sort{padding:12px;border-radius:10px;border:1px solid var(--line);background:#0c131f;color:#fff;outline:none}.search{width:250px}.sort{cursor:pointer}
-.server{display:grid;grid-template-columns:1.5fr .7fr .7fr .8fr auto;gap:18px;align-items:center;padding:18px;margin:12px 0;background:var(--card);border:1px solid var(--line);border-radius:15px}.server:hover{border-color:#41639a}
-.server-name{font-weight:bold;font-size:16px}.ip{color:#8799b4;font-family:monospace;margin-top:6px}.online{color:var(--green);font-weight:bold}.offline{color:var(--red);font-weight:bold}.metric b{display:block}.metric small{color:var(--muted)}
-.actions{display:flex;gap:8px;flex-wrap:wrap}.copy,.players-btn{padding:9px 12px;border-radius:9px;border:1px solid var(--line);background:#172237;color:#fff;cursor:pointer}.players-btn{background:#162744}.copy:hover,.players-btn:hover{border-color:var(--blue)}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.feature{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:22px}.feature p,.about-text{color:var(--muted);line-height:1.7}
-.owner{margin-top:20px;background:#fff;border-radius:16px;padding:20px;border:2px solid #000;box-shadow:0 8px 30px #0008}.owner-title{color:#000;font-size:12px;font-weight:800;letter-spacing:1.5px}.owner-name{color:#000;font-size:27px;font-weight:950;margin-top:7px}
-.notice{margin-top:15px;padding:14px;border:1px dashed #35445d;border-radius:12px;color:var(--muted);font-size:13px}.empty{text-align:center;padding:35px;color:var(--muted);border:1px dashed var(--line);border-radius:15px}
-footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var(--muted)}
-.overlay{display:none;position:fixed;inset:0;background:#000b;z-index:50;align-items:center;justify-content:center;padding:20px}.modal{width:min(620px,100%);max-height:85vh;overflow:auto;background:#0d1522;border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 20px 80px #000}
-.modal-head{display:flex;justify-content:space-between;gap:15px;align-items:center}.close{border:0;background:#172237;color:#fff;border-radius:9px;padding:9px 12px;cursor:pointer}.player{display:flex;justify-content:space-between;gap:15px;padding:12px;border:1px solid var(--line);border-radius:10px;background:#09111d;margin-top:8px}.score{color:var(--muted)}
-.form-group{margin:12px 0}.form-group label{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}.form-group input{width:100%;padding:12px;border-radius:9px;border:1px solid var(--line);background:#09111d;color:#fff;outline:none}.form-submit{width:100%;padding:12px;border:0;border-radius:9px;background:var(--blue);color:#fff;font-weight:bold;cursor:pointer}.form-note{color:var(--muted);font-size:12px;line-height:1.5;margin-top:12px}
-@media(max-width:950px){nav{gap:12px}.server{grid-template-columns:1fr 1fr}.features{grid-template-columns:1fr}}
-@media(max-width:700px){.nav{flex-wrap:wrap;padding:10px 0}.auth-nav{margin-left:auto}.hero{grid-template-columns:1fr}nav{display:none}}
-@media(max-width:520px){.server{grid-template-columns:1fr}.section-title{display:block}.controls{justify-content:stretch;margin-top:15px}.search,.sort{width:100%}.actions{width:100%}}
+:root{
+  --bg:#070a10;
+  --card:#101827;
+  --line:#26344c;
+  --text:#f5f7ff;
+  --muted:#91a0b8;
+  --blue:#5b8cff;
+  --green:#35e6a0;
+  --red:#ff5f6d;
+  --black:#050505
+}
+
+*{
+  box-sizing:border-box
+}
+
+html{
+  scroll-behavior:smooth
+}
+
+body{
+  margin:0;
+  background:radial-gradient(
+    circle at 20% 0%,
+    #14203a 0,
+    #070a10 42%
+  );
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif
+}
+
+.container{
+  width:min(1150px,calc(100% - 30px));
+  margin:auto
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:#070a10ee;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line)
+}
+
+.nav{
+  min-height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px
+}
+
+.logo{
+  font-size:21px;
+  font-weight:900;
+  white-space:nowrap
+}
+
+.logo span{
+  color:var(--blue)
+}
+
+nav{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  color:var(--muted)
+}
+
+nav a{
+  text-decoration:none;
+  color:inherit
+}
+
+nav a:hover{
+  color:#fff
+}
+
+.auth-nav{
+  display:flex;
+  gap:8px;
+  align-items:center
+}
+
+.auth-btn{
+  padding:9px 12px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:#111b2b;
+  color:#fff;
+  cursor:pointer
+}
+
+.auth-btn:hover{
+  border-color:var(--blue)
+}
+
+.auth-btn.primary{
+  background:var(--blue);
+  border-color:var(--blue)
+}
+
+/* =========================
+   HERO
+========================= */
+
+.hero{
+  padding:75px 0 45px;
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:35px
+}
+
+.badge{
+  display:inline-block;
+  padding:8px 13px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  color:var(--muted);
+  font-size:13px;
+  background:#0d1522
+}
+
+h1{
+  font-size:clamp(45px,7vw,76px);
+  line-height:.95;
+  margin:20px 0;
+  letter-spacing:-3px
+}
+
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7
+}
+
+.btn{
+  display:inline-block;
+  padding:13px 18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#111b2b;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:15px;
+  cursor:pointer
+}
+
+.btn.primary{
+  background:var(--blue);
+  border-color:var(--blue)
+}
+
+/* =========================
+   PANEL
+========================= */
+
+.panel{
+  background:linear-gradient(
+    145deg,
+    #111c2d,
+    #0b111b
+  );
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px
+}
+
+.status{
+  font-weight:bold;
+  font-size:25px;
+  margin:12px 0
+}
+
+.status.ok{
+  color:var(--green)
+}
+
+.status.bad{
+  color:var(--red)
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px
+}
+
+.stat{
+  background:#09111d;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:15px
+}
+
+.stat b{
+  font-size:25px
+}
+
+.stat small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px
+}
+
+/* =========================
+   SECTIONS
+========================= */
+
+section{
+  padding:35px 0
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:15px;
+  margin-bottom:20px
+}
+
+.section-title h2{
+  margin:0;
+  font-size:30px
+}
+
+.section-title p{
+  color:var(--muted)
+}
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  justify-content:flex-end
+}
+
+.search,
+.sort{
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#0c131f;
+  color:#fff;
+  outline:none
+}
+
+.search{
+  width:250px
+}
+
+.sort{
+  cursor:pointer
+}
+
+/* =========================
+   SERVER
+========================= */
+
+.server{
+  display:grid;
+  grid-template-columns:
+    1.5fr
+    .7fr
+    .7fr
+    .8fr
+    auto;
+
+  gap:18px;
+  align-items:center;
+  padding:18px;
+  margin:12px 0;
+
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:15px
+}
+
+.server:hover{
+  border-color:#41639a
+}
+
+.server-name{
+  font-weight:bold;
+  font-size:16px
+}
+
+.ip{
+  color:#8799b4;
+  font-family:monospace;
+  margin-top:6px
+}
+
+.online{
+  color:var(--green);
+  font-weight:bold
+}
+
+.offline{
+  color:var(--red);
+  font-weight:bold
+}
+
+.metric b{
+  display:block
+}
+
+.metric small{
+  color:var(--muted)
+}
+
+.actions{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+
+.copy,
+.players-btn{
+  padding:9px 12px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:#172237;
+  color:#fff;
+  cursor:pointer
+}
+
+.players-btn{
+  background:#162744
+}
+
+.copy:hover,
+.players-btn:hover{
+  border-color:var(--blue)
+}
+
+/* =========================
+   FEATURES
+========================= */
+
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px
+}
+
+.feature{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:22px
+}
+
+.feature p,
+.about-text{
+  color:var(--muted);
+  line-height:1.7
+}
+
+/* =========================
+   OWNER
+========================= */
+
+.owner{
+  margin-top:20px;
+  background:#fff;
+  border-radius:16px;
+  padding:20px;
+  border:2px solid #000;
+  box-shadow:0 8px 30px #0008
+}
+
+.owner-title{
+  color:#000;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:1.5px
+}
+
+.owner-name{
+  color:#000;
+  font-size:27px;
+  font-weight:950;
+  margin-top:7px
+}
+
+/* =========================
+   NOTICE
+========================= */
+
+.notice{
+  margin-top:15px;
+  padding:14px;
+  border:1px dashed #35445d;
+  border-radius:12px;
+  color:var(--muted);
+  font-size:13px
+}
+
+.empty{
+  text-align:center;
+  padding:35px;
+  color:var(--muted);
+  border:1px dashed var(--line);
+  border-radius:15px
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  margin-top:50px;
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  color:var(--muted)
+}
+
+/* =========================
+   OVERLAY / MODAL
+========================= */
+
+.overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:#000b;
+  z-index:50;
+  align-items:center;
+  justify-content:center;
+  padding:20px
+}
+
+.modal{
+  width:min(620px,100%);
+  max-height:85vh;
+  overflow:auto;
+
+  background:#0d1522;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:22px;
+
+  box-shadow:0 20px 80px #000
+}
+
+.modal-head{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  align-items:center
+}
+
+.close{
+  border:0;
+  background:#172237;
+  color:#fff;
+  border-radius:9px;
+  padding:9px 12px;
+  cursor:pointer
+}
+
+.close:hover{
+  background:#21304a
+}
+
+/* =========================
+   PLAYERS
+========================= */
+
+.player{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  padding:12px;
+  border:1px solid var(--line);
+  border-radius:10px;
+  background:#09111d;
+  margin-top:8px
+}
+
+.score{
+  color:var(--muted)
+}
+
+/* =========================
+   FORMS
+========================= */
+
+.form-group{
+  margin:12px 0
+}
+
+.form-group label{
+  display:block;
+  color:var(--muted);
+  font-size:13px;
+  margin-bottom:6px
+}
+
+.form-group input{
+  width:100%;
+  padding:12px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:#09111d;
+  color:#fff;
+  outline:none
+}
+
+.form-group input:focus{
+  border-color:var(--blue)
+}
+
+.form-submit{
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:9px;
+  background:var(--blue);
+  color:#fff;
+  font-weight:bold;
+  cursor:pointer
+}
+
+.form-submit:hover{
+  filter:brightness(1.08)
+}
+
+.form-submit:disabled{
+  opacity:.6;
+  cursor:wait
+}
+
+.form-note{
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+  margin-top:12px
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px
+}
+
+.profile-full{
+  grid-column:1 / -1
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:950px){
+
+  nav{
+    gap:12px
+  }
+
+  .server{
+    grid-template-columns:1fr 1fr
+  }
+
+  .features{
+    grid-template-columns:1fr
+  }
+}
+
+@media(max-width:700px){
+
+  .nav{
+    flex-wrap:wrap;
+    padding:10px 0
+  }
+
+  .auth-nav{
+    margin-left:auto
+  }
+
+  .hero{
+    grid-template-columns:1fr
+  }
+
+  nav{
+    display:none
+  }
+
+  .profile-grid{
+    grid-template-columns:1fr
+  }
+
+  .profile-full{
+    grid-column:auto
+  }
+}
+
+@media(max-width:520px){
+
+  .server{
+    grid-template-columns:1fr
+  }
+
+  .section-title{
+    display:block
+  }
+
+  .controls{
+    justify-content:stretch;
+    margin-top:15px
+  }
+
+  .search,
+  .sort{
+    width:100%
+  }
+
+  .actions{
+    width:100%
+  }
+}
 </style>
 </head>
+
 <body>
+
+<!-- =====================================================
+     HEADER
+====================================================== -->
+
 <header>
+
 <div class="container nav">
-<div class="logo">UZB <span>SERVERS</span></div>
-<nav><a href="#servers">Serverlar</a><a href="#features">Imkoniyatlar</a><a href="#about">Biz haqimizda</a></nav>
-<div class="auth-nav">
-<button id="profileBtn" class="auth-btn" style="display:none" onclick="openProfile()">Profil</button>
+
+  <div class="logo">
+    UZB <span>SERVERS</span>
+  </div>
+
+  <nav>
+    <a href="#servers">Serverlar</a>
+    <a href="#features">Imkoniyatlar</a>
+    <a href="#about">Biz haqimizda</a>
+  </nav>
+
+  <div class="auth-nav">
+
+    <button
+      id="profileBtn"
+      class="auth-btn"
+      style="display:none"
+      onclick="openProfile()">
+      Profil
+    </button>
+
+    <button
+      id="loginBtn"
+      class="auth-btn"
+      onclick="openAuth('login')">
+      Kirish
+    </button>
+
+    <button
+      id="registerBtn"
+      class="auth-btn primary"
+      onclick="openAuth('register')">
+      Ro‘yxatdan o‘tish
+    </button>
+
+  </div>
+
 </div>
+
 </header>
 
+
+<!-- =====================================================
+     MAIN
+====================================================== -->
+
 <main>
+
+<!-- HERO -->
+
 <section class="container hero">
-<div><div class="badge">🇺🇿 O‘zbekiston CS 1.6 monitoring platformasi</div><h1>UZB<br>SERVERS</h1><p>O‘zbekiston Counter-Strike 1.6 serverlarini bir joyda toping, kuzating va ulaning.</p><a class="btn primary" href="#servers">Serverlarni ko‘rish →</a></div>
-<div class="panel"><div style="color:#91a0b8">PLATFORM STATUS</div><div id="platformStatus" class="status ok">● ONLINE</div><div style="color:#91a0b8">Real server monitoring ma’lumotlari.</div><div class="stats"><div class="stat"><b id="serverCount">0</b><small>Serverlar</small></div><div class="stat"><b id="playerCount">0</b><small>O‘yinchilar</small></div></div><div style="color:#91a0b8;margin-top:16px;font-size:13px">Yangilangan: <span id="updatedAt">—</span></div></div>
-</section>
 
-<section id="servers" class="container">
-<div class="section-title">
-<div><h2>CS 1.6 Serverlar</h2><p>ONLINE serverlar avtomatik tepaga chiqariladi</p></div>
-<div class="controls"><input id="search" class="search" placeholder="Server qidirish..."><select id="sort" class="sort"><option value="online">ONLINE birinchi</option><option value="players">Playerlar bo‘yicha</option><option value="ping">Ping bo‘yicha</option><option value="name">Nom bo‘yicha</option></select></div>
-</div>
-<div id="serverList"></div>
-<div class="notice">📡 Ma’lumotlar GitHub Actions orqali CS 1.6 serverlaridan avtomatik tekshiriladi.</div>
-</section>
+  <div>
 
-<section id="features" class="container"><div class="section-title"><h2>Imkoniyatlar</h2></div><div class="features">
-<div class="feature"><h3>📡 Real-time Monitoring</h3><p>Serverlarning ONLINE/OFFLINE holati, map, ping va player soni avtomatik yangilanadi.</p></div>
-<div class="feature"><h3>🎮 Server katalogi</h3><p>O‘zbekiston CS 1.6 serverlarini qidirish, saralash va IP manzilini tez nusxalash mumkin.</p></div>
-<div class="feature"><h3>👤 Players</h3><p>Server A2S_PLAYER javobini bersa, ayni paytdagi nicklar va scorelarni ko‘rish mumkin.</p></div>
-</div></section>
-
-<section id="about" class="container">
-<div class="panel">
-<h2>Biz haqimizda</h2>
-<p class="about-text">UZB SERVERS — O‘zbekiston Counter-Strike 1.6 serverlarini bitta zamonaviy platformada topish, kuzatish va serverlarga ulanishni osonlashtirish uchun yaratilgan loyiha.</p>
-<p class="about-text">Platforma ochiq manbalardagi server ma’lumotlarini boshlang‘ich ro‘yxat sifatida ishlatadi va CS 1.6 serverlarini avtomatik monitoring qiladi. Server holati, o‘yinchilar soni, xarita va ping kabi ma’lumotlar monitoring natijasiga qarab yangilanadi.</p>
-<p class="about-text">Bizning maqsadimiz — O‘zbekistondagi faol CS 1.6 serverlarini topishni qulay qilish, o‘yinchilar uchun server tanlashni osonlashtirish va mahalliy Counter-Strike hamjamiyatiga foydali katalog yaratish.</p>
-<div class="owner"><div class="owner-title">SAYT EGASI VA LOYIHA MUALLIFI</div><div class="owner-name">Azizjon Lutfullayev</div></div>
-</div>
-</section>
-</main>
-
-<footer><div class="container">© 2026 UZB SERVERS — Uzbekistan CS 1.6</div></footer>
-
-<div id="playersOverlay" class="overlay" onclick="if(event.target===this)closePlayers()"><div class="modal"><div class="modal-head"><div><h2 id="modalTitle" style="margin:0">Players</h2><div id="modalIp" style="color:#91a0b8;margin-top:5px"></div></div><button class="close" onclick="closePlayers()">Yopish ✕</button></div><div id="playerBox" style="margin-top:18px"></div></div></div>
-
-
-<div id="profileOverlay" class="overlay" onclick="if(event.target===this)closeProfile()">
-  <div class="modal">
-    <div class="modal-head">
-      <div>
-        <h2 style="margin:0">Profil</h2>
-        <div style="color:#91a0b8;margin-top:5px">Shaxsiy ma’lumotlaringiz</div>
-      </div>
-      <button class="close" onclick="closeProfile()">Yopish ✕</button>
+    <div class="badge">
+      🇺🇿 O‘zbekiston CS 1.6 monitoring platformasi
     </div>
 
-    <form id="profileForm" onsubmit="saveProfile(event)" style="margin-top:15px">
-      <div class="form-group"><label>Login</label><input id="profileUsername" disabled></div>
-      <div class="form-group"><label>Email</label><input id="profileEmail" disabled></div>
-      <div class="form-group"><label>Ism</label><input id="profileFirstName" maxlength="80"></div>
-      <div class="form-group"><label>Familiya</label><input id="profileLastName" maxlength="80"></div>
-      <div class="form-group"><label>Telegram</label><input id="profileTelegram" maxlength="100" placeholder="@username"></div>
-      <div class="form-group"><label>Telefon raqami</label><input id="profilePhone" maxlength="30" placeholder="+998..."></div>
-      <div class="form-group"><label>Steam ID</label><input id="profileSteamId" maxlength="64" placeholder="STEAM_0:1:..."></div>
-      <div class="form-group"><label>Serverdagi nickname</label><input id="profileServerNick" maxlength="32"></div>
-      <button class="form-submit" id="profileSave">Saqlash</button>
-    </form>
-    <div class="form-note">Profil ma’lumotlari akkauntingizga bog‘langan holda D1 bazasida saqlanadi. Parol bu yerda ko‘rsatilmaydi.</div>
+    <h1>
+      UZB<br>
+      SERVERS
+    </h1>
+
+    <p>
+      O‘zbekiston Counter-Strike 1.6 serverlarini
+      bir joyda toping, kuzating va ulaning.
+    </p>
+
+    <a
+      class="btn primary"
+      href="#servers">
+      Serverlarni ko‘rish →
+    </a>
+
   </div>
+
+
+  <div class="panel">
+
+    <div style="color:#91a0b8">
+      PLATFORM STATUS
+    </div>
+
+    <div
+      id="platformStatus"
+      class="status ok">
+      ● ONLINE
+    </div>
+
+    <div style="color:#91a0b8">
+      Real server monitoring ma’lumotlari.
+    </div>
+
+    <div class="stats">
+
+      <div class="stat">
+        <b id="serverCount">0</b>
+        <small>Serverlar</small>
+      </div>
+
+      <div class="stat">
+        <b id="playerCount">0</b>
+        <small>O‘yinchilar</small>
+      </div>
+
+    </div>
+
+    <div
+      style="
+        color:#91a0b8;
+        margin-top:16px;
+        font-size:13px
+      ">
+
+      Yangilangan:
+      <span id="updatedAt">—</span>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- SERVERLAR -->
+
+<section
+  id="servers"
+  class="container">
+
+  <div class="section-title">
+
+    <div>
+
+      <h2>
+        CS 1.6 Serverlar
+      </h2>
+
+      <p>
+        ONLINE serverlar avtomatik tepaga chiqariladi
+      </p>
+
+    </div>
+
+    <div class="controls">
+
+      <input
+        id="search"
+        class="search"
+        placeholder="Server qidirish...">
+
+      <select
+        id="sort"
+        class="sort">
+
+        <option value="online">
+          ONLINE birinchi
+        </option>
+
+        <option value="players">
+          Playerlar bo‘yicha
+        </option>
+
+        <option value="ping">
+          Ping bo‘yicha
+        </option>
+
+        <option value="name">
+          Nom bo‘yicha
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <div id="serverList"></div>
+
+
+  <div class="notice">
+
+    📡 Ma’lumotlar GitHub Actions orqali
+    CS 1.6 serverlaridan avtomatik tekshiriladi.
+
+  </div>
+
+</section>
+
+
+<!-- IMKONIYATLAR -->
+
+<section
+  id="features"
+  class="container">
+
+  <div class="section-title">
+
+    <h2>
+      Imkoniyatlar
+    </h2>
+
+  </div>
+
+
+  <div class="features">
+
+    <div class="feature">
+
+      <h3>
+        📡 Real-time Monitoring
+      </h3>
+
+      <p>
+        Serverlarning ONLINE/OFFLINE holati,
+        map, ping va player soni avtomatik yangilanadi.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>
+        🎮 Server katalogi
+      </h3>
+
+      <p>
+        O‘zbekiston CS 1.6 serverlarini qidirish,
+        saralash va IP manzilini tez nusxalash mumkin.
+      </p>
+
+    </div>
+
+
+    <div class="feature">
+
+      <h3>
+        👤 Players
+      </h3>
+
+      <p>
+        Server A2S_PLAYER javobini bersa,
+        ayni paytdagi nicklar va scorelarni ko‘rish mumkin.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section
+  id="about"
+  class="container">
+
+  <div class="panel">
+
+    <h2>
+      Biz haqimizda
+    </h2>
+
+    <p class="about-text">
+
+      UZB SERVERS — O‘zbekiston Counter-Strike 1.6
+      serverlarini bitta zamonaviy platformada topish,
+      kuzatish va serverlarga ulanishni osonlashtirish
+      uchun yaratilgan loyiha.
+
+    </p>
+
+    <p class="about-text">
+
+      Platforma ochiq manbalardagi server ma’lumotlarini
+      boshlang‘ich ro‘yxat sifatida ishlatadi va CS 1.6
+      serverlarini avtomatik monitoring qiladi.
+
+    </p>
+
+    <p class="about-text">
+
+      Server holati, o‘yinchilar soni, xarita va ping
+      monitoring natijasiga qarab yangilanadi.
+
+    </p>
+
+
+    <div class="owner">
+
+      <div class="owner-title">
+        SAYT EGASI VA LOYIHA MUALLIFI
+      </div>
+
+      <div class="owner-name">
+        Azizjon Lutfullayev
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+  © 2026 UZB SERVERS — Uzbekistan CS 1.6
+
 </div>
 
-<div id="authOverlay" class="overlay" onclick="if(event.target===this)closeAuth()"><div class="modal">
-<div class="modal-head"><div><h2 id="authTitle" style="margin:0">Kirish</h2><div style="color:#91a0b8;margin-top:5px">UZB SERVERS akkaunti</div></div><button class="close" onclick="closeAuth()">Yopish ✕</button></div>
-<form id="authForm" onsubmit="handleAuth(event)">
-<div class="form-group"><label>Login</label><input id="authLogin" required minlength="3" autocomplete="username"></div>
-<div id="emailGroup" class="form-group" style="display:none"><label>Email</label><input id="authEmail" type="email" autocomplete="email"></div>
-<div class="form-group"><label>Parol</label><input id="authPassword" type="password" required minlength="8" autocomplete="current-password"></div>
-<button class="form-submit" id="authSubmit">Kirish</button>
-</form>
-<div id="authSwitch" style="text-align:center;margin-top:15px;color:#91a0b8"></div>
-<div class="form-note">Eslatma: bu hozircha frontend demo akkaunt oynasi. Haqiqiy ko‘p foydalanuvchili login/ro‘yxatdan o‘tish uchun xavfsiz backend va ma’lumotlar bazasi ulash kerak.</div>
-</div></div>
+</footer>
+
+
+<!-- =====================================================
+     PLAYERS MODAL
+====================================================== -->
+
+<div
+  id="playersOverlay"
+  class="overlay"
+  onclick="if(event.target===this)closePlayers()">
+
+  <div class="modal">
+
+    <div class="modal-head">
+
+      <div>
+
+        <h2
+          id="modalTitle"
+          style="margin:0">
+          Players
+        </h2>
+
+        <div
+          id="modalIp"
+          style="
+            color:#91a0b8;
+            margin-top:5px">
+        </div>
+
+      </div>
+
+      <button
+        class="close"
+        onclick="closePlayers()">
+        Yopish ✕
+      </button>
+
+    </div>
+
+    <div
+      id="playerBox"
+      style="margin-top:18px">
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     PROFILE MODAL
+====================================================== -->
+
+<div
+  id="profileOverlay"
+  class="overlay"
+  onclick="if(event.target===this)closeProfile()">
+
+  <div class="modal">
+
+    <div class="modal-head">
+
+      <div>
+
+        <h2 style="margin:0">
+          Profil
+        </h2>
+
+        <div
+          style="
+            color:#91a0b8;
+            margin-top:5px">
+          Shaxsiy ma’lumotlaringiz
+        </div>
+
+      </div>
+
+      <button
+        class="close"
+        onclick="closeProfile()">
+        Yopish ✕
+      </button>
+
+    </div>
+
+
+    <form
+      id="profileForm"
+      onsubmit="saveProfile(event)">
+
+      <div class="profile-grid">
+
+        <div class="form-group">
+
+          <label>
+            Login
+          </label>
+
+          <input
+            id="profileUsername"
+            disabled>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Email
+          </label>
+
+          <input
+            id="profileEmail"
+            disabled>
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Ism
+          </label>
+
+          <input
+            id="profileFirstName"
+            maxlength="80"
+            placeholder="Ismingiz">
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Familiya
+          </label>
+
+          <input
+            id="profileLastName"
+            maxlength="80"
+            placeholder="Familiyangiz">
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Telegram
+          </label>
+
+          <input
+            id="profileTelegram"
+            maxlength="100"
+            placeholder="@username">
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Telefon raqami
+          </label>
+
+          <input
+            id="profilePhone"
+            maxlength="30"
+            placeholder="+998...">
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Steam ID
+          </label>
+
+          <input
+            id="profileSteamId"
+            maxlength="64"
+            placeholder="STEAM_0:1:12345678">
+
+        </div>
+
+
+        <div class="form-group">
+
+          <label>
+            Serverdagi nickname
+          </label>
+
+          <input
+            id="profileServerNick"
+            maxlength="32"
+            placeholder="Serverdagi nickingiz">
+
+        </div>
+
+      </div>
+
+
+      <button
+        class="form-submit"
+        id="profileSave">
+
+        Saqlash
+
+      </button>
+
+    </form>
+
+
+    <div class="form-note">
+
+      Profil ma’lumotlari akkauntingizga bog‘langan
+      holda D1 bazasida saqlanadi.
+      Parol profil oynasida ko‘rsatilmaydi.
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- =====================================================
+     LOGIN / REGISTER MODAL
+====================================================== -->
+
+<div
+  id="authOverlay"
+  class="overlay"
+  onclick="if(event.target===this)closeAuth()">
+
+  <div class="modal">
+
+    <div class="modal-head">
+
+      <div>
+
+        <h2
+          id="authTitle"
+          style="margin:0">
+          Kirish
+        </h2>
+
+        <div
+          style="
+            color:#91a0b8;
+            margin-top:5px">
+          UZB SERVERS akkaunti
+        </div>
+
+      </div>
+
+      <button
+        class="close"
+        onclick="closeAuth()">
+        Yopish ✕
+      </button>
+
+    </div>
+
+
+    <form
+      id="authForm"
+      onsubmit="handleAuth(event)">
+
+      <div class="form-group">
+
+        <label>
+          Login
+        </label>
+
+        <input
+          id="authLogin"
+          required
+          minlength="3"
+          autocomplete="username">
+
+      </div>
+
+
+      <div
+        id="emailGroup"
+        class="form-group"
+        style="display:none">
+
+        <label>
+          Email
+        </label>
+
+        <input
+          id="authEmail"
+          type="email"
+          autocomplete="email">
+
+      </div>
+
+
+      <div class="form-group">
+
+        <label>
+          Parol
+        </label>
+
+        <input
+          id="authPassword"
+          type="password"
+          required
+          minlength="8"
+          autocomplete="current-password">
+
+      </div>
+
+
+      <button
+        class="form-submit"
+        id="authSubmit">
+
+        Kirish
+
+      </button>
+
+    </form>
+
+
+    <div
+      id="authSwitch"
+      style="
+        text-align:center;
+        margin-top:15px;
+        color:#91a0b8">
+    </div>
+
+  </div>
+
+</div>
+
 
 <script>
-let data=[],authMode='login';
-const list=document.getElementById('serverList'),search=document.getElementById('search'),sort=document.getElementById('sort');
-const esc=s=>String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-function render(){
- const q=search.value.toLowerCase().trim();
- let filtered=data.filter(s=>(s.name+' '+s.ip+' '+s.map).toLowerCase().includes(q));
- filtered.sort((a,b)=>{
-  if(sort.value==='players')return (b.players||0)-(a.players||0);
-  if(sort.value==='ping')return (a.ping??9999)-(b.ping??9999);
-  if(sort.value==='name')return String(a.name).localeCompare(String(b.name));
-  return Number(b.online)-Number(a.online)||(b.players||0)-(a.players||0);
- });
- if(!filtered.length){list.innerHTML='<div class="empty">Server topilmadi.</div>';return}
- list.innerHTML=filtered.map(s=>{const i=data.indexOf(s);return `<div class="server">
- <div><div class="server-name">${esc(s.name)}</div><div class="ip">${esc(s.ip)}</div></div>
- <div class="${s.online?'online':'offline'}">● ${s.online?'ONLINE':'OFFLINE'}</div>
- <div class="metric"><b>${s.players??0}/${s.maxPlayers??0}</b><small>Players</small></div>
- <div class="metric"><b>${esc(s.map||'—')}</b><small>Map</small></div>
- <div class="metric"><b>${s.ping!=null?s.ping+' ms':'—'}</b><small>Ping</small></div>
- <div class="actions"><button class="copy" onclick="copyIp('${esc(s.ip)}',this)">Copy IP</button><button class="players-btn" onclick="openPlayers(${i})">Players (${s.playerList?.length??0})</button></div>
- </div>`}).join('');
+
+/* =====================================================
+   GLOBAL
+====================================================== */
+
+let data = [];
+let authMode = "login";
+
+
+const list =
+  document.getElementById("serverList");
+
+const search =
+  document.getElementById("search");
+
+const sort =
+  document.getElementById("sort");
+
+
+/* =====================================================
+   HTML ESCAPE
+====================================================== */
+
+function esc(value){
+
+  return String(value ?? "")
+    .replace(
+      /[&<>"']/g,
+      function(match){
+
+        return {
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          '"':"&quot;",
+          "'":"&#39;"
+        }[match];
+
+      }
+    );
+
 }
-async function copyIp(ip,btn){try{await navigator.clipboard.writeText(ip);const old=btn.textContent;btn.textContent='Copied ✓';setTimeout(()=>btn.textContent=old,1200)}catch{}}
-function openPlayers(i){const s=data[i];if(!s)return;document.getElementById('modalTitle').textContent=s.name||'Players';document.getElementById('modalIp').textContent=s.ip||'';const p=s.playerList||[];document.getElementById('playerBox').innerHTML=p.length?p.map(x=>`<div class="player"><div><b>${esc(x.name||'Unnamed')}</b></div><div class="score">Score: ${x.score??0}</div></div>`).join(''):`<div class="empty">${s.online?'Hozir player ro‘yxati bo‘sh yoki server A2S_PLAYER javobini bermadi.':'Server offline.'}</div>`;document.getElementById('playersOverlay').style.display='flex'}
-function closePlayers(){document.getElementById('playersOverlay').style.display='none'}
-async function load(){try{const r=await fetch('/servers.json?x='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error();const j=await r.json();data=Array.isArray(j.servers)?j.servers:[];document.getElementById('serverCount').textContent=data.length;document.getElementById('playerCount').textContent=data.reduce((a,s)=>a+(Number(s.players)||0),0);document.getElementById('updatedAt').textContent=j.updatedAt?new Date(j.updatedAt*1000).toLocaleString('uz-UZ'):'—';document.getElementById('platformStatus').textContent='● ONLINE';document.getElementById('platformStatus').className='status ok';render()}catch(e){document.getElementById('platformStatus').textContent='● DATA ERROR';document.getElementById('platformStatus').className='status bad';list.innerHTML='<div class="empty">Server ma’lumotlarini yuklab bo‘lmadi. /servers.json mavjudligini tekshiring.</div>'}}
+
+
+/* =====================================================
+   SERVER RENDER
+====================================================== */
+
+function render(){
+
+  const query =
+    search.value
+      .toLowerCase()
+      .trim();
+
+
+  let filtered =
+    data.filter(function(server){
+
+      return (
+        server.name +
+        " " +
+        server.ip +
+        " " +
+        server.map
+      )
+      .toLowerCase()
+      .includes(query);
+
+    });
+
+
+  filtered.sort(function(a,b){
+
+    if(sort.value === "players"){
+
+      return (
+        (b.players || 0) -
+        (a.players || 0)
+      );
+
+    }
+
+
+    if(sort.value === "ping"){
+
+      return (
+        (a.ping ?? 9999) -
+        (b.ping ?? 9999)
+      );
+
+    }
+
+
+    if(sort.value === "name"){
+
+      return String(a.name)
+        .localeCompare(
+          String(b.name)
+        );
+
+    }
+
+
+    return (
+      Number(b.online) -
+      Number(a.online)
+    ) ||
+    (
+      (b.players || 0) -
+      (a.players || 0)
+    );
+
+  });
+
+
+  if(!filtered.length){
+
+    list.innerHTML =
+      '<div class="empty">' +
+      'Server topilmadi.' +
+      '</div>';
+
+    return;
+
+  }
+
+
+  list.innerHTML =
+    filtered.map(function(server){
+
+      const index =
+        data.indexOf(server);
+
+
+      return `
+
+      <div class="server">
+
+        <div>
+
+          <div class="server-name">
+            ${esc(server.name)}
+          </div>
+
+          <div class="ip">
+            ${esc(server.ip)}
+          </div>
+
+        </div>
+
+
+        <div class="${
+          server.online
+            ? "online"
+            : "offline"
+        }">
+
+          ● ${
+            server.online
+              ? "ONLINE"
+              : "OFFLINE"
+          }
+
+        </div>
+
+
+        <div class="metric">
+
+          <b>
+            ${server.players ?? 0}/${
+              server.maxPlayers ?? 0
+            }
+          </b>
+
+          <small>
+            Players
+          </small>
+
+        </div>
+
+
+        <div class="metric">
+
+          <b>
+            ${esc(server.map || "—")}
+          </b>
+
+          <small>
+            Map
+          </small>
+
+        </div>
+
+
+        <div class="metric">
+
+          <b>
+            ${
+              server.ping != null
+                ? server.ping + " ms"
+                : "—"
+            }
+          </b>
+
+          <small>
+            Ping
+          </small>
+
+        </div>
+
+
+        <div class="actions">
+
+          <button
+            class="copy"
+            onclick="copyIp('${esc(server.ip)}',this)">
+
+            Copy IP
+
+          </button>
+
+
+          <button
+            class="players-btn"
+            onclick="openPlayers(${index})">
+
+            Players ${
+              server.playerList?.length ?? 0
+            }
+
+          </button>
+
+        </div>
+
+      </div>
+
+      `;
+
+    })
+    .join("");
+
+}
+
+
+/* =====================================================
+   COPY IP
+====================================================== */
+
+async function copyIp(ip,button){
+
+  try{
+
+    await navigator.clipboard.writeText(ip);
+
+    const old =
+      button.textContent;
+
+    button.textContent =
+      "Copied ✓";
+
+    setTimeout(
+      function(){
+        button.textContent = old;
+      },
+      1200
+    );
+
+  }catch(error){}
+
+}
+
+
+/* =====================================================
+   PLAYERS
+====================================================== */
+
+function openPlayers(index){
+
+  const server =
+    data[index];
+
+  if(!server){
+    return;
+  }
+
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent =
+    server.name || "Players";
+
+
+  document.getElementById(
+    "modalIp"
+  ).textContent =
+    server.ip || "";
+
+
+  const players =
+    server.playerList || [];
+
+
+  const box =
+    document.getElementById(
+      "playerBox"
+    );
+
+
+  if(players.length){
+
+    box.innerHTML =
+      players.map(function(player){
+
+        return `
+
+        <div class="player">
+
+          <div>
+            <b>
+              ${esc(
+                player.name ||
+                "Unnamed"
+              )}
+            </b>
+          </div>
+
+          <div class="score">
+            Score:
+            ${player.score ?? 0}
+          </div>
+
+        </div>
+
+        `;
+
+      }).join("");
+
+  }else{
+
+    box.innerHTML = `
+
+      <div class="empty">
+
+        ${
+          server.online
+            ? "Hozir player ro‘yxati bo‘sh yoki server A2S_PLAYER javobini bermadi."
+            : "Server offline."
+        }
+
+      </div>
+
+    `;
+
+  }
+
+
+  document.getElementById(
+    "playersOverlay"
+  ).style.display =
+    "flex";
+
+}
+
+
+function closePlayers(){
+
+  document.getElementById(
+    "playersOverlay"
+  ).style.display =
+    "none";
+
+}
+
+
+/* =====================================================
+   SERVER MONITORING
+====================================================== */
+
+async function load(){
+
+  try{
+
+    const response =
+      await fetch(
+        "/servers.json?x=" +
+        Date.now(),
+        {
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        "servers.json error"
+      );
+
+    }
+
+
+    const json =
+      await response.json();
+
+
+    data =
+      Array.isArray(json.servers)
+        ? json.servers
+        : [];
+
+
+    document.getElementById(
+      "serverCount"
+    ).textContent =
+      data.length;
+
+
+    document.getElementById(
+      "playerCount"
+    ).textContent =
+      data.reduce(
+        function(total,server){
+
+          return total +
+            (Number(server.players) || 0);
+
+        },
+        0
+      );
+
+
+    document.getElementById(
+      "updatedAt"
+    ).textContent =
+      json.updatedAt
+        ? new Date(
+            json.updatedAt * 1000
+          ).toLocaleString("uz-UZ")
+        : "—";
+
+
+    document.getElementById(
+      "platformStatus"
+    ).textContent =
+      "● ONLINE";
+
+
+    document.getElementById(
+      "platformStatus"
+    ).className =
+      "status ok";
+
+
+    render();
+
+
+  }catch(error){
+
+    document.getElementById(
+      "platformStatus"
+    ).textContent =
+      "● DATA ERROR";
+
+
+    document.getElementById(
+      "platformStatus"
+    ).className =
+      "status bad";
+
+
+    list.innerHTML = `
+
+      <div class="empty">
+
+        Server ma’lumotlarini yuklab bo‘lmadi.
+        /servers.json mavjudligini tekshiring.
+
+      </div>
+
+    `;
+
+  }
+
+}
+
+
+/* =====================================================
+   PROFILE BUTTON
+====================================================== */
 
 function setProfileButton(user){
-  const b=document.getElementById('profileBtn');
-  if(!b)return;
-  b.style.display=user?'inline-block':'none';
+
+  const button =
+    document.getElementById(
+      "profileBtn"
+    );
+
+  if(!button){
+    return;
+  }
+
+
+  button.style.display =
+    user
+      ? "inline-block"
+      : "none";
+
 }
+
+
+/* =====================================================
+   OPEN PROFILE
+====================================================== */
 
 async function openProfile(){
+
   try{
-    const r=await fetch('/api/profile',{credentials:'same-origin',cache:'no-store'});
-    const j=await r.json();
-    if(!r.ok) throw new Error(j.error||'Profilni yuklab bo‘lmadi.');
-    const u=j.user||{};
-    const p=j.profile||{};
-    document.getElementById('profileUsername').value=u.username||'';
-    document.getElementById('profileEmail').value=u.email||'';
-    document.getElementById('profileFirstName').value=p.first_name||'';
-    document.getElementById('profileLastName').value=p.last_name||'';
-    document.getElementById('profileTelegram').value=p.telegram||'';
-    document.getElementById('profilePhone').value=p.phone||'';
-    document.getElementById('profileSteamId').value=p.steam_id||'';
-    document.getElementById('profileServerNick').value=p.server_nickname||'';
-    document.getElementById('profileOverlay').style.display='flex';
-  }catch(e){
-    alert(e.message||'Profilni yuklab bo‘lmadi.');
+
+    const response =
+      await fetch(
+        "/api/profile",
+        {
+          method:"GET",
+          credentials:"same-origin",
+          cache:"no-store"
+        }
+      );
+
+
+    const result =
+      await response.json();
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.error ||
+        "Profilni yuklab bo‘lmadi."
+      );
+
+    }
+
+
+    const user =
+      result.user || {};
+
+    const profile =
+      result.profile || {};
+
+
+    document.getElementById(
+      "profileUsername"
+    ).value =
+      user.username || "";
+
+
+    document.getElementById(
+      "profileEmail"
+    ).value =
+      user.email || "";
+
+
+    document.getElementById(
+      "profileFirstName"
+    ).value =
+      profile.first_name || "";
+
+
+    document.getElementById(
+      "profileLastName"
+    ).value =
+      profile.last_name || "";
+
+
+    document.getElementById(
+      "profileTelegram"
+    ).value =
+      profile.telegram || "";
+
+
+    document.getElementById(
+      "profilePhone"
+    ).value =
+      profile.phone || "";
+
+
+    document.getElementById(
+      "profileSteamId"
+    ).value =
+      profile.steam_id || "";
+
+
+    document.getElementById(
+      "profileServerNick"
+    ).value =
+      profile.server_nickname || "";
+
+
+    document.getElementById(
+      "profileOverlay"
+    ).style.display =
+      "flex";
+
+
+  }catch(error){
+
+    alert(
+      error.message ||
+      "Profilni yuklab bo‘lmadi."
+    );
+
   }
+
 }
+
+
+/* =====================================================
+   CLOSE PROFILE
+====================================================== */
 
 function closeProfile(){
-  document.getElementById('profileOverlay').style.display='none';
+
+  document.getElementById(
+    "profileOverlay"
+  ).style.display =
+    "none";
+
 }
 
-async function saveProfile(e){
-  e.preventDefault();
-  const btn=document.getElementById('profileSave');
-  btn.disabled=true;
-  btn.textContent='Saqlanmoqda...';
 
-  const body={
-    first_name:document.getElementById('profileFirstName').value.trim(),
-    last_name:document.getElementById('profileLastName').value.trim(),
-    telegram:document.getElementById('profileTelegram').value.trim(),
-    phone:document.getElementById('profilePhone').value.trim(),
-    steam_id:document.getElementById('profileSteamId').value.trim(),
-    server_nickname:document.getElementById('profileServerNick').value.trim()
+/* =====================================================
+   SAVE PROFILE
+====================================================== */
+
+async function saveProfile(event){
+
+  event.preventDefault();
+
+
+  const button =
+    document.getElementById(
+      "profileSave"
+    );
+
+
+  button.disabled =
+    true;
+
+  button.textContent =
+    "Saqlanmoqda...";
+
+
+  const profile = {
+
+    first_name:
+      document.getElementById(
+        "profileFirstName"
+      ).value.trim(),
+
+
+    last_name:
+      document.getElementById(
+        "profileLastName"
+      ).value.trim(),
+
+
+    telegram:
+      document.getElementById(
+        "profileTelegram"
+      ).value.trim(),
+
+
+    phone:
+      document.getElementById(
+        "profilePhone"
+      ).value.trim(),
+
+
+    steam_id:
+      document.getElementById(
+        "profileSteamId"
+      ).value.trim(),
+
+
+    server_nickname:
+      document.getElementById(
+        "profileServerNick"
+      ).value.trim()
+
   };
 
+
   try{
-    const r=await fetch('/api/profile',{
-      method:'PUT',
-      headers:{'content-type':'application/json'},
-      credentials:'same-origin',
-      body:JSON.stringify(body)
-    });
-    const j=await r.json().catch(()=>({error:'Server javobi noto‘g‘ri.'}));
-    if(!r.ok)throw new Error(j.error||'Profilni saqlab bo‘lmadi.');
-    alert('Profil muvaffaqiyatli saqlandi.');
+
+    const response =
+      await fetch(
+        "/api/profile",
+        {
+          method:"PUT",
+
+          headers:{
+            "Content-Type":
+              "application/json"
+          },
+
+          credentials:
+            "same-origin",
+
+          body:
+            JSON.stringify(profile)
+        }
+      );
+
+
+    const result =
+      await response.json()
+        .catch(
+          function(){
+            return {
+              error:
+                "Server javobi noto‘g‘ri."
+            };
+          }
+        );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.error ||
+        "Profilni saqlab bo‘lmadi."
+      );
+
+    }
+
+
+    alert(
+      "Profil muvaffaqiyatli saqlandi!"
+    );
+
+
     closeProfile();
-  }catch(e){
-    alert(e.message||'Profilni saqlab bo‘lmadi.');
+
+
+  }catch(error){
+
+    alert(
+      error.message ||
+      "Profilni saqlashda xatolik."
+    );
+
   }finally{
-    btn.disabled=false;
-    btn.textContent='Saqlash';
+
+    button.disabled =
+      false;
+
+    button.textContent =
+      "Saqlash";
+
   }
+
 }
+
+
+/* =====================================================
+   AUTH OPEN
+====================================================== */
 
 function openAuth(mode){
-  authMode=mode;
-  document.getElementById('authOverlay').style.display='flex';
-  document.getElementById('authTitle').textContent=mode==='login'?'Kirish':'Ro‘yxatdan o‘tish';
-  document.getElementById('authSubmit').textContent=mode==='login'?'Kirish':'Akkaunt yaratish';
-  document.getElementById('emailGroup').style.display=mode==='login'?'none':'block';
-  document.getElementById('authLogin').value='';
-  document.getElementById('authEmail').value='';
-  document.getElementById('authPassword').value='';
 
-  const sw=document.getElementById('authSwitch');
-  sw.innerHTML=mode==='login'
-    ? 'Akkauntingiz yo‘qmi? <button id="authSwitchBtn" class="close" type="button">Ro‘yxatdan o‘tish</button>'
-    : 'Akkauntingiz bormi? <button id="authSwitchBtn" class="close" type="button">Kirish</button>';
-  document.getElementById('authSwitchBtn').onclick=()=>openAuth(mode==='login'?'register':'login');
+  authMode =
+    mode;
+
+
+  document.getElementById(
+    "authOverlay"
+  ).style.display =
+    "flex";
+
+
+  document.getElementById(
+    "authTitle"
+  ).textContent =
+    mode === "login"
+      ? "Kirish"
+      : "Ro‘yxatdan o‘tish";
+
+
+  document.getElementById(
+    "authSubmit"
+  ).textContent =
+    mode === "login"
+      ? "Kirish"
+      : "Akkaunt yaratish";
+
+
+  document.getElementById(
+    "emailGroup"
+  ).style.display =
+    mode === "login"
+      ? "none"
+      : "block";
+
+
+  document.getElementById(
+    "authLogin"
+  ).value = "";
+
+
+  document.getElementById(
+    "authEmail"
+  ).value = "";
+
+
+  document.getElementById(
+    "authPassword"
+  ).value = "";
+
+
+  const switchBox =
+    document.getElementById(
+      "authSwitch"
+    );
+
+
+  if(mode === "login"){
+
+    switchBox.innerHTML = `
+      Akkauntingiz yo‘qmi?
+      <button
+        id="authSwitchBtn"
+        class="close"
+        type="button">
+        Ro‘yxatdan o‘tish
+      </button>
+    `;
+
+  }else{
+
+    switchBox.innerHTML = `
+      Akkauntingiz bormi?
+      <button
+        id="authSwitchBtn"
+        class="close"
+        type="button">
+        Kirish
+      </button>
+    `;
+
+  }
+
+
+  document.getElementById(
+    "authSwitchBtn"
+  ).onclick =
+    function(){
+
+      openAuth(
+        mode === "login"
+          ? "register"
+          : "login"
+      );
+
+    };
+
 }
+
+
+/* =====================================================
+   CLOSE AUTH
+====================================================== */
 
 function closeAuth(){
-  document.getElementById('authOverlay').style.display='none';
+
+  document.getElementById(
+    "authOverlay"
+  ).style.display =
+    "none";
+
 }
 
-async function handleAuth(e){
-  e.preventDefault();
 
-  const login=document.getElementById('authLogin').value.trim();
-  const email=document.getElementById('authEmail').value.trim();
-  const password=document.getElementById('authPassword').value;
-  const submit=document.getElementById('authSubmit');
+/* =====================================================
+   LOGIN / REGISTER
+====================================================== */
 
-  submit.disabled=true;
-  submit.textContent='Yuklanmoqda...';
+async function handleAuth(event){
+
+  event.preventDefault();
+
+
+  const login =
+    document.getElementById(
+      "authLogin"
+    ).value.trim();
+
+
+  const email =
+    document.getElementById(
+      "authEmail"
+    ).value.trim();
+
+
+  const password =
+    document.getElementById(
+      "authPassword"
+    ).value;
+
+
+  const submit =
+    document.getElementById(
+      "authSubmit"
+    );
+
+
+  submit.disabled =
+    true;
+
+  submit.textContent =
+    "Yuklanmoqda...";
+
 
   try{
-    const endpoint=authMode==='register'?'/api/register':'/api/login';
-    const body=authMode==='register'
-      ? {username:login,email,password}
-      : {login,password};
 
-    const r=await fetch(endpoint,{
-      method:'POST',
-      headers:{'content-type':'application/json'},
-      credentials:'same-origin',
-      body:JSON.stringify(body)
-    });
+    const endpoint =
+      authMode === "register"
+        ? "/api/register"
+        : "/api/login";
 
-    const result=await r.json().catch(()=>({error:'Server javobi noto‘g‘ri.'}));
 
-    if(!r.ok){
-      throw new Error(result.error||'Xatolik yuz berdi.');
+    const body =
+      authMode === "register"
+        ? {
+            username:login,
+            email:email,
+            password:password
+          }
+        : {
+            login:login,
+            password:password
+          };
+
+
+    const response =
+      await fetch(
+        endpoint,
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "application/json"
+          },
+
+          credentials:
+            "same-origin",
+
+          body:
+            JSON.stringify(body)
+        }
+      );
+
+
+    const result =
+      await response.json()
+        .catch(
+          function(){
+            return {
+              error:
+                "Server javobi noto‘g‘ri."
+            };
+          }
+        );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.error ||
+        "Xatolik yuz berdi."
+      );
+
     }
+
 
     closeAuth();
 
+
     alert(
-      authMode==='register'
-        ? 'Akkaunt muvaffaqiyatli yaratildi: '+result.user.username
-        : 'Xush kelibsiz, '+result.user.username+'!'
+      authMode === "register"
+        ? "Akkaunt muvaffaqiyatli yaratildi: " +
+          result.user.username
+        : "Xush kelibsiz, " +
+          result.user.username +
+          "!"
     );
 
-    updateAuthButtons(result.user);
 
-  }catch(err){
-    alert(err.message||'Xatolik yuz berdi.');
+    updateAuthButtons(
+      result.user
+    );
+
+
+  }catch(error){
+
+    alert(
+      error.message ||
+      "Xatolik yuz berdi."
+    );
+
   }finally{
-    submit.disabled=false;
-    submit.textContent=authMode==='login'?'Kirish':'Akkaunt yaratish';
+
+    submit.disabled =
+      false;
+
+    submit.textContent =
+      authMode === "login"
+        ? "Kirish"
+        : "Akkaunt yaratish";
+
   }
+
 }
 
-async function updateAuthButtons(user){
-  const box=document.querySelector('.auth-nav');
-  if(!box)return;
+
+/* =====================================================
+   AUTH BUTTONS
+====================================================== */
+
+function updateAuthButtons(user){
+
+  const box =
+    document.querySelector(
+      ".auth-nav"
+    );
+
+
+  if(!box){
+    return;
+  }
+
 
   if(user){
-    setProfileButton(user);
-    box.innerHTML=
-      '<span class="auth-btn" style="cursor:default">👤 '+esc(user.username)+'</span>'+
-      '<button id="logoutBtn" class="auth-btn">Chiqish</button>';
 
-    document.getElementById('logoutBtn').onclick=logoutUser;
+    /*
+      Profil tugmasi
+    */
+
+    box.innerHTML = `
+
+      <button
+        id="profileBtn"
+        class="auth-btn"
+        onclick="openProfile()">
+
+        Profil
+
+      </button>
+
+
+      <span
+        class="auth-btn"
+        style="cursor:default">
+
+        👤 ${esc(user.username)}
+
+      </span>
+
+
+      <button
+        id="logoutBtn"
+        class="auth-btn">
+
+        Chiqish
+
+      </button>
+
+    `;
+
+
+    document.getElementById(
+      "logoutBtn"
+    ).onclick =
+      logoutUser;
+
+
   }else{
-    setProfileButton(null);
-    box.innerHTML=
-      '<button id="loginBtn" class="auth-btn">Kirish</button>'+
-      '<button id="registerBtn" class="auth-btn primary">Ro‘yxatdan o‘tish</button>';
 
-    document.getElementById('loginBtn').onclick=()=>openAuth('login');
-    document.getElementById('registerBtn').onclick=()=>openAuth('register');
+    box.innerHTML = `
+
+      <button
+        id="loginBtn"
+        class="auth-btn">
+
+        Kirish
+
+      </button>
+
+
+      <button
+        id="registerBtn"
+        class="auth-btn primary">
+
+        Ro‘yxatdan o‘tish
+
+      </button>
+
+    `;
+
+
+    document.getElementById(
+      "loginBtn"
+    ).onclick =
+      function(){
+        openAuth("login");
+      };
+
+
+    document.getElementById(
+      "registerBtn"
+    ).onclick =
+      function(){
+        openAuth("register");
+      };
+
   }
+
 }
+
+
+/* =====================================================
+   LOGOUT
+====================================================== */
 
 async function logoutUser(){
+
   try{
-    await fetch('/api/logout',{
-      method:'POST',
-      credentials:'same-origin'
-    });
+
+    await fetch(
+      "/api/logout",
+      {
+        method:"POST",
+        credentials:"same-origin"
+      }
+    );
+
   }finally{
-    updateAuthButtons(null);
+
+    updateAuthButtons(
+      null
+    );
+
   }
+
 }
+
+
+/* =====================================================
+   CHECK LOGIN
+====================================================== */
 
 async function checkAuth(){
+
   try{
-    const r=await fetch('/api/me',{
-      credentials:'same-origin',
-      cache:'no-store'
-    });
 
-    if(!r.ok)return;
+    const response =
+      await fetch(
+        "/api/me",
+        {
+          credentials:
+            "same-origin",
+          cache:"no-store"
+        }
+      );
 
-    const j=await r.json();
-    updateAuthButtons(j.authenticated?j.user:null);
-  }catch{}
+
+    if(!response.ok){
+      return;
+    }
+
+
+    const result =
+      await response.json();
+
+
+    updateAuthButtons(
+      result.authenticated
+        ? result.user
+        : null
+    );
+
+
+  }catch(error){}
+
 }
 
-search.addEventListener('input',render);sort.addEventListener('change',render);load();checkAuth();setInterval(load,60000);
+
+/* =====================================================
+   EVENTS
+====================================================== */
+
+search.addEventListener(
+  "input",
+  render
+);
+
+
+sort.addEventListener(
+  "change",
+  render
+);
+
+
+/* =====================================================
+   START
+====================================================== */
+
+load();
+
+checkAuth();
+
+
+/* Server monitoring
+   har 60 sekundda yangilanadi.
+*/
+
+setInterval(
+  load,
+  60000
+);
+
 </script>
+
 </body>
 </html>
