@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790896553,
+  "updatedAt": 1790897467,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,7 +10,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896547,
+      "updatedAt": 1790897461,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -22,7 +22,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896548,
+      "updatedAt": 1790897461,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -34,7 +34,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896548,
+      "updatedAt": 1790897462,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -46,7 +46,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896548,
+      "updatedAt": 1790897462,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -58,7 +58,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896548,
+      "updatedAt": 1790897462,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -70,7 +70,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896548,
+      "updatedAt": 1790897462,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -82,19 +82,20 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896549,
+      "updatedAt": 1790897463,
       "error": "invalid A2S_INFO response"
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
       "ip": "83.69.139.164:27015",
-      "online": true,
+      "online": false,
       "players": 0,
-      "maxPlayers": 32,
-      "map": "de_mirage",
-      "ping": 216,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
       "playerList": [],
-      "updatedAt": 1790896549
+      "updatedAt": 1790897463,
+      "error": "invalid A2S_INFO response"
     },
     {
       "name": "TIMCS.UZ Public #1",
@@ -105,7 +106,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896550,
+      "updatedAt": 1790897463,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -114,17 +115,17 @@
       "online": true,
       "players": 1,
       "maxPlayers": 32,
-      "map": "de_dust2_oldgods",
-      "ping": 217,
+      "map": "de_dust2",
+      "ping": 228,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 4523.6
+          "duration": 5437.1
         }
       ],
-      "updatedAt": 1790896550
+      "updatedAt": 1790897463
     },
     {
       "name": "PROCS.UZ",
@@ -133,9 +134,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_india",
-      "ping": 229,
+      "ping": 233,
       "playerList": [],
-      "updatedAt": 1790896550
+      "updatedAt": 1790897464
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -143,10 +144,10 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_inferno_2x2",
-      "ping": 215,
+      "map": "de_dust2_2x2",
+      "ping": 227,
       "playerList": [],
-      "updatedAt": 1790896551
+      "updatedAt": 1790897465
     },
     {
       "name": "IHOST.UZ MIX",
@@ -157,7 +158,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896552,
+      "updatedAt": 1790897465,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -169,7 +170,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790896552,
+      "updatedAt": 1790897466,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -178,10 +179,10 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2_2x2",
-      "ping": 231,
+      "map": "de_dust2002_2x2",
+      "ping": 244,
       "playerList": [],
-      "updatedAt": 1790896552
+      "updatedAt": 1790897466
     }
   ]
 }
