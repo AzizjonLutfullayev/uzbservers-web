@@ -64,9 +64,7 @@ async function verifyPassword(password, stored) {
   try {
     const [scheme, iterations, salt64, hash64] = stored.split("$");
 
-    if (scheme !== "pbkdf2") {
-      return false;
-    }
+    if (scheme !== "pbkdf2") return false;
 
     const key = await crypto.subtle.importKey(
       "raw",
@@ -90,9 +88,7 @@ async function verifyPassword(password, stored) {
     const a = new Uint8Array(bits);
     const b = b64ToBytes(hash64);
 
-    if (a.length !== b.length) {
-      return false;
-    }
+    if (a.length !== b.length) return false;
 
     let diff = 0;
 
@@ -136,9 +132,7 @@ function clearSessionCookie() {
 async function currentUser(request, env) {
   const token = getCookie(request, "session");
 
-  if (!token) {
-    return null;
-  }
+  if (!token) return null;
 
   const now = Math.floor(Date.now() / 1000);
 
@@ -169,13 +163,11 @@ async function register(request, env) {
   const body = await request.json().catch(() => null);
 
   if (!body) {
-    return json(
-      { error: "Noto‘g‘ri JSON." },
-      400
-    );
+    return json({ error: "Noto‘g‘ri JSON." }, 400);
   }
 
   const username = String(body.username || "").trim();
+
   const email = String(body.email || "")
     .trim()
     .toLowerCase();
@@ -183,64 +175,50 @@ async function register(request, env) {
   const password = String(body.password || "");
 
   if (!/^[A-Za-z0-9_]{3,24}$/.test(username)) {
-    return json(
-      {
-        error:
-          "Login 3–24 belgidan iborat bo‘lsin: harf, raqam yoki _."
-      },
-      400
-    );
+    return json({
+      error:
+        "Login 3–24 belgidan iborat bo‘lsin: harf, raqam yoki _."
+    }, 400);
   }
 
   if (
     !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) ||
     email.length > 160
   ) {
-    return json(
-      {
-        error: "Email manzili noto‘g‘ri."
-      },
-      400
-    );
+    return json({
+      error: "Email manzili noto‘g‘ri."
+    }, 400);
   }
 
   if (password.length < 8 || password.length > 128) {
-    return json(
-      {
-        error: "Parol 8–128 belgidan iborat bo‘lsin."
-      },
-      400
-    );
+    return json({
+      error: "Parol 8–128 belgidan iborat bo‘lsin."
+    }, 400);
   }
 
-  const existing = await env.DB.prepare(
-    `
+  const existing = await env.DB.prepare(`
     SELECT id
     FROM users
     WHERE username = ?
        OR email = ?
     LIMIT 1
-    `
-  )
+  `)
     .bind(username, email)
     .first();
 
   if (existing) {
-    return json(
-      {
-        error:
-          "Bu login yoki email allaqachon ro‘yxatdan o‘tgan."
-      },
-      409
-    );
+    return json({
+      error:
+        "Bu login yoki email allaqachon ro‘yxatdan o‘tgan."
+    }, 409);
   }
 
   const passwordHash = await hashPassword(password);
+
   const now = Math.floor(Date.now() / 1000);
 
   try {
-    const result = await env.DB.prepare(
-      `
+    const result = await env.DB.prepare(`
       INSERT INTO users
         (
           username,
@@ -249,8 +227,7 @@ async function register(request, env) {
           created_at
         )
       VALUES (?, ?, ?, ?)
-      `
-    )
+    `)
       .bind(
         username,
         email,
@@ -265,8 +242,7 @@ async function register(request, env) {
 
     const expires = now + SESSION_TTL;
 
-    await env.DB.prepare(
-      `
+    await env.DB.prepare(`
       INSERT INTO sessions
         (
           id,
@@ -275,8 +251,7 @@ async function register(request, env) {
           created_at
         )
       VALUES (?, ?, ?, ?)
-      `
-    )
+    `)
       .bind(
         token,
         userId,
@@ -285,24 +260,15 @@ async function register(request, env) {
       )
       .run();
 
-    /*
-      Yangi foydalanuvchi uchun bo‘sh profil yaratamiz.
-    */
-
-    await env.DB.prepare(
-      `
+    await env.DB.prepare(`
       INSERT INTO profiles
         (
           user_id,
           updated_at
         )
       VALUES (?, ?)
-      `
-    )
-      .bind(
-        userId,
-        now
-      )
+    `)
+      .bind(userId, now)
       .run();
 
     return json(
@@ -321,13 +287,10 @@ async function register(request, env) {
     );
 
   } catch (error) {
-    return json(
-      {
-        error:
-          "Akkaunt yaratishda xatolik yuz berdi."
-      },
-      500
-    );
+    return json({
+      error:
+        "Akkaunt yaratishda xatolik yuz berdi."
+    }, 500);
   }
 }
 
@@ -340,20 +303,16 @@ async function login(request, env) {
   const body = await request.json().catch(() => null);
 
   if (!body) {
-    return json(
-      {
-        error: "Noto‘g‘ri JSON."
-      },
-      400
-    );
+    return json({
+      error: "Noto‘g‘ri JSON."
+    }, 400);
   }
 
   const loginValue = String(body.login || "").trim();
 
   const password = String(body.password || "");
 
-  const user = await env.DB.prepare(
-    `
+  const user = await env.DB.prepare(`
     SELECT
       id,
       username,
@@ -363,8 +322,7 @@ async function login(request, env) {
     WHERE username = ?
        OR email = ?
     LIMIT 1
-    `
-  )
+  `)
     .bind(
       loginValue,
       loginValue.toLowerCase()
@@ -378,12 +336,9 @@ async function login(request, env) {
       user.password_hash
     ))
   ) {
-    return json(
-      {
-        error: "Login yoki parol noto‘g‘ri."
-      },
-      401
-    );
+    return json({
+      error: "Login yoki parol noto‘g‘ri."
+    }, 401);
   }
 
   const now = Math.floor(Date.now() / 1000);
@@ -392,8 +347,7 @@ async function login(request, env) {
 
   const expires = now + SESSION_TTL;
 
-  await env.DB.prepare(
-    `
+  await env.DB.prepare(`
     INSERT INTO sessions
       (
         id,
@@ -402,8 +356,7 @@ async function login(request, env) {
         created_at
       )
     VALUES (?, ?, ?, ?)
-    `
-  )
+  `)
     .bind(
       token,
       user.id,
@@ -434,10 +387,7 @@ async function login(request, env) {
 ========================================================= */
 
 async function logout(request, env) {
-  const token = getCookie(
-    request,
-    "session"
-  );
+  const token = getCookie(request, "session");
 
   if (token) {
     await env.DB.prepare(
@@ -448,9 +398,7 @@ async function logout(request, env) {
   }
 
   return json(
-    {
-      ok: true
-    },
+    { ok: true },
     200,
     {
       "Set-Cookie": clearSessionCookie()
@@ -460,14 +408,11 @@ async function logout(request, env) {
 
 
 /* =========================================================
-   /api/me
+   ME
 ========================================================= */
 
 async function me(request, env) {
-  const user = await currentUser(
-    request,
-    env
-  );
+  const user = await currentUser(request, env);
 
   return json({
     authenticated: !!user,
@@ -488,40 +433,31 @@ async function me(request, env) {
 ========================================================= */
 
 async function profile(request, env) {
-  const user = await currentUser(
-    request,
-    env
-  );
+  const user = await currentUser(request, env);
 
   if (!user) {
-    return json(
-      {
-        error: "Kirish talab qilinadi."
-      },
-      401
-    );
+    return json({
+      error: "Kirish talab qilinadi."
+    }, 401);
   }
 
 
-  /* =========================
-     GET PROFILE
-  ========================= */
+  /* GET */
 
   if (request.method === "GET") {
 
-    const p = await env.DB.prepare(
-      `
+    const p = await env.DB.prepare(`
       SELECT
         first_name,
         last_name,
         telegram,
         phone,
         steam_id,
-        server_nickname
+        server_nickname,
+        avatar_url
       FROM profiles
       WHERE user_id = ?
-      `
-    )
+    `)
       .bind(user.id)
       .first();
 
@@ -539,80 +475,66 @@ async function profile(request, env) {
           telegram: "",
           phone: "",
           steam_id: "",
-          server_nickname: ""
+          server_nickname: "",
+          avatar_url: ""
         }
     });
   }
 
 
-  /* =========================
-     UPDATE PROFILE
-  ========================= */
+  /* PUT */
 
   const body = await request
     .json()
     .catch(() => null);
 
   if (!body) {
-    return json(
-      {
-        error: "Noto‘g‘ri JSON."
-      },
-      400
-    );
+    return json({
+      error: "Noto‘g‘ri JSON."
+    }, 400);
   }
 
   const clean = {
 
-    first_name: String(
-      body.first_name || ""
-    )
-      .trim()
-      .slice(0, 80),
+    first_name:
+      String(body.first_name || "")
+        .trim()
+        .slice(0, 80),
 
-    last_name: String(
-      body.last_name || ""
-    )
-      .trim()
-      .slice(0, 80),
+    last_name:
+      String(body.last_name || "")
+        .trim()
+        .slice(0, 80),
 
-    telegram: String(
-      body.telegram || ""
-    )
-      .trim()
-      .slice(0, 100),
+    telegram:
+      String(body.telegram || "")
+        .trim()
+        .slice(0, 100),
 
-    phone: String(
-      body.phone || ""
-    )
-      .trim()
-      .slice(0, 30),
+    phone:
+      String(body.phone || "")
+        .trim()
+        .slice(0, 30),
 
-    steam_id: String(
-      body.steam_id || ""
-    )
-      .trim()
-      .slice(0, 64),
+    steam_id:
+      String(body.steam_id || "")
+        .trim()
+        .slice(0, 64),
 
-    server_nickname: String(
-      body.server_nickname || ""
-    )
-      .trim()
-      .slice(0, 32)
+    server_nickname:
+      String(body.server_nickname || "")
+        .trim()
+        .slice(0, 32),
+
+    avatar_url:
+      String(body.avatar_url || "")
+        .trim()
+        .slice(0, 500)
   };
 
-  const now = Math.floor(
-    Date.now() / 1000
-  );
+  const now = Math.floor(Date.now() / 1000);
 
-
-  /*
-    Profil mavjud bo‘lmasa yaratadi,
-    mavjud bo‘lsa yangilaydi.
-  */
-
-  await env.DB.prepare(
-    `
+  await env.DB.prepare(`
     INSERT INTO profiles
       (
         user_id,
@@ -622,9 +544,10 @@ async function profile(request, env) {
         phone,
         steam_id,
         server_nickname,
+        avatar_url,
         updated_at
       )
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
 
     ON CONFLICT(user_id)
     DO UPDATE SET
@@ -642,10 +565,12 @@ async function profile(request, env) {
       server_nickname =
         excluded.server_nickname,
 
+      avatar_url =
+        excluded.avatar_url,
+
       updated_at =
         excluded.updated_at
-    `
-  )
+  `)
     .bind(
       user.id,
       clean.first_name,
@@ -654,10 +579,10 @@ async function profile(request, env) {
       clean.phone,
       clean.steam_id,
       clean.server_nickname,
+      clean.avatar_url,
       now
     )
     .run();
-
 
   return json({
     ok: true,
@@ -672,64 +597,35 @@ async function profile(request, env) {
 
 async function api(request, env) {
 
-  const url = new URL(
-    request.url
-  );
-
-
-  /* REGISTER */
+  const url = new URL(request.url);
 
   if (
     request.method === "POST" &&
     url.pathname === "/api/register"
   ) {
-    return register(
-      request,
-      env
-    );
+    return register(request, env);
   }
-
-
-  /* LOGIN */
 
   if (
     request.method === "POST" &&
     url.pathname === "/api/login"
   ) {
-    return login(
-      request,
-      env
-    );
+    return login(request, env);
   }
-
-
-  /* LOGOUT */
 
   if (
     request.method === "POST" &&
     url.pathname === "/api/logout"
   ) {
-    return logout(
-      request,
-      env
-    );
+    return logout(request, env);
   }
-
-
-  /* CURRENT USER */
 
   if (
     request.method === "GET" &&
     url.pathname === "/api/me"
   ) {
-    return me(
-      request,
-      env
-    );
+    return me(request, env);
   }
-
-
-  /* PROFILE */
 
   if (
     (
@@ -738,20 +634,12 @@ async function api(request, env) {
     ) &&
     url.pathname === "/api/profile"
   ) {
-    return profile(
-      request,
-      env
-    );
+    return profile(request, env);
   }
 
-
-  return json(
-    {
-      error:
-        "API endpoint topilmadi."
-    },
-    404
-  );
+  return json({
+    error: "API endpoint topilmadi."
+  }, 404);
 }
 
 
@@ -763,35 +651,14 @@ export default {
 
   async fetch(request, env) {
 
-    const url = new URL(
-      request.url
-    );
-
-
-    /*
-      Barcha /api/* so‘rovlari
-      Worker tomonidan ishlanadi.
-    */
+    const url = new URL(request.url);
 
     if (
-      url.pathname.startsWith(
-        "/api/"
-      )
+      url.pathname.startsWith("/api/")
     ) {
-      return api(
-        request,
-        env
-      );
+      return api(request, env);
     }
 
-
-    /*
-      Qolgan barcha sahifalar
-      public/ ichidan olinadi.
-    */
-
-    return env.ASSETS.fetch(
-      request
-    );
+    return env.ASSETS.fetch(request);
   }
 };
