@@ -1,33 +1,34 @@
-name: Build UZB SERVERS
+name: Publish UZB SERVERS
 
 on:
   push:
     branches:
       - main
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+permissions:
+  contents: read
+  packages: write
 
-    permissions:
-      contents: read
-      packages: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
-      - name: Login to GitHub Container Registry
+      - name: Login to GHCR
         uses: docker/login-action@v3
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push Docker image
+      - name: Build and push image
         uses: docker/build-push-action@v6
         with:
           context: .
+          file: ./Dockerfile
           push: true
-         tags: |
-                ghcr.io/azizjonlutfullayev/uzbservers-web:latest
+          tags: |
+            ghcr.io/azizjonlutfullayev/uzbservers-web:latest
