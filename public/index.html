@@ -1,9 +1,480 @@
 <!doctype html>
-<html lang="uz"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>UZB SERVERS — CS 1.6 Uzbekistan</title>
-<meta name="description" content="UZB SERVERS — O‘zbekiston CS 1.6 serverlari va online monitoring.">
-<meta name="robots" content="index,follow">
-<link rel="canonical" href="https://uzbservers.uz/">
-<style>body{margin:0;background:#080b12;color:#eef2ff;font:16px Arial}.wrap{max-width:1100px;margin:auto;padding:60px 20px}.card{background:#111827;border:1px solid #263247;border-radius:18px;padding:28px;margin-top:24px}.online{color:#6ee7b7}</style>
-</head><body><main class="wrap"><h1>UZB SERVERS</h1><p>O‘zbekiston CS 1.6 serverlari va monitoring platformasi.</p>
-<div class="card"><h2>UZB SERVERS | Public</h2><p class="online">● ONLINE monitoring</p><p>CS 1.6 server ma'lumotlari shu yerda ko‘rsatiladi.</p></div></main></body></html>
+<meta name="description" content="O‘zbekiston CS 1.6 serverlari va monitoring platformasi.">
+
+<style>
+:root{
+  --bg:#070a10;
+  --card:#101827;
+  --line:#26344c;
+  --text:#f5f7ff;
+  --muted:#91a0b8;
+  --blue:#5b8cff;
+  --green:#35e6a0;
+  --red:#ff5f6d;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:radial-gradient(circle at 20% 0%,#14203a 0,#070a10 40%);
+  color:var(--text);
+  font-family:Arial,Helvetica,sans-serif;
+}
+.container{
+  width:min(1150px,calc(100% - 30px));
+  margin:auto;
+}
+header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#070a10dd;
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid var(--line);
+}
+.nav{
+  height:70px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo{
+  font-size:21px;
+  font-weight:900;
+}
+.logo span{color:var(--blue)}
+nav{
+  display:flex;
+  gap:25px;
+  color:var(--muted);
+}
+nav a{text-decoration:none;color:inherit}
+nav a:hover{color:white}
+.hero{
+  padding:75px 0 45px;
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:35px;
+}
+.badge{
+  display:inline-block;
+  padding:8px 13px;
+  border:1px solid var(--line);
+  border-radius:30px;
+  color:var(--muted);
+  font-size:13px;
+  background:#0d1522;
+}
+h1{
+  font-size:clamp(45px,7vw,76px);
+  line-height:.95;
+  margin:20px 0;
+  letter-spacing:-3px;
+}
+.hero p{
+  color:var(--muted);
+  font-size:18px;
+  line-height:1.7;
+}
+.btn{
+  display:inline-block;
+  padding:13px 18px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#111b2b;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:15px;
+}
+.btn.primary{
+  background:var(--blue);
+  border-color:var(--blue);
+}
+.panel{
+  background:linear-gradient(145deg,#111c2d,#0b111b);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:25px;
+}
+.status{
+  color:var(--green);
+  font-weight:bold;
+  font-size:25px;
+  margin:12px 0;
+}
+.stats{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:12px;
+  margin-top:20px;
+}
+.stat{
+  background:#09111d;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:15px;
+}
+.stat b{
+  font-size:25px;
+}
+.stat small{
+  display:block;
+  color:var(--muted);
+  margin-top:5px;
+}
+section{
+  padding:35px 0;
+}
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  margin-bottom:20px;
+}
+.section-title h2{
+  margin:0;
+  font-size:30px;
+}
+.section-title p{
+  color:var(--muted);
+}
+.search{
+  width:280px;
+  max-width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background:#0c131f;
+  color:white;
+}
+.server{
+  display:grid;
+  grid-template-columns:1.5fr .7fr .7fr .7fr auto;
+  gap:18px;
+  align-items:center;
+  padding:18px;
+  margin:12px 0;
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:15px;
+}
+.server:hover{
+  border-color:#41639a;
+}
+.server-name{
+  font-weight:bold;
+  font-size:16px;
+}
+.ip{
+  color:#8799b4;
+  font-family:monospace;
+  margin-top:6px;
+}
+.online{
+  color:var(--green);
+  font-weight:bold;
+}
+.offline{
+  color:var(--red);
+  font-weight:bold;
+}
+.metric b{
+  display:block;
+}
+.metric small{
+  color:var(--muted);
+}
+.copy{
+  padding:9px 12px;
+  border-radius:9px;
+  border:1px solid var(--line);
+  background:#172237;
+  color:white;
+  cursor:pointer;
+}
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:15px;
+}
+.feature{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:15px;
+  padding:22px;
+}
+.feature p{
+  color:var(--muted);
+  line-height:1.6;
+}
+.notice{
+  margin-top:15px;
+  padding:14px;
+  border:1px dashed #35445d;
+  border-radius:12px;
+  color:var(--muted);
+  font-size:13px;
+}
+footer{
+  margin-top:50px;
+  border-top:1px solid var(--line);
+  padding:30px 0;
+  color:var(--muted);
+}
+@media(max-width:850px){
+  .hero{grid-template-columns:1fr}
+  nav{display:none}
+  .server{grid-template-columns:1fr 1fr}
+  .features{grid-template-columns:1fr}
+}
+@media(max-width:520px){
+  .server{grid-template-columns:1fr}
+  .section-title{display:block}
+  .search{width:100%}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<div class="logo">UZB <span>SERVERS</span></div>
+<nav>
+<a href="#servers">Serverlar</a>
+<a href="#features">Imkoniyatlar</a>
+<a href="#about">Biz haqimizda</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="container hero">
+
+<div>
+<div class="badge">🇺🇿 O‘zbekiston CS 1.6 monitoring platformasi</div>
+
+<h1>UZB<br>SERVERS</h1>
+
+<p>
+O‘zbekiston Counter-Strike 1.6 serverlarini
+bir joyda toping, kuzating va ulaning.
+</p>
+
+<a class="btn primary" href="#servers">
+Serverlarni ko‘rish →
+</a>
+</div>
+
+<div class="panel">
+<div style="color:#91a0b8">PLATFORM STATUS</div>
+
+<div class="status">● ONLINE</div>
+
+<div style="color:#91a0b8">
+UZB SERVERS platformasi ishlayapti.
+</div>
+
+<div class="stats">
+<div class="stat">
+<b id="serverCount">3</b>
+<small>Serverlar</small>
+</div>
+
+<div class="stat">
+<b id="playerCount">20</b>
+<small>O‘yinchilar</small>
+</div>
+</div>
+</div>
+
+</section>
+
+
+<section id="servers" class="container">
+
+<div class="section-title">
+<div>
+<h2>CS 1.6 Serverlar</h2>
+<p>Serverlar katalogi</p>
+</div>
+
+<input
+id="search"
+class="search"
+placeholder="Server qidirish..."
+>
+</div>
+
+<div id="serverList"></div>
+
+<div class="notice">
+ℹ️ Hozircha demo server ma’lumotlari ko‘rsatilmoqda.
+Keyingi bosqichda real CS 1.6 monitoring API ulanadi.
+</div>
+
+</section>
+
+
+<section id="features" class="container">
+
+<div class="section-title">
+<h2>Imkoniyatlar</h2>
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>📡 Real-time Monitoring</h3>
+<p>
+Server ONLINE/OFFLINE holatini avtomatik tekshirish.
+</p>
+</div>
+
+<div class="feature">
+<h3>🎮 CS 1.6 Server Info</h3>
+<p>
+IP, port, map, ping va o‘yinchilar sonini ko‘rsatish.
+</p>
+</div>
+
+<div class="feature">
+<h3>🇺🇿 UZB Server Katalog</h3>
+<p>
+O‘zbekiston CS 1.6 serverlarini bitta platformada jamlash.
+</p>
+</div>
+
+</div>
+</section>
+
+
+<section id="about" class="container">
+
+<div class="panel">
+<h2>UZB SERVERS</h2>
+
+<p style="color:#91a0b8;line-height:1.7">
+UZB SERVERS — O‘zbekiston CS 1.6 serverlarini
+topish va kuzatish uchun yaratilayotgan portal.
+</p>
+</div>
+
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+© 2026 UZB SERVERS — Uzbekistan CS 1.6
+</div>
+</footer>
+
+
+<script>
+
+const servers=[
+{
+name:"UZB SERVERS | Public",
+ip:"185.XX.XX.XX:27015",
+status:"ONLINE",
+players:"12/32",
+map:"de_dust2",
+ping:"42 ms"
+},
+{
+name:"UZB Classic Public",
+ip:"185.XX.XX.XX:27016",
+status:"ONLINE",
+players:"8/32",
+map:"de_inferno",
+ping:"48 ms"
+},
+{
+name:"UZB Mix Server",
+ip:"185.XX.XX.XX:27017",
+status:"OFFLINE",
+players:"0/32",
+map:"—",
+ping:"—"
+}
+];
+
+const list=document.getElementById("serverList");
+const search=document.getElementById("search");
+
+function render(){
+
+const q=search.value.toLowerCase();
+
+const data=servers.filter(s =>
+(s.name+s.ip+s.map).toLowerCase().includes(q)
+);
+
+list.innerHTML=data.map(s=>`
+
+<div class="server">
+
+<div>
+<div class="server-name">${s.name}</div>
+<div class="ip">${s.ip}</div>
+</div>
+
+<div class="${s.status==="ONLINE"?"online":"offline"}">
+● ${s.status}
+</div>
+
+<div class="metric">
+<b>${s.players}</b>
+<small>Players</small>
+</div>
+
+<div class="metric">
+<b>${s.map}</b>
+<small>Map</small>
+</div>
+
+<div class="metric">
+<b>${s.ping}</b>
+<small>Ping</small>
+</div>
+
+<button class="copy" data-ip="${s.ip}">
+Copy IP
+</button>
+
+</div>
+
+`).join("");
+
+document.querySelectorAll(".copy").forEach(btn=>{
+
+btn.onclick=async()=>{
+await navigator.clipboard.writeText(btn.dataset.ip);
+
+const old=btn.textContent;
+btn.textContent="Copied ✓";
+
+setTimeout(()=>{
+btn.textContent=old;
+},1200);
+};
+
+});
+
+}
+
+search.addEventListener("input",render);
+
+render();
+
+</script>
+
+</body>
+</html>
