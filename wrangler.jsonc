@@ -1,8 +1,18 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
   "name": "uzbservers-web",
+  "main": "./worker.js",
   "compatibility_date": "2026-10-02",
   "assets": {
-    "directory": "./public"
-  }
+    "directory": "./public",
+    "binding": "ASSETS",
+    "run_worker_first": ["/api/*"]
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "uzbservers-db",
+      "database_id": "0fe23897-9911-4a37-bd49-3124fb6b9429"
+    }
+  ]
 }
