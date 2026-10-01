@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790891902,
+  "updatedAt": 1790892991,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,7 +10,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891898,
+      "updatedAt": 1790892985,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -22,7 +22,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891898,
+      "updatedAt": 1790892985,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -34,7 +34,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891898,
+      "updatedAt": 1790892985,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -46,20 +46,19 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891898,
+      "updatedAt": 1790892986,
       "error": "invalid A2S_INFO response"
     },
     {
       "name": "NumberOne[UZ]-Public #1",
       "ip": "83.69.139.164:27016",
-      "online": false,
+      "online": true,
       "players": 0,
-      "maxPlayers": 0,
-      "map": "—",
-      "ping": null,
+      "maxPlayers": 32,
+      "map": "de_dust2_2x2",
+      "ping": 225,
       "playerList": [],
-      "updatedAt": 1790891899,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790892986
     },
     {
       "name": "NumberOne[UZ]-Public #2",
@@ -70,7 +69,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891899,
+      "updatedAt": 1790892987,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -82,7 +81,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891899,
+      "updatedAt": 1790892987,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -94,7 +93,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891899,
+      "updatedAt": 1790892987,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -106,7 +105,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891899,
+      "updatedAt": 1790892987,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -115,23 +114,23 @@
       "online": true,
       "players": 2,
       "maxPlayers": 32,
-      "map": "de_dust2",
-      "ping": 193,
+      "map": "de_dust2_oldgods",
+      "ping": 229,
       "playerList": [
         {
           "index": 0,
-          "name": "player",
+          "name": "GSC",
           "score": 0,
-          "duration": 10480.4
+          "duration": 217.3
         },
         {
           "index": 1,
-          "name": "BOOST-TOP | player",
+          "name": "player",
           "score": 0,
-          "duration": 10480.1
+          "duration": 961.1
         }
       ],
-      "updatedAt": 1790891900
+      "updatedAt": 1790892988
     },
     {
       "name": "PROCS.UZ",
@@ -140,9 +139,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_aztec",
-      "ping": 215,
+      "ping": 229,
       "playerList": [],
-      "updatedAt": 1790891900
+      "updatedAt": 1790892988
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -150,10 +149,10 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2002_2x2",
-      "ping": 193,
+      "map": "de_dust_2x2",
+      "ping": 226,
       "playerList": [],
-      "updatedAt": 1790891901
+      "updatedAt": 1790892989
     },
     {
       "name": "IHOST.UZ MIX",
@@ -164,7 +163,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891901,
+      "updatedAt": 1790892990,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -176,7 +175,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790891901,
+      "updatedAt": 1790892990,
       "error": "invalid A2S_INFO response"
     },
     {
@@ -186,9 +185,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_aztec_2x2",
-      "ping": 206,
+      "ping": 242,
       "playerList": [],
-      "updatedAt": 1790891902
+      "updatedAt": 1790892990
     }
   ]
 }
