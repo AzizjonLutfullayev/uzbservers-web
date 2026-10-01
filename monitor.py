@@ -4,7 +4,7 @@ import struct
 import time
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
+ROOT = Path(__file__).resolve().parent
 SEED = ROOT / "servers.seed.json"
 OUT = ROOT / "public" / "servers.json"
 
