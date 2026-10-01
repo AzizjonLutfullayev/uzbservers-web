@@ -40,7 +40,7 @@ footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var
 <div class="container nav">
 <div class="logo">UZB <span>SERVERS</span></div>
 <nav><a href="#servers">Serverlar</a><a href="#features">Imkoniyatlar</a><a href="#about">Biz haqimizda</a></nav>
-<div class="auth-nav"><button class="auth-btn" onclick="openAuth('login')">Kirish</button><button class="auth-btn primary" onclick="openAuth('register')">Ro‘yxatdan o‘tish</button></div>
+<div class="auth-nav"><button id="profileBtn" class="auth-btn" style="display:none" onclick="openProfile()">Profil</button><button class="auth-btn" onclick="openAuth('login')">Kirish</button><button class="auth-btn primary" onclick="openAuth('register')">Ro‘yxatdan o‘tish</button></div>
 </div>
 </header>
 
@@ -79,6 +79,32 @@ footer{margin-top:50px;border-top:1px solid var(--line);padding:30px 0;color:var
 <footer><div class="container">© 2026 UZB SERVERS — Uzbekistan CS 1.6</div></footer>
 
 <div id="playersOverlay" class="overlay" onclick="if(event.target===this)closePlayers()"><div class="modal"><div class="modal-head"><div><h2 id="modalTitle" style="margin:0">Players</h2><div id="modalIp" style="color:#91a0b8;margin-top:5px"></div></div><button class="close" onclick="closePlayers()">Yopish ✕</button></div><div id="playerBox" style="margin-top:18px"></div></div></div>
+
+
+<div id="profileOverlay" class="overlay" onclick="if(event.target===this)closeProfile()">
+  <div class="modal">
+    <div class="modal-head">
+      <div>
+        <h2 style="margin:0">Profil</h2>
+        <div style="color:#91a0b8;margin-top:5px">Shaxsiy ma’lumotlaringiz</div>
+      </div>
+      <button class="close" onclick="closeProfile()">Yopish ✕</button>
+    </div>
+
+    <form id="profileForm" onsubmit="saveProfile(event)" style="margin-top:15px">
+      <div class="form-group"><label>Login</label><input id="profileUsername" disabled></div>
+      <div class="form-group"><label>Email</label><input id="profileEmail" disabled></div>
+      <div class="form-group"><label>Ism</label><input id="profileFirstName" maxlength="80"></div>
+      <div class="form-group"><label>Familiya</label><input id="profileLastName" maxlength="80"></div>
+      <div class="form-group"><label>Telegram</label><input id="profileTelegram" maxlength="100" placeholder="@username"></div>
+      <div class="form-group"><label>Telefon raqami</label><input id="profilePhone" maxlength="30" placeholder="+998..."></div>
+      <div class="form-group"><label>Steam ID</label><input id="profileSteamId" maxlength="64" placeholder="STEAM_0:1:..."></div>
+      <div class="form-group"><label>Serverdagi nickname</label><input id="profileServerNick" maxlength="32"></div>
+      <button class="form-submit" id="profileSave">Saqlash</button>
+    </form>
+    <div class="form-note">Profil ma’lumotlari akkauntingizga bog‘langan holda D1 bazasida saqlanadi. Parol bu yerda ko‘rsatilmaydi.</div>
+  </div>
+</div>
 
 <div id="authOverlay" class="overlay" onclick="if(event.target===this)closeAuth()"><div class="modal">
 <div class="modal-head"><div><h2 id="authTitle" style="margin:0">Kirish</h2><div style="color:#91a0b8;margin-top:5px">UZB SERVERS akkaunti</div></div><button class="close" onclick="closeAuth()">Yopish ✕</button></div>
@@ -119,6 +145,72 @@ async function copyIp(ip,btn){try{await navigator.clipboard.writeText(ip);const 
 function openPlayers(i){const s=data[i];if(!s)return;document.getElementById('modalTitle').textContent=s.name||'Players';document.getElementById('modalIp').textContent=s.ip||'';const p=s.playerList||[];document.getElementById('playerBox').innerHTML=p.length?p.map(x=>`<div class="player"><div><b>${esc(x.name||'Unnamed')}</b></div><div class="score">Score: ${x.score??0}</div></div>`).join(''):`<div class="empty">${s.online?'Hozir player ro‘yxati bo‘sh yoki server A2S_PLAYER javobini bermadi.':'Server offline.'}</div>`;document.getElementById('playersOverlay').style.display='flex'}
 function closePlayers(){document.getElementById('playersOverlay').style.display='none'}
 async function load(){try{const r=await fetch('/servers.json?x='+Date.now(),{cache:'no-store'});if(!r.ok)throw new Error();const j=await r.json();data=Array.isArray(j.servers)?j.servers:[];document.getElementById('serverCount').textContent=data.length;document.getElementById('playerCount').textContent=data.reduce((a,s)=>a+(Number(s.players)||0),0);document.getElementById('updatedAt').textContent=j.updatedAt?new Date(j.updatedAt*1000).toLocaleString('uz-UZ'):'—';document.getElementById('platformStatus').textContent='● ONLINE';document.getElementById('platformStatus').className='status ok';render()}catch(e){document.getElementById('platformStatus').textContent='● DATA ERROR';document.getElementById('platformStatus').className='status bad';list.innerHTML='<div class="empty">Server ma’lumotlarini yuklab bo‘lmadi. /servers.json mavjudligini tekshiring.</div>'}}
+
+function setProfileButton(user){
+  const b=document.getElementById('profileBtn');
+  if(!b)return;
+  b.style.display=user?'inline-block':'none';
+}
+
+async function openProfile(){
+  try{
+    const r=await fetch('/api/profile',{credentials:'same-origin',cache:'no-store'});
+    const j=await r.json();
+    if(!r.ok) throw new Error(j.error||'Profilni yuklab bo‘lmadi.');
+    const u=j.user||{};
+    const p=j.profile||{};
+    document.getElementById('profileUsername').value=u.username||'';
+    document.getElementById('profileEmail').value=u.email||'';
+    document.getElementById('profileFirstName').value=p.first_name||'';
+    document.getElementById('profileLastName').value=p.last_name||'';
+    document.getElementById('profileTelegram').value=p.telegram||'';
+    document.getElementById('profilePhone').value=p.phone||'';
+    document.getElementById('profileSteamId').value=p.steam_id||'';
+    document.getElementById('profileServerNick').value=p.server_nickname||'';
+    document.getElementById('profileOverlay').style.display='flex';
+  }catch(e){
+    alert(e.message||'Profilni yuklab bo‘lmadi.');
+  }
+}
+
+function closeProfile(){
+  document.getElementById('profileOverlay').style.display='none';
+}
+
+async function saveProfile(e){
+  e.preventDefault();
+  const btn=document.getElementById('profileSave');
+  btn.disabled=true;
+  btn.textContent='Saqlanmoqda...';
+
+  const body={
+    first_name:document.getElementById('profileFirstName').value.trim(),
+    last_name:document.getElementById('profileLastName').value.trim(),
+    telegram:document.getElementById('profileTelegram').value.trim(),
+    phone:document.getElementById('profilePhone').value.trim(),
+    steam_id:document.getElementById('profileSteamId').value.trim(),
+    server_nickname:document.getElementById('profileServerNick').value.trim()
+  };
+
+  try{
+    const r=await fetch('/api/profile',{
+      method:'PUT',
+      headers:{'content-type':'application/json'},
+      credentials:'same-origin',
+      body:JSON.stringify(body)
+    });
+    const j=await r.json().catch(()=>({error:'Server javobi noto‘g‘ri.'}));
+    if(!r.ok)throw new Error(j.error||'Profilni saqlab bo‘lmadi.');
+    alert('Profil muvaffaqiyatli saqlandi.');
+    closeProfile();
+  }catch(e){
+    alert(e.message||'Profilni saqlab bo‘lmadi.');
+  }finally{
+    btn.disabled=false;
+    btn.textContent='Saqlash';
+  }
+}
+
 function openAuth(mode){
   authMode=mode;
   document.getElementById('authOverlay').style.display='flex';
@@ -193,12 +285,14 @@ async function updateAuthButtons(user){
   if(!box)return;
 
   if(user){
+    setProfileButton(user);
     box.innerHTML=
       '<span class="auth-btn" style="cursor:default">👤 '+esc(user.username)+'</span>'+
       '<button id="logoutBtn" class="auth-btn">Chiqish</button>';
 
     document.getElementById('logoutBtn').onclick=logoutUser;
   }else{
+    setProfileButton(null);
     box.innerHTML=
       '<button id="loginBtn" class="auth-btn">Kirish</button>'+
       '<button id="registerBtn" class="auth-btn primary">Ro‘yxatdan o‘tish</button>';
