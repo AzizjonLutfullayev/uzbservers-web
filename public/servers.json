@@ -1,4 +1,194 @@
 {
-  "updatedAt": 0,
-  "servers": []
+  "updatedAt": 1790889331,
+  "servers": [
+    {
+      "name": "CSZONE.UZ - Public #1",
+      "ip": "195.158.11.77:27015",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889326,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "CSZONE.UZ - Public #2",
+      "ip": "195.158.11.77:27016",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889326,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "CSZONE.UZ - Clanwar #1",
+      "ip": "195.158.11.77:27017",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889327,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "CSZONE.UZ - Clanwar #2",
+      "ip": "195.158.11.77:27018",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889327,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "NumberOne[UZ]-Public #1",
+      "ip": "83.69.139.164:27016",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889327,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "NumberOne[UZ]-Public #2",
+      "ip": "83.69.139.164:27022",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889328,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "NumberOne[UZ]-CSDM #1",
+      "ip": "83.69.139.164:27020",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889328,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "NUMBERONE UZBEKISTAN",
+      "ip": "83.69.139.164:27015",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889328,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "TIMCS.UZ Public #1",
+      "ip": "195.158.4.109:27015",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889328,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "UZB ARENA",
+      "ip": "157.22.130.26:27015",
+      "online": true,
+      "players": 2,
+      "maxPlayers": 32,
+      "map": "de_winterdust2",
+      "ping": 179,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "player",
+          "score": 0,
+          "duration": 7909.3
+        },
+        {
+          "index": 1,
+          "name": "BOOST-TOP | player",
+          "score": 0,
+          "duration": 7909.0
+        }
+      ],
+      "updatedAt": 1790889328
+    },
+    {
+      "name": "PROCS.UZ",
+      "ip": "195.158.4.108:27777",
+      "online": true,
+      "players": 0,
+      "maxPlayers": 32,
+      "map": "de_dust",
+      "ping": 173,
+      "playerList": [],
+      "updatedAt": 1790889329
+    },
+    {
+      "name": "ONECS.UZ Public #1",
+      "ip": "185.228.90.26:27002",
+      "online": true,
+      "players": 0,
+      "maxPlayers": 32,
+      "map": "cs_mansion",
+      "ping": 159,
+      "playerList": [],
+      "updatedAt": 1790889329
+    },
+    {
+      "name": "IHOST.UZ MIX",
+      "ip": "83.69.139.164:27014",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889330,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "WEIT CS Public",
+      "ip": "84.54.82.234:27047",
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "updatedAt": 1790889330,
+      "error": "invalid A2S_INFO response"
+    },
+    {
+      "name": "CSLOVE.UZ [PUBLIC #1]",
+      "ip": "84.54.82.234:27015",
+      "online": true,
+      "players": 0,
+      "maxPlayers": 32,
+      "map": "de_nuke32",
+      "ping": 180,
+      "playerList": [],
+      "updatedAt": 1790889330
+    }
+  ]
 }
