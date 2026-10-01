@@ -1,15 +1,19 @@
 <!doctype html>
 <html lang="uz">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>UZB SERVERS — CS 1.6 Uzbekistan</title>
 
-<meta name="description"
-content="O‘zbekiston CS 1.6 serverlari, real-time monitoring, playerlar va server katalogi.">
+<meta
+  name="description"
+  content="O‘zbekiston CS 1.6 serverlari, real-time monitoring, playerlar va server katalogi."
+>
 
 <style>
+
 :root{
   --bg:#070a10;
   --card:#101827;
@@ -46,9 +50,10 @@ body{
   margin:auto
 }
 
-/* =========================
+
+/* =====================================================
    HEADER
-========================= */
+===================================================== */
 
 header{
   position:sticky;
@@ -117,9 +122,52 @@ nav a:hover{
   border-color:var(--blue)
 }
 
-/* =========================
+
+/* =====================================================
+   USER MENU
+===================================================== */
+
+.user-menu{
+  position:relative;
+}
+
+.user-dropdown{
+  display:none;
+  position:absolute;
+  right:0;
+  top:calc(100% + 8px);
+  min-width:180px;
+  padding:7px;
+  background:#0d1522;
+  border:1px solid var(--line);
+  border-radius:12px;
+  box-shadow:0 15px 45px #000b;
+  z-index:100;
+}
+
+.user-dropdown.show{
+  display:block;
+}
+
+.user-dropdown button{
+  width:100%;
+  padding:11px 12px;
+  border:0;
+  border-radius:8px;
+  background:transparent;
+  color:#fff;
+  text-align:left;
+  cursor:pointer;
+}
+
+.user-dropdown button:hover{
+  background:#172237;
+}
+
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero{
   padding:75px 0 45px;
@@ -169,9 +217,10 @@ h1{
   border-color:var(--blue)
 }
 
-/* =========================
+
+/* =====================================================
    PANEL
-========================= */
+===================================================== */
 
 .panel{
   background:linear-gradient(
@@ -222,9 +271,10 @@ h1{
   margin-top:5px
 }
 
-/* =========================
+
+/* =====================================================
    SECTIONS
-========================= */
+===================================================== */
 
 section{
   padding:35px 0
@@ -247,9 +297,10 @@ section{
   color:var(--muted)
 }
 
-/* =========================
+
+/* =====================================================
    CONTROLS
-========================= */
+===================================================== */
 
 .controls{
   display:flex;
@@ -276,9 +327,10 @@ section{
   cursor:pointer
 }
 
-/* =========================
+
+/* =====================================================
    SERVER
-========================= */
+===================================================== */
 
 .server{
   display:grid;
@@ -357,9 +409,10 @@ section{
   border-color:var(--blue)
 }
 
-/* =========================
+
+/* =====================================================
    FEATURES
-========================= */
+===================================================== */
 
 .features{
   display:grid;
@@ -380,9 +433,10 @@ section{
   line-height:1.7
 }
 
-/* =========================
+
+/* =====================================================
    OWNER
-========================= */
+===================================================== */
 
 .owner{
   margin-top:20px;
@@ -407,9 +461,10 @@ section{
   margin-top:7px
 }
 
-/* =========================
+
+/* =====================================================
    NOTICE
-========================= */
+===================================================== */
 
 .notice{
   margin-top:15px;
@@ -428,9 +483,10 @@ section{
   border-radius:15px
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer{
   margin-top:50px;
@@ -439,9 +495,10 @@ footer{
   color:var(--muted)
 }
 
-/* =========================
+
+/* =====================================================
    OVERLAY / MODAL
-========================= */
+===================================================== */
 
 .overlay{
   display:none;
@@ -487,9 +544,10 @@ footer{
   background:#21304a
 }
 
-/* =========================
+
+/* =====================================================
    PLAYERS
-========================= */
+===================================================== */
 
 .player{
   display:flex;
@@ -506,9 +564,10 @@ footer{
   color:var(--muted)
 }
 
-/* =========================
+
+/* =====================================================
    FORMS
-========================= */
+===================================================== */
 
 .form-group{
   margin:12px 0
@@ -562,9 +621,10 @@ footer{
   margin-top:12px
 }
 
-/* =========================
+
+/* =====================================================
    PROFILE
-========================= */
+===================================================== */
 
 .profile-grid{
   display:grid;
@@ -576,9 +636,63 @@ footer{
   grid-column:1 / -1
 }
 
-/* =========================
+.profile-header{
+  display:flex;
+  align-items:center;
+  gap:18px;
+  padding:18px;
+  margin-bottom:18px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#09111d;
+}
+
+.profile-avatar{
+  width:90px;
+  height:90px;
+  min-width:90px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid var(--blue);
+  background:#172237;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:32px;
+  font-weight:bold;
+}
+
+.profile-avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.profile-header-name{
+  font-size:24px;
+  font-weight:900;
+}
+
+.profile-header-login{
+  color:var(--muted);
+  margin-top:5px
+}
+
+.profile-status{
+  display:inline-block;
+  margin-top:8px;
+  padding:5px 9px;
+  border-radius:20px;
+  background:#123526;
+  color:var(--green);
+  font-size:12px;
+  font-weight:bold
+}
+
+
+/* =====================================================
    RESPONSIVE
-========================= */
+===================================================== */
 
 @media(max-width:950px){
 
@@ -593,6 +707,7 @@ footer{
   .features{
     grid-template-columns:1fr
   }
+
 }
 
 @media(max-width:700px){
@@ -621,6 +736,7 @@ footer{
   .profile-full{
     grid-column:auto
   }
+
 }
 
 @media(max-width:520px){
@@ -646,15 +762,28 @@ footer{
   .actions{
     width:100%
   }
+
+  .user-dropdown{
+    right:0
+  }
+
+  .profile-header{
+    flex-direction:column;
+    text-align:center
+  }
+
 }
+
 </style>
 </head>
 
+
 <body>
+
 
 <!-- =====================================================
      HEADER
-====================================================== -->
+===================================================== -->
 
 <header>
 
@@ -664,35 +793,81 @@ footer{
     UZB <span>SERVERS</span>
   </div>
 
+
   <nav>
-    <a href="#servers">Serverlar</a>
-    <a href="#features">Imkoniyatlar</a>
-    <a href="#about">Biz haqimizda</a>
+
+    <a href="#servers">
+      Serverlar
+    </a>
+
+    <a href="#features">
+      Imkoniyatlar
+    </a>
+
+    <a href="#about">
+      Biz haqimizda
+    </a>
+
   </nav>
+
 
   <div class="auth-nav">
 
-    <button
-      id="profileBtn"
-      class="auth-btn"
-      style="display:none"
-      onclick="openProfile()">
-      Profil
-    </button>
+    <!-- LOGGED OUT -->
 
     <button
       id="loginBtn"
       class="auth-btn"
       onclick="openAuth('login')">
+
       Kirish
+
     </button>
 
-    <button
-      id="registerBtn"
-      class="auth-btn primary"
-      onclick="openAuth('register')">
-      Ro‘yxatdan o‘tish
-    </button>
+
+    <!-- LOGGED IN -->
+
+    <div
+      id="userMenu"
+      class="user-menu"
+      style="display:none">
+
+      <button
+        id="userMenuBtn"
+        class="auth-btn"
+        onclick="toggleUserMenu()">
+
+        👤
+        <span id="menuUsername">
+          User
+        </span>
+        ▾
+
+      </button>
+
+
+      <div
+        id="userDropdown"
+        class="user-dropdown">
+
+        <button
+          onclick="openProfileFromMenu()">
+
+          👤 Profil
+
+        </button>
+
+
+        <button
+          onclick="logoutUser()">
+
+          🚪 Chiqish
+
+        </button>
+
+      </div>
+
+    </div>
 
   </div>
 
@@ -703,11 +878,14 @@ footer{
 
 <!-- =====================================================
      MAIN
-====================================================== -->
+===================================================== -->
 
 <main>
 
-<!-- HERO -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section class="container hero">
 
@@ -717,20 +895,29 @@ footer{
       🇺🇿 O‘zbekiston CS 1.6 monitoring platformasi
     </div>
 
+
     <h1>
+
       UZB<br>
       SERVERS
+
     </h1>
 
+
     <p>
+
       O‘zbekiston Counter-Strike 1.6 serverlarini
       bir joyda toping, kuzating va ulaning.
+
     </p>
+
 
     <a
       class="btn primary"
       href="#servers">
+
       Serverlarni ko‘rish →
+
     </a>
 
   </div>
@@ -739,32 +926,57 @@ footer{
   <div class="panel">
 
     <div style="color:#91a0b8">
+
       PLATFORM STATUS
+
     </div>
+
 
     <div
       id="platformStatus"
       class="status ok">
+
       ● ONLINE
+
     </div>
 
+
     <div style="color:#91a0b8">
+
       Real server monitoring ma’lumotlari.
+
     </div>
+
 
     <div class="stats">
 
       <div class="stat">
-        <b id="serverCount">0</b>
-        <small>Serverlar</small>
+
+        <b id="serverCount">
+          0
+        </b>
+
+        <small>
+          Serverlar
+        </small>
+
       </div>
 
+
       <div class="stat">
-        <b id="playerCount">0</b>
-        <small>O‘yinchilar</small>
+
+        <b id="playerCount">
+          0
+        </b>
+
+        <small>
+          O‘yinchilar
+        </small>
+
       </div>
 
     </div>
+
 
     <div
       style="
@@ -774,7 +986,10 @@ footer{
       ">
 
       Yangilangan:
-      <span id="updatedAt">—</span>
+
+      <span id="updatedAt">
+        —
+      </span>
 
     </div>
 
@@ -783,11 +998,14 @@ footer{
 </section>
 
 
-<!-- SERVERLAR -->
+<!-- =====================================================
+     SERVERS
+===================================================== -->
 
 <section
   id="servers"
   class="container">
+
 
   <div class="section-title">
 
@@ -803,12 +1021,14 @@ footer{
 
     </div>
 
+
     <div class="controls">
 
       <input
         id="search"
         class="search"
         placeholder="Server qidirish...">
+
 
       <select
         id="sort"
@@ -850,7 +1070,9 @@ footer{
 </section>
 
 
-<!-- IMKONIYATLAR -->
+<!-- =====================================================
+     FEATURES
+===================================================== -->
 
 <section
   id="features"
@@ -867,6 +1089,7 @@ footer{
 
   <div class="features">
 
+
     <div class="feature">
 
       <h3>
@@ -874,8 +1097,10 @@ footer{
       </h3>
 
       <p>
+
         Serverlarning ONLINE/OFFLINE holati,
         map, ping va player soni avtomatik yangilanadi.
+
       </p>
 
     </div>
@@ -888,8 +1113,10 @@ footer{
       </h3>
 
       <p>
+
         O‘zbekiston CS 1.6 serverlarini qidirish,
         saralash va IP manzilini tez nusxalash mumkin.
+
       </p>
 
     </div>
@@ -902,18 +1129,23 @@ footer{
       </h3>
 
       <p>
+
         Server A2S_PLAYER javobini bersa,
         ayni paytdagi nicklar va scorelarni ko‘rish mumkin.
+
       </p>
 
     </div>
+
 
   </div>
 
 </section>
 
 
-<!-- ABOUT -->
+<!-- =====================================================
+     ABOUT
+===================================================== -->
 
 <section
   id="about"
@@ -925,6 +1157,7 @@ footer{
       Biz haqimizda
     </h2>
 
+
     <p class="about-text">
 
       UZB SERVERS — O‘zbekiston Counter-Strike 1.6
@@ -934,6 +1167,7 @@ footer{
 
     </p>
 
+
     <p class="about-text">
 
       Platforma ochiq manbalardagi server ma’lumotlarini
@@ -941,6 +1175,7 @@ footer{
       serverlarini avtomatik monitoring qiladi.
 
     </p>
+
 
     <p class="about-text">
 
@@ -953,11 +1188,16 @@ footer{
     <div class="owner">
 
       <div class="owner-title">
+
         SAYT EGASI VA LOYIHA MUALLIFI
+
       </div>
 
+
       <div class="owner-name">
+
         Azizjon Lutfullayev
+
       </div>
 
     </div>
@@ -966,10 +1206,13 @@ footer{
 
 </section>
 
+
 </main>
 
 
-<!-- FOOTER -->
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -984,7 +1227,7 @@ footer{
 
 <!-- =====================================================
      PLAYERS MODAL
-====================================================== -->
+===================================================== -->
 
 <div
   id="playersOverlay"
@@ -993,6 +1236,7 @@ footer{
 
   <div class="modal">
 
+
     <div class="modal-head">
 
       <div>
@@ -1000,29 +1244,38 @@ footer{
         <h2
           id="modalTitle"
           style="margin:0">
+
           Players
+
         </h2>
+
 
         <div
           id="modalIp"
           style="
             color:#91a0b8;
             margin-top:5px">
+
         </div>
 
       </div>
 
+
       <button
         class="close"
         onclick="closePlayers()">
+
         Yopish ✕
+
       </button>
 
     </div>
 
+
     <div
       id="playerBox"
       style="margin-top:18px">
+
     </div>
 
   </div>
@@ -1032,52 +1285,112 @@ footer{
 
 <!-- =====================================================
      PROFILE MODAL
-====================================================== -->
+===================================================== -->
 
 <div
   id="profileOverlay"
   class="overlay"
   onclick="if(event.target===this)closeProfile()">
 
+
   <div class="modal">
+
 
     <div class="modal-head">
 
       <div>
 
         <h2 style="margin:0">
+
           Profil
+
         </h2>
+
 
         <div
           style="
             color:#91a0b8;
             margin-top:5px">
+
           Shaxsiy ma’lumotlaringiz
+
         </div>
 
       </div>
 
+
       <button
         class="close"
         onclick="closeProfile()">
+
         Yopish ✕
+
       </button>
 
     </div>
 
 
+    <!-- PROFILE HEADER -->
+
+    <div class="profile-header">
+
+
+      <div
+        id="profileAvatar"
+        class="profile-avatar">
+
+        👤
+
+      </div>
+
+
+      <div>
+
+        <div
+          id="profileHeaderName"
+          class="profile-header-name">
+
+          Foydalanuvchi
+
+        </div>
+
+
+        <div
+          id="profileHeaderLogin"
+          class="profile-header-login">
+
+          @username
+
+        </div>
+
+
+        <div class="profile-status">
+
+          ● AKKAUNT FAOL
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- PROFILE FORM -->
+
     <form
       id="profileForm"
       onsubmit="saveProfile(event)">
 
+
       <div class="profile-grid">
+
 
         <div class="form-group">
 
           <label>
             Login
           </label>
+
 
           <input
             id="profileUsername"
@@ -1092,9 +1405,26 @@ footer{
             Email
           </label>
 
+
           <input
             id="profileEmail"
             disabled>
+
+        </div>
+
+
+        <div
+          class="form-group profile-full">
+
+          <label>
+            Avatar rasmi URL
+          </label>
+
+
+          <input
+            id="profileAvatarUrl"
+            maxlength="500"
+            placeholder="https://.../avatar.jpg">
 
         </div>
 
@@ -1104,6 +1434,7 @@ footer{
           <label>
             Ism
           </label>
+
 
           <input
             id="profileFirstName"
@@ -1119,6 +1450,7 @@ footer{
             Familiya
           </label>
 
+
           <input
             id="profileLastName"
             maxlength="80"
@@ -1132,6 +1464,7 @@ footer{
           <label>
             Telegram
           </label>
+
 
           <input
             id="profileTelegram"
@@ -1147,6 +1480,7 @@ footer{
             Telefon raqami
           </label>
 
+
           <input
             id="profilePhone"
             maxlength="30"
@@ -1160,6 +1494,7 @@ footer{
           <label>
             Steam ID
           </label>
+
 
           <input
             id="profileSteamId"
@@ -1175,12 +1510,14 @@ footer{
             Serverdagi nickname
           </label>
 
+
           <input
             id="profileServerNick"
             maxlength="32"
             placeholder="Serverdagi nickingiz">
 
         </div>
+
 
       </div>
 
@@ -1193,6 +1530,7 @@ footer{
 
       </button>
 
+
     </form>
 
 
@@ -1204,6 +1542,7 @@ footer{
 
     </div>
 
+
   </div>
 
 </div>
@@ -1211,14 +1550,16 @@ footer{
 
 <!-- =====================================================
      LOGIN / REGISTER MODAL
-====================================================== -->
+===================================================== -->
 
 <div
   id="authOverlay"
   class="overlay"
   onclick="if(event.target===this)closeAuth()">
 
+
   <div class="modal">
+
 
     <div class="modal-head">
 
@@ -1227,22 +1568,30 @@ footer{
         <h2
           id="authTitle"
           style="margin:0">
+
           Kirish
+
         </h2>
+
 
         <div
           style="
             color:#91a0b8;
             margin-top:5px">
+
           UZB SERVERS akkaunti
+
         </div>
 
       </div>
 
+
       <button
         class="close"
         onclick="closeAuth()">
+
         Yopish ✕
+
       </button>
 
     </div>
@@ -1252,11 +1601,13 @@ footer{
       id="authForm"
       onsubmit="handleAuth(event)">
 
+
       <div class="form-group">
 
         <label>
           Login
         </label>
+
 
         <input
           id="authLogin"
@@ -1276,6 +1627,7 @@ footer{
           Email
         </label>
 
+
         <input
           id="authEmail"
           type="email"
@@ -1289,6 +1641,7 @@ footer{
         <label>
           Parol
         </label>
+
 
         <input
           id="authPassword"
@@ -1308,6 +1661,7 @@ footer{
 
       </button>
 
+
     </form>
 
 
@@ -1317,6 +1671,7 @@ footer{
         text-align:center;
         margin-top:15px;
         color:#91a0b8">
+
     </div>
 
   </div>
@@ -1326,27 +1681,37 @@ footer{
 
 <script>
 
+
 /* =====================================================
    GLOBAL
-====================================================== */
+===================================================== */
 
 let data = [];
+
 let authMode = "login";
 
 
 const list =
-  document.getElementById("serverList");
+  document.getElementById(
+    "serverList"
+  );
+
 
 const search =
-  document.getElementById("search");
+  document.getElementById(
+    "search"
+  );
+
 
 const sort =
-  document.getElementById("sort");
+  document.getElementById(
+    "sort"
+  );
 
 
 /* =====================================================
    HTML ESCAPE
-====================================================== */
+===================================================== */
 
 function esc(value){
 
@@ -1371,7 +1736,7 @@ function esc(value){
 
 /* =====================================================
    SERVER RENDER
-====================================================== */
+===================================================== */
 
 function render(){
 
@@ -1467,11 +1832,16 @@ function render(){
         <div>
 
           <div class="server-name">
+
             ${esc(server.name)}
+
           </div>
 
+
           <div class="ip">
+
             ${esc(server.ip)}
+
           </div>
 
         </div>
@@ -1495,9 +1865,11 @@ function render(){
         <div class="metric">
 
           <b>
+
             ${server.players ?? 0}/${
               server.maxPlayers ?? 0
             }
+
           </b>
 
           <small>
@@ -1510,7 +1882,9 @@ function render(){
         <div class="metric">
 
           <b>
+
             ${esc(server.map || "—")}
+
           </b>
 
           <small>
@@ -1523,11 +1897,13 @@ function render(){
         <div class="metric">
 
           <b>
+
             ${
               server.ping != null
                 ? server.ping + " ms"
                 : "—"
             }
+
           </b>
 
           <small>
@@ -1538,6 +1914,7 @@ function render(){
 
 
         <div class="actions">
+
 
           <button
             class="copy"
@@ -1558,7 +1935,9 @@ function render(){
 
           </button>
 
+
         </div>
+
 
       </div>
 
@@ -1572,7 +1951,7 @@ function render(){
 
 /* =====================================================
    COPY IP
-====================================================== */
+===================================================== */
 
 async function copyIp(ip,button){
 
@@ -1588,7 +1967,10 @@ async function copyIp(ip,button){
 
     setTimeout(
       function(){
-        button.textContent = old;
+
+        button.textContent =
+          old;
+
       },
       1200
     );
@@ -1600,7 +1982,7 @@ async function copyIp(ip,button){
 
 /* =====================================================
    PLAYERS
-====================================================== */
+===================================================== */
 
 function openPlayers(index){
 
@@ -1644,17 +2026,24 @@ function openPlayers(index){
         <div class="player">
 
           <div>
+
             <b>
+
               ${esc(
                 player.name ||
                 "Unnamed"
               )}
+
             </b>
+
           </div>
 
+
           <div class="score">
+
             Score:
             ${player.score ?? 0}
+
           </div>
 
         </div>
@@ -1702,7 +2091,7 @@ function closePlayers(){
 
 /* =====================================================
    SERVER MONITORING
-====================================================== */
+===================================================== */
 
 async function load(){
 
@@ -1813,32 +2202,80 @@ async function load(){
 
 
 /* =====================================================
-   PROFILE BUTTON
-====================================================== */
+   USER MENU
+===================================================== */
 
-function setProfileButton(user){
+function toggleUserMenu(){
 
-  const button =
+  const menu =
     document.getElementById(
-      "profileBtn"
+      "userDropdown"
     );
 
-  if(!button){
+  if(!menu){
     return;
   }
 
-
-  button.style.display =
-    user
-      ? "inline-block"
-      : "none";
+  menu.classList.toggle("show");
 
 }
 
 
+function openProfileFromMenu(){
+
+  const dropdown =
+    document.getElementById(
+      "userDropdown"
+    );
+
+  if(dropdown){
+
+    dropdown.classList.remove(
+      "show"
+    );
+
+  }
+
+  openProfile();
+
+}
+
+
+document.addEventListener(
+  "click",
+  function(event){
+
+    const userMenu =
+      document.getElementById(
+        "userMenu"
+      );
+
+    const dropdown =
+      document.getElementById(
+        "userDropdown"
+      );
+
+    if(
+      userMenu &&
+      dropdown &&
+      !userMenu.contains(
+        event.target
+      )
+    ){
+
+      dropdown.classList.remove(
+        "show"
+      );
+
+    }
+
+  }
+);
+
+
 /* =====================================================
    OPEN PROFILE
-====================================================== */
+===================================================== */
 
 async function openProfile(){
 
@@ -1871,6 +2308,7 @@ async function openProfile(){
 
     const user =
       result.user || {};
+
 
     const profile =
       result.profile || {};
@@ -1925,6 +2363,51 @@ async function openProfile(){
 
 
     document.getElementById(
+      "profileAvatarUrl"
+    ).value =
+      profile.avatar_url || "";
+
+
+    document.getElementById(
+      "profileHeaderName"
+    ).textContent =
+      profile.first_name ||
+      user.username ||
+      "Foydalanuvchi";
+
+
+    document.getElementById(
+      "profileHeaderLogin"
+    ).textContent =
+      "@" +
+      (user.username || "");
+
+
+    const avatarBox =
+      document.getElementById(
+        "profileAvatar"
+      );
+
+
+    if(profile.avatar_url){
+
+      avatarBox.innerHTML =
+
+        `<img
+          src="${esc(profile.avatar_url)}"
+          alt="Avatar"
+          onerror="this.parentElement.textContent='👤'"
+        >`;
+
+    }else{
+
+      avatarBox.textContent =
+        "👤";
+
+    }
+
+
+    document.getElementById(
       "profileOverlay"
     ).style.display =
       "flex";
@@ -1944,7 +2427,7 @@ async function openProfile(){
 
 /* =====================================================
    CLOSE PROFILE
-====================================================== */
+===================================================== */
 
 function closeProfile(){
 
@@ -1958,7 +2441,7 @@ function closeProfile(){
 
 /* =====================================================
    SAVE PROFILE
-====================================================== */
+===================================================== */
 
 async function saveProfile(event){
 
@@ -1973,6 +2456,7 @@ async function saveProfile(event){
 
   button.disabled =
     true;
+
 
   button.textContent =
     "Saqlanmoqda...";
@@ -2013,6 +2497,12 @@ async function saveProfile(event){
     server_nickname:
       document.getElementById(
         "profileServerNick"
+      ).value.trim(),
+
+
+    avatar_url:
+      document.getElementById(
+        "profileAvatarUrl"
       ).value.trim()
 
   };
@@ -2044,10 +2534,12 @@ async function saveProfile(event){
       await response.json()
         .catch(
           function(){
+
             return {
               error:
                 "Server javobi noto‘g‘ri."
             };
+
           }
         );
 
@@ -2060,6 +2552,42 @@ async function saveProfile(event){
       );
 
     }
+
+
+    /* Avatarni darhol yangilaymiz */
+
+    const avatarBox =
+      document.getElementById(
+        "profileAvatar"
+      );
+
+
+    if(profile.avatar_url){
+
+      avatarBox.innerHTML =
+
+        `<img
+          src="${esc(profile.avatar_url)}"
+          alt="Avatar"
+          onerror="this.parentElement.textContent='👤'"
+        >`;
+
+    }else{
+
+      avatarBox.textContent =
+        "👤";
+
+    }
+
+
+    document.getElementById(
+      "profileHeaderName"
+    ).textContent =
+      profile.first_name ||
+      document.getElementById(
+        "profileUsername"
+      ).value ||
+      "Foydalanuvchi";
 
 
     alert(
@@ -2092,7 +2620,7 @@ async function saveProfile(event){
 
 /* =====================================================
    AUTH OPEN
-====================================================== */
+===================================================== */
 
 function openAuth(mode){
 
@@ -2154,25 +2682,35 @@ function openAuth(mode){
   if(mode === "login"){
 
     switchBox.innerHTML = `
+
       Akkauntingiz yo‘qmi?
+
       <button
         id="authSwitchBtn"
         class="close"
         type="button">
+
         Ro‘yxatdan o‘tish
+
       </button>
+
     `;
 
   }else{
 
     switchBox.innerHTML = `
+
       Akkauntingiz bormi?
+
       <button
         id="authSwitchBtn"
         class="close"
         type="button">
+
         Kirish
+
       </button>
+
     `;
 
   }
@@ -2196,7 +2734,7 @@ function openAuth(mode){
 
 /* =====================================================
    CLOSE AUTH
-====================================================== */
+===================================================== */
 
 function closeAuth(){
 
@@ -2210,7 +2748,7 @@ function closeAuth(){
 
 /* =====================================================
    LOGIN / REGISTER
-====================================================== */
+===================================================== */
 
 async function handleAuth(event){
 
@@ -2243,6 +2781,7 @@ async function handleAuth(event){
 
   submit.disabled =
     true;
+
 
   submit.textContent =
     "Yuklanmoqda...";
@@ -2293,10 +2832,12 @@ async function handleAuth(event){
       await response.json()
         .catch(
           function(){
+
             return {
               error:
                 "Server javobi noto‘g‘ri."
             };
+
           }
         );
 
@@ -2318,6 +2859,7 @@ async function handleAuth(event){
       authMode === "register"
         ? "Akkaunt muvaffaqiyatli yaratildi: " +
           result.user.username
+
         : "Xush kelibsiz, " +
           result.user.username +
           "!"
@@ -2353,103 +2895,70 @@ async function handleAuth(event){
 
 /* =====================================================
    AUTH BUTTONS
-====================================================== */
+===================================================== */
 
 function updateAuthButtons(user){
 
-  const box =
-    document.querySelector(
-      ".auth-nav"
+  const loginBtn =
+    document.getElementById(
+      "loginBtn"
     );
 
 
-  if(!box){
-    return;
-  }
+  const userMenu =
+    document.getElementById(
+      "userMenu"
+    );
+
+
+  const username =
+    document.getElementById(
+      "menuUsername"
+    );
 
 
   if(user){
 
-    /*
-      Profil tugmasi
-    */
+    if(loginBtn){
 
-    box.innerHTML = `
+      loginBtn.style.display =
+        "none";
 
-      <button
-        id="profileBtn"
-        class="auth-btn"
-        onclick="openProfile()">
-
-        Profil
-
-      </button>
+    }
 
 
-      <span
-        class="auth-btn"
-        style="cursor:default">
+    if(userMenu){
 
-        👤 ${esc(user.username)}
+      userMenu.style.display =
+        "block";
 
-      </span>
-
-
-      <button
-        id="logoutBtn"
-        class="auth-btn">
-
-        Chiqish
-
-      </button>
-
-    `;
+    }
 
 
-    document.getElementById(
-      "logoutBtn"
-    ).onclick =
-      logoutUser;
+    if(username){
 
+      username.textContent =
+        user.username ||
+        "User";
+
+    }
 
   }else{
 
-    box.innerHTML = `
+    if(loginBtn){
 
-      <button
-        id="loginBtn"
-        class="auth-btn">
+      loginBtn.style.display =
+        "inline-block";
 
-        Kirish
-
-      </button>
+    }
 
 
-      <button
-        id="registerBtn"
-        class="auth-btn primary">
+    if(userMenu){
 
-        Ro‘yxatdan o‘tish
+      userMenu.style.display =
+        "none";
 
-      </button>
-
-    `;
-
-
-    document.getElementById(
-      "loginBtn"
-    ).onclick =
-      function(){
-        openAuth("login");
-      };
-
-
-    document.getElementById(
-      "registerBtn"
-    ).onclick =
-      function(){
-        openAuth("register");
-      };
+    }
 
   }
 
@@ -2458,7 +2967,7 @@ function updateAuthButtons(user){
 
 /* =====================================================
    LOGOUT
-====================================================== */
+===================================================== */
 
 async function logoutUser(){
 
@@ -2474,6 +2983,20 @@ async function logoutUser(){
 
   }finally{
 
+    const dropdown =
+      document.getElementById(
+        "userDropdown"
+      );
+
+    if(dropdown){
+
+      dropdown.classList.remove(
+        "show"
+      );
+
+    }
+
+
     updateAuthButtons(
       null
     );
@@ -2485,7 +3008,7 @@ async function logoutUser(){
 
 /* =====================================================
    CHECK LOGIN
-====================================================== */
+===================================================== */
 
 async function checkAuth(){
 
@@ -2503,7 +3026,13 @@ async function checkAuth(){
 
 
     if(!response.ok){
+
+      updateAuthButtons(
+        null
+      );
+
       return;
+
     }
 
 
@@ -2518,14 +3047,20 @@ async function checkAuth(){
     );
 
 
-  }catch(error){}
+  }catch(error){
+
+    updateAuthButtons(
+      null
+    );
+
+  }
 
 }
 
 
 /* =====================================================
    EVENTS
-====================================================== */
+===================================================== */
 
 search.addEventListener(
   "input",
@@ -2541,15 +3076,16 @@ sort.addEventListener(
 
 /* =====================================================
    START
-====================================================== */
+===================================================== */
 
 load();
 
 checkAuth();
 
 
-/* Server monitoring
-   har 60 sekundda yangilanadi.
+/*
+  Server monitoring
+  har 60 sekundda yangilanadi.
 */
 
 setInterval(
