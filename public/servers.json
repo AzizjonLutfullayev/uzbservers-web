@@ -1,16 +1,16 @@
 {
-  "updatedAt": 1790964117,
+  "updatedAt": 1790964149,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
       "ip": "195.158.11.77",
       "port": 27015,
       "online": true,
-      "players": 18,
+      "players": 20,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 170,
-      "updated_at": 1790964117
+      "ping": 174,
+      "updated_at": 1790964149
     },
     {
       "name": "CSZONE.UZ - Public #2",
@@ -19,9 +19,9 @@
       "online": true,
       "players": 5,
       "max_players": 32,
-      "map": "de_dust2_2x2",
-      "ping": 191,
-      "updated_at": 1790964117
+      "map": "de_dust2",
+      "ping": 177,
+      "updated_at": 1790964149
     },
     {
       "name": "CSZONE.UZ - Clanwar #1",
@@ -31,19 +31,19 @@
       "players": 13,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 178,
-      "updated_at": 1790964117
+      "ping": 168,
+      "updated_at": 1790964149
     },
     {
       "name": "CSZONE.UZ - Clanwar #2",
       "ip": "195.158.11.77",
       "port": 27018,
       "online": true,
-      "players": 5,
+      "players": 6,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 176,
-      "updated_at": 1790964117
+      "ping": 181,
+      "updated_at": 1790964149
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -53,19 +53,19 @@
       "players": 9,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 170,
-      "updated_at": 1790964117
+      "ping": 171,
+      "updated_at": 1790964149
     },
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164",
       "port": 27022,
-      "online": true,
-      "players": 12,
-      "max_players": 32,
-      "map": "de_dust2_2x2",
-      "ping": 170,
-      "updated_at": 1790964117
+      "online": false,
+      "players": 0,
+      "max_players": 0,
+      "map": "",
+      "ping": null,
+      "updated_at": 1790964149
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
@@ -75,41 +75,41 @@
       "players": 7,
       "max_players": 32,
       "map": "de_train",
-      "ping": 168,
-      "updated_at": 1790964117
+      "ping": 169,
+      "updated_at": 1790964149
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
       "ip": "83.69.139.164",
       "port": 27015,
       "online": true,
-      "players": 15,
+      "players": 14,
       "max_players": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
-      "updated_at": 1790964117
+      "updated_at": 1790964149
     },
     {
       "name": "TIMCS.UZ Public #1",
       "ip": "195.158.4.109",
       "port": 27015,
       "online": true,
-      "players": 23,
+      "players": 22,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 181,
-      "updated_at": 1790964117
+      "ping": 179,
+      "updated_at": 1790964149
     },
     {
       "name": "UZB ARENA",
       "ip": "157.22.130.26",
       "port": 27015,
       "online": true,
-      "players": 11,
+      "players": 12,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 169,
-      "updated_at": 1790964117
+      "ping": 184,
+      "updated_at": 1790964149
     },
     {
       "name": "PROCS.UZ",
@@ -120,7 +120,7 @@
       "max_players": 32,
       "map": "de_dust2",
       "ping": 178,
-      "updated_at": 1790964117
+      "updated_at": 1790964149
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -130,8 +130,8 @@
       "players": 10,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
-      "updated_at": 1790964117
+      "ping": 179,
+      "updated_at": 1790964149
     },
     {
       "name": "IHOST.UZ MIX",
@@ -141,8 +141,8 @@
       "players": 0,
       "max_players": 14,
       "map": "aim_sk_awp",
-      "ping": 169,
-      "updated_at": 1790964117
+      "ping": 168,
+      "updated_at": 1790964149
     },
     {
       "name": "WEIT CS Public",
@@ -152,19 +152,19 @@
       "players": 0,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
-      "updated_at": 1790964117
+      "ping": 180,
+      "updated_at": 1790964149
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
       "ip": "84.54.82.234",
       "port": 27015,
       "online": true,
-      "players": 7,
+      "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
-      "updated_at": 1790964117
+      "ping": 178,
+      "updated_at": 1790964149
     }
   ]
 }
