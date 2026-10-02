@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790977963,
+  "updatedAt": 1790977964,
   "servers": [
     {
       "name": "UZB ARENA",
@@ -25,7 +25,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 2607.8
+          "duration": 2608.6
         }
       ]
     },
@@ -36,7 +36,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 169,
+      "ping": 171,
       "playerList": []
     },
     {
@@ -46,19 +46,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 641853.2
+          "duration": 641854.0
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 44897.6
+          "duration": 44898.4
         }
       ]
     },
@@ -69,13 +69,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 178,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 7921.2
+          "duration": 7921.9
         }
       ]
     },
@@ -86,13 +86,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 14286.6
+          "duration": 14287.3
         }
       ]
     },
@@ -109,7 +109,7 @@
           "index": 0,
           "name": "oo7777",
           "score": 0,
-          "duration": 507.5
+          "duration": 508.3
         }
       ]
     },
@@ -120,13 +120,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "abdumuhtor",
           "score": 0,
-          "duration": 223.2
+          "duration": 224.0
         }
       ]
     },
@@ -147,7 +147,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -167,7 +167,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -177,7 +177,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -197,7 +197,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dusferno2",
-      "ping": 178,
+      "ping": 177,
       "playerList": []
     }
   ]
