@@ -1,204 +1,831 @@
-import os
+#!/usr/bin/env python3
+
+import base64
 import json
-import time
+import os
 import socket
 import struct
-import base64
+import time
+import urllib.parse
 import urllib.request
-import urllib.error
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
-# Railway environment variables:
-# GITHUB_TOKEN   = GitHub fine-grained token with Contents: Read and write
-# GITHUB_REPO    = AzizjonLutfullayev/uzbservers-web
-# GITHUB_BRANCH  = main
-# INTERVAL       = 60
 
-REPO = os.getenv("GITHUB_REPO", "AzizjonLutfullayev/uzbservers-web")
-BRANCH = os.getenv("GITHUB_BRANCH", "main")
-TOKEN = os.getenv("GITHUB_TOKEN", "")
-INTERVAL = int(os.getenv("INTERVAL", "60"))
+# =========================================================
+# UZB SERVERS — RAILWAY LIVE MONITOR
+# CS 1.6 / GoldSrc A2S_INFO + A2S_PLAYER
+# =========================================================
+
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "").strip()
+
+GITHUB_REPO = os.getenv(
+    "GITHUB_REPO",
+    "AzizjonLutfullayev/uzbservers-web"
+).strip()
+
+GITHUB_BRANCH = os.getenv(
+    "GITHUB_BRANCH",
+    "main"
+).strip()
+
+INTERVAL = max(
+    30,
+    int(os.getenv("INTERVAL", "60"))
+)
+
+TIMEOUT = 2.0
+
 FILE_PATH = "public/servers.json"
 
+
+# =========================================================
+# MONITORING SERVERLAR
+# =========================================================
+
 SERVERS = [
-    {"name":"CSZONE.UZ - Public #1","ip":"195.158.11.77","port":27015},
-    {"name":"CSZONE.UZ - Public #2","ip":"195.158.11.77","port":27016},
-    {"name":"CSZONE.UZ - Clanwar #1","ip":"195.158.11.77","port":27017},
-    {"name":"CSZONE.UZ - Clanwar #2","ip":"195.158.11.77","port":27018},
-    {"name":"NumberOne[UZ]-Public #1","ip":"83.69.139.164","port":27016},
-    {"name":"NumberOne[UZ]-Public #2","ip":"83.69.139.164","port":27022},
-    {"name":"NumberOne[UZ]-CSDM #1","ip":"83.69.139.164","port":27020},
-    {"name":"NUMBERONE UZBEKISTAN","ip":"83.69.139.164","port":27015},
-    {"name":"TIMCS.UZ Public #1","ip":"195.158.4.109","port":27015},
-    {"name":"UZB ARENA","ip":"157.22.130.26","port":27015},
-    {"name":"PROCS.UZ","ip":"195.158.4.108","port":27777},
-    {"name":"ONECS.UZ Public #1","ip":"185.228.90.26","port":27002},
-    {"name":"IHOST.UZ MIX","ip":"83.69.139.164","port":27014},
-    {"name":"WEIT CS Public","ip":"84.54.82.234","port":27047},
-    {"name":"CSLOVE.UZ [PUBLIC #1]","ip":"84.54.82.234","port":27015},
+
+    {
+        "name": "CSZONE.UZ - Public #1",
+        "ip": "195.158.11.77",
+        "port": 27015
+    },
+
+    {
+        "name": "CSZONE.UZ - Public #2",
+        "ip": "195.158.11.77",
+        "port": 27016
+    },
+
+    {
+        "name": "CSZONE.UZ - Clanwar #1",
+        "ip": "195.158.11.77",
+        "port": 27017
+    },
+
+    {
+        "name": "CSZONE.UZ - Clanwar #2",
+        "ip": "195.158.11.77",
+        "port": 27018
+    },
+
+    {
+        "name": "NumberOne[UZ]-Public #1",
+        "ip": "83.69.139.164",
+        "port": 27016
+    },
+
+    {
+        "name": "NumberOne[UZ]-Public #2",
+        "ip": "83.69.139.164",
+        "port": 27022
+    },
+
+    {
+        "name": "NumberOne[UZ]-CSDM #1",
+        "ip": "83.69.139.164",
+        "port": 27020
+    },
+
+    {
+        "name": "NUMBERONE UZBEKISTAN",
+        "ip": "83.69.139.164",
+        "port": 27015
+    },
+
+    {
+        "name": "TIMCS.UZ Public #1",
+        "ip": "195.158.4.109",
+        "port": 27015
+    },
+
+    {
+        "name": "UZB ARENA",
+        "ip": "157.22.130.26",
+        "port": 27015
+    },
+
+    {
+        "name": "PROCS.UZ",
+        "ip": "195.158.4.108",
+        "port": 27777
+    },
+
+    {
+        "name": "ONECS.UZ Public #1",
+        "ip": "185.228.90.26",
+        "port": 27002
+    },
+
+    {
+        "name": "IHOST.UZ MIX",
+        "ip": "83.69.139.164",
+        "port": 27014
+    },
+
+    {
+        "name": "WEIT CS Public",
+        "ip": "84.54.82.234",
+        "port": 27047
+    },
+
+    {
+        "name": "CSLOVE.UZ [PUBLIC #1]",
+        "ip": "84.54.82.234",
+        "port": 27015
+    }
+
 ]
 
-def recv_packet(sock, timeout=3):
-    sock.settimeout(timeout)
-    data, _ = sock.recvfrom(65535)
-    return data
 
-def parse_source(data):
-    # Source A2S_INFO: FF FF FF FF 49 ...
-    if len(data) < 6 or data[4] != 0x49:
-        return None
-    p = 5
-    protocol = data[p]; p += 1
+# =========================================================
+# STRING PARSER
+# =========================================================
 
-    def cstr():
-        nonlocal p
-        e = data.find(b"\x00", p)
-        if e < 0: raise ValueError("bad string")
-        s = data[p:e].decode("utf-8", "replace"); p = e + 1
-        return s
+def cstr(data, pos):
 
-    name = cstr()
-    map_name = cstr()
-    folder = cstr()
-    game = cstr()
-    if p + 2 > len(data): return None
-    appid = struct.unpack_from("<H", data, p)[0]; p += 2
-    if p + 2 > len(data): return None
-    players = data[p]; max_players = data[p+1]; p += 2
-    if p + 1 > len(data): return None
-    bots = data[p]; p += 1
+    end = data.find(
+        b"\x00",
+        pos
+    )
+
+    if end < 0:
+        raise ValueError(
+            "unterminated string"
+        )
+
+    return (
+        data[pos:end].decode(
+            "utf-8",
+            "replace"
+        ),
+        end + 1
+    )
+
+
+# =========================================================
+# A2S_INFO
+# =========================================================
+
+def query_info(server):
+
+    addr = (
+        server["ip"],
+        server["port"]
+    )
+
+    packet = (
+        b"\xff\xff\xff\xff"
+        b"\x54Source Engine Query\x00"
+    )
+
+    started = time.perf_counter()
+
+    with socket.socket(
+        socket.AF_INET,
+        socket.SOCK_DGRAM
+    ) as s:
+
+        s.settimeout(TIMEOUT)
+
+        s.sendto(
+            packet,
+            addr
+        )
+
+        data, _ = s.recvfrom(
+            65535
+        )
+
+    ping = max(
+        1,
+        round(
+            (time.perf_counter() - started)
+            * 1000
+        )
+    )
+
+    if (
+        len(data) < 6
+        or data[:4] != b"\xff\xff\xff\xff"
+    ):
+        raise ValueError(
+            "invalid A2S_INFO"
+        )
+
+    typ = data[4]
+
+
+    # -----------------------------------------------------
+    # Source
+    # -----------------------------------------------------
+
+    if typ == 0x49:
+
+        pos = 6
+
+        name, pos = cstr(
+            data,
+            pos
+        )
+
+        map_name, pos = cstr(
+            data,
+            pos
+        )
+
+        _, pos = cstr(
+            data,
+            pos
+        )
+
+        _, pos = cstr(
+            data,
+            pos
+        )
+
+        if pos + 2 > len(data):
+
+            raise ValueError(
+                "short Source A2S_INFO"
+            )
+
+        players = data[pos]
+
+        max_players = data[
+            pos + 1
+        ]
+
+
+    # -----------------------------------------------------
+    # GoldSrc / CS 1.6
+    # -----------------------------------------------------
+
+    elif typ == 0x6d:
+
+        pos = 5
+
+        _, pos = cstr(
+            data,
+            pos
+        )
+
+        name, pos = cstr(
+            data,
+            pos
+        )
+
+        map_name, pos = cstr(
+            data,
+            pos
+        )
+
+        _, pos = cstr(
+            data,
+            pos
+        )
+
+        _, pos = cstr(
+            data,
+            pos
+        )
+
+        if pos + 7 > len(data):
+
+            raise ValueError(
+                "short GoldSrc A2S_INFO"
+            )
+
+        players = data[pos]
+
+        max_players = data[
+            pos + 1
+        ]
+
+
+    else:
+
+        raise ValueError(
+            f"unexpected A2S_INFO type "
+            f"0x{typ:02x}"
+        )
+
+
     return {
-        "name": name, "map": map_name, "players": int(players),
-        "max_players": int(max_players), "bots": int(bots),
+
+        "name": (
+            name
+            or server["name"]
+        ),
+
+        "map": map_name,
+
+        "players": int(
+            players
+        ),
+
+        "maxPlayers": int(
+            max_players
+        ),
+
+        "ping": ping,
+
         "online": True
+
     }
 
-def parse_goldsrc(data):
-    # GoldSrc A2S_INFO (0x6D)
-    if len(data) < 6 or data[4] != 0x6D:
-        return None
-    p = 5
 
-    def cstr():
-        nonlocal p
-        e = data.find(b"\x00", p)
-        if e < 0: raise ValueError("bad string")
-        s = data[p:e].decode("utf-8", "replace"); p = e + 1
-        return s
+# =========================================================
+# A2S_PLAYER
+# =========================================================
 
-    address = cstr()
-    name = cstr()
-    map_name = cstr()
-    folder = cstr()
-    game = cstr()
-    if p + 1 > len(data): return None
-    players = data[p]; p += 1
-    if p + 1 > len(data): return None
-    max_players = data[p]; p += 1
-    return {
-        "name": name, "map": map_name, "players": int(players),
-        "max_players": int(max_players), "bots": 0, "online": True
-    }
+def query_players(server):
 
-def query_server(ip, port):
-    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    sock.settimeout(3)
-    start = time.perf_counter()
-    try:
-        sock.sendto(b"\xff\xff\xff\xff\x54Source Engine Query\x00", (ip, port))
-        data = recv_packet(sock, 3)
-        ping = round((time.perf_counter() - start) * 1000)
+    addr = (
+        server["ip"],
+        server["port"]
+    )
 
-        info = parse_source(data) or parse_goldsrc(data)
-        if info:
-            info["ping"] = ping
-            return info
+    with socket.socket(
+        socket.AF_INET,
+        socket.SOCK_DGRAM
+    ) as s:
 
-        # Some GoldSrc servers need a challenge packet first.
-        if len(data) >= 5 and data[4] == 0x41:
+        s.settimeout(TIMEOUT)
+
+        # A2S_PLAYER challenge request
+
+        s.sendto(
+            b"\xff\xff\xff\xff"
+            b"\x55"
+            b"\xff\xff\xff\xff",
+            addr
+        )
+
+        data, _ = s.recvfrom(
+            65535
+        )
+
+
+        # Server challenge yuborsa
+
+        if (
+            len(data) >= 9
+            and data[4] == 0x41
+        ):
+
             challenge = data[5:9]
-            sock.sendto(b"\xff\xff\xff\xff\x54Source Engine Query\x00" + challenge, (ip, port))
-            data2 = recv_packet(sock, 3)
-            ping = round((time.perf_counter() - start) * 1000)
-            info = parse_source(data2) or parse_goldsrc(data2)
-            if info:
-                info["ping"] = ping
-                return info
 
-        return {"online": False, "players": 0, "max_players": 0, "map": "", "ping": None}
-    except Exception:
-        return {"online": False, "players": 0, "max_players": 0, "map": "", "ping": None}
-    finally:
-        sock.close()
+            s.sendto(
+                b"\xff\xff\xff\xff"
+                b"\x55"
+                + challenge,
+                addr
+            )
 
-def github_get_file():
-    url = f"https://api.github.com/repos/{REPO}/contents/{FILE_PATH}?ref={BRANCH}"
-    req = urllib.request.Request(url, headers={
-        "Authorization": f"Bearer {TOKEN}",
-        "Accept": "application/vnd.github+json",
-        "User-Agent": "uzbservers-monitor"
-    })
-    with urllib.request.urlopen(req, timeout=15) as r:
-        return json.loads(r.read().decode())
+            data, _ = s.recvfrom(
+                65535
+            )
 
-def github_put_file(content, sha):
-    raw = json.dumps(content, ensure_ascii=False, indent=2).encode()
-    encoded = base64.b64encode(raw).decode()
-    url = f"https://api.github.com/repos/{REPO}/contents/{FILE_PATH}"
-    body = json.dumps({
-        "message": "Update CS 1.6 server status",
-        "content": encoded,
-        "sha": sha,
-        "branch": BRANCH
-    }).encode()
-    req = urllib.request.Request(url, data=body, method="PUT", headers={
-        "Authorization": f"Bearer {TOKEN}",
-        "Accept": "application/vnd.github+json",
-        "Content-Type": "application/json",
-        "User-Agent": "uzbservers-monitor"
-    })
-    with urllib.request.urlopen(req, timeout=20) as r:
-        return r.status
 
-def build_json():
-    checked_at = int(time.time())
-    out = []
-    for s in SERVERS:
-        result = query_server(s["ip"], s["port"])
-        row = {
-            "name": s["name"],
-            "ip": s["ip"],
-            "port": s["port"],
-            "online": bool(result.get("online")),
-            "players": int(result.get("players", 0) or 0),
-            "max_players": int(result.get("max_players", 0) or 0),
-            "map": result.get("map", "") or "",
-            "ping": result.get("ping"),
-            "updated_at": checked_at
-        }
-        out.append(row)
-        print(f'{s["name"]}: {"ONLINE" if row["online"] else "OFFLINE"} | {row["players"]}/{row["max_players"]} | {row["map"]} | {row["ping"]} ms')
-    return {"updatedAt": checked_at, "servers": out}
+    if (
+        len(data) < 6
+        or data[:4] != b"\xff\xff\xff\xff"
+        or data[4] != 0x44
+    ):
+
+        raise ValueError(
+            "invalid A2S_PLAYER"
+        )
+
+
+    count = data[5]
+
+    pos = 6
+
+    players = []
+
+
+    for _ in range(count):
+
+        if pos >= len(data):
+            break
+
+
+        # Player index
+
+        index = data[pos]
+
+        pos += 1
+
+
+        # Player name
+
+        name, pos = cstr(
+            data,
+            pos
+        )
+
+
+        if pos + 8 > len(data):
+            break
+
+
+        # Score
+
+        score = struct.unpack_from(
+            "<i",
+            data,
+            pos
+        )[0]
+
+        pos += 4
+
+
+        # Duration
+
+        duration = struct.unpack_from(
+            "<f",
+            data,
+            pos
+        )[0]
+
+        pos += 4
+
+
+        players.append({
+
+            "index": index,
+
+            "name": name,
+
+            "score": score,
+
+            "duration": round(
+                max(
+                    0.0,
+                    duration
+                ),
+                1
+            )
+
+        })
+
+
+    return players
+
+
+# =========================================================
+# SERVER CHECK
+# =========================================================
+
+def check(server):
+
+    row = {
+
+        "name": server["name"],
+
+        "ip": (
+            f'{server["ip"]}:'
+            f'{server["port"]}'
+        ),
+
+        "online": False,
+
+        "players": 0,
+
+        "maxPlayers": 0,
+
+        "map": "—",
+
+        "ping": None,
+
+        "playerList": []
+
+    }
+
+
+    try:
+
+        # Server information
+
+        row.update(
+            query_info(server)
+        )
+
+
+        # Player information
+
+        try:
+
+            row["playerList"] = (
+                query_players(server)
+            )
+
+
+            # Real player count
+
+            row["players"] = max(
+
+                row["players"],
+
+                len(
+                    row["playerList"]
+                )
+
+            )
+
+
+        except Exception as e:
+
+            row["playerError"] = str(e)[
+                :120
+            ]
+
+
+    except Exception as e:
+
+        row["error"] = str(e)[
+            :120
+        ]
+
+
+    return row
+
+
+# =========================================================
+# GITHUB API
+# =========================================================
+
+def github_request(
+    method,
+    url,
+    body=None
+):
+
+    if not GITHUB_TOKEN:
+
+        raise RuntimeError(
+            "GITHUB_TOKEN is not set."
+        )
+
+
+    headers = {
+
+        "Authorization":
+            f"Bearer {GITHUB_TOKEN}",
+
+        "Accept":
+            "application/vnd.github+json",
+
+        "X-GitHub-Api-Version":
+            "2022-11-28",
+
+        "User-Agent":
+            "uzbservers-railway-monitor"
+
+    }
+
+
+    data = None
+
+
+    if body is not None:
+
+        data = json.dumps(
+            body,
+            ensure_ascii=False
+        ).encode()
+
+        headers[
+            "Content-Type"
+        ] = "application/json"
+
+
+    req = urllib.request.Request(
+
+        url,
+
+        data=data,
+
+        method=method,
+
+        headers=headers
+
+    )
+
+
+    with urllib.request.urlopen(
+        req,
+        timeout=20
+    ) as r:
+
+        return json.loads(
+            r.read().decode()
+        )
+
+
+# =========================================================
+# PUBLISH SERVERS.JSON
+# =========================================================
+
+def publish(snapshot):
+
+    api = (
+        f"https://api.github.com/repos/"
+        f"{GITHUB_REPO}/contents/"
+        f"{FILE_PATH}"
+        f"?ref="
+        f"{urllib.parse.quote(GITHUB_BRANCH)}"
+    )
+
+
+    # Current GitHub file
+
+    current = github_request(
+        "GET",
+        api
+    )
+
+
+    # JSON content
+
+    content = {
+
+        "updatedAt": int(
+            time.time()
+        ),
+
+        "servers": snapshot
+
+    }
+
+
+    encoded = base64.b64encode(
+
+        json.dumps(
+            content,
+            ensure_ascii=False,
+            indent=2
+        ).encode()
+
+    ).decode()
+
+
+    payload = {
+
+        "message":
+            "Update CS 1.6 server status",
+
+        "content":
+            encoded,
+
+        "branch":
+            GITHUB_BRANCH,
+
+        "sha":
+            current["sha"]
+
+    }
+
+
+    github_request(
+        "PUT",
+        api,
+        payload
+    )
+
+
+# =========================================================
+# MAIN LOOP
+# =========================================================
 
 def main():
-    if not TOKEN:
-        raise SystemExit("GITHUB_TOKEN is not set.")
-    print(f"Starting monitor: every {INTERVAL}s")
-    print(f"Repository: {REPO}, branch: {BRANCH}")
+
+    print(
+        "UZB SERVERS Railway monitor | "
+        f"{len(SERVERS)} servers | "
+        f"every {INTERVAL}s"
+    )
+
 
     while True:
-        started = time.time()
-        try:
-            data = build_json()
-            meta = github_get_file()
-            status = github_put_file(data, meta["sha"])
-            print(f"GitHub updated: HTTP {status}")
-        except Exception as e:
-            print("Update error:", repr(e))
 
-        elapsed = time.time() - started
-        sleep_for = max(5, INTERVAL - elapsed)
-        print(f"Next check in {sleep_for:.1f}s")
-        time.sleep(sleep_for)
+        started = time.time()
+
+
+        # Parallel server checking
+
+        with ThreadPoolExecutor(
+            max_workers=min(
+                16,
+                len(SERVERS)
+            )
+        ) as pool:
+
+            futures = [
+
+                pool.submit(
+                    check,
+                    server
+                )
+
+                for server in SERVERS
+
+            ]
+
+
+            snapshot = [
+
+                future.result()
+
+                for future in as_completed(
+                    futures
+                )
+
+            ]
+
+
+        # Sort by IP
+
+        snapshot.sort(
+            key=lambda x: x["ip"]
+        )
+
+
+        try:
+
+            publish(
+                snapshot
+            )
+
+
+            online = sum(
+
+                1
+
+                for server in snapshot
+
+                if server["online"]
+
+            )
+
+
+            players = sum(
+
+                int(
+                    server.get(
+                        "players",
+                        0
+                    )
+                    or 0
+                )
+
+                for server in snapshot
+
+            )
+
+
+            print(
+
+                f"[{time.strftime('%H:%M:%S')}] "
+
+                f"published: "
+
+                f"{online}/"
+                f"{len(snapshot)} online, "
+
+                f"{players} players"
+
+            )
+
+
+        except Exception as e:
+
+            print(
+                f"PUBLISH ERROR: {e}"
+            )
+
+
+        # Wait until next update
+
+        elapsed = (
+            time.time()
+            - started
+        )
+
+
+        time.sleep(
+            max(
+                1,
+                INTERVAL - elapsed
+            )
+        )
+
+
+# =========================================================
+# START
+# =========================================================
 
 if __name__ == "__main__":
+
     main()
