@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790977517,
+  "updatedAt": 1790977554,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 18468.5
+          "duration": 18505.5
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 18467.2
+          "duration": 18504.2
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 18464.4
+          "duration": 18501.4
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 2163.9
+          "duration": 2200.8
         }
       ]
     },
@@ -64,19 +64,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 3,
-          "duration": 641409.2
+          "duration": 641446.2
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 44453.6
+          "duration": 44490.6
         }
       ]
     },
@@ -93,7 +93,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 7477.2
+          "duration": 7514.2
         }
       ]
     },
@@ -104,13 +104,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 178,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 13842.7
+          "duration": 13879.6
         }
       ]
     },
@@ -121,13 +121,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_lego_2",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "oo7777",
           "score": 0,
-          "duration": 63.6
+          "duration": 100.5
         }
       ]
     },
@@ -138,13 +138,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "abdumuhtor",
           "score": 14,
-          "duration": 961.6
+          "duration": 998.7
         }
       ]
     },
@@ -162,8 +162,8 @@
       "name": "亗 NUMBERONE UZBEKISTAN 亗",
       "ip": "83.69.139.164:27015",
       "online": true,
-      "players": 0,
-      "maxPlayers": 32,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "de_inferno",
       "ping": 169,
       "playerList": []
@@ -185,15 +185,15 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_nuke",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 2,
+      "maxPlayers": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
       "playerList": [
@@ -201,19 +201,13 @@
           "index": 0,
           "name": "Cristy",
           "score": 0,
-          "duration": 842.6
+          "duration": 879.6
         },
         {
           "index": 1,
           "name": "Empte",
-          "score": 1,
-          "duration": 159.6
-        },
-        {
-          "index": 2,
-          "name": "f0rest~",
-          "score": 2,
-          "duration": 140.8
+          "score": 3,
+          "duration": 196.6
         }
       ]
     },
@@ -224,13 +218,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "puma",
-          "score": -3,
-          "duration": 127.3
+          "score": -11,
+          "duration": 164.3
         }
       ]
     },
