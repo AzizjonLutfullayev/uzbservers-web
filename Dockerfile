@@ -1,10 +1,7 @@
-FROM php:8.3-apache
+FROM python:3.12-slim
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-RUN a2enmod rewrite headers
+WORKDIR /app
 
-COPY . /var/www/html/
+COPY monitor-railway.py /app/monitor-railway.py
 
-RUN chown -R www-data:www-data /var/www/html
-
-EXPOSE 80
+CMD ["python", "-u", "/app/monitor-railway.py"]
