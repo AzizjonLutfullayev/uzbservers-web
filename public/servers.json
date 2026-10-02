@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790981279,
+  "updatedAt": 1790981285,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 1530.4
+          "duration": 1536.9
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 22228.4
+          "duration": 22234.8
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 1529.0
+          "duration": 1535.5
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 5925.1
+          "duration": 5931.5
         }
       ]
     },
@@ -54,7 +54,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 167,
       "playerList": []
     },
     {
@@ -64,19 +64,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 645170.4
+          "duration": 645176.9
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 48214.8
+          "duration": 48221.2
         }
       ]
     },
@@ -87,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 168,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 11238.4
+          "duration": 11244.8
         }
       ]
     },
@@ -104,13 +104,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 17603.8
+          "duration": 17609.9
         }
       ]
     },
@@ -121,7 +121,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 178,
+      "ping": 166,
       "playerList": []
     },
     {
@@ -131,13 +131,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 172,
       "playerList": [
         {
           "index": 0,
           "name": ".",
           "score": 2,
-          "duration": 829.1
+          "duration": 835.5
         }
       ]
     },
@@ -148,7 +148,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 168,
+      "ping": 171,
       "playerList": []
     },
     {
@@ -158,37 +158,37 @@
       "players": 5,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "020VP",
           "score": 26,
-          "duration": 3107.3
+          "duration": 3113.7
         },
         {
           "index": 1,
           "name": "-13",
           "score": 23,
-          "duration": 2999.0
+          "duration": 3005.4
         },
         {
           "index": 2,
           "name": "Empte",
           "score": 26,
-          "duration": 2263.7
+          "duration": 2270.1
         },
         {
           "index": 3,
           "name": "UZB707",
           "score": 28,
-          "duration": 2022.8
+          "duration": 2029.2
         },
         {
           "index": 4,
           "name": "[Fine-Boost] player",
           "score": 3,
-          "duration": 461.0
+          "duration": 467.5
         }
       ]
     },
@@ -199,17 +199,17 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 171,
       "playerList": []
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
       "ip": "83.69.139.164:27020",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 0,
+      "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 171,
       "playerList": []
     },
     {
@@ -219,7 +219,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -229,7 +229,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_train32",
-      "ping": 179,
+      "ping": 173,
       "playerList": []
     },
     {
@@ -239,7 +239,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 178,
+      "ping": 174,
       "playerList": []
     }
   ]
