@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790974933,
+  "updatedAt": 1790974938,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,25 +8,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 15883.8
+          "duration": 15888.7
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 15882.5
+          "duration": 15887.4
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 15879.7
+          "duration": 15884.6
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 789.6
+          "duration": 794.5
         }
       ]
     },
@@ -60,13 +60,13 @@
           "index": 0,
           "name": "＃ a1M fERGANA ***",
           "score": 2,
-          "duration": 166.3
+          "duration": 171.8
         },
         {
           "index": 1,
           "name": "qariya",
-          "score": 5,
-          "duration": 249.2
+          "score": 6,
+          "duration": 254.6
         }
       ]
     },
@@ -83,13 +83,13 @@
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 638824.5
+          "duration": 638829.4
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 41868.9
+          "duration": 41873.8
         }
       ]
     },
@@ -100,13 +100,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 177,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 4892.4
+          "duration": 4897.3
         }
       ]
     },
@@ -123,7 +123,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 11257.9
+          "duration": 11262.8
         }
       ]
     },
@@ -134,7 +134,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_india",
-      "ping": 177,
+      "ping": 178,
       "playerList": []
     },
     {
@@ -151,22 +151,22 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 2,
+      "maxPlayers": 14,
       "map": "aim_sk_awp",
       "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "f0rest~",
-          "score": 0,
-          "duration": 240.9
+          "score": 1,
+          "duration": 245.8
         },
         {
           "index": 1,
           "name": "Empte",
           "score": 0,
-          "duration": 20.3
+          "duration": 25.3
         }
       ]
     },
@@ -177,13 +177,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "lalka(Lol)",
           "score": 0,
-          "duration": 145.0
+          "duration": 150.0
         }
       ]
     },
@@ -201,8 +201,8 @@
       "name": "NumberOne[UZ]-CSDM #1",
       "ip": "83.69.139.164:27020",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 0,
+      "maxPlayers": 32,
       "map": "de_nuke",
       "ping": 169,
       "playerList": []
@@ -211,8 +211,8 @@
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 3,
+      "maxPlayers": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
       "playerList": [
@@ -220,13 +220,19 @@
           "index": 0,
           "name": "MARS-102",
           "score": 0,
-          "duration": 14.1
+          "duration": 19.0
         },
         {
           "index": 1,
+          "name": "ewrpole",
+          "score": 4,
+          "duration": 0.9
+        },
+        {
+          "index": 2,
           "name": "yingming",
           "score": 0,
-          "duration": 23.4
+          "duration": 28.3
         }
       ]
     },
