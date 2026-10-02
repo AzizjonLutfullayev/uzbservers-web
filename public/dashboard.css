@@ -1,0 +1,461 @@
+/* =========================================================
+   UZB SERVERS — PREMIUM DASHBOARD
+========================================================= */
+
+.monitor-dashboard{
+  margin-top:35px;
+}
+
+.monitor-title{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:20px;
+  margin-bottom:18px;
+}
+
+.monitor-title h2{
+  margin:0;
+  font-size:32px;
+  font-weight:900;
+  letter-spacing:-1px;
+}
+
+.monitor-title p{
+  margin:7px 0 0;
+  color:#91a0b8;
+}
+
+.monitor-live{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  border:1px solid #26344c;
+  border-radius:999px;
+  background:#0b1422;
+  color:#35e6a0;
+  font-size:12px;
+  font-weight:800;
+}
+
+.monitor-live-dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#35e6a0;
+  box-shadow:0 0 12px #35e6a0;
+  animation:monitorPulse 1.5s infinite;
+}
+
+@keyframes monitorPulse{
+  0%,100%{
+    opacity:1;
+    transform:scale(1);
+  }
+  50%{
+    opacity:.45;
+    transform:scale(.75);
+  }
+}
+
+
+/* =========================================================
+   STAT CARDS
+========================================================= */
+
+.monitor-stats{
+  display:grid;
+  grid-template-columns:repeat(5,1fr);
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.monitor-stat{
+  position:relative;
+  overflow:hidden;
+  padding:18px;
+  background:
+    linear-gradient(
+      145deg,
+      rgba(19,31,51,.96),
+      rgba(8,14,24,.96)
+    );
+  border:1px solid #26344c;
+  border-radius:16px;
+  transition:.25s;
+}
+
+.monitor-stat:hover{
+  transform:translateY(-3px);
+  border-color:#4d70a7;
+  box-shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+.monitor-stat::after{
+  content:"";
+  position:absolute;
+  width:100px;
+  height:100px;
+  right:-40px;
+  top:-40px;
+  border-radius:50%;
+  background:#5b8cff22;
+  filter:blur(15px);
+}
+
+.monitor-stat-label{
+  color:#91a0b8;
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:.7px;
+}
+
+.monitor-stat-value{
+  margin-top:8px;
+  font-size:30px;
+  font-weight:950;
+}
+
+.monitor-stat-sub{
+  margin-top:5px;
+  color:#91a0b8;
+  font-size:11px;
+}
+
+.monitor-online{
+  color:#35e6a0;
+}
+
+.monitor-offline{
+  color:#ff5f6d;
+}
+
+.monitor-blue{
+  color:#5b8cff;
+}
+
+.monitor-yellow{
+  color:#ffd45c;
+}
+
+
+/* =========================================================
+   TOP SERVER
+========================================================= */
+
+.monitor-top-server{
+  display:grid;
+  grid-template-columns:1.4fr .7fr .7fr .7fr;
+  gap:12px;
+  margin-bottom:18px;
+}
+
+.monitor-highlight{
+  padding:20px;
+  background:
+    linear-gradient(
+      135deg,
+      #111e34,
+      #09111c
+    );
+  border:1px solid #26344c;
+  border-radius:16px;
+}
+
+.monitor-highlight-label{
+  color:#91a0b8;
+  font-size:11px;
+  text-transform:uppercase;
+  letter-spacing:.8px;
+}
+
+.monitor-highlight-name{
+  margin-top:8px;
+  font-size:19px;
+  font-weight:900;
+}
+
+.monitor-highlight-value{
+  margin-top:5px;
+  font-size:27px;
+  font-weight:950;
+}
+
+.monitor-highlight-ip{
+  margin-top:4px;
+  color:#6f82a0;
+  font-family:monospace;
+  font-size:12px;
+}
+
+
+/* =========================================================
+   SERVER GRID
+========================================================= */
+
+.monitor-server-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:14px;
+}
+
+.monitor-server-card{
+  position:relative;
+  overflow:hidden;
+  padding:18px;
+  background:
+    linear-gradient(
+      145deg,
+      #111b2c,
+      #09111c
+    );
+  border:1px solid #26344c;
+  border-radius:17px;
+  transition:.25s;
+}
+
+.monitor-server-card:hover{
+  transform:translateY(-3px);
+  border-color:#496b9f;
+  box-shadow:0 15px 45px #0006;
+}
+
+.monitor-server-card.online-card{
+  border-left:3px solid #35e6a0;
+}
+
+.monitor-server-card.offline-card{
+  border-left:3px solid #ff5f6d;
+}
+
+.monitor-server-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:12px;
+}
+
+.monitor-server-name{
+  font-size:16px;
+  font-weight:900;
+}
+
+.monitor-server-ip{
+  margin-top:5px;
+  color:#71839e;
+  font-family:monospace;
+  font-size:12px;
+}
+
+.monitor-status{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:6px 9px;
+  border-radius:999px;
+  font-size:10px;
+  font-weight:900;
+}
+
+.monitor-status.online{
+  background:#0c3528;
+  color:#35e6a0;
+  border:1px solid #1b6e55;
+}
+
+.monitor-status.offline{
+  background:#3a141b;
+  color:#ff5f6d;
+  border:1px solid #71313c;
+}
+
+.monitor-status-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+}
+
+.monitor-status.online .monitor-status-dot{
+  background:#35e6a0;
+  box-shadow:0 0 8px #35e6a0;
+}
+
+.monitor-status.offline .monitor-status-dot{
+  background:#ff5f6d;
+}
+
+
+/* =========================================================
+   SERVER METRICS
+========================================================= */
+
+.monitor-metrics{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+  margin-top:18px;
+}
+
+.monitor-metric{
+  padding:11px;
+  background:#080f19;
+  border:1px solid #1c2940;
+  border-radius:11px;
+}
+
+.monitor-metric-label{
+  color:#71839e;
+  font-size:10px;
+}
+
+.monitor-metric-value{
+  margin-top:4px;
+  font-size:16px;
+  font-weight:900;
+}
+
+.monitor-ping-good{
+  color:#35e6a0;
+}
+
+.monitor-ping-medium{
+  color:#ffd45c;
+}
+
+.monitor-ping-bad{
+  color:#ff5f6d;
+}
+
+
+/* =========================================================
+   PLAYER BAR
+========================================================= */
+
+.monitor-player-wrap{
+  margin-top:15px;
+}
+
+.monitor-player-head{
+  display:flex;
+  justify-content:space-between;
+  color:#91a0b8;
+  font-size:11px;
+  margin-bottom:7px;
+}
+
+.monitor-player-bar{
+  height:7px;
+  background:#172237;
+  border-radius:999px;
+  overflow:hidden;
+}
+
+.monitor-player-fill{
+  height:100%;
+  border-radius:999px;
+  background:
+    linear-gradient(
+      90deg,
+      #35e6a0,
+      #5b8cff
+    );
+  box-shadow:0 0 12px #35e6a055;
+  transition:width .5s ease;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.monitor-actions{
+  display:flex;
+  gap:8px;
+  margin-top:15px;
+}
+
+.monitor-action{
+  flex:1;
+  padding:9px 11px;
+  border:1px solid #26344c;
+  border-radius:9px;
+  background:#111b2b;
+  color:#fff;
+  cursor:pointer;
+  font-size:12px;
+  font-weight:700;
+  transition:.2s;
+}
+
+.monitor-action:hover{
+  border-color:#5b8cff;
+  background:#162744;
+}
+
+
+/* =========================================================
+   UPDATE INFO
+========================================================= */
+
+.monitor-update{
+  margin-top:15px;
+  color:#637590;
+  font-size:10px;
+  text-align:right;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1000px){
+
+  .monitor-stats{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .monitor-top-server{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:700px){
+
+  .monitor-stats{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .monitor-server-grid{
+    grid-template-columns:1fr;
+  }
+
+  .monitor-top-server{
+    grid-template-columns:1fr;
+  }
+
+  .monitor-title{
+    display:block;
+  }
+
+  .monitor-live{
+    margin-top:12px;
+    display:inline-flex;
+  }
+
+}
+
+@media(max-width:450px){
+
+  .monitor-stats{
+    grid-template-columns:1fr;
+  }
+
+  .monitor-metrics{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
