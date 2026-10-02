@@ -1097,6 +1097,198 @@ footer{
 @media(max-width:700px){.monitor-stats{grid-template-columns:1fr 1fr}.monitor-server-grid{grid-template-columns:1fr}.monitor-top-server{grid-template-columns:1fr}.monitor-title{display:block}.monitor-live{margin-top:12px;display:inline-flex}}
 @media(max-width:450px){.monitor-stats{grid-template-columns:1fr}.monitor-metrics{grid-template-columns:1fr 1fr}}
 
+
+
+/* =====================================================
+   PREMIUM NAVIGATION INTERFACE
+===================================================== */
+.logo-home{
+  display:inline-flex;
+  align-items:center;
+  gap:0;
+  color:inherit;
+  text-decoration:none;
+  position:relative;
+  padding:8px 12px;
+  margin-left:-12px;
+  border-radius:13px;
+  transition:transform .25s ease,background .25s ease,box-shadow .25s ease;
+}
+.logo-home::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:13px;
+  background:linear-gradient(135deg,#5b8cff22,#35e6a022,transparent 70%);
+  opacity:0;
+  transform:scale(.92);
+  transition:.25s ease;
+}
+.logo-home::after{
+  content:"";
+  position:absolute;
+  left:12px;
+  right:12px;
+  bottom:4px;
+  height:2px;
+  border-radius:99px;
+  background:linear-gradient(90deg,#5b8cff,#35e6a0);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .28s ease;
+  box-shadow:0 0 12px #35e6a088;
+}
+.logo-home:hover{
+  transform:translateY(-1px);
+  background:#111b2b88;
+  box-shadow:0 8px 28px #0005,0 0 18px #5b8cff18;
+}
+.logo-home:hover::before{opacity:1;transform:scale(1)}
+.logo-home:hover::after{transform:scaleX(1)}
+.logo-home:active{transform:scale(.97)}
+.logo-home .logo{position:relative;z-index:1}
+
+.nav-premium{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:7px;
+  padding:5px;
+  border:1px solid #26344c99;
+  border-radius:15px;
+  background:#09111dcc;
+  box-shadow:inset 0 1px 0 #ffffff08,0 8px 30px #0003;
+}
+.nav-premium a{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  padding:10px 12px;
+  border-radius:10px;
+  color:#91a0b8;
+  font-size:14px;
+  font-weight:700;
+  text-decoration:none;
+  transition:color .2s ease,background .2s ease,transform .2s ease,box-shadow .2s ease;
+  white-space:nowrap;
+}
+.nav-premium a::before{
+  content:"";
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:#5b8cff;
+  opacity:0;
+  transform:scale(.3);
+  transition:.2s ease;
+  box-shadow:0 0 10px #5b8cff;
+}
+.nav-premium a:hover,
+.nav-premium a.nav-active{
+  color:#fff;
+  background:linear-gradient(135deg,#172744,#101b2d);
+  box-shadow:inset 0 0 0 1px #3c5c8d66,0 5px 18px #0004;
+  transform:translateY(-1px);
+}
+.nav-premium a:hover::before,
+.nav-premium a.nav-active::before{opacity:1;transform:scale(1)}
+.nav-premium a:active{transform:scale(.97)}
+
+.nav-popover{
+  position:fixed;
+  top:78px;
+  left:50%;
+  width:min(620px,calc(100vw - 30px));
+  transform:translate(-50%,-12px) scale(.97);
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  z-index:90;
+  padding:18px;
+  border:1px solid #3b5376;
+  border-radius:20px;
+  background:linear-gradient(145deg,#111e33f7,#08111df7);
+  backdrop-filter:blur(20px) saturate(130%);
+  box-shadow:0 25px 80px #000a,0 0 35px #5b8cff12,inset 0 1px 0 #fff0d;
+  transition:opacity .2s ease,transform .25s ease,visibility .2s ease;
+}
+.nav-popover.show{
+  opacity:1;
+  visibility:visible;
+  pointer-events:auto;
+  transform:translate(-50%,0) scale(1);
+}
+.nav-popover::before{
+  content:"";
+  position:absolute;
+  top:-6px;
+  left:var(--arrow-left,50%);
+  width:12px;
+  height:12px;
+  background:#111e33;
+  border-left:1px solid #3b5376;
+  border-top:1px solid #3b5376;
+  transform:rotate(45deg);
+}
+.nav-popover-head{display:flex;align-items:center;justify-content:space-between;gap:15px}
+.nav-popover-title{font-size:19px;font-weight:900;color:#fff}
+.nav-popover-sub{margin-top:5px;color:#91a0b8;font-size:12px;line-height:1.5}
+.nav-popover-icon{width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:#172744;border:1px solid #30496f;font-size:20px;box-shadow:0 0 18px #5b8cff22}
+.nav-popover-close{border:1px solid #26344c;background:#0b1422;color:#91a0b8;border-radius:10px;width:34px;height:34px;cursor:pointer;font-size:17px;transition:.2s}
+.nav-popover-close:hover{color:#fff;border-color:#5b8cff;background:#162744}
+.nav-popover-body{margin-top:15px;display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.nav-pop-card{padding:13px;border:1px solid #26344c;border-radius:13px;background:#09111dcc;transition:.2s}
+.nav-pop-card:hover{border-color:#4b6fa6;transform:translateY(-2px);background:#0d1727}
+.nav-pop-card b{display:block;font-size:13px;color:#fff}
+.nav-pop-card span{display:block;margin-top:5px;font-size:11px;color:#91a0b8;line-height:1.45}
+.nav-pop-action{margin-top:14px;display:flex;justify-content:flex-end;gap:8px}
+.nav-pop-action button{padding:10px 14px;border-radius:10px;border:1px solid #31548c;background:#172744;color:#fff;font-weight:800;cursor:pointer;transition:.2s}
+.nav-pop-action button.primary{background:linear-gradient(135deg,#5b8cff,#4777e8);border-color:#6f99ff;box-shadow:0 7px 22px #5b8cff33}
+.nav-pop-action button:hover{transform:translateY(-1px);filter:brightness(1.08)}
+.nav-pop-backdrop{position:fixed;inset:0;background:#0005;backdrop-filter:blur(2px);z-index:80;opacity:0;visibility:hidden;pointer-events:none;transition:.2s}
+.nav-pop-backdrop.show{opacity:1;visibility:visible;pointer-events:auto}
+
+@media(max-width:950px){
+  .nav-premium{gap:3px}
+  .nav-premium a{padding:9px 9px;font-size:13px}
+}
+@media(max-width:700px){
+  .logo-home{margin-left:0}
+  .nav-premium{display:flex;order:3;width:100%;overflow-x:auto;justify-content:flex-start;border-radius:12px;padding:4px}
+  .nav-premium a{flex:0 0 auto;font-size:12px;padding:9px 11px}
+  .nav-popover{top:132px;width:calc(100vw - 20px);border-radius:17px}
+  .nav-popover-body{grid-template-columns:1fr}
+}
+@media(max-width:450px){
+  .nav-popover{top:145px;padding:14px}
+  .nav-popover-title{font-size:17px}
+  .nav-popover-sub{font-size:11px}
+}
+
+
+
+/* ADMIN PANEL PREMIUM RESTORE */
+.admin-panel-premium{
+  position:relative;
+  overflow:hidden;
+  border-color:#31517e;
+  box-shadow:0 18px 55px #0008, inset 0 1px 0 #5b8cff18;
+}
+.admin-panel-premium::before{
+  content:"";
+  position:absolute;
+  left:0;right:0;top:0;height:2px;
+  background:linear-gradient(90deg,#5b8cff,#35e6a0,#5b8cff);
+  background-size:200% 100%;
+  animation:adminPanelLine 3s linear infinite;
+}
+@keyframes adminPanelLine{0%{background-position:0 0}100%{background-position:200% 0}}
+.admin-panel-premium .section-title{margin-bottom:22px}
+.admin-panel-premium .section-title h2{font-size:30px}
+.admin-panel-premium .auth-btn{box-shadow:0 0 18px #5b8cff22}
+
 </style>
 </head>
 
@@ -1112,32 +1304,18 @@ footer{
 
 <div class="container nav">
 
-  <div class="logo">
-    UZB <span>SERVERS</span>
-  </div>
+  <a class="logo-home" href="#home" aria-label="UZB SERVERS bosh sahifa">
+    <div class="logo">UZB <span>SERVERS</span></div>
+  </a>
 
 
-  <nav>
+  <nav class="nav-premium" aria-label="Asosiy menyu">
 
-    <a href="#servers">
-      Server Monitoring
-    </a>
-
-    <a href="#features">
-      Imkoniyatlar
-    </a>
-
-    <a href="#about">
-      Biz haqimizda
-    </a>
-
-    <a href="#onlineChat">
-      Chat
-    </a>
-
-    <a id="adminNavLink" href="#adminPanel" style="display:none">
-      Admin
-    </a>
+    <a href="#servers" data-nav-pop="servers">Server Monitoring</a>
+    <a href="#features" data-nav-pop="features">Imkoniyatlar</a>
+    <a href="#about" data-nav-pop="about">Biz haqimizda</a>
+    <a href="#onlineChat" data-nav-pop="chat">Chat</a>
+    <a id="adminNavLink" href="#adminPanel" data-nav-pop="admin" style="display:none">Admin</a>
 
   </nav>
 
@@ -1189,6 +1367,13 @@ footer{
         </button>
 
 
+        <button id="adminMenuButton" style="display:none" onclick="openAdminFromMenu()">
+
+          🛡️ Admin panel
+
+        </button>
+
+
         <button
           onclick="logoutUser()">
 
@@ -1206,12 +1391,30 @@ footer{
 
 </header>
 
+<div id="navPopBackdrop" class="nav-pop-backdrop"></div>
+<div id="navPopover" class="nav-popover" role="dialog" aria-modal="false" aria-live="polite">
+  <div class="nav-popover-head">
+    <div style="display:flex;align-items:center;gap:12px;min-width:0">
+      <div id="navPopIcon" class="nav-popover-icon">✨</div>
+      <div style="min-width:0">
+        <div id="navPopTitle" class="nav-popover-title">UZB SERVERS</div>
+        <div id="navPopSub" class="nav-popover-sub">Tezkor boshqaruv paneli</div>
+      </div>
+    </div>
+    <button id="navPopClose" class="nav-popover-close" type="button" aria-label="Yopish">✕</button>
+  </div>
+  <div id="navPopBody" class="nav-popover-body"></div>
+  <div class="nav-pop-action">
+    <button id="navPopOpen" class="primary" type="button">Bo‘limni ochish →</button>
+  </div>
+</div>
+
 
 <!-- =====================================================
      MAIN
 ===================================================== -->
 
-<main>
+<main id="home">
 
 
 <!-- =====================================================
@@ -1580,7 +1783,7 @@ footer{
      ADMIN PANEL
 ===================================================== -->
 
-<section id="adminPanel" class="container site-panel admin-panel" style="display:none">
+<section id="adminPanel" class="container site-panel admin-panel admin-panel-premium" style="display:none">
 
   <div class="section-title">
     <div>
@@ -2655,6 +2858,20 @@ function openProfileFromMenu(){
 }
 
 
+function openAdminFromMenu(){
+
+  const dropdown=document.getElementById("userDropdown");
+  if(dropdown) dropdown.classList.remove("show");
+
+  const panel=document.getElementById("adminPanel");
+  if(panel){
+    panel.style.display="block";
+    panel.scrollIntoView({behavior:"smooth",block:"start"});
+  }
+  if(typeof loadAdminPanel === "function") loadAdminPanel();
+}
+
+
 document.addEventListener(
   "click",
   function(event){
@@ -3654,6 +3871,7 @@ function updateAuthButtons(user){
   const username = document.getElementById("menuUsername");
   const adminPanel = document.getElementById("adminPanel");
   const adminNavLink = document.getElementById("adminNavLink");
+  const adminMenuButton = document.getElementById("adminMenuButton");
 
   if(user){
     if(loginBtn) loginBtn.style.display = "none";
@@ -3674,10 +3892,12 @@ function updateAuthButtons(user){
     if(["admin","gl_admin"].includes(user.role)){
       if(adminPanel) adminPanel.style.display="block";
       if(adminNavLink) adminNavLink.style.display="inline";
+      if(adminMenuButton) adminMenuButton.style.display="block";
       loadAdminPanel();
     }else{
       if(adminPanel) adminPanel.style.display="none";
       if(adminNavLink) adminNavLink.style.display="none";
+      if(adminMenuButton) adminMenuButton.style.display="none";
     }
   }else{
     if(loginBtn) loginBtn.style.display = "inline-block";
@@ -3691,6 +3911,7 @@ function updateAuthButtons(user){
     currentUserState = null;
     if(adminPanel) adminPanel.style.display="none";
     if(adminNavLink) adminNavLink.style.display="none";
+    if(adminMenuButton) adminMenuButton.style.display="none";
     loadOnlineUsers();
     loadChat();
   }
@@ -4055,5 +4276,125 @@ setInterval(
   else startDashboard();
 })();
 </script>
+
+
+<script>
+/* =====================================================
+   PREMIUM NAV POP-UP INTERFACE
+===================================================== */
+(function(){
+  const pop = document.getElementById('navPopover');
+  const backdrop = document.getElementById('navPopBackdrop');
+  const title = document.getElementById('navPopTitle');
+  const sub = document.getElementById('navPopSub');
+  const icon = document.getElementById('navPopIcon');
+  const body = document.getElementById('navPopBody');
+  const openBtn = document.getElementById('navPopOpen');
+  const closeBtn = document.getElementById('navPopClose');
+  const logo = document.querySelector('.logo-home');
+  let activeTarget = '';
+  let closeTimer = null;
+
+  const content = {
+    servers:{
+      title:'Server Monitoring', icon:'🎮',
+      sub:'O‘zbekiston CS 1.6 serverlarini real vaqtga yaqin holatda kuzating.',
+      cards:[['ONLINE / OFFLINE','Serverlarning joriy holatini ko‘ring.'],['PLAYERS','Ayni paytdagi o‘yinchilar sonini tekshiring.'],['MAP & PING','Map va ping qiymatlarini bir joyda ko‘ring.'],['LIVE DATA','Monitoring ma’lumotlari avtomatik yangilanadi.']]
+    },
+    features:{
+      title:'Imkoniyatlar', icon:'⚡',
+      sub:'UZB SERVERS platformasining asosiy imkoniyatlari.',
+      cards:[['Real-time Monitoring','Server holati, map, ping va playerlar.'],['Server katalogi','Serverlarni qidirish va saralash.'],['Players','Server javob berganda playerlar ro‘yxatini ko‘rish.'],['IP nusxalash','Ulanish uchun IP manzilini bir bosishda nusxalash.']]
+    },
+    about:{
+      title:'Biz haqimizda', icon:'🇺🇿',
+      sub:'UZB SERVERS loyihasi haqida qisqacha ma’lumot.',
+      cards:[['UZB SERVERS','O‘zbekiston CS 1.6 serverlarini bir joyga jamlaydi.'],['Monitoring','Server holati avtomatik kuzatiladi.'],['Qulay interfeys','Desktop va mobil qurilmalarga moslangan.'],['Loyiha muallifi','Azizjon Lutfullayev.']]
+    },
+    chat:{
+      title:'Online Chat', icon:'💬',
+      sub:'Saytdagi foydalanuvchilar bilan jonli yozishma.',
+      cards:[['Jonli xabarlar','Yangi xabarlar avtomatik yuklanadi.'],['Online foydalanuvchilar','Hozir saytda bo‘lgan foydalanuvchilar ko‘rinadi.'],['Profil','Avatar va foydalanuvchi nomlari ko‘rsatiladi.'],['Xabar tahrirlash','O‘z xabaringizni keyinroq tahrirlashingiz mumkin.']]
+    },
+    admin:{
+      title:'Admin Panel', icon:'🛡️',
+      sub:'Foydalanuvchilar va platforma boshqaruvi.',
+      cards:[['Foydalanuvchilar','Ro‘yxatdan o‘tgan akkauntlarni ko‘rish.'],['Online holat','Foydalanuvchilarning joriy holatini ko‘rish.'],['Role boshqaruvi','Ruxsatlarni boshqarish.'],['Chat boshqaruvi','Platformadagi chat ma’lumotlarini nazorat qilish.']]
+    }
+  };
+
+  function show(target, anchor){
+    const item = content[target];
+    if(!item || !pop) return;
+    activeTarget = target;
+    clearTimeout(closeTimer);
+    title.textContent = item.title;
+    sub.textContent = item.sub;
+    icon.textContent = item.icon;
+    body.innerHTML = item.cards.map(function(card){
+      return '<div class="nav-pop-card"><b>'+card[0]+'</b><span>'+card[1]+'</span></div>';
+    }).join('');
+    document.querySelectorAll('.nav-premium a[data-nav-pop]').forEach(function(a){
+      a.classList.toggle('nav-active', a.dataset.navPop === target);
+    });
+    if(anchor){
+      const rect=anchor.getBoundingClientRect();
+      const center=rect.left + rect.width/2;
+      const min=110, max=window.innerWidth-110;
+      const arrow=Math.max(min,Math.min(max,center));
+      pop.style.setProperty('--arrow-left', arrow+'px');
+    }
+    pop.classList.add('show');
+    backdrop.classList.add('show');
+  }
+
+  function hide(){
+    if(!pop) return;
+    pop.classList.remove('show');
+    backdrop.classList.remove('show');
+    document.querySelectorAll('.nav-premium a.nav-active').forEach(function(a){a.classList.remove('nav-active')});
+    activeTarget='';
+  }
+
+  document.querySelectorAll('.nav-premium a[data-nav-pop]').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      const target=a.dataset.navPop;
+      if(activeTarget===target && pop.classList.contains('show')){
+        hide();
+        return;
+      }
+      show(target,a);
+    });
+  });
+
+  if(openBtn) openBtn.addEventListener('click',function(){
+    if(!activeTarget) return;
+    hide();
+    const target=document.getElementById(activeTarget==='servers'?'servers':activeTarget==='features'?'features':activeTarget==='about'?'about':activeTarget==='chat'?'onlineChat':'adminPanel');
+    if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  });
+  if(closeBtn) closeBtn.addEventListener('click',hide);
+  if(backdrop) backdrop.addEventListener('click',hide);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape') hide();});
+
+  if(logo){
+    logo.addEventListener('click',function(e){
+      e.preventDefault();
+      hide();
+      window.scrollTo({top:0,behavior:'smooth'});
+      history.replaceState(null,'','#home');
+    });
+  }
+
+  window.addEventListener('resize',function(){
+    if(pop.classList.contains('show')){
+      const active=document.querySelector('.nav-premium a[data-nav-pop="'+activeTarget+'"]');
+      if(active) show(activeTarget,active);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>
