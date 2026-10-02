@@ -4232,5 +4232,401 @@ setInterval(
   }
 })();
 </script>
+  <!-- =========================================================
+     UZB SERVERS — LIVE DATA + MOBILE INTERFACE PATCH
+     Existing site/auth/chat/admin code is preserved.
+========================================================= -->
+
+<style id="uzb-live-mobile-patch">
+
+/* =========================================================
+   MOBILE HEADER + CHAT
+========================================================= */
+
+@media (max-width:700px){
+
+  header .nav{
+    flex-wrap:wrap;
+    gap:8px 12px;
+    padding:9px 0;
+  }
+
+  header .logo{
+    flex:1 1 auto;
+  }
+
+  /*
+     Telefonda menyuni yashirmaymiz.
+     Gorizontal scroll bilan barcha menyular ko‘rinadi.
+  */
+  header nav{
+    display:flex !important;
+    order:3;
+    width:100%;
+    max-width:100%;
+    gap:6px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    padding:2px 0 5px;
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  header nav::-webkit-scrollbar{
+    display:none;
+  }
+
+  header nav a{
+    flex:0 0 auto;
+    white-space:nowrap;
+    padding:7px 10px;
+    border:1px solid var(--line);
+    border-radius:9px;
+    background:#0d1522;
+    font-size:12px;
+  }
+
+  header .auth-nav{
+    flex:0 0 auto;
+    margin-left:0;
+  }
+
+
+  /* =======================================================
+     MOBILE CHAT
+  ======================================================= */
+
+  .chat-layout{
+    grid-template-columns:1fr !important;
+  }
+
+  .chat-panel{
+    width:min(100% - 20px,1150px);
+    margin-left:auto;
+    margin-right:auto;
+    padding:14px;
+  }
+
+  .chat-panel .section-title{
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+
+  .chat-panel .section-title p{
+    font-size:12px;
+    line-height:1.45;
+  }
+
+  .chat-messages{
+    height:45vh;
+    min-height:260px;
+    max-height:520px;
+    padding:10px;
+  }
+
+  .chat-message{
+    gap:7px;
+  }
+
+  .chat-avatar{
+    width:30px;
+    height:30px;
+    min-width:30px;
+    font-size:14px;
+  }
+
+  .chat-bubble{
+    max-width:calc(100vw - 95px);
+  }
+
+  .chat-form{
+    padding:9px;
+    gap:6px;
+  }
+
+  .chat-form input{
+    min-width:0;
+    font-size:14px;
+  }
+
+  .chat-form button{
+    padding:0 12px;
+    white-space:nowrap;
+  }
+
+  .online-users{
+    max-height:none;
+  }
+
+  .online-users-list{
+    max-height:260px;
+  }
+
+
+  /* =======================================================
+     MOBILE SERVER MONITOR
+  ======================================================= */
+
+  .monitor-toolbar{
+    grid-template-columns:1fr !important;
+  }
+
+  .monitor-control{
+    width:100%;
+  }
+
+  .monitor-server-grid{
+    grid-template-columns:1fr !important;
+  }
+
+  .monitor-top-server{
+    grid-template-columns:1fr !important;
+  }
+
+  .monitor-stats{
+    grid-template-columns:repeat(2,1fr) !important;
+  }
+
+  .monitor-title{
+    display:block;
+  }
+
+  .monitor-live{
+    display:inline-flex;
+    margin-top:10px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width:390px){
+
+  .container{
+    width:calc(100% - 18px);
+  }
+
+  .logo{
+    font-size:18px;
+  }
+
+  header .auth-btn{
+    padding:7px 9px;
+    font-size:12px;
+  }
+
+  .monitor-stats{
+    grid-template-columns:1fr !important;
+  }
+
+  .chat-form input{
+    padding:10px 8px;
+  }
+
+  .chat-form button{
+    padding:0 10px;
+  }
+
+}
+
+</style>
+
+
+<script id="uzb-live-mobile-patch-js">
+
+(function(){
+
+  "use strict";
+
+
+  /* =======================================================
+     GITHUB LIVE SERVERS.JSON
+  ======================================================= */
+
+  const RAW_SERVERS_URL =
+    "https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json";
+
+
+  const originalFetch =
+    window.fetch.bind(window);
+
+
+  function isServersRequest(input){
+
+    try{
+
+      const url =
+        typeof input === "string"
+          ? new URL(input, location.href)
+          : new URL(input.url, location.href);
+
+
+      return url.pathname === "/servers.json";
+
+    }catch(error){
+
+      return false;
+
+    }
+
+  }
+
+
+  /*
+     Sayt /servers.json so‘raganda
+     GitHub'dagi eng yangi faylni olamiz.
+  */
+
+  window.fetch =
+    function(input, init){
+
+      if(isServersRequest(input)){
+
+        const liveUrl =
+          RAW_SERVERS_URL +
+          "?live=" +
+          Date.now();
+
+
+        return originalFetch(
+          liveUrl,
+          {
+            method:"GET",
+
+            cache:"no-store",
+
+            mode:"cors",
+
+            headers:{
+              "Accept":"application/json"
+            }
+
+          }
+        );
+
+      }
+
+
+      return originalFetch(
+        input,
+        init
+      );
+
+    };
+
+
+  /* =======================================================
+     FORCE LIVE REFRESH
+  ======================================================= */
+
+  async function forceLiveRefresh(){
+
+    /*
+       Eski asosiy monitoring funksiyasini
+       yangi GitHub ma'lumoti bilan yangilaymiz.
+    */
+
+    try{
+
+      if(
+        typeof window.load === "function"
+      ){
+
+        await window.load();
+
+      }
+
+    }catch(error){
+
+      console.warn(
+        "UZB SERVERS live top refresh:",
+        error
+      );
+
+    }
+
+
+    /*
+       Premium Server Monitoring dashboardini
+       ham yangilaymiz.
+    */
+
+    try{
+
+      const refresh =
+        document.getElementById(
+          "monitorRefresh"
+        );
+
+
+      if(refresh){
+
+        refresh.click();
+
+      }
+
+    }catch(error){
+
+      console.warn(
+        "UZB SERVERS live dashboard refresh:",
+        error
+      );
+
+    }
+
+  }
+
+
+  /* =======================================================
+     START
+  ======================================================= */
+
+  function start(){
+
+    /*
+       Sahifa yuklangandan keyin darhol
+       yangi server ma'lumotini olamiz.
+    */
+
+    setTimeout(
+      forceLiveRefresh,
+      300
+    );
+
+
+    /*
+       Har 60 sekundda yangilanadi.
+    */
+
+    setInterval(
+      forceLiveRefresh,
+      60000
+    );
+
+  }
+
+
+  if(
+    document.readyState === "loading"
+  ){
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      start
+    );
+
+  }else{
+
+    start();
+
+  }
+
+})();
+
+</script>
 </body>
 </html>
