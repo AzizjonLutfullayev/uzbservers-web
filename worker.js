@@ -26,10 +26,7 @@ function b64ToBytes(value) {
 function randomToken(bytes = 32) {
   const a = new Uint8Array(bytes);
   crypto.getRandomValues(a);
-
-  return [...a]
-    .map(x => x.toString(16).padStart(2, "0"))
-    .join("");
+  return [...a].map(x => x.toString(16).padStart(2, "0")).join("");
 }
 
 async function hashPassword(password) {
@@ -165,9 +162,7 @@ async function register(request, env) {
   const body = await request.json().catch(() => null);
 
   if (!body) {
-    return json({
-      error: "Noto‘g‘ri JSON."
-    }, 400);
+    return json({ error: "Noto‘g‘ri JSON." }, 400);
   }
 
   const username = String(body.username || "").trim();
@@ -180,8 +175,7 @@ async function register(request, env) {
 
   if (!/^[A-Za-z0-9_]{3,24}$/.test(username)) {
     return json({
-      error:
-        "Login 3–24 belgidan iborat bo‘lsin: harf, raqam yoki _."
+      error: "Login 3–24 belgidan iborat bo‘lsin: harf, raqam yoki _."
     }, 400);
   }
 
@@ -212,13 +206,11 @@ async function register(request, env) {
 
   if (existing) {
     return json({
-      error:
-        "Bu login yoki email allaqachon ro‘yxatdan o‘tgan."
+      error: "Bu login yoki email allaqachon ro‘yxatdan o‘tgan."
     }, 409);
   }
 
   const passwordHash = await hashPassword(password);
-
   const now = Math.floor(Date.now() / 1000);
 
   try {
@@ -241,9 +233,7 @@ async function register(request, env) {
       .run();
 
     const userId = result.meta.last_row_id;
-
     const token = randomToken(32);
-
     const expires = now + SESSION_TTL;
 
     await env.DB.prepare(`
@@ -281,7 +271,9 @@ async function register(request, env) {
         user: {
           id: userId,
           username,
-          email
+          email,
+          role: "user",
+          is_banned: false
         }
       },
       201,
@@ -292,8 +284,7 @@ async function register(request, env) {
 
   } catch (error) {
     return json({
-      error:
-        "Akkaunt yaratishda xatolik yuz berdi."
+      error: "Akkaunt yaratishda xatolik yuz berdi."
     }, 500);
   }
 }
@@ -313,7 +304,6 @@ async function login(request, env) {
   }
 
   const loginValue = String(body.login || "").trim();
-
   const password = String(body.password || "");
 
   const user = await env.DB.prepare(`
@@ -354,9 +344,7 @@ async function login(request, env) {
   }
 
   const now = Math.floor(Date.now() / 1000);
-
   const token = randomToken(32);
-
   const expires = now + SESSION_TTL;
 
   await env.DB.prepare(`
@@ -511,7 +499,6 @@ async function profile(request, env) {
   }
 
   const clean = {
-
     first_name:
       String(body.first_name || "")
         .trim()
@@ -567,25 +554,14 @@ async function profile(request, env) {
 
     ON CONFLICT(user_id)
     DO UPDATE SET
-
       first_name = excluded.first_name,
-
       last_name = excluded.last_name,
-
       telegram = excluded.telegram,
-
       phone = excluded.phone,
-
       steam_id = excluded.steam_id,
-
-      server_nickname =
-        excluded.server_nickname,
-
-      avatar_url =
-        excluded.avatar_url,
-
-      updated_at =
-        excluded.updated_at
+      server_nickname = excluded.server_nickname,
+      avatar_url = excluded.avatar_url,
+      updated_at = excluded.updated_at
   `)
     .bind(
       user.id,
@@ -608,7 +584,7 @@ async function profile(request, env) {
 
 
 /* =========================================================
-   PRESENCE / ONLINE USERS
+   PRESENCE
 ========================================================= */
 
 async function presence(request, env) {
@@ -620,23 +596,88 @@ async function presence(request, env) {
     }, 401);
   }
 
+  if (Number(user.is_banned) === 1) {
+    return json({
+      error: "Akkauntingiz cheklangan."
+    }, 403);
+  }
+
   const now = Math.floor(Date.now() / 1000);
 
   await env.DB.prepare(`
     INSERT INTO user_presence
-      (user_id, last_seen)
+      (
+        user_id,
+        last_seen
+      )
     VALUES (?, ?)
 
     ON CONFLICT(user_id)
     DO UPDATE SET
       last_seen = excluded.last_seen
   `)
-    .bind(user.id, now)
+    .bind(
+      user.id,
+      now
+    )
     .run();
 
   return json({
     ok: true,
     last_seen: now
+  });
+}
+
+
+/* =========================================================
+   ONLINE USERS
+========================================================= */
+
+async function onlineUsers(request, env) {
+  const user = await currentUser(request, env);
+
+  if (!user) {
+    return json({
+      error: "Kirish talab qilinadi."
+    }, 401);
+  }
+
+  const now = Math.floor(Date.now() / 1000);
+  const onlineAfter = now - 90;
+
+  const rows = await env.DB.prepare(`
+    SELECT
+      users.id,
+      users.username,
+      users.role,
+      users.is_banned,
+      profiles.first_name,
+      profiles.last_name,
+      profiles.avatar_url,
+      user_presence.last_seen
+    FROM user_presence
+
+    JOIN users
+      ON users.id = user_presence.user_id
+
+    LEFT JOIN profiles
+      ON profiles.user_id = users.id
+
+    WHERE user_presence.last_seen >= ?
+      AND users.is_banned = 0
+
+    ORDER BY user_presence.last_seen DESC
+
+    LIMIT 200
+  `)
+    .bind(onlineAfter)
+    .all();
+
+  const users = rows.results || [];
+
+  return json({
+    users,
+    total: users.length
   });
 }
 
@@ -654,16 +695,16 @@ async function chat(request, env) {
     }, 401);
   }
 
-  if (user.is_banned) {
+  if (Number(user.is_banned) === 1) {
     return json({
       error: "Akkauntingiz cheklangan."
     }, 403);
   }
 
 
-  /* =======================================================
-     GET CHAT MESSAGES
-  ======================================================= */
+  /* =========================
+     GET CHAT
+  ========================= */
 
   if (request.method === "GET") {
 
@@ -722,66 +763,9 @@ async function chat(request, env) {
   }
 
 
-  /* =======================================================
-     POST NEW CHAT MESSAGE
-  ======================================================= */
-
-  if (request.method === "POST") {
-
-    const body =
-      await request.json().catch(() => null);
-
-    if (!body) {
-      return json({
-        error: "Noto‘g‘ri JSON."
-      }, 400);
-    }
-
-    const message =
-      String(body.message || "")
-        .trim();
-
-    if (!message) {
-      return json({
-        error: "Xabar bo‘sh bo‘lishi mumkin emas."
-      }, 400);
-    }
-
-    if (message.length > 1000) {
-      return json({
-        error: "Xabar 1000 belgidan oshmasin."
-      }, 400);
-    }
-
-    const now =
-      Math.floor(Date.now() / 1000);
-
-    const result = await env.DB.prepare(`
-      INSERT INTO chat_messages
-        (
-          user_id,
-          message,
-          created_at
-        )
-      VALUES (?, ?, ?)
-    `)
-      .bind(
-        user.id,
-        message,
-        now
-      )
-      .run();
-
-    return json({
-      ok: true,
-      id: result.meta.last_row_id
-    }, 201);
-  }
-
-
-  /* =======================================================
-     PUT EDIT CHAT MESSAGE
-  ======================================================= */
+  /* =========================
+     EDIT CHAT
+  ========================= */
 
   if (request.method === "PUT") {
 
@@ -841,11 +825,6 @@ async function chat(request, env) {
       }, 404);
     }
 
-    /*
-      Faqat xabar egasi o‘z xabarini
-      tahrirlashi mumkin.
-    */
-
     if (
       Number(target.user_id) !==
       Number(user.id)
@@ -859,7 +838,8 @@ async function chat(request, env) {
     await env.DB.prepare(`
       UPDATE chat_messages
       SET message = ?
-      WHERE id = ?
+      WHERE
+        id = ?
         AND user_id = ?
     `)
       .bind(
@@ -877,119 +857,66 @@ async function chat(request, env) {
   }
 
 
+  /* =========================
+     SEND CHAT
+  ========================= */
+
+  if (request.method === "POST") {
+
+    const body =
+      await request.json().catch(() => null);
+
+    if (!body) {
+      return json({
+        error: "Noto‘g‘ri JSON."
+      }, 400);
+    }
+
+    const message =
+      String(body.message || "")
+        .trim();
+
+    if (!message) {
+      return json({
+        error: "Xabar bo‘sh bo‘lishi mumkin emas."
+      }, 400);
+    }
+
+    if (message.length > 1000) {
+      return json({
+        error: "Xabar 1000 belgidan oshmasin."
+      }, 400);
+    }
+
+    const now =
+      Math.floor(Date.now() / 1000);
+
+    const result =
+      await env.DB.prepare(`
+        INSERT INTO chat_messages
+          (
+            user_id,
+            message,
+            created_at
+          )
+        VALUES (?, ?, ?)
+      `)
+        .bind(
+          user.id,
+          message,
+          now
+        )
+        .run();
+
+    return json({
+      ok: true,
+      id: result.meta.last_row_id
+    }, 201);
+  }
+
   return json({
-    error:
-      "Method qo‘llab-quvvatlanmaydi."
+    error: "Method qo‘llab-quvvatlanmaydi."
   }, 405);
-}
-
-
-/* =========================================================
-   ONLINE USERS
-========================================================= */
-
-/* =========================================================
-   ONLINE USERS
-========================================================= */
-
-async function onlineUsers(request, env) {
-  const user = await currentUser(request, env);
-
-  if (!user) {
-    return json({
-      error: "Kirish talab qilinadi."
-    }, 401);
-  }
-
-  const now = Math.floor(Date.now() / 1000);
-
-  // 90 sekund ichida heartbeat yuborganlar online
-  const onlineAfter = now - 90;
-
-  const rows = await env.DB.prepare(`
-    SELECT
-      users.id,
-      users.username,
-      users.role,
-      users.is_banned,
-
-      profiles.first_name,
-      profiles.last_name,
-      profiles.avatar_url,
-
-      user_presence.last_seen
-
-    FROM user_presence
-
-    JOIN users
-      ON users.id = user_presence.user_id
-
-    LEFT JOIN profiles
-      ON profiles.user_id = users.id
-
-    WHERE user_presence.last_seen >= ?
-      AND users.is_banned = 0
-
-    ORDER BY user_presence.last_seen DESC
-
-    LIMIT 200
-  `)
-    .bind(onlineAfter)
-    .all();
-
-  const users = rows.results || [];
-
-  return json({
-    users: users,
-    total: users.length
-  });
-}
-  const user = await currentUser(request, env);
-
-  if (!user) {
-    return json({
-      error: "Kirish talab qilinadi."
-    }, 401);
-  }
-
-  const now =
-    Math.floor(Date.now() / 1000);
-
-  const onlineAfter =
-    now - 90;
-
-  const rows = await env.DB.prepare(`
-    SELECT
-      users.id,
-      users.username,
-      users.role,
-
-      profiles.avatar_url,
-
-      user_presence.last_seen
-
-    FROM user_presence
-
-    JOIN users
-      ON users.id = user_presence.user_id
-
-    LEFT JOIN profiles
-      ON profiles.user_id = users.id
-
-    WHERE user_presence.last_seen >= ?
-      AND users.is_banned = 0
-
-    ORDER BY user_presence.last_seen DESC
-
-    LIMIT 200
-  `)
-    .bind(onlineAfter)
-    .all();
-
-  return json({
-    online: rows.results || [],
-    count: (rows.results || []).length
-  });
 }
 
 
@@ -1022,15 +949,13 @@ async function adminUsers(request, env) {
 
   if (!isAdmin(meUser)) {
     return json({
-      error:
-        "Admin huquqi talab qilinadi."
+      error: "Admin huquqi talab qilinadi."
     }, 403);
   }
 
   if (request.method !== "GET") {
     return json({
-      error:
-        "Method qo‘llab-quvvatlanmaydi."
+      error: "Method qo‘llab-quvvatlanmaydi."
     }, 405);
   }
 
@@ -1088,6 +1013,96 @@ async function adminUsers(request, env) {
 
 
 /* =========================================================
+   ADMIN USER DETAILS
+========================================================= */
+
+async function adminUserDetails(request, env) {
+
+  const meUser =
+    await currentUser(request, env);
+
+  if (!isAdmin(meUser)) {
+    return json({
+      error: "Admin huquqi talab qilinadi."
+    }, 403);
+  }
+
+  const url =
+    new URL(request.url);
+
+  const id =
+    Number(
+      url.searchParams.get("id")
+    );
+
+  if (
+    !Number.isInteger(id) ||
+    id <= 0
+  ) {
+    return json({
+      error: "Foydalanuvchi ID noto‘g‘ri."
+    }, 400);
+  }
+
+  const row =
+    await env.DB.prepare(`
+      SELECT
+        users.id,
+        users.username,
+        users.email,
+        users.role,
+        users.is_banned,
+        users.created_at,
+
+        profiles.first_name,
+        profiles.last_name,
+        profiles.telegram,
+        profiles.phone,
+        profiles.steam_id,
+        profiles.server_nickname,
+        profiles.avatar_url,
+        profiles.updated_at,
+
+        user_presence.last_seen
+
+      FROM users
+
+      LEFT JOIN profiles
+        ON profiles.user_id = users.id
+
+      LEFT JOIN user_presence
+        ON user_presence.user_id = users.id
+
+      WHERE users.id = ?
+
+      LIMIT 1
+    `)
+      .bind(id)
+      .first();
+
+  if (!row) {
+    return json({
+      error: "Foydalanuvchi topilmadi."
+    }, 404);
+  }
+
+  if (
+    meUser.role === "admin" &&
+    row.role !== "user"
+  ) {
+    return json({
+      error:
+        "Siz faqat user foydalanuvchilar ma’lumotlarini ko‘rishingiz mumkin."
+    }, 403);
+  }
+
+  return json({
+    user: row
+  });
+}
+
+
+/* =========================================================
    ADMIN BAN / UNBAN
 ========================================================= */
 
@@ -1098,15 +1113,13 @@ async function adminBan(request, env) {
 
   if (!isAdmin(meUser)) {
     return json({
-      error:
-        "Admin huquqi talab qilinadi."
+      error: "Admin huquqi talab qilinadi."
     }, 403);
   }
 
   if (request.method !== "POST") {
     return json({
-      error:
-        "Method qo‘llab-quvvatlanmaydi."
+      error: "Method qo‘llab-quvvatlanmaydi."
     }, 405);
   }
 
@@ -1124,17 +1137,16 @@ async function adminBan(request, env) {
     targetId <= 0
   ) {
     return json({
-      error:
-        "Foydalanuvchi ID noto‘g‘ri."
+      error: "Foydalanuvchi ID noto‘g‘ri."
     }, 400);
   }
 
   if (
-    targetId === Number(meUser.id)
+    targetId ===
+    Number(meUser.id)
   ) {
     return json({
-      error:
-        "O‘zingizni bloklay olmaysiz."
+      error: "O‘zingizni bloklay olmaysiz."
     }, 400);
   }
 
@@ -1154,15 +1166,9 @@ async function adminBan(request, env) {
 
   if (!target) {
     return json({
-      error:
-        "Foydalanuvchi topilmadi."
+      error: "Foydalanuvchi topilmadi."
     }, 404);
   }
-
-  /*
-    Oddiy admin faqat userlarni
-    bloklay/unblock qila oladi.
-  */
 
   if (
     meUser.role === "admin" &&
@@ -1174,13 +1180,7 @@ async function adminBan(request, env) {
     }, 403);
   }
 
-  /*
-    GL Admin akkauntini bloklab bo‘lmaydi.
-  */
-
-  if (
-    target.role === "gl_admin"
-  ) {
+  if (target.role === "gl_admin") {
     return json({
       error:
         "GL Admin akkauntini bloklash mumkin emas."
@@ -1259,7 +1259,8 @@ async function glAdminRole(request, env) {
   }
 
   if (
-    targetId === Number(meUser.id)
+    targetId ===
+    Number(meUser.id)
   ) {
     return json({
       error:
@@ -1288,9 +1289,7 @@ async function glAdminRole(request, env) {
     }, 404);
   }
 
-  if (
-    target.role === "gl_admin"
-  ) {
+  if (target.role === "gl_admin") {
     return json({
       error:
         "GL Admin rolini boshqa foydalanuvchiga bera olmaysiz."
@@ -1375,8 +1374,10 @@ async function adminStats(request, env) {
     await env.DB.prepare(`
       SELECT COUNT(*) AS count
       FROM user_presence
+
       JOIN users
         ON users.id = user_presence.user_id
+
       WHERE user_presence.last_seen >= ?
         AND users.is_banned = 0
     `)
@@ -1408,104 +1409,6 @@ async function adminStats(request, env) {
 
     chat_messages:
       Number(messages?.count || 0)
-  });
-}
-
-
-/* =========================================================
-   ADMIN USER DETAILS
-========================================================= */
-
-async function adminUserDetails(request, env) {
-
-  const meUser =
-    await currentUser(request, env);
-
-  if (!isAdmin(meUser)) {
-    return json({
-      error:
-        "Admin huquqi talab qilinadi."
-    }, 403);
-  }
-
-  const url =
-    new URL(request.url);
-
-  const id =
-    Number(
-      url.searchParams.get("id")
-    );
-
-  if (
-    !Number.isInteger(id) ||
-    id <= 0
-  ) {
-    return json({
-      error:
-        "Foydalanuvchi ID noto‘g‘ri."
-    }, 400);
-  }
-
-  const row =
-    await env.DB.prepare(`
-      SELECT
-        users.id,
-        users.username,
-        users.email,
-        users.role,
-        users.is_banned,
-        users.created_at,
-
-        profiles.first_name,
-        profiles.last_name,
-        profiles.telegram,
-        profiles.phone,
-        profiles.steam_id,
-        profiles.server_nickname,
-        profiles.avatar_url,
-        profiles.updated_at,
-
-        user_presence.last_seen
-
-      FROM users
-
-      LEFT JOIN profiles
-        ON profiles.user_id = users.id
-
-      LEFT JOIN user_presence
-        ON user_presence.user_id = users.id
-
-      WHERE users.id = ?
-
-      LIMIT 1
-    `)
-      .bind(id)
-      .first();
-
-  if (!row) {
-    return json({
-      error:
-        "Foydalanuvchi topilmadi."
-    }, 404);
-  }
-
-  /*
-    Oddiy admin boshqa admin yoki
-    GL Admin ma’lumotlarini ko‘ra olmaydi.
-  */
-
-  if (
-    meUser.role === "admin" &&
-    row.role !== "user"
-  ) {
-    return json({
-      error:
-        "Siz faqat user foydalanuvchilar ma’lumotlarini ko‘rishingiz mumkin."
-    }, 403);
-  }
-
-  return json({
-    user: row
   });
 }
 
@@ -1585,13 +1488,7 @@ async function api(request, env) {
   }
 
 
-  /* =======================================================
-     CHAT
-
-     GET  = xabarlarni olish
-     POST = yangi xabar
-     PUT  = xabarni tahrirlash
-  ======================================================= */
+  /* CHAT */
 
   if (
     (
@@ -1660,7 +1557,7 @@ async function api(request, env) {
   }
 
 
-  /* ADMIN ROLE */
+  /* GL ADMIN ROLE */
 
   if (
     request.method === "POST" &&
