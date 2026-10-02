@@ -4,13 +4,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="google-site-verification" content="S3c8AlsZO5zrsL05Uv-5ZqD1f1On1FGjm7GGjLqEiII" />
+<title>UZB SERVERS — CS 1.6 Uzbekistan Servers</title>
+<meta name="description" content="UZB SERVERS — O‘zbekistondagi CS 1.6 serverlar katalogi. Serverlar, IP manzillar, o‘yinchilar va server holatini ko‘ring.">
+<meta name="keywords" content="CS 1.6, Counter Strike 1.6, Uzbekistan servers, Uzbek CS 1.6 servers, UZB servers">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://uzbservers.uzbservers.workers.dev/">
 
-<title>UZB SERVERS — CS 1.6 Uzbekistan</title>
-
-<meta
-  name="description"
-  content="O‘zbekiston CS 1.6 serverlari, real-time monitoring, playerlar va server katalogi."
->
 
 <style>
 
@@ -962,7 +962,21 @@ footer{
   }
 
   nav{
-    display:none
+    display:flex;
+    flex:1;
+    min-width:0;
+    overflow-x:auto;
+    gap:10px;
+    padding:4px 0;
+    scrollbar-width:none;
+  }
+
+  nav::-webkit-scrollbar{display:none}
+
+  nav a{
+    flex:0 0 auto;
+    white-space:nowrap;
+    font-size:13px;
   }
 
   .profile-grid{
@@ -1016,368 +1030,72 @@ footer{
 .chat-edit-btn:hover{background:#223451;border-color:#5b8cff;color:#fff;box-shadow:0 0 10px #5b8cff44;}
 
 
-/* =====================================================
-   PREMIUM LIVE SERVER MONITOR — SAFE FRONTEND OVERRIDES
-   Does not alter auth/chat/admin API or profile logic.
-===================================================== */
 
-#serverList{
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:18px;
-  align-items:stretch;
-}
+/* =========================================================
+   UZB SERVERS — PREMIUM MONITOR DASHBOARD
+   Added without changing the existing site components
+========================================================= */
 
-.server.monitor-card{
-  position:relative;
-  display:block;
-  min-width:0;
-  overflow:hidden;
-  padding:0;
-  margin:0;
-  border-radius:20px;
-  background:
-    radial-gradient(circle at 0% 0%,rgba(53,230,160,.14),transparent 36%),
-    linear-gradient(145deg,#101d1b,#0b121a 55%,#07130f);
-  border:1px solid #1d5d46;
-  box-shadow:
-    inset 0 0 35px rgba(53,230,160,.035),
-    0 8px 30px rgba(0,0,0,.28);
-  cursor:pointer;
-  transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease;
-}
+#servers .controls{display:none}
 
-.server.monitor-card::before{
-  content:"";
-  position:absolute;
-  left:0;
-  top:0;
-  bottom:0;
-  width:4px;
-  background:#35e6a0;
-  box-shadow:0 0 18px #35e6a0;
-}
+.monitor-dashboard{margin-top:0}
+.monitor-title{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px}
+.monitor-title h2{margin:0;font-size:32px;font-weight:900;letter-spacing:-1px}
+.monitor-title p{margin:7px 0 0;color:#91a0b8}
+.monitor-live{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #26344c;border-radius:999px;background:#0b1422;color:#35e6a0;font-size:12px;font-weight:800}
+.monitor-live-dot{width:8px;height:8px;border-radius:50%;background:#35e6a0;box-shadow:0 0 12px #35e6a0;animation:monitorPulse 1.5s infinite}
+@keyframes monitorPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}
 
-.server.monitor-card:hover{
-  transform:translateY(-4px);
-  border-color:#35e6a0;
-  box-shadow:
-    0 0 0 1px rgba(53,230,160,.15),
-    0 0 35px rgba(53,230,160,.18),
-    0 15px 45px rgba(0,0,0,.4);
-}
+.monitor-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
+.monitor-stat{position:relative;overflow:hidden;padding:18px;background:linear-gradient(145deg,rgba(19,31,51,.96),rgba(8,14,24,.96));border:1px solid #26344c;border-radius:16px;transition:.25s}
+.monitor-stat:hover{transform:translateY(-3px);border-color:#4d70a7;box-shadow:0 15px 40px rgba(0,0,0,.25)}
+.monitor-stat::after{content:"";position:absolute;width:100px;height:100px;right:-40px;top:-40px;border-radius:50%;background:#5b8cff22;filter:blur(15px)}
+.monitor-stat-label{color:#91a0b8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
+.monitor-stat-value{margin-top:8px;font-size:30px;font-weight:950}
+.monitor-stat-sub{margin-top:5px;color:#91a0b8;font-size:11px}
+.monitor-online{color:#35e6a0}.monitor-offline{color:#ff5f6d}.monitor-blue{color:#5b8cff}.monitor-yellow{color:#ffd45c}
 
-.monitor-inner{padding:20px}
+.monitor-top-server{display:grid;grid-template-columns:1.4fr .7fr .7fr .7fr;gap:12px;margin-bottom:18px}
+.monitor-highlight{padding:20px;background:linear-gradient(135deg,#111e34,#09111c);border:1px solid #26344c;border-radius:16px}
+.monitor-highlight-label{color:#91a0b8;font-size:11px;text-transform:uppercase;letter-spacing:.8px}
+.monitor-highlight-name{margin-top:8px;font-size:19px;font-weight:900}
+.monitor-highlight-value{margin-top:5px;font-size:27px;font-weight:950}
+.monitor-highlight-ip{margin-top:4px;color:#6f82a0;font-family:monospace;font-size:12px}
 
-.monitor-card-head{
-  display:flex;
-  justify-content:space-between;
-  align-items:flex-start;
-  gap:14px;
-}
+.monitor-server-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.monitor-server-card{position:relative;overflow:hidden;padding:18px;background:linear-gradient(145deg,#111b2c,#09111c);border:1px solid #26344c;border-radius:17px;transition:.25s}
+.monitor-server-card:hover{transform:translateY(-3px);border-color:#496b9f;box-shadow:0 15px 45px #0006}
+.monitor-server-card.online-card{border-left:3px solid #35e6a0}
+.monitor-server-card.offline-card{border-left:3px solid #ff5f6d}
+.monitor-server-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.monitor-server-name{font-size:16px;font-weight:900}
+.monitor-server-ip{margin-top:5px;color:#71839e;font-family:monospace;font-size:12px}
+.monitor-status{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900}
+.monitor-status.online{background:#0c3528;color:#35e6a0;border:1px solid #1b6e55}
+.monitor-status.offline{background:#3a141b;color:#ff5f6d;border:1px solid #71313c}
+.monitor-status-dot{width:6px;height:6px;border-radius:50%}
+.monitor-status.online .monitor-status-dot{background:#35e6a0;box-shadow:0 0 8px #35e6a0}
+.monitor-status.offline .monitor-status-dot{background:#ff5f6d}
 
-.monitor-card-name{
-  color:#fff;
-  font-size:18px;
-  line-height:1.35;
-  font-weight:900;
-  word-break:break-word;
-}
+.monitor-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
+.monitor-metric{padding:11px;background:#080f19;border:1px solid #1c2940;border-radius:11px}
+.monitor-metric-label{color:#71839e;font-size:10px}
+.monitor-metric-value{margin-top:4px;font-size:16px;font-weight:900}
+.monitor-ping-good{color:#35e6a0}.monitor-ping-medium{color:#ffd45c}.monitor-ping-bad{color:#ff5f6d}
 
-.monitor-card-ip{
-  margin-top:7px;
-  color:#8297b2;
-  font-family:monospace;
-  font-size:13px;
-}
+.monitor-player-wrap{margin-top:15px}
+.monitor-player-head{display:flex;justify-content:space-between;color:#91a0b8;font-size:11px;margin-bottom:7px}
+.monitor-player-bar{height:7px;background:#172237;border-radius:999px;overflow:hidden}
+.monitor-player-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#35e6a0,#5b8cff);box-shadow:0 0 12px #35e6a055;transition:width .5s ease}
 
-.monitor-online,.monitor-offline{
-  display:flex;
-  align-items:center;
-  gap:7px;
-  white-space:nowrap;
-  font-size:12px;
-  font-weight:900;
-}
+.monitor-actions{display:flex;gap:8px;margin-top:15px}
+.monitor-action{flex:1;padding:9px 11px;border:1px solid #26344c;border-radius:9px;background:#111b2b;color:#fff;cursor:pointer;font-size:12px;font-weight:700;transition:.2s}
+.monitor-action:hover{border-color:#5b8cff;background:#162744}
+.monitor-update{margin-top:15px;color:#637590;font-size:10px;text-align:right}
 
-.monitor-online{color:#35e6a0;text-shadow:0 0 10px rgba(53,230,160,.35)}
-.monitor-offline{color:#ff5f6d}
-
-.monitor-online::first-letter{ text-shadow:0 0 10px #35e6a0; }
-
-.monitor-grid{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:9px;
-  margin-top:18px;
-}
-
-.monitor-box{
-  min-width:0;
-  padding:12px;
-  border:1px solid #1c3440;
-  border-radius:13px;
-  background:rgba(4,12,18,.65);
-  transition:.2s;
-}
-
-.monitor-card:hover .monitor-box{border-color:#275144}
-
-.monitor-label{
-  color:#637a91;
-  font-size:9px;
-  font-weight:900;
-  letter-spacing:1.1px;
-}
-
-.monitor-value{
-  margin-top:5px;
-  color:#f5f7ff;
-  font-size:15px;
-  font-weight:900;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-}
-
-.monitor-bar-head{
-  display:flex;
-  justify-content:space-between;
-  margin-top:17px;
-  margin-bottom:7px;
-  color:#8297ad;
-  font-size:11px;
-}
-
-.monitor-bar{
-  height:7px;
-  overflow:hidden;
-  border-radius:20px;
-  background:#111e27;
-}
-
-.monitor-bar > span{
-  display:block;
-  height:100%;
-  border-radius:20px;
-  background:linear-gradient(90deg,#1ebf82,#35e6a0,#7affc6);
-  box-shadow:0 0 12px rgba(53,230,160,.7);
-  transition:width .4s ease;
-}
-
-.monitor-card-actions{
-  display:flex;
-  gap:8px;
-  margin-top:17px;
-}
-
-.monitor-btn{
-  flex:1;
-  min-width:0;
-  padding:10px 12px;
-  border-radius:11px;
-  border:1px solid #274157;
-  background:#101e2d;
-  color:#fff;
-  font-size:12px;
-  font-weight:800;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.monitor-btn:hover{
-  border-color:#35e6a0;
-  box-shadow:0 0 14px rgba(53,230,160,.16);
-}
-
-.monitor-btn.players{
-  background:linear-gradient(135deg,#123a31,#102b2b);
-  border-color:#245f4b;
-}
-
-.monitor-card-time{
-  margin-top:12px;
-  color:#536a82;
-  font-size:10px;
-}
-
-/* Players modal */
-#playersOverlay .modal{
-  width:min(780px,100%);
-}
-
-.monitor-modal-server{
-  padding:16px;
-  margin-bottom:15px;
-  border-radius:15px;
-  border:1px solid #1c4e3c;
-  background:
-    radial-gradient(circle at top left,rgba(53,230,160,.12),transparent 45%),
-    #09151a;
-}
-
-.monitor-modal-server-name{
-  color:#fff;
-  font-size:19px;
-  line-height:1.4;
-  font-weight:900;
-}
-
-.monitor-modal-server-info{
-  margin-top:7px;
-  color:#8197ae;
-  font-family:monospace;
-  font-size:12px;
-  line-height:1.6;
-}
-
-.monitor-player-list{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  max-height:55vh;
-  overflow:auto;
-  padding-right:3px;
-}
-
-.monitor-player-row{
-  display:grid;
-  grid-template-columns:38px minmax(0,1fr) 90px 125px;
-  gap:10px;
-  align-items:center;
-  padding:12px;
-  border:1px solid #1d3042;
-  border-radius:12px;
-  background:linear-gradient(100deg,#0a131e,#0c1720);
-  transition:.18s;
-}
-
-.monitor-player-row:hover{
-  border-color:#35e6a0;
-  background:#0d1b20;
-  transform:translateX(2px);
-  box-shadow:0 0 15px rgba(53,230,160,.08);
-}
-
-.monitor-player-index{
-  width:28px;
-  height:28px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  border-radius:8px;
-  background:#15263a;
-  color:#7f9ab8;
-  font-size:11px;
-  font-weight:900;
-}
-
-.monitor-player-name{
-  min-width:0;
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
-  color:#fff;
-  font-weight:800;
-}
-
-.monitor-player-score{
-  color:#35e6a0;
-  text-align:right;
-  font-size:12px;
-  font-weight:900;
-}
-
-.monitor-player-time{
-  color:#8ca0b5;
-  text-align:right;
-  font-size:11px;
-}
-
-#playersOverlay .monitor-player-list::-webkit-scrollbar{width:7px}
-#playersOverlay .monitor-player-list::-webkit-scrollbar-track{background:#09111d}
-#playersOverlay .monitor-player-list::-webkit-scrollbar-thumb{background:#254936;border-radius:20px}
-#playersOverlay .monitor-player-list::-webkit-scrollbar-thumb:hover{background:#35e6a0}
-
-/* Professional mobile navigation */
-.mobile-menu-btn{display:none}
-
-@media(max-width:700px){
-  .mobile-menu-btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    width:42px;
-    height:42px;
-    margin-left:auto;
-    border:1px solid #2a3c58;
-    border-radius:11px;
-    background:#0e1828;
-    color:#fff;
-    font-size:20px;
-    cursor:pointer;
-  }
-
-  header .nav{position:relative}
-
-  header nav#mainNav{
-    display:none;
-    position:absolute;
-    left:0;
-    right:0;
-    top:64px;
-    z-index:100;
-    flex-direction:column;
-    align-items:stretch;
-    gap:4px;
-    padding:9px;
-    border:1px solid #26344c;
-    border-radius:14px;
-    background:rgba(8,13,22,.97);
-    box-shadow:0 18px 45px rgba(0,0,0,.5);
-    backdrop-filter:blur(16px);
-  }
-
-  header nav#mainNav.mobile-open{display:flex}
-
-  header nav#mainNav a{
-    display:block;
-    padding:12px 13px;
-    border-radius:9px;
-  }
-
-  header nav#mainNav a:hover{
-    background:#121f32;
-  }
-
-  #serverList{grid-template-columns:1fr}
-
-  .monitor-grid{grid-template-columns:1fr 1fr}
-
-  .monitor-card-head{flex-direction:column}
-
-  .monitor-card-actions{flex-direction:column}
-
-  .monitor-btn{width:100%}
-
-  .monitor-player-row{
-    grid-template-columns:32px minmax(0,1fr);
-  }
-
-  .monitor-player-score,
-  .monitor-player-time{
-    grid-column:2;
-    text-align:left;
-  }
-}
-
-@media(max-width:420px){
-  .monitor-inner{padding:15px}
-  .monitor-grid{gap:7px}
-  .monitor-box{padding:10px}
-  .monitor-card-name{font-size:16px}
-  .monitor-value{font-size:14px}
-}
+@media(max-width:1000px){.monitor-stats{grid-template-columns:repeat(3,1fr)}.monitor-top-server{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.monitor-stats{grid-template-columns:1fr 1fr}.monitor-server-grid{grid-template-columns:1fr}.monitor-top-server{grid-template-columns:1fr}.monitor-title{display:block}.monitor-live{margin-top:12px;display:inline-flex}}
+@media(max-width:450px){.monitor-stats{grid-template-columns:1fr}.monitor-metrics{grid-template-columns:1fr 1fr}}
 
 </style>
 </head>
@@ -1399,21 +1117,10 @@ footer{
   </div>
 
 
-  <button
-    id="mobileMenuBtn"
-    class="mobile-menu-btn"
-    type="button"
-    aria-label="Menyuni ochish"
-    aria-expanded="false"
-    onclick="toggleMobileMenu()">
-    ☰
-  </button>
-
-
-  <nav id="mainNav">
+  <nav>
 
     <a href="#servers">
-      Serverlar
+      Server Monitoring
     </a>
 
     <a href="#features">
@@ -1636,11 +1343,11 @@ footer{
     <div>
 
       <h2>
-        CS 1.6 Serverlar
+        Server Monitoring
       </h2>
 
       <p>
-        ONLINE serverlar avtomatik tepaga chiqariladi
+        O‘zbekiston CS 1.6 serverlari avtomatik monitoringi
       </p>
 
     </div>
@@ -1681,15 +1388,12 @@ footer{
   </div>
 
 
-  <div id="serverList"></div>
+  <div id="uzbMonitorDashboard"></div>
+
+  <div id="serverList" style="display:none"></div>
 
 
-  <div class="notice">
-
-    📡 Ma’lumotlar GitHub Actions orqali
-    CS 1.6 serverlaridan avtomatik tekshiriladi.
-
-  </div>
+  <div class="notice" style="display:none">📡 Live monitoring data</div>
 
 </section>
 
@@ -2460,156 +2164,211 @@ function esc(value){
 
 function render(){
 
-  const monitored = new Set([
-    "195.158.11.77:27015",
-    "195.158.11.77:27016",
-    "195.158.11.77:27017",
-    "195.158.11.77:27018",
-    "83.69.139.164:27016",
-    "83.69.139.164:27022",
-    "83.69.139.164:27020",
-    "83.69.139.164:27015",
-    "83.69.139.164:27014",
-    "195.158.4.109:27015",
-    "157.22.130.26:27015",
-    "195.158.4.108:27777",
-    "185.228.90.26:27002",
-    "84.54.82.234:27047",
-    "84.54.82.234:27015"
-  ]);
+  const query =
+    search.value
+      .toLowerCase()
+      .trim();
 
-  const monitoredData =
-    (Array.isArray(data) ? data : []).filter(function(server){
-      return monitored.has(String(server.ip || "").trim().toLowerCase());
+
+  let filtered =
+    data.filter(function(server){
+
+      return (
+        server.name +
+        " " +
+        server.ip +
+        " " +
+        server.map
+      )
+      .toLowerCase()
+      .includes(query);
+
     });
 
-  const q = String(search?.value || "").toLowerCase().trim();
-  const mode = sort?.value || "online";
-
-  let filtered = monitoredData.filter(function(server){
-    const haystack = [
-      server.name,
-      server.ip,
-      server.map
-    ].join(" ").toLowerCase();
-    return haystack.includes(q);
-  });
 
   filtered.sort(function(a,b){
-    if(mode === "players"){
-      return (Number(b.players)||0) - (Number(a.players)||0);
+
+    if(sort.value === "players"){
+
+      return (
+        (b.players || 0) -
+        (a.players || 0)
+      );
+
     }
-    if(mode === "ping"){
-      return (Number(a.ping)||9999) - (Number(b.ping)||9999);
+
+
+    if(sort.value === "ping"){
+
+      return (
+        (a.ping ?? 9999) -
+        (b.ping ?? 9999)
+      );
+
     }
-    if(mode === "name"){
-      return String(a.name||"").localeCompare(String(b.name||""));
+
+
+    if(sort.value === "name"){
+
+      return String(a.name)
+        .localeCompare(
+          String(b.name)
+        );
+
     }
-    return (Number(b.online)-Number(a.online)) ||
-           ((Number(b.players)||0)-(Number(a.players)||0));
+
+
+    return (
+      Number(b.online) -
+      Number(a.online)
+    ) ||
+    (
+      (b.players || 0) -
+      (a.players || 0)
+    );
+
   });
 
-  document.getElementById("serverCount").textContent = monitoredData.length;
-  document.getElementById("playerCount").textContent = monitoredData.reduce(function(total,server){
-    return total + (Number(server.players)||0);
-  },0);
 
   if(!filtered.length){
-    list.innerHTML = `
-      <div class="empty" style="grid-column:1/-1">
-        Monitoring serverlari topilmadi.
-      </div>
-    `;
+
+    list.innerHTML =
+      '<div class="empty">' +
+      'Server topilmadi.' +
+      '</div>';
+
     return;
+
   }
 
-  list.innerHTML = filtered.map(function(server){
 
-    const index = monitoredData.indexOf(server);
-    const players = Number(server.players)||0;
-    const maxPlayers = Number(server.maxPlayers ?? server.max_players ?? 0);
-    const safeMax = maxPlayers > 0 ? maxPlayers : Math.max(players,1);
-    const percent = Math.min(100,Math.round(players/safeMax*100));
-    const online = Boolean(server.online);
-    const playerList = Array.isArray(server.playerList) ? server.playerList : [];
+  list.innerHTML =
+    filtered.map(function(server){
 
-    return `
-      <article class="server monitor-card" onclick="openPlayers(${index})">
-        <div class="monitor-inner">
+      const index =
+        data.indexOf(server);
 
-          <div class="monitor-card-head">
-            <div style="min-width:0">
-              <div class="monitor-card-name">
-                ${esc(server.name || "Unnamed server")}
-              </div>
-              <div class="monitor-card-ip">
-                ${esc(server.ip || "")}
-              </div>
-            </div>
 
-            <div class="${online ? "monitor-online" : "monitor-offline"}">
-              ${online ? "🟢 ONLINE" : "🔴 OFFLINE"}
-            </div>
+      return `
+
+      <div class="server">
+
+        <div>
+
+          <div class="server-name">
+
+            ${esc(server.name)}
+
           </div>
 
-          <div class="monitor-grid">
-            <div class="monitor-box">
-              <div class="monitor-label">PLAYERS</div>
-              <div class="monitor-value">
-                ${players}/${maxPlayers || "?"}
-              </div>
-            </div>
 
-            <div class="monitor-box">
-              <div class="monitor-label">MAP</div>
-              <div class="monitor-value">
-                ${esc(server.map || "—")}
-              </div>
-            </div>
+          <div class="ip">
 
-            <div class="monitor-box">
-              <div class="monitor-label">PING</div>
-              <div class="monitor-value">
-                ${online && server.ping != null ? esc(server.ping) + " ms" : "—"}
-              </div>
-            </div>
+            ${esc(server.ip)}
 
-            <div class="monitor-box">
-              <div class="monitor-label">STATUS</div>
-              <div class="monitor-value">
-                ${online ? "LIVE" : "OFFLINE"}
-              </div>
-            </div>
-          </div>
-
-          <div class="monitor-bar-head">
-            <span>Server bandligi</span>
-            <span>${percent}%</span>
-          </div>
-
-          <div class="monitor-bar">
-            <span style="width:${percent}%"></span>
-          </div>
-
-          <div class="monitor-card-actions">
-            <button class="monitor-btn" onclick="event.stopPropagation();copyIp('${esc(server.ip || "")}',this)">
-              📋 IP nusxalash
-            </button>
-
-            <button class="monitor-btn players" onclick="event.stopPropagation();openPlayers(${index})">
-              👥 Players ${playerList.length || players}
-            </button>
-          </div>
-
-          <div class="monitor-card-time">
-            🕐 Live monitoring · ${online ? "Server ishlayapti" : "Server offline"}
           </div>
 
         </div>
-      </article>
-    `;
 
-  }).join("");
+
+        <div class="${
+          server.online
+            ? "online"
+            : "offline"
+        }">
+
+          ● ${
+            server.online
+              ? "ONLINE"
+              : "OFFLINE"
+          }
+
+        </div>
+
+
+        <div class="metric">
+
+          <b>
+
+            ${server.players ?? 0}/${
+              server.maxPlayers ?? 0
+            }
+
+          </b>
+
+          <small>
+            Players
+          </small>
+
+        </div>
+
+
+        <div class="metric">
+
+          <b>
+
+            ${esc(server.map || "—")}
+
+          </b>
+
+          <small>
+            Map
+          </small>
+
+        </div>
+
+
+        <div class="metric">
+
+          <b>
+
+            ${
+              server.ping != null
+                ? server.ping + " ms"
+                : "—"
+            }
+
+          </b>
+
+          <small>
+            Ping
+          </small>
+
+        </div>
+
+
+        <div class="actions">
+
+
+          <button
+            class="copy"
+            onclick="copyIp('${esc(server.ip)}',this)">
+
+            Copy IP
+
+          </button>
+
+
+          <button
+            class="players-btn"
+            onclick="openPlayers(${index})">
+
+            Players ${
+              server.playerList?.length ?? 0
+            }
+
+          </button>
+
+
+        </div>
+
+
+      </div>
+
+      `;
+
+    })
+    .join("");
 
 }
 
@@ -2649,111 +2408,89 @@ async function copyIp(ip,button){
    PLAYERS
 ===================================================== */
 
+function formatPlayerDuration(seconds){
+  const n=Math.max(0,Math.floor(Number(seconds||0)));
+  const h=Math.floor(n/3600);
+  const m=Math.floor((n%3600)/60);
+  const sec=n%60;
+  if(h) return h+" soat "+m+" daq.";
+  if(m) return m+" daq. "+sec+" sek.";
+  return sec+" sek.";
+}
+
 function openPlayers(index){
 
-  const monitored = new Set([
-    "195.158.11.77:27015",
-    "195.158.11.77:27016",
-    "195.158.11.77:27017",
-    "195.158.11.77:27018",
-    "83.69.139.164:27016",
-    "83.69.139.164:27022",
-    "83.69.139.164:27020",
-    "83.69.139.164:27015",
-    "83.69.139.164:27014",
-    "195.158.4.109:27015",
-    "157.22.130.26:27015",
-    "195.158.4.108:27777",
-    "185.228.90.26:27002",
-    "84.54.82.234:27047",
-    "84.54.82.234:27015"
-  ]);
+  const server =
+    data[index];
 
-  const monitoredData =
-    (Array.isArray(data) ? data : []).filter(function(server){
-      return monitored.has(String(server.ip || "").trim().toLowerCase());
-    });
-
-  const server = monitoredData[index];
-  if(!server) return;
-
-  document.getElementById("modalTitle").textContent = "Players";
-  document.getElementById("modalIp").textContent = server.ip || "";
-
-  const players = Array.isArray(server.playerList) ? server.playerList : [];
-  const maxPlayers = Number(server.maxPlayers ?? server.max_players ?? 0);
-  const currentPlayers = Number(server.players)||0;
-  const box = document.getElementById("playerBox");
-
-  function durationText(seconds){
-    const value = Number(seconds);
-    if(!Number.isFinite(value) || value < 0) return "—";
-
-    let total = Math.floor(value);
-    const days = Math.floor(total / 86400);
-    total %= 86400;
-    const hours = Math.floor(total / 3600);
-    total %= 3600;
-    const minutes = Math.floor(total / 60);
-    const secs = total % 60;
-
-    if(days > 0) return `${days} kun ${hours} soat`;
-    if(hours > 0) return `${hours} soat ${minutes} daq`;
-    if(minutes > 0) return `${minutes} daq ${secs} son`;
-    return `${secs} son`;
+  if(!server){
+    return;
   }
 
-  let html = `
-    <div class="monitor-modal-server">
-      <div class="monitor-modal-server-name">
-        ${esc(server.name || "Server")}
-      </div>
-      <div class="monitor-modal-server-info">
-        ${esc(server.ip || "")} ·
-        ${server.online ? "🟢 ONLINE" : "🔴 OFFLINE"} ·
-        ${currentPlayers}/${maxPlayers || "?"} ·
-        ${esc(server.map || "—")} ·
-        ${server.ping != null ? esc(server.ping) + " ms" : "Ping —"}
-      </div>
-    </div>
-  `;
+
+  document.getElementById(
+    "modalTitle"
+  ).textContent =
+    server.name || "Players";
+
+
+  document.getElementById(
+    "modalIp"
+  ).textContent =
+    server.ip || "";
+
+
+  const players =
+    server.playerList || [];
+
+
+  const box =
+    document.getElementById(
+      "playerBox"
+    );
+
 
   if(players.length){
-    html += `<div class="monitor-player-list">`;
 
-    players.forEach(function(player,playerIndex){
-      html += `
-        <div class="monitor-player-row">
-          <div class="monitor-player-index">${playerIndex + 1}</div>
+    box.innerHTML =
+      players.map(function(player){
 
-          <div class="monitor-player-name" title="${esc(player.name || "Unnamed")}">
-            ${esc(player.name || "Unnamed")}
+        return `
+        <div class="player">
+          <div style="min-width:0">
+            <b>${esc(player.name || "Unnamed")}</b>
+            <div class="score" style="margin-top:4px">⏱ ${formatPlayerDuration(player.duration)}</div>
           </div>
-
-          <div class="monitor-player-score">
-            SCORE: ${Number(player.score)||0}
-          </div>
-
-          <div class="monitor-player-time">
-            ⏱ ${durationText(player.duration)}
-          </div>
+          <div class="score">Score: ${player.score ?? 0}</div>
         </div>
-      `;
-    });
+        `;
 
-    html += `</div>`;
+      }).join("");
+
   }else{
-    html += `
+
+    box.innerHTML = `
+
       <div class="empty">
-        ${server.online
-          ? "Server online, lekin player ma'lumotlari hozir mavjud emas."
-          : "Server hozir OFFLINE."}
+
+        ${
+          server.online
+            ? "Hozir player ro‘yxati bo‘sh yoki server A2S_PLAYER javobini bermadi."
+            : "Server offline."
+        }
+
       </div>
+
     `;
+
   }
 
-  box.innerHTML = html;
-  document.getElementById("playersOverlay").style.display = "flex";
+
+  document.getElementById(
+    "playersOverlay"
+  ).style.display =
+    "flex";
+
 }
 
 
@@ -2775,58 +2512,1280 @@ async function load(){
 
   try{
 
-    /*
-      Cloudflare Assets eski snapshotni berishi mumkin.
-      Shuning uchun monitoring ma'lumoti GitHub'dagi
-      doimiy yangilanadigan servers.json'dan olinadi.
-    */
+    const response =
+      await fetch(
+        "https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json?live=" + Date.now(),
+        {cache:"no-store"}
+      );
 
-    const response = await fetch(
-      "https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json?live=" + Date.now(),
-      {
-        cache:"no-store"
-      }
-    );
 
     if(!response.ok){
-      throw new Error("servers.json error");
+
+      throw new Error(
+        "servers.json error"
+      );
+
     }
 
-    const json = await response.json();
 
-    data = Array.isArray(json.servers) ? json.servers : [];
+    const json =
+      await response.json();
 
-    document.getElementById("serverCount").textContent = data.length;
 
-    document.getElementById("playerCount").textContent = data.reduce(function(total,server){
-      return total + (Number(server.players)||0);
-    },0);
+    data =
+      Array.isArray(json.servers)
+        ? json.servers
+        : [];
 
-    document.getElementById("updatedAt").textContent = json.updatedAt
-      ? new Date(json.updatedAt * 1000).toLocaleString("uz-UZ")
-      : "—";
 
-    document.getElementById("platformStatus").textContent = "● ONLINE";
-    document.getElementById("platformStatus").className = "status ok";
+    document.getElementById(
+      "serverCount"
+    ).textContent =
+      data.length;
+
+
+    document.getElementById(
+      "playerCount"
+    ).textContent =
+      data.reduce(
+        function(total,server){
+
+          return total +
+            (Number(server.players) || 0);
+
+        },
+        0
+      );
+
+
+    document.getElementById(
+      "updatedAt"
+    ).textContent =
+      json.updatedAt
+        ? new Date(
+            json.updatedAt * 1000
+          ).toLocaleString("uz-UZ")
+        : "—";
+
+
+    document.getElementById(
+      "platformStatus"
+    ).textContent =
+      "● ONLINE";
+
+
+    document.getElementById(
+      "platformStatus"
+    ).className =
+      "status ok";
+
 
     render();
 
-    if(["admin","gl_admin"].includes(currentUserState?.role)){
-      loadAdminPanel();
-    }
+    if(["admin","gl_admin"].includes(currentUserState?.role)) loadAdminPanel();
+
 
   }catch(error){
 
-    document.getElementById("platformStatus").textContent = "● DATA ERROR";
-    document.getElementById("platformStatus").className = "status bad";
+    document.getElementById(
+      "platformStatus"
+    ).textContent =
+      "● DATA ERROR";
+
+
+    document.getElementById(
+      "platformStatus"
+    ).className =
+      "status bad";
+
 
     list.innerHTML = `
-      <div class="empty" style="grid-column:1/-1">
-        Server ma'lumotlarini yuklab bo'lmadi. Internet aloqasini yoki GitHub servers.json faylini tekshiring.
+
+      <div class="empty">
+
+        Server ma’lumotlarini yuklab bo‘lmadi.
+        /servers.json mavjudligini tekshiring.
+
       </div>
+
     `;
 
-    console.error("UZB SERVERS monitor:",error);
+  }
+
+}
+
+
+/* =====================================================
+   USER MENU
+===================================================== */
+
+function toggleUserMenu(){
+
+  const menu =
+    document.getElementById(
+      "userDropdown"
+    );
+
+  if(!menu){
+    return;
+  }
+
+  menu.classList.toggle("show");
+
+}
+
+
+function openProfileFromMenu(){
+
+  const dropdown =
+    document.getElementById(
+      "userDropdown"
+    );
+
+  if(dropdown){
+
+    dropdown.classList.remove(
+      "show"
+    );
+
+  }
+
+  openProfile();
+
+}
+
+
+document.addEventListener(
+  "click",
+  function(event){
+
+    const userMenu =
+      document.getElementById(
+        "userMenu"
+      );
+
+    const dropdown =
+      document.getElementById(
+        "userDropdown"
+      );
+
+    if(
+      userMenu &&
+      dropdown &&
+      !userMenu.contains(
+        event.target
+      )
+    ){
+
+      dropdown.classList.remove(
+        "show"
+      );
+
+    }
+
+  }
+);
+
+
+
+/* =====================================================
+   AVATAR UPLOAD / PERSISTENCE
+===================================================== */
+
+function setMenuAvatar(url){
+  const button = document.getElementById("userMenuBtn");
+  if(!button) return;
+  let avatar = document.getElementById("menuAvatar");
+  if(!avatar){
+    avatar = document.createElement("span");
+    avatar.id = "menuAvatar";
+    avatar.className = "menu-avatar";
+    button.prepend(avatar);
+  }
+  if(url){
+    avatar.innerHTML = `<img src="${esc(url)}" alt="Avatar" onerror="this.parentElement.textContent='👤'">`;
+  }else{
+    avatar.textContent = "👤";
+  }
+}
+
+function resizeAvatarJpg(file){
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 128;
+        canvas.height = 128;
+        const ctx = canvas.getContext("2d");
+        const size = Math.min(img.width,img.height);
+        const sx = (img.width-size)/2;
+        const sy = (img.height-size)/2;
+        ctx.drawImage(img,sx,sy,size,size,0,0,128,128);
+        let dataUrl = canvas.toDataURL("image/jpeg",0.60);
+        if(dataUrl.length > 90000) dataUrl = canvas.toDataURL("image/jpeg",0.45);
+        resolve(dataUrl);
+      };
+      img.onerror = reject;
+      img.src = reader.result;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function loadMenuAvatar(){
+  if(!currentUserState) return;
+  try{
+    const response = await fetch("/api/profile",{credentials:"same-origin",cache:"no-store"});
+    if(!response.ok){setMenuAvatar("");return;}
+    const result = await response.json();
+    setMenuAvatar(result.profile?.avatar_url || "");
+  }catch(error){setMenuAvatar("");}
+}
+
+function setupAvatarUpload(){
+  const input = document.getElementById("profileAvatarFile");
+  if(!input || input.dataset.bound) return;
+  input.dataset.bound = "1";
+  input.addEventListener("change",async function(){
+    const file = this.files?.[0];
+    if(!file) return;
+    if(file.type !== "image/jpeg"){
+      alert("Faqat JPG/JPEG rasm tanlang.");
+      this.value = "";
+      return;
+    }
+    if(file.size > 10 * 1024 * 1024){
+      alert("Rasm 10 MB dan kichik bo‘lsin.");
+      this.value = "";
+      return;
+    }
+    try{
+      selectedAvatarDataUrl = await resizeAvatarJpg(file);
+      const urlInput = document.getElementById("profileAvatarUrl");
+      if(urlInput) urlInput.value = "";
+      const box = document.getElementById("profileAvatar");
+      if(box) box.innerHTML = `<img src="${esc(selectedAvatarDataUrl)}" alt="Avatar">`;
+    }catch(error){
+      selectedAvatarDataUrl = "";
+      alert("Rasmni tayyorlab bo‘lmadi.");
+    }
+  });
+}
+
+function roleClass(role){
+  if(role === "gl_admin") return "role-gl-admin-name";
+  if(role === "admin") return "role-admin-name";
+  return "role-user-name";
+}
+
+/* =====================================================
+   ONLINE USERS
+===================================================== */
+
+async function sendHeartbeat(){
+  if(!currentUserState) return;
+  try{ await fetch("/api/presence",{method:"POST",credentials:"same-origin",cache:"no-store"}); }catch(error){}
+}
+
+async function loadOnlineUsers(){
+  if(!currentUserState){
+    document.getElementById("onlineCount").textContent = "0";
+    document.getElementById("onlineUsersList").innerHTML = `<div class="empty">Kirish qiling.</div>`;
+    return;
+  }
+  try{
+    await sendHeartbeat();
+    const response = await fetch("/api/online-users?x="+Date.now(),{credentials:"same-origin",cache:"no-store"});
+    if(!response.ok) return;
+    const result = await response.json();
+    document.getElementById("onlineCount").textContent = result.total || 0;
+    const box = document.getElementById("onlineUsersList");
+    if(!result.users?.length){box.innerHTML=`<div class="empty">Hozircha online foydalanuvchi yo‘q.</div>`;return;}
+    box.innerHTML = result.users.map(u=>`
+      <div class="online-user">
+        <div class="online-avatar">${u.avatar_url ? `<img src="${esc(u.avatar_url)}" alt="">` : "👤"}</div>
+        <div style="min-width:0">
+          <div class="online-user-name ${roleClass(u.role)}">${esc(u.first_name || u.username)}</div>
+          <div class="online-user-sub">@${esc(u.username)}</div>
+        </div>
+      </div>
+    `).join("");
+  }catch(error){}
+}
+
+/* =====================================================
+   CHAT
+===================================================== */
+
+function setChatEnabled(enabled){
+  document.getElementById("chatInput").disabled = !enabled;
+  document.getElementById("chatSend").disabled = !enabled;
+  document.getElementById("chatLoginNote").textContent = enabled ? "Xabarlar avtomatik yangilanadi." : "Chatda yozish uchun akkauntga kiring.";
+}
+
+function formatChatTime(timestamp){
+  return new Date(Number(timestamp)*1000).toLocaleString("uz-UZ",{hour:"2-digit",minute:"2-digit",day:"2-digit",month:"2-digit"});
+}
+
+async function loadChat(){
+  if(!currentUserState){
+    setChatEnabled(false);
+    document.getElementById("chatMessages").innerHTML = `<div class="empty">Chatni ko‘rish va yozish uchun akkauntga kiring.</div>`;
+    return;
+  }
+  try{
+    const response = await fetch("/api/chat?x="+Date.now(),{credentials:"same-origin",cache:"no-store"});
+    if(!response.ok) return;
+    const result = await response.json();
+    const box = document.getElementById("chatMessages");
+    const wasNearBottom = box.scrollHeight - box.scrollTop - box.clientHeight < 80;
+    if(!result.messages?.length){box.innerHTML=`<div class="empty">Hali xabarlar yo‘q. Birinchi xabarni yozing.</div>`;return;}
+    box.innerHTML = result.messages.map(m=>{
+      const canEdit = currentUserState && Number(m.user_id) === Number(currentUserState.id);
+      return `
+      <div class="chat-message">
+        <div class="chat-avatar">${m.avatar_url ? `<img src="${esc(m.avatar_url)}" alt="">` : "👤"}</div>
+        <div class="chat-bubble">
+          <div class="chat-meta"><span class="chat-name ${roleClass(m.role)}">${esc(m.first_name || m.username)}</span><span class="chat-time">@${esc(m.username)} · ${formatChatTime(m.created_at)}</span></div>
+          <div class="chat-text">${esc(m.message)}</div>
+          ${canEdit ? `<div class="chat-actions"><button type="button" class="chat-edit-btn" onclick='editChatMessage(${Number(m.id)}, ${JSON.stringify(m.message)})'>✏️ Tahrirlash</button></div>` : ""}
+        </div>
+      </div>`;
+    }).join("");
+    if(wasNearBottom || !chatReady) box.scrollTop = box.scrollHeight;
+    chatReady = true;
+  }catch(error){}
+}
+
+async function editChatMessage(messageId, oldMessage){
+  if(!currentUserState){
+    alert("Avval akkauntga kiring.");
+    return;
+  }
+
+  const next = prompt("Xabarni tahrirlash:", oldMessage);
+  if(next === null) return;
+
+  const message = next.trim();
+  if(!message){
+    alert("Xabar bo‘sh bo‘lishi mumkin emas.");
+    return;
+  }
+  if(message.length > 1000){
+    alert("Xabar 1000 belgidan oshmasin.");
+    return;
+  }
+
+  try{
+    const response = await fetch("/api/chat",{
+      method:"PUT",
+      headers:{"Content-Type":"application/json"},
+      credentials:"same-origin",
+      body:JSON.stringify({message_id:Number(messageId),message})
+    });
+    const result = await response.json().catch(()=>({}));
+    if(!response.ok) throw new Error(result.error || "Xabar tahrirlanmadi.");
+    await loadChat();
+  }catch(error){
+    alert(error.message || "Xabar tahrirlanmadi.");
+  }
+}
+
+async function sendChatMessage(event){
+  event.preventDefault();
+  if(!currentUserState) return;
+  const input = document.getElementById("chatInput");
+  const message = input.value.trim();
+  if(!message) return;
+  input.disabled = true;
+  try{
+    const response = await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({message})});
+    const result = await response.json().catch(()=>({}));
+    if(!response.ok) throw new Error(result.error || "Xabar yuborilmadi.");
+    input.value = "";
+    await loadChat();
+    await sendHeartbeat();
+  }catch(error){alert(error.message || "Xabar yuborilmadi.");}
+  finally{input.disabled = false;input.focus();}
+}
+
+/* =====================================================
+   ADMIN PANEL
+===================================================== */
+
+async function loadAdminPanel(){
+  if(!currentUserState || !["admin","gl_admin"].includes(currentUserState.role)) return;
+  try{
+    const statsResponse = await fetch("/api/admin/stats?x="+Date.now(),{credentials:"same-origin",cache:"no-store"});
+    const stats = await statsResponse.json();
+    if(statsResponse.ok){
+      document.getElementById("adminTotalUsers").textContent=stats.total_users||0;
+      document.getElementById("adminOnlineUsers").textContent=stats.online||0;
+      document.getElementById("adminTotalMessages").textContent=stats.chat_messages||0;
+      document.getElementById("adminServerCount").textContent=data.length;
+      document.getElementById("adminPlayerCount").textContent=data.reduce((t,s)=>t+(Number(s.players)||0),0);
+    }
+
+    const response = await fetch("/api/admin/users?x="+Date.now(),{credentials:"same-origin",cache:"no-store"});
+    const result = await response.json();
+    if(!response.ok) throw new Error(result.error || "Admin ma’lumotlari yuklanmadi.");
+
+    const body = document.getElementById("adminUsersBody");
+    body.innerHTML = result.users.map(u=>{
+      const canManage = u.id !== currentUserState.id && (currentUserState.role === "gl_admin" ? u.role !== "gl_admin" : u.role === "user");
+      const roleControl = currentUserState.role === "gl_admin" && u.id !== currentUserState.id && u.role !== "gl_admin"
+        ? `<select class="admin-role" onchange="changeUserRole(${u.id},this.value)">
+            <option value="user" ${u.role==="user" ? "selected" : ""}>user</option>
+            <option value="admin" ${u.role==="admin" ? "selected" : ""}>admin</option>
+          </select>`
+        : `<span class="admin-role">${esc(u.role)}</span>`;
+
+      const banButton = canManage
+        ? `<button class="copy" onclick="toggleUserBan(${u.id},${u.is_banned ? "false" : "true"})">${u.is_banned ? "Unban" : "Cheklash"}</button>`
+        : "—";
+      const detailButton = `<button class="copy" onclick="viewUserDetails(${u.id})">Ko‘rish</button>`;
+
+      return `
+      <tr>
+        <td>${u.id}</td>
+        <td><b class="${roleClass(u.role)}">${esc(u.username)}</b>${u.first_name ? `<div class="online-user-sub">${esc(u.first_name)} ${esc(u.last_name||"")}</div>` : ""}</td>
+        <td>${esc(u.email)}</td>
+        <td class="${u.online ? "admin-online" : "admin-offline"}">${u.is_banned ? "🚫 CHEKLANGAN" : (u.online ? "ONLINE" : "offline")}</td>
+        <td>${roleControl}</td>
+        <td>${new Date(Number(u.created_at)*1000).toLocaleDateString("uz-UZ")}</td>
+        <td><div class="actions">${detailButton}${banButton}</div></td>
+      </tr>`;
+    }).join("") || `<tr><td colspan="7">Foydalanuvchilar yo‘q.</td></tr>`;
+  }catch(error){alert(error.message || "Admin panel xatosi.");}
+}
+
+async function changeUserRole(userId,role){
+  if(!currentUserState || currentUserState.role !== "gl_admin") return;
+  try{
+    const response=await fetch("/api/admin/role",{method:"POST",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({user_id:userId,make_admin:role === "admin"})});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok) throw new Error(result.error || "Role o‘zgartirilmadi.");
+    await loadAdminPanel();
+  }catch(error){alert(error.message || "Role o‘zgartirilmadi.");await loadAdminPanel();}
+}
+
+async function toggleUserBan(userId,banned){
+  try{
+    const response=await fetch("/api/admin/ban",{method:"POST",headers:{"Content-Type":"application/json"},credentials:"same-origin",body:JSON.stringify({user_id:userId,banned})});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok) throw new Error(result.error || "Foydalanuvchi holatini o‘zgartirib bo‘lmadi.");
+    await loadAdminPanel();
+  }catch(error){alert(error.message || "Amal bajarilmadi.");await loadAdminPanel();}
+}
+
+async function viewUserDetails(userId){
+  if(!currentUserState || !["admin","gl_admin"].includes(currentUserState.role)) return;
+  try{
+    const response=await fetch("/api/admin/user?id="+encodeURIComponent(userId),{credentials:"same-origin",cache:"no-store"});
+    const result=await response.json().catch(()=>({}));
+    if(!response.ok) throw new Error(result.error || "Foydalanuvchi ma’lumotlari olinmadi.");
+    const u=result.user || result;
+    const p=u.profile || u;
+    document.getElementById("userDetailsBody").innerHTML=`
+      <div class="profile-grid">
+        <div class="form-group"><label>ID</label><input value="${esc(String(u.id ?? "—"))}" disabled></div>
+        <div class="form-group"><label>Login</label><input value="${esc(u.username || "—")}" disabled></div>
+        <div class="form-group"><label>Email</label><input value="${esc(u.email || "—")}" disabled></div>
+        <div class="form-group"><label>Role</label><input value="${esc(u.role || "user")}" disabled></div>
+        <div class="form-group"><label>Ism</label><input value="${esc(p.first_name || "—")}" disabled></div>
+        <div class="form-group"><label>Familiya</label><input value="${esc(p.last_name || "—")}" disabled></div>
+        <div class="form-group"><label>Telegram</label><input value="${esc(p.telegram || "—")}" disabled></div>
+        <div class="form-group"><label>Telefon</label><input value="${esc(p.phone || "—")}" disabled></div>
+        <div class="form-group"><label>Steam ID</label><input value="${esc(p.steam_id || "—")}" disabled></div>
+        <div class="form-group"><label>Server nickname</label><input value="${esc(p.server_nickname || "—")}" disabled></div>
+      </div>`;
+    document.getElementById("userDetailsOverlay").style.display="flex";
+  }catch(error){alert(error.message || "Ma’lumotlar yuklanmadi.");}
+}
+
+function closeUserDetails(){
+  const el=document.getElementById("userDetailsOverlay");
+  if(el) el.style.display="none";
+}
+
+/* =====================================================
+   OPEN PROFILE
+===================================================== */
+
+async function openProfile(){
+
+  try{
+
+    const response =
+      await fetch(
+        "/api/profile",
+        {
+          method:"GET",
+          credentials:"same-origin",
+          cache:"no-store"
+        }
+      );
+
+
+    const result =
+      await response.json();
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.error ||
+        "Profilni yuklab bo‘lmadi."
+      );
+
+    }
+
+
+    const user =
+      result.user || {};
+
+
+    const profile =
+      result.profile || {};
+
+
+    document.getElementById(
+      "profileUsername"
+    ).value =
+      user.username || "";
+
+
+    document.getElementById(
+      "profileEmail"
+    ).value =
+      user.email || "";
+
+
+    document.getElementById(
+      "profileFirstName"
+    ).value =
+      profile.first_name || "";
+
+
+    document.getElementById(
+      "profileLastName"
+    ).value =
+      profile.last_name || "";
+
+
+    document.getElementById(
+      "profileTelegram"
+    ).value =
+      profile.telegram || "";
+
+
+    document.getElementById(
+      "profilePhone"
+    ).value =
+      profile.phone || "";
+
+
+    document.getElementById(
+      "profileSteamId"
+    ).value =
+      profile.steam_id || "";
+
+
+    document.getElementById(
+      "profileServerNick"
+    ).value =
+      profile.server_nickname || "";
+
+
+    selectedAvatarDataUrl = "";
+
+    document.getElementById(
+      "profileAvatarUrl"
+    ).value =
+      profile.avatar_url || "";
+
+    const avatarFile = document.getElementById("profileAvatarFile");
+    if(avatarFile) avatarFile.value = "";
+    setupAvatarUpload();
+
+
+    document.getElementById(
+      "profileHeaderName"
+    ).textContent =
+      profile.first_name ||
+      user.username ||
+      "Foydalanuvchi";
+
+
+    document.getElementById(
+      "profileHeaderLogin"
+    ).textContent =
+      "@" +
+      (user.username || "");
+
+
+    const avatarBox =
+      document.getElementById(
+        "profileAvatar"
+      );
+
+
+    if(profile.avatar_url){
+
+      avatarBox.innerHTML =
+
+        `<img
+          src="${esc(profile.avatar_url)}"
+          alt="Avatar"
+          onerror="this.parentElement.textContent='👤'"
+        >`;
+
+    }else{
+
+      avatarBox.textContent =
+        "👤";
+
+    }
+
+
+    document.getElementById(
+      "profileOverlay"
+    ).style.display =
+      "flex";
+
+
+  }catch(error){
+
+    alert(
+      error.message ||
+      "Profilni yuklab bo‘lmadi."
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   CLOSE PROFILE
+===================================================== */
+
+function closeProfile(){
+
+  document.getElementById(
+    "profileOverlay"
+  ).style.display =
+    "none";
+
+}
+
+
+/* =====================================================
+   SAVE PROFILE
+===================================================== */
+
+async function saveProfile(event){
+
+  event.preventDefault();
+
+
+  const button =
+    document.getElementById(
+      "profileSave"
+    );
+
+
+  button.disabled =
+    true;
+
+
+  button.textContent =
+    "Saqlanmoqda...";
+
+
+  const profile = {
+
+    first_name:
+      document.getElementById(
+        "profileFirstName"
+      ).value.trim(),
+
+
+    last_name:
+      document.getElementById(
+        "profileLastName"
+      ).value.trim(),
+
+
+    telegram:
+      document.getElementById(
+        "profileTelegram"
+      ).value.trim(),
+
+
+    phone:
+      document.getElementById(
+        "profilePhone"
+      ).value.trim(),
+
+
+    steam_id:
+      document.getElementById(
+        "profileSteamId"
+      ).value.trim(),
+
+
+    server_nickname:
+      document.getElementById(
+        "profileServerNick"
+      ).value.trim(),
+
+
+    avatar_url:
+      selectedAvatarDataUrl ||
+      document.getElementById(
+        "profileAvatarUrl"
+      ).value.trim()
+
+  };
+
+
+  try{
+
+    const response =
+      await fetch(
+        "/api/profile",
+        {
+          method:"PUT",
+
+          headers:{
+            "Content-Type":
+              "application/json"
+          },
+
+          credentials:
+            "same-origin",
+
+          body:
+            JSON.stringify(profile)
+        }
+      );
+
+
+    const result =
+      await response.json()
+        .catch(
+          function(){
+
+            return {
+              error:
+                "Server javobi noto‘g‘ri."
+            };
+
+          }
+        );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.error ||
+        "Profilni saqlab bo‘lmadi."
+      );
+
+    }
+
+
+    /* Avatarni darhol yangilaymiz */
+
+    const avatarBox =
+      document.getElementById(
+        "profileAvatar"
+      );
+
+
+    if(profile.avatar_url){
+
+      avatarBox.innerHTML =
+
+        `<img
+          src="${esc(profile.avatar_url)}"
+          alt="Avatar"
+          onerror="this.parentElement.textContent='👤'"
+        >`;
+
+    }else{
+
+      avatarBox.textContent =
+        "👤";
+
+    }
+
+
+    document.getElementById(
+      "profileHeaderName"
+    ).textContent =
+      profile.first_name ||
+      document.getElementById(
+        "profileUsername"
+      ).value ||
+      "Foydalanuvchi";
+
+
+    selectedAvatarDataUrl = "";
+    setMenuAvatar(profile.avatar_url || "");
+
+    alert(
+      "Profil muvaffaqiyatli saqlandi!"
+    );
+
+
+    closeProfile();
+
+
+  }catch(error){
+
+    alert(
+      error.message ||
+      "Profilni saqlashda xatolik."
+    );
+
+  }finally{
+
+    button.disabled =
+      false;
+
+    button.textContent =
+      "Saqlash";
+
+  }
+
+}
+
+
+/* =====================================================
+   AUTH OPEN
+===================================================== */
+
+function openAuth(mode){
+
+  authMode =
+    mode;
+
+
+  document.getElementById(
+    "authOverlay"
+  ).style.display =
+    "flex";
+
+
+  document.getElementById(
+    "authTitle"
+  ).textContent =
+    mode === "login"
+      ? "Kirish"
+      : "Ro‘yxatdan o‘tish";
+
+
+  document.getElementById(
+    "authSubmit"
+  ).textContent =
+    mode === "login"
+      ? "Kirish"
+      : "Akkaunt yaratish";
+
+
+  document.getElementById(
+    "emailGroup"
+  ).style.display =
+    mode === "login"
+      ? "none"
+      : "block";
+
+
+  document.getElementById(
+    "authLogin"
+  ).value = "";
+
+
+  document.getElementById(
+    "authEmail"
+  ).value = "";
+
+
+  document.getElementById(
+    "authPassword"
+  ).value = "";
+
+
+  const switchBox =
+    document.getElementById(
+      "authSwitch"
+    );
+
+
+  if(mode === "login"){
+
+    switchBox.innerHTML = `
+
+      Akkauntingiz yo‘qmi?
+
+      <button
+        id="authSwitchBtn"
+        class="close"
+        type="button">
+
+        Ro‘yxatdan o‘tish
+
+      </button>
+
+    `;
+
+  }else{
+
+    switchBox.innerHTML = `
+
+      Akkauntingiz bormi?
+
+      <button
+        id="authSwitchBtn"
+        class="close"
+        type="button">
+
+        Kirish
+
+      </button>
+
+    `;
+
+  }
+
+
+  document.getElementById(
+    "authSwitchBtn"
+  ).onclick =
+    function(){
+
+      openAuth(
+        mode === "login"
+          ? "register"
+          : "login"
+      );
+
+    };
+
+}
+
+
+/* =====================================================
+   CLOSE AUTH
+===================================================== */
+
+function closeAuth(){
+
+  document.getElementById(
+    "authOverlay"
+  ).style.display =
+    "none";
+
+}
+
+
+/* =====================================================
+   LOGIN / REGISTER
+===================================================== */
+
+async function handleAuth(event){
+
+  event.preventDefault();
+
+
+  const login =
+    document.getElementById(
+      "authLogin"
+    ).value.trim();
+
+
+  const email =
+    document.getElementById(
+      "authEmail"
+    ).value.trim();
+
+
+  const password =
+    document.getElementById(
+      "authPassword"
+    ).value;
+
+
+  const submit =
+    document.getElementById(
+      "authSubmit"
+    );
+
+
+  submit.disabled =
+    true;
+
+
+  submit.textContent =
+    "Yuklanmoqda...";
+
+
+  try{
+
+    const endpoint =
+      authMode === "register"
+        ? "/api/register"
+        : "/api/login";
+
+
+    const body =
+      authMode === "register"
+        ? {
+            username:login,
+            email:email,
+            password:password
+          }
+        : {
+            login:login,
+            password:password
+          };
+
+
+    const response =
+      await fetch(
+        endpoint,
+        {
+          method:"POST",
+
+          headers:{
+            "Content-Type":
+              "application/json"
+          },
+
+          credentials:
+            "same-origin",
+
+          body:
+            JSON.stringify(body)
+        }
+      );
+
+
+    const result =
+      await response.json()
+        .catch(
+          function(){
+
+            return {
+              error:
+                "Server javobi noto‘g‘ri."
+            };
+
+          }
+        );
+
+
+    if(!response.ok){
+
+      throw new Error(
+        result.error ||
+        "Xatolik yuz berdi."
+      );
+
+    }
+
+
+    closeAuth();
+
+
+    alert(
+      authMode === "register"
+        ? "Akkaunt muvaffaqiyatli yaratildi: " +
+          result.user.username
+
+        : "Xush kelibsiz, " +
+          result.user.username +
+          "!"
+    );
+
+
+    updateAuthButtons(
+      result.user
+    );
+
+
+  }catch(error){
+
+    alert(
+      error.message ||
+      "Xatolik yuz berdi."
+    );
+
+  }finally{
+
+    submit.disabled =
+      false;
+
+    submit.textContent =
+      authMode === "login"
+        ? "Kirish"
+        : "Akkaunt yaratish";
+
+  }
+
+}
+
+
+/* =====================================================
+   AUTH BUTTONS
+===================================================== */
+
+function updateAuthButtons(user){
+
+  currentUserState = user || null;
+
+  const loginBtn = document.getElementById("loginBtn");
+  const userMenu = document.getElementById("userMenu");
+  const username = document.getElementById("menuUsername");
+  const adminPanel = document.getElementById("adminPanel");
+  const adminNavLink = document.getElementById("adminNavLink");
+
+  if(user){
+    if(loginBtn) loginBtn.style.display = "none";
+    if(userMenu) userMenu.style.display = "block";
+    if(username){
+      username.textContent = user.username || "User";
+      username.className = roleClass(user.role);
+    }
+    const userMenuBtn = document.getElementById("userMenuBtn");
+    if(userMenuBtn) userMenuBtn.classList.toggle("gl-admin-button", user.role === "gl_admin");
+    setChatEnabled(true);
+    loadMenuAvatar();
+    sendHeartbeat();
+    loadOnlineUsers();
+    loadChat();
+    if(!presenceTimer) presenceTimer=setInterval(()=>{sendHeartbeat();loadOnlineUsers();},20000);
+    if(!chatTimer) chatTimer=setInterval(loadChat,3000);
+    if(["admin","gl_admin"].includes(user.role)){
+      if(adminPanel) adminPanel.style.display="block";
+      if(adminNavLink) adminNavLink.style.display="inline";
+      loadAdminPanel();
+    }else{
+      if(adminPanel) adminPanel.style.display="none";
+      if(adminNavLink) adminNavLink.style.display="none";
+    }
+  }else{
+    if(loginBtn) loginBtn.style.display = "inline-block";
+    if(userMenu) userMenu.style.display = "none";
+    const userMenuBtn = document.getElementById("userMenuBtn");
+    if(userMenuBtn) userMenuBtn.classList.remove("gl-admin-button");
+    const username = document.getElementById("menuUsername");
+    if(username) username.className = "";
+    setMenuAvatar("");
+    setChatEnabled(false);
+    currentUserState = null;
+    if(adminPanel) adminPanel.style.display="none";
+    if(adminNavLink) adminNavLink.style.display="none";
+    loadOnlineUsers();
+    loadChat();
+  }
+
+}
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+async function logoutUser(){
+
+  try{
+
+    await fetch(
+      "/api/logout",
+      {
+        method:"POST",
+        credentials:"same-origin"
+      }
+    );
+
+  }finally{
+
+    const dropdown =
+      document.getElementById(
+        "userDropdown"
+      );
+
+    if(dropdown){
+
+      dropdown.classList.remove(
+        "show"
+      );
+
+    }
+
+
+    updateAuthButtons(
+      null
+    );
+
+  }
+
+}
+
+
+/* =====================================================
+   CHECK LOGIN
+===================================================== */
+
+async function checkAuth(){
+
+  try{
+
+    const response =
+      await fetch(
+        "/api/me",
+        {
+          credentials:
+            "same-origin",
+          cache:"no-store"
+        }
+      );
+
+
+    if(!response.ok){
+
+      updateAuthButtons(
+        null
+      );
+
+      return;
+
+    }
+
+
+    const result =
+      await response.json();
+
+
+    updateAuthButtons(
+      result.authenticated
+        ? result.user
+        : null
+    );
+
+
+  }catch(error){
+
+    updateAuthButtons(
+      null
+    );
+
   }
 
 }
@@ -2873,29 +3832,228 @@ setInterval(
 
 </script>
 
+
+
+<script>
+/* =========================================================
+   UZB SERVERS — RESTORED PREMIUM LIVE MONITOR
+   - Restored dashboard appearance
+   - Live GitHub servers.json with local fallback
+   - 60-second browser refresh
+   - Correct root updatedAt timestamp
+   - Players modal uses nick / score / time
+========================================================= */
+(function(){
+  "use strict";
+
+  const DASHBOARD_ID = "uzbMonitorDashboard";
+  const LIVE_URL = "https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json";
+  let dashboardServers = [];
+  let dashboardUpdatedAt = 0;
+
+  function dEsc(value){
+    return String(value ?? "").replace(/[&<>"']/g,function(m){
+      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m];
+    });
+  }
+
+  function maxPlayersOf(server){
+    return Number(server.maxPlayers ?? server.max_players ?? server.maxplayers ?? 0);
+  }
+
+  function playersOf(server){
+    return Number(server.players ?? server.playerCount ?? 0);
+  }
+
+  function pingClass(ping){
+    ping = Number(ping || 0);
+    if(ping <= 80) return "monitor-ping-good";
+    if(ping <= 160) return "monitor-ping-medium";
+    return "monitor-ping-bad";
+  }
+
+  function formatTime(timestamp){
+    if(!timestamp) return "—";
+    const n = Number(timestamp);
+    const d = new Date(n < 100000000000 ? n * 1000 : n);
+    return d.toLocaleString("uz-UZ",{
+      day:"2-digit",month:"2-digit",year:"numeric",
+      hour:"2-digit",minute:"2-digit",second:"2-digit"
+    });
+  }
+
+  function formatDuration(seconds){
+    const n = Math.max(0,Math.floor(Number(seconds || 0)));
+    const h = Math.floor(n/3600);
+    const m = Math.floor((n%3600)/60);
+    const s = n%60;
+    if(h) return `${h} soat ${m} daq.`;
+    if(m) return `${m} daq. ${s} sek.`;
+    return `${s} sek.`;
+  }
+
+  function copyDashboardIP(ip,button){
+    const done=function(){
+      const old=button.textContent;
+      button.textContent="Nusxalandi ✓";
+      setTimeout(function(){button.textContent=old},1200);
+    };
+    if(navigator.clipboard && window.isSecureContext){
+      navigator.clipboard.writeText(ip).then(done).catch(function(){});
+    }else{
+      const ta=document.createElement("textarea");
+      ta.value=ip; document.body.appendChild(ta); ta.select();
+      try{document.execCommand("copy");done();}catch(e){}
+      ta.remove();
+    }
+  }
+
+  function renderDashboard(){
+    const root=document.getElementById(DASHBOARD_ID);
+    if(!root) return;
+
+    const total=dashboardServers.length;
+    const online=dashboardServers.filter(s=>!!s.online).length;
+    const offline=total-online;
+    const players=dashboardServers.reduce((sum,s)=>sum+playersOf(s),0);
+    const onlineServers=dashboardServers.filter(s=>!!s.online && Number(s.ping)>0);
+    const avgPing=onlineServers.length
+      ? Math.round(onlineServers.reduce((sum,s)=>sum+Number(s.ping||0),0)/onlineServers.length)
+      : 0;
+    const topServer=dashboardServers.slice().sort((a,b)=>playersOf(b)-playersOf(a))[0];
+
+    root.innerHTML=`
+      <section class="monitor-dashboard">
+        <div class="monitor-title">
+          <div>
+            <h2>Server Monitoring</h2>
+            <p>O‘zbekiston CS 1.6 serverlari avtomatik monitoringi</p>
+          </div>
+          <div class="monitor-live"><span class="monitor-live-dot"></span> LIVE MONITOR</div>
+        </div>
+
+        <div class="monitor-stats">
+          <div class="monitor-stat"><div class="monitor-stat-label">Jami server</div><div class="monitor-stat-value monitor-blue">${total}</div><div class="monitor-stat-sub">monitoringdagi serverlar</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">Online</div><div class="monitor-stat-value monitor-online">${online}</div><div class="monitor-stat-sub">faol serverlar</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">Offline</div><div class="monitor-stat-value monitor-offline">${offline}</div><div class="monitor-stat-sub">javob bermayotgan serverlar</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">O‘yinchilar</div><div class="monitor-stat-value monitor-yellow">${players}</div><div class="monitor-stat-sub">barcha serverlarda</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">O‘rtacha ping</div><div class="monitor-stat-value monitor-blue">${avgPing} ms</div><div class="monitor-stat-sub">online serverlar</div></div>
+        </div>
+
+        ${topServer ? `
+        <div class="monitor-top-server">
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Eng ko‘p o‘yinchili server</div><div class="monitor-highlight-name">${dEsc(topServer.name)}</div><div class="monitor-highlight-ip">${dEsc(topServer.ip)}</div></div>
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Players</div><div class="monitor-highlight-value monitor-online">${playersOf(topServer)}/${maxPlayersOf(topServer) || "—"}</div></div>
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Map</div><div class="monitor-highlight-value">${dEsc(topServer.map || "—")}</div></div>
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Ping</div><div class="monitor-highlight-value ${pingClass(topServer.ping)}">${topServer.online ? Number(topServer.ping||0)+" ms" : "—"}</div></div>
+        </div>` : ""}
+
+        <div class="monitor-server-grid">
+          ${dashboardServers.map(renderServerCard).join("")}
+        </div>
+
+        <div class="monitor-update" style="font-size:11px;text-align:left;margin-top:16px">
+          Ma’lumotlar yangilangan: <b>${formatTime(dashboardUpdatedAt)}</b> · Brauzer refresh: har 60 soniyada
+        </div>
+      </section>`;
+
+    root.querySelectorAll("[data-dashboard-copy]").forEach(function(button){
+      button.addEventListener("click",function(){copyDashboardIP(button.dataset.dashboardCopy,button);});
+    });
+    root.querySelectorAll("[data-dashboard-players]").forEach(function(button){
+      button.addEventListener("click",function(){
+        const index=Number(button.dataset.dashboardPlayers);
+        if(typeof window.openPlayers==="function") window.openPlayers(index);
+      });
+    });
+  }
+
+  function renderServerCard(server,index){
+    const players=playersOf(server);
+    const max=Math.max(maxPlayersOf(server),1);
+    const percentage=Math.min(100,Math.round(players/max*100));
+    const online=!!server.online;
+    return `
+      <article class="monitor-server-card ${online?"online-card":"offline-card"}">
+        <div class="monitor-server-head">
+          <div><div class="monitor-server-name">${dEsc(server.name)}</div><div class="monitor-server-ip">${dEsc(server.ip)}</div></div>
+          <div class="monitor-status ${online?"online":"offline"}"><span class="monitor-status-dot"></span>${online?"ONLINE":"OFFLINE"}</div>
+        </div>
+        <div class="monitor-metrics">
+          <div class="monitor-metric"><div class="monitor-metric-label">PLAYERS</div><div class="monitor-metric-value">${players}/${maxPlayersOf(server)||"—"}</div></div>
+          <div class="monitor-metric"><div class="monitor-metric-label">MAP</div><div class="monitor-metric-value">${dEsc(server.map||"—")}</div></div>
+          <div class="monitor-metric"><div class="monitor-metric-label">PING</div><div class="monitor-metric-value ${pingClass(server.ping)}">${online?Number(server.ping||0)+" ms":"—"}</div></div>
+        </div>
+        <div class="monitor-player-wrap"><div class="monitor-player-head"><span>Server bandligi</span><span>${percentage}%</span></div><div class="monitor-player-bar"><div class="monitor-player-fill" style="width:${percentage}%"></div></div></div>
+        <div class="monitor-actions">
+          <button class="monitor-action" type="button" data-dashboard-copy="${dEsc(server.ip)}">📋 IP nusxalash</button>
+          <button class="monitor-action" type="button" data-dashboard-players="${index}">👥 Players ${Array.isArray(server.playerList)?server.playerList.length:players}</button>
+        </div>
+        <div class="monitor-update">Oxirgi tekshiruv: ${formatTime(dashboardUpdatedAt)}</div>
+      </article>`;
+  }
+
+  async function getServerData(){
+    const urls=[
+      LIVE_URL+"?live="+Date.now(),
+      "/servers.json?live="+Date.now()
+    ];
+    let lastError=null;
+    for(const url of urls){
+      try{
+        const response=await fetch(url,{cache:"no-store"});
+        if(!response.ok) throw new Error("HTTP "+response.status);
+        const json=await response.json();
+        if(!Array.isArray(json.servers)) throw new Error("servers.json format error");
+        return json;
+      }catch(error){lastError=error;}
+    }
+    throw lastError || new Error("Server ma’lumotlari yuklanmadi");
+  }
+
+  async function loadDashboard(){
+    try{
+      const json=await getServerData();
+      dashboardServers=json.servers;
+      dashboardUpdatedAt=json.updatedAt || Date.now();
+
+      /* Base site/player modal/admin panel ham ayni live ma’lumotni ishlatadi. */
+      if(Array.isArray(window.__uzbDataTarget)){
+        window.__uzbDataTarget.length=0;
+        window.__uzbDataTarget.push(...dashboardServers);
+      }
+      if(typeof data!=="undefined") data=dashboardServers;
+
+      const count=document.getElementById("serverCount");
+      const countPlayers=document.getElementById("playerCount");
+      const updated=document.getElementById("updatedAt");
+      const status=document.getElementById("platformStatus");
+      if(count) count.textContent=dashboardServers.length;
+      if(countPlayers) countPlayers.textContent=dashboardServers.reduce((t,s)=>t+playersOf(s),0);
+      if(updated) updated.textContent=formatTime(dashboardUpdatedAt);
+      if(status){status.textContent="● ONLINE";status.className="status ok";}
+
+      renderDashboard();
+      if(typeof loadAdminPanel==="function" && ["admin","gl_admin"].includes(currentUserState?.role)) loadAdminPanel();
+    }catch(error){
+      console.error("UZB live monitor:",error);
+      const status=document.getElementById("platformStatus");
+      if(status){status.textContent="● MONITOR RETRY";status.className="status bad";}
+      const root=document.getElementById(DASHBOARD_ID);
+      if(root && !dashboardServers.length){
+        root.innerHTML=`<section class="monitor-dashboard"><div class="empty">Server ma’lumotlarini yuklashda vaqtinchalik xatolik. Avtomatik qayta urinilmoqda...</div></section>`;
+      }
+    }
+  }
+
+  function startDashboard(){
+    loadDashboard();
+    setInterval(loadDashboard,60000);
+  }
+
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",startDashboard);
+  else startDashboard();
+})();
+</script>
 </body>
 </html>
-function toggleMobileMenu(){
-
-  const nav = document.getElementById("mainNav");
-  const button = document.getElementById("mobileMenuBtn");
-
-  if(!nav || !button) return;
-
-  const open = nav.classList.toggle("mobile-open");
-  button.setAttribute("aria-expanded",open ? "true" : "false");
-  button.textContent = open ? "✕" : "☰";
-}
-
-
-document.addEventListener("click",function(event){
-  const nav = document.getElementById("mainNav");
-  const button = document.getElementById("mobileMenuBtn");
-  if(!nav || !button) return;
-  if(window.innerWidth > 700) return;
-  if(!nav.contains(event.target) && !button.contains(event.target)){
-    nav.classList.remove("mobile-open");
-    button.setAttribute("aria-expanded","false");
-    button.textContent = "☰";
-  }
-});
