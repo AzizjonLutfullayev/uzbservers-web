@@ -2831,7 +2831,13 @@ async function loadAdminPanel(){
             <option value="user" ${u.role==="user" ? "selected" : ""}>user</option>
             <option value="admin" ${u.role==="admin" ? "selected" : ""}>admin</option>
           </select>`
-        : `<span class="admin-role">${esc(u.role)}</span>`;
+        <span class="admin-role">${
+  u.role === "gl_admin"
+    ? "GL ADMIN"
+    : u.role === "admin"
+      ? "ADMIN"
+      : "USER"
+}</span>
 
       const banButton = canManage
         ? `<button class="copy" onclick="toggleUserBan(${u.id},${u.is_banned ? "false" : "true"})">${u.is_banned ? "Unban" : "Cheklash"}</button>`
