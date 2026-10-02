@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790978436,
+  "updatedAt": 1790978440,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 19386.8
+          "duration": 19390.8
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 19385.5
+          "duration": 19389.5
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 19382.7
+          "duration": 19386.7
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 3082.1
+          "duration": 3086.2
         }
       ]
     },
@@ -54,7 +54,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 170,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -64,19 +64,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 642327.5
+          "duration": 642331.6
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 45371.9
+          "duration": 45375.9
         }
       ]
     },
@@ -87,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 8395.4
+          "duration": 8399.4
         }
       ]
     },
@@ -104,13 +104,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 14760.9
+          "duration": 14765.0
         }
       ]
     },
@@ -127,7 +127,7 @@
           "index": 0,
           "name": "oo7777",
           "score": 0,
-          "duration": 981.8
+          "duration": 985.8
         }
       ]
     },
@@ -148,13 +148,13 @@
       "players": 1,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "Empte",
           "score": 0,
-          "duration": 74.1
+          "duration": 78.2
         }
       ]
     },
@@ -165,25 +165,25 @@
       "players": 3,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "020VP",
           "score": 3,
-          "duration": 264.4
+          "duration": 268.4
         },
         {
           "index": 1,
           "name": "-13",
           "score": 1,
-          "duration": 156.0
+          "duration": 160.1
         },
         {
           "index": 2,
           "name": "MoheGRK",
           "score": 0,
-          "duration": 53.5
+          "duration": 57.5
         }
       ]
     },
@@ -194,7 +194,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 171,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -204,7 +204,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -214,7 +214,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -234,7 +234,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_mirage_2x2",
-      "ping": 178,
+      "ping": 177,
       "playerList": []
     }
   ]
