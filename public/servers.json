@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 16701.3
+          "duration": 16703.5
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 16700.0
+          "duration": 16702.2
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 16697.2
+          "duration": 16699.4
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 396.7
+          "duration": 398.8
         }
       ]
     },
@@ -54,13 +54,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "qariya",
           "score": 0,
-          "duration": 34.8
+          "duration": 37.0
         }
       ]
     },
@@ -71,19 +71,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 176,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 639642.0
+          "duration": 639644.2
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 42686.4
+          "duration": 42688.6
         }
       ]
     },
@@ -100,7 +100,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 5709.9
+          "duration": 5712.1
         }
       ]
     },
@@ -111,13 +111,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 12075.4
+          "duration": 12077.6
         }
       ]
     },
@@ -128,7 +128,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_india",
-      "ping": 168,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -138,7 +138,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 171,
       "playerList": []
     },
     {
@@ -148,7 +148,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -164,13 +164,13 @@
           "index": 0,
           "name": "kraken",
           "score": 0,
-          "duration": 11.1
+          "duration": 13.3
         },
         {
           "index": 1,
           "name": "lalka(Lol)",
           "score": 0,
-          "duration": 962.6
+          "duration": 964.8
         }
       ]
     },
@@ -188,8 +188,8 @@
       "name": "NumberOne[UZ]-CSDM #1",
       "ip": "83.69.139.164:27020",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 0,
+      "maxPlayers": 32,
       "map": "de_nuke",
       "ping": 169,
       "playerList": []
@@ -201,25 +201,25 @@
       "players": 3,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "MARS-102",
           "score": 0,
-          "duration": 831.6
+          "duration": 833.8
         },
         {
           "index": 1,
           "name": "ewrpole",
           "score": 0,
-          "duration": 813.5
+          "duration": 815.7
         },
         {
           "index": 2,
           "name": "yingming",
           "score": 0,
-          "duration": 840.9
+          "duration": 843.1
         }
       ]
     },
@@ -230,7 +230,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_aztec_2x2",
-      "ping": 177,
+      "ping": 181,
       "playerList": []
     },
     {
@@ -240,7 +240,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_lego_2",
-      "ping": 177,
+      "ping": 178,
       "playerList": []
     }
   ]
