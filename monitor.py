@@ -70,76 +70,76 @@ def get_info(addr):
 
     # Standard A2S_INFO response.
    # GoldSrc legacy A2S_INFO response.
-if response_type == b"m":
-    p = 5
-
-    address, p = cstr(data, p)
-    name, p = cstr(data, p)
-    map_name, p = cstr(data, p)
-    folder, p = cstr(data, p)
-    game, p = cstr(data, p)
-
-    if p + 7 > len(data):
-        raise ValueError("short GoldSrc A2S_INFO response")
-
-    players = data[p]
-    p += 1
-
-    max_players = data[p]
-    p += 1
-
-    protocol = data[p]
-    p += 1
-
-    server_type = data[p:p + 1]
-    p += 1
-
-    os_byte = data[p:p + 1]
-    p += 1
-
-    password = data[p]
-    p += 1
-
-    mod = data[p]
-    p += 1
-
-    if mod:
-        website, p = cstr(data, p)
-        download, p = cstr(data, p)
-
-        if p < len(data) and data[p] == 0:
-            p += 1
-
-        if p + 10 <= len(data):
-            p += 4
-            p += 4
-            p += 1
-            p += 1
-
-    if p >= len(data):
-        vac = False
-        bots = 0
-    else:
-        vac = bool(data[p])
+    if response_type == b"m":
+        p = 5
+    
+        address, p = cstr(data, p)
+        name, p = cstr(data, p)
+        map_name, p = cstr(data, p)
+        folder, p = cstr(data, p)
+        game, p = cstr(data, p)
+    
+        if p + 7 > len(data):
+            raise ValueError("short GoldSrc A2S_INFO response")
+    
+        players = data[p]
         p += 1
-
-        bots = data[p] if p < len(data) else 0
-
-    return {
-        "protocol": protocol,
-        "appId": 0,
-        "name": name,
-        "map": map_name,
-        "folder": folder,
-        "game": game,
-        "players": players,
-        "maxPlayers": max_players,
-        "bots": bots,
-        "ping": ping,
-        "vac": vac,
-        "password": bool(password),
-        "version": "",
-    }
+    
+        max_players = data[p]
+        p += 1
+    
+        protocol = data[p]
+        p += 1
+    
+        server_type = data[p:p + 1]
+        p += 1
+    
+        os_byte = data[p:p + 1]
+        p += 1
+    
+        password = data[p]
+        p += 1
+    
+        mod = data[p]
+        p += 1
+    
+        if mod:
+            website, p = cstr(data, p)
+            download, p = cstr(data, p)
+    
+            if p < len(data) and data[p] == 0:
+                p += 1
+    
+            if p + 10 <= len(data):
+                p += 4
+                p += 4
+                p += 1
+                p += 1
+    
+        if p >= len(data):
+            vac = False
+            bots = 0
+        else:
+            vac = bool(data[p])
+            p += 1
+    
+            bots = data[p] if p < len(data) else 0
+    
+        return {
+            "protocol": protocol,
+            "appId": 0,
+            "name": name,
+            "map": map_name,
+            "folder": folder,
+            "game": game,
+            "players": players,
+            "maxPlayers": max_players,
+            "bots": bots,
+            "ping": ping,
+            "vac": vac,
+            "password": bool(password),
+            "version": "",
+        }
 
 # Standard A2S_INFO response.
 if response_type != b"I":
