@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790980213,
+  "updatedAt": 1790980220,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 464.4
+          "duration": 472.0
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 21162.3
+          "duration": 21170.0
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 463.0
+          "duration": 470.6
         }
       ]
     },
@@ -37,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 4859.0
+          "duration": 4866.4
         }
       ]
     },
@@ -54,13 +54,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_nuke_2x2",
-      "ping": 178,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "＃ a1M fERGANA ***",
           "score": 0,
-          "duration": 416.1
+          "duration": 423.6
         }
       ]
     },
@@ -68,16 +68,22 @@
       "name": "CSZONE.UZ - Public [#2]",
       "ip": "195.158.11.77:27016",
       "online": true,
-      "players": 1,
+      "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
+          "name": "CSZONE.UZ",
+          "score": 0,
+          "duration": 644112.0
+        },
+        {
+          "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 47148.7
+          "duration": 47156.3
         }
       ]
     },
@@ -94,7 +100,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 10172.3
+          "duration": 10179.9
         }
       ]
     },
@@ -105,13 +111,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 16537.8
+          "duration": 16545.4
         }
       ]
     },
@@ -122,7 +128,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 177,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -132,7 +138,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -152,31 +158,31 @@
       "players": 4,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "020VP",
           "score": 8,
-          "duration": 2041.0
+          "duration": 2048.8
         },
         {
           "index": 1,
           "name": "-13",
           "score": 7,
-          "duration": 1932.7
+          "duration": 1940.5
         },
         {
           "index": 2,
           "name": "Empte",
           "score": 13,
-          "duration": 1197.4
+          "duration": 1205.2
         },
         {
           "index": 3,
           "name": "UZB707",
-          "score": 10,
-          "duration": 956.5
+          "score": 11,
+          "duration": 964.3
         }
       ]
     },
@@ -187,7 +193,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -197,7 +203,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -217,7 +223,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_train32",
-      "ping": 180,
+      "ping": 177,
       "playerList": []
     },
     {
