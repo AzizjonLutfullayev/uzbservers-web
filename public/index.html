@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google-site-verification" content="S3c8AlsZO5zrsL05Uv-5ZqD1f1On1FGjm7GGjLqEiII" />
 <title>UZB SERVERS — CS 1.6 Uzbekistan Servers</title>
-<meta name="generator" content="UZB SERVERS Server Monitoring build 2026-10-02">\n<meta name="description" content="UZB SERVERS — O‘zbekistondagi CS 1.6 serverlar katalogi. Serverlar, IP manzillar, o‘yinchilar va server holatini ko‘ring.">
+<meta name="description" content="UZB SERVERS — O‘zbekistondagi CS 1.6 serverlar katalogi. Serverlar, IP manzillar, o‘yinchilar va server holatini ko‘ring.">
 <meta name="keywords" content="CS 1.6, Counter Strike 1.6, Uzbekistan servers, Uzbek CS 1.6 servers, UZB servers">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://uzbservers.uzbservers.workers.dev/">
@@ -1014,216 +1014,7 @@ footer{
 .chat-actions{display:flex;justify-content:flex-end;margin-top:7px;}
 .chat-edit-btn{border:1px solid #30415d;background:#172237;color:#9db7ff;padding:5px 8px;border-radius:7px;font-size:11px;cursor:pointer;transition:.2s;}
 .chat-edit-btn:hover{background:#223451;border-color:#5b8cff;color:#fff;box-shadow:0 0 10px #5b8cff44;}
-
-
-
-/* =========================================================
-   UZB SERVERS — PREMIUM MONITOR DASHBOARD
-   Added without changing the existing site components
-========================================================= */
-
-.monitor-dashboard{margin-top:35px}
-.monitor-title{display:flex;align-items:flex-end;justify-content:space-between;gap:20px;margin-bottom:18px}
-.monitor-title h2{margin:0;font-size:32px;font-weight:900;letter-spacing:-1px}
-.monitor-title p{margin:7px 0 0;color:#91a0b8}
-.monitor-live{display:flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid #26344c;border-radius:999px;background:#0b1422;color:#35e6a0;font-size:12px;font-weight:800}
-.monitor-live-dot{width:8px;height:8px;border-radius:50%;background:#35e6a0;box-shadow:0 0 12px #35e6a0;animation:monitorPulse 1.5s infinite}
-@keyframes monitorPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.45;transform:scale(.75)}}
-
-.monitor-stats{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:18px}
-.monitor-stat{position:relative;overflow:hidden;padding:18px;background:linear-gradient(145deg,rgba(19,31,51,.96),rgba(8,14,24,.96));border:1px solid #26344c;border-radius:16px;transition:.25s}
-.monitor-stat:hover{transform:translateY(-3px);border-color:#4d70a7;box-shadow:0 15px 40px rgba(0,0,0,.25)}
-.monitor-stat::after{content:"";position:absolute;width:100px;height:100px;right:-40px;top:-40px;border-radius:50%;background:#5b8cff22;filter:blur(15px)}
-.monitor-stat-label{color:#91a0b8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.7px}
-.monitor-stat-value{margin-top:8px;font-size:30px;font-weight:950}
-.monitor-stat-sub{margin-top:5px;color:#91a0b8;font-size:11px}
-.monitor-online{color:#35e6a0}.monitor-offline{color:#ff5f6d}.monitor-blue{color:#5b8cff}.monitor-yellow{color:#ffd45c}
-
-.monitor-top-server{display:grid;grid-template-columns:1.4fr .7fr .7fr .7fr;gap:12px;margin-bottom:18px}
-.monitor-highlight{padding:20px;background:linear-gradient(135deg,#111e34,#09111c);border:1px solid #26344c;border-radius:16px}
-.monitor-highlight-label{color:#91a0b8;font-size:11px;text-transform:uppercase;letter-spacing:.8px}
-.monitor-highlight-name{margin-top:8px;font-size:19px;font-weight:900}
-.monitor-highlight-value{margin-top:5px;font-size:27px;font-weight:950}
-.monitor-highlight-ip{margin-top:4px;color:#6f82a0;font-family:monospace;font-size:12px}
-
-.monitor-server-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.monitor-server-card{position:relative;overflow:hidden;padding:18px;background:linear-gradient(145deg,#111b2c,#09111c);border:1px solid #26344c;border-radius:17px;transition:.25s}
-.monitor-server-card:hover{transform:translateY(-3px);border-color:#496b9f;box-shadow:0 15px 45px #0006}
-.monitor-server-card.online-card{border-left:3px solid #35e6a0}
-.monitor-server-card.offline-card{border-left:3px solid #ff5f6d}
-.monitor-server-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
-.monitor-server-name{font-size:16px;font-weight:900}
-.monitor-server-ip{margin-top:5px;color:#71839e;font-family:monospace;font-size:12px}
-.monitor-status{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;font-size:10px;font-weight:900}
-.monitor-status.online{background:#0c3528;color:#35e6a0;border:1px solid #1b6e55}
-.monitor-status.offline{background:#3a141b;color:#ff5f6d;border:1px solid #71313c}
-.monitor-status-dot{width:6px;height:6px;border-radius:50%}
-.monitor-status.online .monitor-status-dot{background:#35e6a0;box-shadow:0 0 8px #35e6a0}
-.monitor-status.offline .monitor-status-dot{background:#ff5f6d}
-
-.monitor-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:18px}
-.monitor-metric{padding:11px;background:#080f19;border:1px solid #1c2940;border-radius:11px}
-.monitor-metric-label{color:#71839e;font-size:10px}
-.monitor-metric-value{margin-top:4px;font-size:16px;font-weight:900}
-.monitor-ping-good{color:#35e6a0}.monitor-ping-medium{color:#ffd45c}.monitor-ping-bad{color:#ff5f6d}
-
-.monitor-player-wrap{margin-top:15px}
-.monitor-player-head{display:flex;justify-content:space-between;color:#91a0b8;font-size:11px;margin-bottom:7px}
-.monitor-player-bar{height:7px;background:#172237;border-radius:999px;overflow:hidden}
-.monitor-player-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#35e6a0,#5b8cff);box-shadow:0 0 12px #35e6a055;transition:width .5s ease}
-
-.monitor-actions{display:flex;gap:8px;margin-top:15px}
-.monitor-action{flex:1;padding:9px 11px;border:1px solid #26344c;border-radius:9px;background:#111b2b;color:#fff;cursor:pointer;font-size:12px;font-weight:700;transition:.2s}
-.monitor-action:hover{border-color:#5b8cff;background:#162744}
-.monitor-update{margin-top:15px;color:#637590;font-size:10px;text-align:right}
-
-@media(max-width:1000px){.monitor-stats{grid-template-columns:repeat(3,1fr)}.monitor-top-server{grid-template-columns:1fr 1fr}}
-@media(max-width:700px){.monitor-stats{grid-template-columns:1fr 1fr}.monitor-server-grid{grid-template-columns:1fr}.monitor-top-server{grid-template-columns:1fr}.monitor-title{display:block}.monitor-live{margin-top:12px;display:inline-flex}}
-@media(max-width:450px){.monitor-stats{grid-template-columns:1fr}.monitor-metrics{grid-template-columns:1fr 1fr}}
-
-
-/* =====================================================
-   PREMIUM UZB SERVERS LOGO
-   Click → page top
-===================================================== */
-
-.logo-link{
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  gap:6px;
-  text-decoration:none;
-  cursor:pointer;
-  padding:8px 12px;
-  margin-left:-12px;
-  border-radius:12px;
-  transition:
-    transform .22s ease,
-    background .22s ease,
-    box-shadow .22s ease;
-}
-
-.logo-link::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  border-radius:12px;
-  background:linear-gradient(
-    135deg,
-    rgba(91,140,255,.16),
-    rgba(53,230,160,.08)
-  );
-  opacity:0;
-  transition:opacity .22s ease;
-  pointer-events:none;
-}
-
-.logo-link:hover{
-  transform:translateY(-1px);
-  background:rgba(91,140,255,.07);
-  box-shadow:
-    0 0 18px rgba(91,140,255,.16),
-    inset 0 0 14px rgba(53,230,160,.04);
-}
-
-.logo-link:hover::before{
-  opacity:1;
-}
-
-.logo-link:active{
-  transform:translateY(0) scale(.98);
-}
-
-.logo-link .logo-main,
-.logo-link .logo-accent{
-  position:relative;
-  z-index:1;
-}
-
-.logo-link .logo-main{
-  color:#ffffff;
-  letter-spacing:.8px;
-  text-shadow:
-    0 0 8px rgba(255,255,255,.18);
-}
-
-.logo-link .logo-accent{
-  color:#5b8cff;
-  letter-spacing:1.2px;
-  text-shadow:
-    0 0 8px rgba(91,140,255,.65),
-    0 0 18px rgba(91,140,255,.28);
-}
-
-.logo-link:focus-visible{
-  outline:2px solid #5b8cff;
-  outline-offset:3px;
-}
-
-@media(max-width:700px){
-  .logo-link{
-    padding:7px 9px;
-    margin-left:-9px;
-    gap:4px;
-  }
-}
-
-
-
-
-/* =========================================================
-   UZB SERVERS — ALL FEATURES ENHANCEMENT
-========================================================= */
-.monitor-toolbar{display:grid;grid-template-columns:1.5fr .8fr .8fr auto auto;gap:10px;margin:0 0 16px}
-.monitor-control{min-height:44px;padding:0 13px;border:1px solid #26344c;border-radius:12px;background:#0b1422;color:#e8eef8;outline:none}
-.monitor-control:focus{border-color:#5b8cff;box-shadow:0 0 0 3px #5b8cff22}
-.monitor-toolbar button{cursor:pointer;font-weight:800}
-.monitor-refresh{background:#111e34!important}
-.monitor-refresh.is-refreshing{opacity:.7;pointer-events:none}
-.monitor-filter-note{margin:-5px 0 14px;color:#71839e;font-size:12px}
-.monitor-server-card{scroll-margin-top:90px}
-.monitor-card-tools{display:flex;gap:7px;align-items:center}
-.monitor-favorite{width:34px;height:34px;padding:0;border-radius:10px;border:1px solid #26344c;background:#0b1422;color:#71839e;cursor:pointer;font-size:17px}
-.monitor-favorite.active{color:#ffd45c;border-color:#806b2b;background:#2a230d}
-.monitor-action{cursor:pointer}
-.monitor-action:disabled{opacity:.5;cursor:not-allowed}
-.monitor-data-state{display:inline-flex;align-items:center;gap:7px;margin-top:5px;color:#71839e;font-size:11px}
-.monitor-data-state .dot{width:7px;height:7px;border-radius:50%;background:#35e6a0;box-shadow:0 0 8px #35e6a0}
-.monitor-empty-filter{grid-column:1/-1;padding:35px;text-align:center;border:1px dashed #26344c;border-radius:16px;color:#91a0b8}
-.monitor-mini-bar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 14px;padding:10px 13px;border:1px solid #26344c;border-radius:12px;background:#0b1422}
-.monitor-mini-bar b{color:#e8eef8}
-.monitor-mini-right{color:#71839e;font-size:12px}
-@media(max-width:1050px){
-  .monitor-stats{grid-template-columns:repeat(3,1fr)}
-  .monitor-toolbar{grid-template-columns:1fr 1fr 1fr}
-}
-@media(max-width:700px){
-  .monitor-title{align-items:flex-start;flex-direction:column}
-  .monitor-title h2{font-size:26px}
-  .monitor-stats{grid-template-columns:repeat(2,1fr)}
-  .monitor-top-server{grid-template-columns:1fr 1fr}
-  .monitor-server-grid{grid-template-columns:1fr}
-  .monitor-toolbar{grid-template-columns:1fr 1fr}
-  .monitor-toolbar .monitor-search{grid-column:1/-1}
-  .monitor-refresh{grid-column:1/-1}
-  .monitor-mini-bar{align-items:flex-start;flex-direction:column}
-}
-@media(max-width:430px){
-  .monitor-stats{grid-template-columns:1fr}
-  .monitor-top-server{grid-template-columns:1fr}
-  .monitor-toolbar{grid-template-columns:1fr}
-  .monitor-toolbar .monitor-search{grid-column:auto}
-}
-
 </style>
-
-<!-- UZB SERVERS SEO / SOCIAL META -->
-<meta name="description" content="UZB SERVERS — O‘zbekiston CS 1.6 serverlarini qidirish, kuzatish va ulanish uchun zamonaviy server monitoring platformasi.">
-<meta property="og:title" content="UZB SERVERS — CS 1.6 Server Monitoring">
-<meta property="og:description" content="O‘zbekiston CS 1.6 serverlari: ONLINE/OFFLINE, players, map va ping monitoringi.">
-<meta property="og:type" content="website">
-<meta name="theme-color" content="#08111f">
-
 </head>
 
 
@@ -1238,22 +1029,15 @@ footer{
 
 <div class="container nav">
 
-  <a
-    href="#"
-    class="logo logo-link"
-    aria-label="UZB SERVERS — bosh sahifa"
-    onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
-
-    <span class="logo-main">UZB</span>
-    <span class="logo-accent">SERVERS</span>
-
-  </a>
+  <div class="logo">
+    UZB <span>SERVERS</span>
+  </div>
 
 
   <nav>
 
-    <a href="#uzbMonitorDashboard">
-      Server Monitoring
+    <a href="#servers">
+      Serverlar
     </a>
 
     <a href="#features">
@@ -1378,9 +1162,9 @@ footer{
 
     <a
       class="btn primary"
-      href="#uzbMonitorDashboard">
+      href="#servers">
 
-      Server Monitoringni ko‘rish →
+      Serverlarni ko‘rish →
 
     </a>
 
@@ -1463,12 +1247,74 @@ footer{
 
 
 <!-- =====================================================
-     SERVER MONITORING
+     SERVERS
 ===================================================== -->
 
 <section
-  id="uzbMonitorDashboard"
+  id="servers"
   class="container">
+
+
+  <div class="section-title">
+
+    <div>
+
+      <h2>
+        CS 1.6 Serverlar
+      </h2>
+
+      <p>
+        ONLINE serverlar avtomatik tepaga chiqariladi
+      </p>
+
+    </div>
+
+
+    <div class="controls">
+
+      <input
+        id="search"
+        class="search"
+        placeholder="Server qidirish...">
+
+
+      <select
+        id="sort"
+        class="sort">
+
+        <option value="online">
+          ONLINE birinchi
+        </option>
+
+        <option value="players">
+          Playerlar bo‘yicha
+        </option>
+
+        <option value="ping">
+          Ping bo‘yicha
+        </option>
+
+        <option value="name">
+          Nom bo‘yicha
+        </option>
+
+      </select>
+
+    </div>
+
+  </div>
+
+
+  <div id="serverList"></div>
+
+
+  <div class="notice">
+
+    📡 Ma’lumotlar GitHub Actions orqali
+    CS 1.6 serverlaridan avtomatik tekshiriladi.
+
+  </div>
+
 </section>
 
 
@@ -2238,10 +2084,6 @@ function esc(value){
 
 function render(){
 
-  if(!list || !search || !sort){
-    return;
-  }
-
   const query =
     search.value
       .toLowerCase()
@@ -2670,9 +2512,7 @@ async function load(){
       "status ok";
 
 
-    if(list && search && sort){
-      render();
-    }
+    render();
 
     if(["admin","gl_admin"].includes(currentUserState?.role)) loadAdminPanel();
 
@@ -3887,20 +3727,16 @@ async function checkAuth(){
    EVENTS
 ===================================================== */
 
-if(search){
-  search.addEventListener(
-    "input",
-    render
-  );
-}
+search.addEventListener(
+  "input",
+  render
+);
 
 
-if(sort){
-  sort.addEventListener(
-    "change",
-    render
-  );
-}
+sort.addEventListener(
+  "change",
+  render
+);
 
 
 document.getElementById("chatForm").addEventListener("submit", sendChatMessage);
@@ -3929,451 +3765,75 @@ setInterval(
 </script>
 
 
-
-<script>
-/* =========================================================
-   UZB SERVERS — ALL-IN-ONE PREMIUM SERVER MONITOR
-   Preserves existing auth/chat/admin and openPlayers()
-========================================================= */
-(function(){
-  "use strict";
-
-  const DASHBOARD_ID = "uzbMonitorDashboard";
-  const FAVORITES_KEY = "uzbservers:favorites";
-  let allServers = [];
-  let query = "";
-  let status = "all";
-  let sort = "default";
-  let lastUpdated = 0;
-
-  function esc(v){
-    return String(v ?? "").replace(/[&<>"']/g,function(m){
-      return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m];
-    });
-  }
-
-  function pingClass(p){
-    p = Number(p || 0);
-    if(p <= 80) return "monitor-ping-good";
-    if(p <= 160) return "monitor-ping-medium";
-    return "monitor-ping-bad";
-  }
-
-  function formatTime(ts){
-    if(!ts) return "—";
-    const n = Number(ts);
-    const d = new Date(n < 100000000000 ? n*1000 : n);
-    return d.toLocaleString("uz-UZ",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});
-  }
-
-  function getFavorites(){
-    try{
-      return new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]"));
-    }catch(e){
-      return new Set();
-    }
-  }
-
-  function saveFavorites(set){
-    try{ localStorage.setItem(FAVORITES_KEY,JSON.stringify([...set])); }catch(e){}
-  }
-
-  function serverKey(s){
-    return String(s.ip || s.name || "");
-  }
-
-  function copyIP(ip,button){
-    if(!navigator.clipboard || !window.isSecureContext) return;
-    navigator.clipboard.writeText(ip).then(function(){
-      const old = button.textContent;
-      button.textContent = "✓ Nusxalandi";
-      setTimeout(function(){button.textContent=old},1200);
-    }).catch(function(){});
-  }
-
-  function filteredServers(){
-    const q = query.trim().toLowerCase();
-
-    let list = allServers.filter(function(s){
-      const matchesQuery = !q ||
-        String(s.name || "").toLowerCase().includes(q) ||
-        String(s.ip || "").toLowerCase().includes(q) ||
-        String(s.map || "").toLowerCase().includes(q);
-
-      const matchesStatus =
-        status === "all" ||
-        (status === "online" && !!s.online) ||
-        (status === "offline" && !s.online);
-
-      return matchesQuery && matchesStatus;
-    });
-
-    if(sort === "players"){
-      list.sort((a,b)=>Number(b.players||0)-Number(a.players||0));
-    }else if(sort === "ping"){
-      list.sort((a,b)=>Number(a.ping||9999)-Number(b.ping||9999));
-    }else if(sort === "name"){
-      list.sort((a,b)=>String(a.name||"").localeCompare(String(b.name||""),"uz"));
-    }else if(sort === "status"){
-      list.sort((a,b)=>Number(b.online)-Number(a.online));
-    }
-
-    const favs = getFavorites();
-    if(sort === "favorites"){
-      list.sort((a,b)=>{
-        return Number(favs.has(serverKey(b))) - Number(favs.has(serverKey(a)));
-      });
-    }
-
-    return list;
-  }
-
-  function render(){
-    const root = document.getElementById(DASHBOARD_ID);
-    if(!root) return;
-
-    const total = allServers.length;
-    const online = allServers.filter(s=>!!s.online).length;
-    const offline = total-online;
-    const players = allServers.reduce((n,s)=>n+Number(s.players||0),0);
-    const onlineServers = allServers.filter(s=>!!s.online);
-    const avgPing = onlineServers.length
-      ? Math.round(onlineServers.reduce((n,s)=>n+Number(s.ping||0),0)/onlineServers.length)
-      : 0;
-
-    const filtered = filteredServers();
-    const favs = getFavorites();
-
-    const topServer = allServers.slice().sort((a,b)=>Number(b.players||0)-Number(a.players||0))[0];
-
-    root.innerHTML = `
-      <div class="monitor-dashboard">
-        <div class="monitor-title">
-          <div>
-            <h2>Server Monitoring</h2>
-            <p>O‘zbekiston CS 1.6 serverlari — qidiruv, filter, ping va player monitoringi</p>
-            <div class="monitor-data-state"><span class="dot"></span> Ma'lumotlar avtomatik yangilanmoqda</div>
-          </div>
-          <div class="monitor-live"><span class="monitor-live-dot"></span> LIVE MONITOR</div>
-        </div>
-
-        <div class="monitor-stats">
-          <div class="monitor-stat"><div class="monitor-stat-label">Jami server</div><div class="monitor-stat-value monitor-blue">${total}</div><div class="monitor-stat-sub">monitoringdagi serverlar</div></div>
-          <div class="monitor-stat"><div class="monitor-stat-label">Online</div><div class="monitor-stat-value monitor-online">${online}</div><div class="monitor-stat-sub">faol serverlar</div></div>
-          <div class="monitor-stat"><div class="monitor-stat-label">Offline</div><div class="monitor-stat-value monitor-offline">${offline}</div><div class="monitor-stat-sub">javob bermayotgan serverlar</div></div>
-          <div class="monitor-stat"><div class="monitor-stat-label">O‘yinchilar</div><div class="monitor-stat-value monitor-yellow">${players}</div><div class="monitor-stat-sub">barcha serverlarda</div></div>
-          <div class="monitor-stat"><div class="monitor-stat-label">O‘rtacha ping</div><div class="monitor-stat-value monitor-blue">${avgPing} ms</div><div class="monitor-stat-sub">online serverlar</div></div>
-        </div>
-
-        ${topServer ? `
-        <div class="monitor-top-server">
-          <div class="monitor-highlight">
-            <div class="monitor-highlight-label">Eng ko‘p o‘yinchili server</div>
-            <div class="monitor-highlight-name">${esc(topServer.name)}</div>
-            <div class="monitor-highlight-ip">${esc(topServer.ip)}</div>
-          </div>
-          <div class="monitor-highlight"><div class="monitor-highlight-label">Players</div><div class="monitor-highlight-value monitor-online">${Number(topServer.players||0)}/${Number(topServer.maxPlayers||0)}</div></div>
-          <div class="monitor-highlight"><div class="monitor-highlight-label">Map</div><div class="monitor-highlight-value">${esc(topServer.map||"—")}</div></div>
-          <div class="monitor-highlight"><div class="monitor-highlight-label">Ping</div><div class="monitor-highlight-value ${pingClass(topServer.ping)}">${Number(topServer.ping||0)} ms</div></div>
-        </div>` : ""}
-
-        <div class="monitor-toolbar">
-          <input class="monitor-control monitor-search" id="monitorSearch" value="${esc(query)}" placeholder="🔎 Server nomi, IP yoki map..." aria-label="Server qidirish">
-          <select class="monitor-control" id="monitorStatus" aria-label="Status filter">
-            <option value="all" ${status==="all"?"selected":""}>Barcha status</option>
-            <option value="online" ${status==="online"?"selected":""}>🟢 Online</option>
-            <option value="offline" ${status==="offline"?"selected":""}>🔴 Offline</option>
-          </select>
-          <select class="monitor-control" id="monitorSort" aria-label="Server saralash">
-            <option value="default" ${sort==="default"?"selected":""}>Standart</option>
-            <option value="favorites" ${sort==="favorites"?"selected":""}>⭐ Sevimlilar</option>
-            <option value="players" ${sort==="players"?"selected":""}>👥 Playerlar</option>
-            <option value="ping" ${sort==="ping"?"selected":""}>📡 Ping</option>
-            <option value="name" ${sort==="name"?"selected":""}>🔤 Nom</option>
-            <option value="status" ${sort==="status"?"selected":""}>🟢 Status</option>
-          </select>
-          <button class="monitor-control monitor-refresh" id="monitorRefresh" type="button">↻ Yangilash</button>
-          <button class="monitor-control" id="monitorReset" type="button">✕ Tozalash</button>
-        </div>
-
-        <div class="monitor-mini-bar">
-          <div><b>${filtered.length}</b> ta server ko‘rsatilmoqda</div>
-          <div class="monitor-mini-right">Oxirgi data: ${lastUpdated ? formatTime(lastUpdated) : "—"}</div>
-        </div>
-
-        <div class="monitor-server-grid">
-          ${filtered.length ? filtered.map(function(s){
-            const originalIndex = allServers.indexOf(s);
-            return card(s,originalIndex,favs);
-          }).join("") : `<div class="monitor-empty-filter">Mos server topilmadi.</div>`}
-        </div>
-      </div>
-    `;
-
-    const search = root.querySelector("#monitorSearch");
-    const statusEl = root.querySelector("#monitorStatus");
-    const sortEl = root.querySelector("#monitorSort");
-    const refresh = root.querySelector("#monitorRefresh");
-    const reset = root.querySelector("#monitorReset");
-
-    search.addEventListener("input",function(){
-      query=this.value;
-      render();
-      const el=document.getElementById("monitorSearch");
-      if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length);}
-    });
-
-    statusEl.addEventListener("change",function(){status=this.value;render();});
-    sortEl.addEventListener("change",function(){sort=this.value;render();});
-
-    reset.addEventListener("click",function(){
-      query="";
-      status="all";
-      sort="default";
-      render();
-    });
-
-    refresh.addEventListener("click",async function(){
-      refresh.classList.add("is-refreshing");
-      refresh.textContent="⟳ Yuklanmoqda...";
-      await load();
-    });
-
-    root.querySelectorAll("[data-copy-ip]").forEach(function(btn){
-      btn.addEventListener("click",function(){copyIP(btn.dataset.copyIp,btn);});
-    });
-
-    root.querySelectorAll("[data-favorite]").forEach(function(btn){
-      btn.addEventListener("click",function(){
-        const key=btn.dataset.favorite;
-        const set=getFavorites();
-        if(set.has(key)) set.delete(key); else set.add(key);
-        saveFavorites(set);
-        render();
-      });
-    });
-
-    root.querySelectorAll("[data-players-index]").forEach(function(btn){
-      btn.addEventListener("click",function(){
-        const i=Number(btn.dataset.playersIndex);
-        if(typeof window.openPlayers==="function") window.openPlayers(i);
-      });
-    });
-  }
-
-  function card(s,index,favs){
-    const players=Number(s.players||0);
-    const max=Math.max(Number(s.maxPlayers||0),1);
-    const pct=Math.min(100,Math.round(players/max*100));
-    const online=!!s.online;
-    const key=serverKey(s);
-    const favorite=favs.has(key);
-
-    return `
-      <article class="monitor-server-card ${online?"online-card":"offline-card"}">
-        <div class="monitor-server-head">
-          <div>
-            <div class="monitor-server-name">${esc(s.name||"Unnamed server")}</div>
-            <div class="monitor-server-ip">${esc(s.ip||"")}</div>
-          </div>
-          <div class="monitor-card-tools">
-            <button class="monitor-favorite ${favorite?"active":""}" type="button" data-favorite="${esc(key)}" aria-label="Sevimliga qo‘shish">${favorite?"★":"☆"}</button>
-            <div class="monitor-status ${online?"online":"offline"}"><span class="monitor-status-dot"></span>${online?"ONLINE":"OFFLINE"}</div>
-          </div>
-        </div>
-
-        <div class="monitor-metrics">
-          <div class="monitor-metric"><div class="monitor-metric-label">PLAYERS</div><div class="monitor-metric-value">${players}/${max}</div></div>
-          <div class="monitor-metric"><div class="monitor-metric-label">MAP</div><div class="monitor-metric-value">${esc(s.map||"—")}</div></div>
-          <div class="monitor-metric"><div class="monitor-metric-label">PING</div><div class="monitor-metric-value ${pingClass(s.ping)}">${online?Number(s.ping||0)+" ms":"—"}</div></div>
-        </div>
-
-        <div class="monitor-player-wrap">
-          <div class="monitor-player-head"><span>Server bandligi</span><span>${pct}%</span></div>
-          <div class="monitor-player-bar"><div class="monitor-player-fill" style="width:${pct}%"></div></div>
-        </div>
-
-        <div class="monitor-actions">
-          <button class="monitor-action" type="button" data-copy-ip="${esc(s.ip||"")}">📋 IP nusxalash</button>
-          <button class="monitor-action" type="button" data-players-index="${index}">👥 Players ${s.playerList? s.playerList.length : players}</button>
-        </div>
-
-        <div class="monitor-update">
-          Oxirgi tekshiruv: ${formatTime(s.updatedAt || lastUpdated)}
-        </div>
-      </article>
-    `;
-  }
-
-  async function load(){
-    try{
-      const response=await fetch("/servers.json?monitor="+Date.now(),{cache:"no-store"});
-      if(!response.ok) throw new Error("servers.json");
-      const json=await response.json();
-      allServers=Array.isArray(json.servers)?json.servers:(Array.isArray(json)?json:[]);
-      lastUpdated=json.updatedAt ? Number(json.updatedAt)*1000 : Date.now();
-      render();
-    }catch(error){
-      console.error("UZB SERVERS monitor:",error);
-    }
-  }
-
-  function start(){
-    load();
-    /* Frontend data refresh: 30 sec.
-       Haqiqiy 1-second UDP ping uchun alohida server-side monitor/API kerak. */
-    setInterval(load,30000);
-  }
-
-  if(document.readyState==="loading"){
-    document.addEventListener("DOMContentLoaded",start);
-  }else{
-    start();
-  }
-})();
-</script>
-  <!-- =========================================================
-     UZB SERVERS — LIVE DATA + MOBILE INTERFACE PATCH
-     Existing site/auth/chat/admin code is preserved.
+<!-- =========================================================
+ UZB SERVERS — FINAL MOBILE + LIVE PATCH
+ Existing site/auth/chat/admin/server UI preserved.
 ========================================================= -->
 
-<style id="uzb-live-mobile-patch">
-
-/* =========================================================
-   MOBILE HEADER + CHAT
-========================================================= */
-
-@media (max-width:700px){
-
+<style id="uzb-final-patch">
+@media(max-width:700px){
   header .nav{
-    flex-wrap:wrap;
-    gap:8px 12px;
-    padding:9px 0;
+    flex-wrap:wrap !important;
+    padding:10px 0 !important;
   }
 
-  header .logo{
-    flex:1 1 auto;
-  }
-
-  /*
-     Telefonda menyuni yashirmaymiz.
-     Gorizontal scroll bilan barcha menyular ko‘rinadi.
-  */
   header nav{
     display:flex !important;
-    order:3;
-    width:100%;
-    max-width:100%;
-    gap:6px;
-    overflow-x:auto;
-    overflow-y:hidden;
-    padding:2px 0 5px;
+    order:3 !important;
+    width:100% !important;
+    max-width:100% !important;
+    overflow-x:auto !important;
+    gap:7px !important;
+    padding:7px 0 4px !important;
+    white-space:nowrap !important;
     scrollbar-width:none;
-    -webkit-overflow-scrolling:touch;
   }
 
-  header nav::-webkit-scrollbar{
-    display:none;
-  }
+  header nav::-webkit-scrollbar{display:none}
 
   header nav a{
-    flex:0 0 auto;
-    white-space:nowrap;
-    padding:7px 10px;
-    border:1px solid var(--line);
-    border-radius:9px;
-    background:#0d1522;
-    font-size:12px;
+    display:inline-flex !important;
+    flex:0 0 auto !important;
+    white-space:nowrap !important;
+    padding:8px 11px !important;
+    border:1px solid var(--line) !important;
+    border-radius:9px !important;
+    background:#101827 !important;
   }
-
-  header .auth-nav{
-    flex:0 0 auto;
-    margin-left:0;
-  }
-
-
-  /* =======================================================
-     MOBILE CHAT
-  ======================================================= */
 
   .chat-layout{
     grid-template-columns:1fr !important;
   }
 
   .chat-panel{
-    width:min(100% - 20px,1150px);
-    margin-left:auto;
-    margin-right:auto;
-    padding:14px;
-  }
-
-  .chat-panel .section-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-  }
-
-  .chat-panel .section-title p{
-    font-size:12px;
-    line-height:1.45;
+    width:calc(100% - 20px) !important;
   }
 
   .chat-messages{
-    height:45vh;
-    min-height:260px;
-    max-height:520px;
-    padding:10px;
-  }
-
-  .chat-message{
-    gap:7px;
-  }
-
-  .chat-avatar{
-    width:30px;
-    height:30px;
-    min-width:30px;
-    font-size:14px;
-  }
-
-  .chat-bubble{
-    max-width:calc(100vw - 95px);
+    height:45vh !important;
+    min-height:260px !important;
   }
 
   .chat-form{
-    padding:9px;
-    gap:6px;
+    display:flex !important;
+    gap:7px !important;
   }
 
   .chat-form input{
-    min-width:0;
-    font-size:14px;
+    min-width:0 !important;
+    flex:1 !important;
   }
 
   .chat-form button{
-    padding:0 12px;
-    white-space:nowrap;
+    flex:0 0 auto !important;
   }
 
   .online-users{
-    max-height:none;
+    width:100% !important;
   }
-
-  .online-users-list{
-    max-height:260px;
-  }
-
-
-  /* =======================================================
-     MOBILE SERVER MONITOR
-  ======================================================= */
 
   .monitor-toolbar{
     grid-template-columns:1fr !important;
-  }
-
-  .monitor-control{
-    width:100%;
   }
 
   .monitor-server-grid{
@@ -4387,246 +3847,54 @@ setInterval(
   .monitor-stats{
     grid-template-columns:repeat(2,1fr) !important;
   }
-
-  .monitor-title{
-    display:block;
-  }
-
-  .monitor-live{
-    display:inline-flex;
-    margin-top:10px;
-  }
-
 }
 
-
-/* =========================================================
-   SMALL PHONES
-========================================================= */
-
-@media (max-width:390px){
-
-  .container{
-    width:calc(100% - 18px);
-  }
-
-  .logo{
-    font-size:18px;
-  }
-
-  header .auth-btn{
-    padding:7px 9px;
-    font-size:12px;
-  }
-
+@media(max-width:390px){
   .monitor-stats{
     grid-template-columns:1fr !important;
   }
-
-  .chat-form input{
-    padding:10px 8px;
-  }
-
-  .chat-form button{
-    padding:0 10px;
-  }
-
 }
-
 </style>
 
-
-<script id="uzb-live-mobile-patch-js">
-
+<script id="uzb-final-live-patch">
 (function(){
 
   "use strict";
 
-
-  /* =======================================================
-     GITHUB LIVE SERVERS.JSON
-  ======================================================= */
-
-  const RAW_SERVERS_URL =
+  const LIVE_SERVERS =
     "https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json";
 
+  const originalFetch = window.fetch.bind(window);
 
-  const originalFetch =
-    window.fetch.bind(window);
-
-
-  function isServersRequest(input){
+  window.fetch = function(input, init){
 
     try{
-
       const url =
         typeof input === "string"
           ? new URL(input, location.href)
           : new URL(input.url, location.href);
 
-
-      return url.pathname === "/servers.json";
-
-    }catch(error){
-
-      return false;
-
-    }
-
-  }
-
-
-  /*
-     Sayt /servers.json so‘raganda
-     GitHub'dagi eng yangi faylni olamiz.
-  */
-
-  window.fetch =
-    function(input, init){
-
-      if(isServersRequest(input)){
-
-        const liveUrl =
-          RAW_SERVERS_URL +
-          "?live=" +
-          Date.now();
-
-
+      if(url.pathname === "/servers.json"){
         return originalFetch(
-          liveUrl,
+          LIVE_SERVERS + "?live=" + Date.now(),
           {
             method:"GET",
-
             cache:"no-store",
-
-            mode:"cors",
-
             headers:{
               "Accept":"application/json"
             }
-
           }
         );
-
       }
-
-
-      return originalFetch(
-        input,
-        init
-      );
-
-    };
-
-
-  /* =======================================================
-     FORCE LIVE REFRESH
-  ======================================================= */
-
-  async function forceLiveRefresh(){
-
-    /*
-       Eski asosiy monitoring funksiyasini
-       yangi GitHub ma'lumoti bilan yangilaymiz.
-    */
-
-    try{
-
-      if(
-        typeof window.load === "function"
-      ){
-
-        await window.load();
-
-      }
-
-    }catch(error){
-
-      console.warn(
-        "UZB SERVERS live top refresh:",
-        error
-      );
-
+    }catch(e){
+      console.warn("UZB live fetch:", e);
     }
 
-
-    /*
-       Premium Server Monitoring dashboardini
-       ham yangilaymiz.
-    */
-
-    try{
-
-      const refresh =
-        document.getElementById(
-          "monitorRefresh"
-        );
-
-
-      if(refresh){
-
-        refresh.click();
-
-      }
-
-    }catch(error){
-
-      console.warn(
-        "UZB SERVERS live dashboard refresh:",
-        error
-      );
-
-    }
-
-  }
-
-
-  /* =======================================================
-     START
-  ======================================================= */
-
-  function start(){
-
-    /*
-       Sahifa yuklangandan keyin darhol
-       yangi server ma'lumotini olamiz.
-    */
-
-    setTimeout(
-      forceLiveRefresh,
-      300
-    );
-
-
-    /*
-       Har 60 sekundda yangilanadi.
-    */
-
-    setInterval(
-      forceLiveRefresh,
-      60000
-    );
-
-  }
-
-
-  if(
-    document.readyState === "loading"
-  ){
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      start
-    );
-
-  }else{
-
-    start();
-
-  }
+    return originalFetch(input, init);
+  };
 
 })();
-
 </script>
+
 </body>
 </html>
