@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790935205,
+  "updatedAt": 1790936402,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,7 +10,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935200,
+      "updatedAt": 1790936398,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -22,7 +22,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935200,
+      "updatedAt": 1790936398,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -34,7 +34,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935200,
+      "updatedAt": 1790936398,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -46,7 +46,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935201,
+      "updatedAt": 1790936398,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -58,7 +58,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935201,
+      "updatedAt": 1790936398,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -70,7 +70,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935201,
+      "updatedAt": 1790936398,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -82,7 +82,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935201,
+      "updatedAt": 1790936399,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -94,7 +94,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935201,
+      "updatedAt": 1790936399,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -106,266 +106,290 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935202,
+      "updatedAt": 1790936399,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "UZB ARENA",
       "ip": "157.22.130.26:27015",
       "online": true,
-      "players": 14,
+      "players": 21,
       "maxPlayers": 32,
-      "map": "de_dust2_2x2_unlimited",
-      "ping": 191,
+      "map": "de_dust2_oldgods",
+      "ping": 175,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 20378.1
+          "duration": 21575.7
         },
         {
           "index": 1,
-          "name": "tabakha",
-          "score": 4,
-          "duration": 228.7
+          "name": "JOKER$",
+          "score": 0,
+          "duration": 0.9
         },
         {
           "index": 2,
-          "name": "GSClient",
-          "score": 4,
-          "duration": 231.0
+          "name": "PREZIDENT_KZ",
+          "score": 0,
+          "duration": 4.2
         },
         {
           "index": 3,
-          "name": "Б Е К",
-          "score": 7,
-          "duration": 233.6
+          "name": "9999",
+          "score": 1,
+          "duration": 136.2
         },
         {
           "index": 4,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 225.9
+          "duration": 131.1
         },
         {
           "index": 5,
-          "name": "Dr.Doom",
-          "score": 3,
-          "duration": 231.6
+          "name": "white",
+          "score": 4,
+          "duration": 136.0
         },
         {
           "index": 6,
-          "name": "FERUZA",
+          "name": "kodeks",
           "score": 0,
-          "duration": 24.8
+          "duration": 136.7
         },
         {
           "index": 7,
-          "name": "kodeks",
-          "score": 2,
-          "duration": 233.1
+          "name": "vibe",
+          "score": 6,
+          "duration": 89.8
         },
         {
           "index": 8,
-          "name": "vibe",
-          "score": 0,
-          "duration": 232.1
+          "name": "НеПрофИ",
+          "score": 1,
+          "duration": 131.5
         },
         {
           "index": 9,
-          "name": "НеПрофИ",
-          "score": 3,
-          "duration": 226.7
+          "name": "LALAKU",
+          "score": 5,
+          "duration": 135.0
         },
         {
           "index": 10,
-          "name": "LALAKU",
+          "name": "dem0n",
           "score": 1,
-          "duration": 171.4
+          "duration": 128.6
         },
         {
           "index": 11,
           "name": "EXPERT",
-          "score": 1,
-          "duration": 45.9
+          "score": 4,
+          "duration": 133.9
         },
         {
           "index": 12,
           "name": "KNYAZ",
-          "score": 0,
-          "duration": 231.6
+          "score": 1,
+          "duration": 135.5
         },
         {
           "index": 13,
+          "name": "0000",
+          "score": 2,
+          "duration": 135.4
+        },
+        {
+          "index": 14,
           "name": "W Kiyistick",
-          "score": 3,
-          "duration": 226.7
+          "score": 0,
+          "duration": 128.8
+        },
+        {
+          "index": 15,
+          "name": "gamer",
+          "score": 8,
+          "duration": 135.7
+        },
+        {
+          "index": 16,
+          "name": "BARBOSSA",
+          "score": 6,
+          "duration": 134.7
+        },
+        {
+          "index": 17,
+          "name": "mONESY",
+          "score": 2,
+          "duration": 133.2
+        },
+        {
+          "index": 18,
+          "name": "namangan",
+          "score": 1,
+          "duration": 135.5
+        },
+        {
+          "index": 19,
+          "name": "amg_opg",
+          "score": 2,
+          "duration": 135.3
+        },
+        {
+          "index": 20,
+          "name": "s",
+          "score": 1,
+          "duration": 118.7
         }
       ],
-      "updatedAt": 1790935202
+      "updatedAt": 1790936399
     },
     {
       "name": "PROCS.UZ",
       "ip": "195.158.4.108:27777",
       "online": true,
-      "players": 2,
+      "players": 4,
       "maxPlayers": 32,
-      "map": "awp_lego_2",
-      "ping": 192,
+      "map": "cs_mansion_32",
+      "ping": 180,
       "playerList": [
         {
           "index": 0,
-          "name": "AWP N1",
-          "score": 7,
-          "duration": 491.2
+          "name": "G",
+          "score": 5,
+          "duration": 1042.4
         },
         {
           "index": 1,
+          "name": "khim",
+          "score": 0,
+          "duration": 368.3
+        },
+        {
+          "index": 2,
+          "name": "Neo_One|Ninety_One",
+          "score": 3,
+          "duration": 175.9
+        },
+        {
+          "index": 3,
           "name": "db",
           "score": 0,
-          "duration": 638.3
+          "duration": 1835.6
         }
       ],
-      "updatedAt": 1790935202
+      "updatedAt": 1790936400
     },
     {
       "name": "ONECS.UZ Public #1",
       "ip": "185.228.90.26:27002",
       "online": true,
-      "players": 21,
+      "players": 16,
       "maxPlayers": 32,
-      "map": "de_dust2",
-      "ping": 191,
+      "map": "de_inferno",
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "WsTRLM",
-          "score": 11,
-          "duration": 1121.3
+          "score": 2,
+          "duration": 2318.5
         },
         {
           "index": 1,
           "name": "azik",
-          "score": 5,
-          "duration": 4898.6
+          "score": 0,
+          "duration": 6095.8
         },
         {
           "index": 2,
-          "name": "Azamc1k",
-          "score": 19,
-          "duration": 1583.5
+          "name": "BARON",
+          "score": 1,
+          "duration": 261.7
         },
         {
           "index": 3,
-          "name": "Burgut",
-          "score": 12,
-          "duration": 474.6
+          "name": "naviChok",
+          "score": 9,
+          "duration": 4070.4
         },
         {
           "index": 4,
-          "name": "naviChok",
-          "score": 10,
-          "duration": 2873.2
+          "name": "rok",
+          "score": 0,
+          "duration": 3109.5
         },
         {
           "index": 5,
-          "name": "rok",
-          "score": 23,
-          "duration": 1912.3
+          "name": "Apex 无敌",
+          "score": 0,
+          "duration": 4667.8
         },
         {
           "index": 6,
-          "name": "Apex 无敌",
-          "score": 119,
-          "duration": 3470.6
+          "name": "QARIYA",
+          "score": 19,
+          "duration": 3704.9
         },
         {
           "index": 7,
-          "name": "QARIYA",
-          "score": 52,
-          "duration": 2507.7
+          "name": "boboy",
+          "score": 10,
+          "duration": 594.9
         },
         {
           "index": 8,
-          "name": "babayaga",
-          "score": 9,
-          "duration": 899.2
+          "name": "polkan",
+          "score": 10,
+          "duration": 1279.8
         },
         {
           "index": 9,
-          "name": "polkan",
-          "score": 1,
-          "duration": 82.6
+          "name": "KAKA",
+          "score": 3,
+          "duration": 565.4
         },
         {
           "index": 10,
-          "name": "205",
-          "score": 3,
-          "duration": 237.0
+          "name": "MotoMoto",
+          "score": 1,
+          "duration": 794.0
         },
         {
           "index": 11,
-          "name": "talgar",
-          "score": 4,
-          "duration": 72.0
+          "name": "[LC] Street_077uz",
+          "score": 6,
+          "duration": 516.6
         },
         {
           "index": 12,
-          "name": "MotoMoto",
-          "score": 23,
-          "duration": 1534.6
+          "name": "kyousuke-_-",
+          "score": 7,
+          "duration": 579.6
         },
         {
           "index": 13,
-          "name": "yanchar quyon",
-          "score": 24,
-          "duration": 2156.5
+          "name": ".",
+          "score": 9,
+          "duration": 877.2
         },
         {
           "index": 14,
-          "name": "007",
-          "score": 0,
-          "duration": 664.3
+          "name": "ЮгАгроФруд",
+          "score": 1,
+          "duration": 243.9
         },
         {
           "index": 15,
-          "name": "[LC] Street_077uz",
-          "score": 1,
-          "duration": 147.7
-        },
-        {
-          "index": 16,
-          "name": "kyousuke-_-",
-          "score": 16,
-          "duration": 613.0
-        },
-        {
-          "index": 17,
-          "name": "кинг",
-          "score": 30,
-          "duration": 1722.6
-        },
-        {
-          "index": 18,
-          "name": "S T A R",
-          "score": 4,
-          "duration": 171.4
-        },
-        {
-          "index": 19,
-          "name": "``ТРУЛЯЛЯ``",
-          "score": 0,
-          "duration": 51.1
-        },
-        {
-          "index": 20,
           "name": "neo",
           "score": 0,
-          "duration": 18.4
+          "duration": 1215.6
         }
       ],
-      "updatedAt": 1790935203
+      "updatedAt": 1790936400
     },
     {
       "name": "IHOST.UZ MIX",
@@ -376,7 +400,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935204,
+      "updatedAt": 1790936401,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -388,110 +412,140 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790935204,
+      "updatedAt": 1790936401,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
       "ip": "84.54.82.234:27015",
       "online": true,
-      "players": 16,
+      "players": 20,
       "maxPlayers": 32,
-      "map": "de_dust2002",
-      "ping": 220,
+      "map": "de_inferno",
+      "ping": 192,
       "playerList": [
         {
           "index": 0,
-          "name": "Manyak",
-          "score": 53,
-          "duration": 3347.1
+          "name": "Polat_alemdar",
+          "score": 1,
+          "duration": 256.5
         },
         {
           "index": 1,
-          "name": "AmIrChIk＃",
-          "score": 8,
-          "duration": 552.0
+          "name": "br1an.jke",
+          "score": 1,
+          "duration": 98.4
         },
         {
           "index": 2,
-          "name": "1",
-          "score": 8,
-          "duration": 1258.3
+          "name": "frankenshteyn",
+          "score": 4,
+          "duration": 565.1
         },
         {
           "index": 3,
-          "name": "WINSTONNNNNNNNNNNNNNNNNNNNNNNNN",
-          "score": 0,
-          "duration": 68.9
+          "name": "4lwervna",
+          "score": 12,
+          "duration": 1187.1
         },
         {
           "index": 4,
-          "name": "sava",
-          "score": 5,
-          "duration": 5502.9
+          "name": "WINSTONNNNNNNNNNNNNNNNNNNNNNNNN",
+          "score": 21,
+          "duration": 1265.9
         },
         {
           "index": 5,
-          "name": "Rapper",
-          "score": 4,
-          "duration": 302.5
+          "name": "sava",
+          "score": 37,
+          "duration": 6700.0
         },
         {
           "index": 6,
-          "name": "AnAwAwwwwwwwwwwwwwwwwwwwwwwwwww",
-          "score": 40,
-          "duration": 1258.4
+          "name": "Remboo",
+          "score": 0,
+          "duration": 465.5
         },
         {
           "index": 7,
-          "name": "SakinawOw~",
-          "score": 18,
-          "duration": 3017.0
+          "name": "AnAwAwwwwwwwwwwwwwwwwwwwwwwwwww",
+          "score": 13,
+          "duration": 2455.4
         },
         {
           "index": 8,
-          "name": "c1",
-          "score": 0,
-          "duration": 118.2
+          "name": "15",
+          "score": 17,
+          "duration": 388.0
         },
         {
           "index": 9,
-          "name": "PAPAWA",
+          "name": "c1",
           "score": 16,
-          "duration": 1412.1
+          "duration": 1315.3
         },
         {
           "index": 10,
-          "name": "333",
-          "score": 17,
-          "duration": 1451.0
+          "name": "PAPAWA",
+          "score": 1,
+          "duration": 133.2
         },
         {
           "index": 11,
-          "name": "SakinawOw",
-          "score": 22,
-          "duration": 594.1
+          "name": "333",
+          "score": 20,
+          "duration": 2648.1
         },
         {
           "index": 12,
           "name": "puma",
-          "score": 13,
-          "duration": 731.4
+          "score": 50,
+          "duration": 1928.5
         },
         {
           "index": 13,
-          "name": "Sarvi Noz",
-          "score": 9,
-          "duration": 1551.2
+          "name": "W",
+          "score": 0,
+          "duration": 5.3
         },
         {
           "index": 14,
-          "name": "PANDA",
+          "name": "qassop",
+          "score": 20,
+          "duration": 1153.6
+        },
+        {
+          "index": 15,
+          "name": "s224",
+          "score": 7,
+          "duration": 529.6
+        },
+        {
+          "index": 16,
+          "name": "Sarvi Noz",
           "score": 0,
-          "duration": 9.3
+          "duration": 2748.3
+        },
+        {
+          "index": 17,
+          "name": "Prokuror",
+          "score": 5,
+          "duration": 882.1
+        },
+        {
+          "index": 18,
+          "name": "FATAYAR",
+          "score": 6,
+          "duration": 534.0
+        },
+        {
+          "index": 19,
+          "name": "PANDA",
+          "score": 7,
+          "duration": 1206.3
         }
       ],
-      "updatedAt": 1790935204
+      "updatedAt": 1790936401
     }
   ]
 }
