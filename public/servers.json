@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790976632,
+  "updatedAt": 1790976638,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 17583.5
+          "duration": 17588.7
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 17582.2
+          "duration": 17587.4
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 17579.4
+          "duration": 17584.6
         }
       ]
     },
@@ -37,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_inferno_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 1278.8
+          "duration": 1284.0
         }
       ]
     },
@@ -53,8 +53,8 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2",
-      "ping": 171,
+      "map": "de_dust2_2x2",
+      "ping": 170,
       "playerList": []
     },
     {
@@ -64,19 +64,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 640523.9
+          "duration": 640529.4
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 43568.3
+          "duration": 43573.8
         }
       ]
     },
@@ -87,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 6591.9
+          "duration": 6597.4
         }
       ]
     },
@@ -110,7 +110,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 12957.3
+          "duration": 12962.8
         }
       ]
     },
@@ -121,13 +121,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_india",
-      "ping": 169,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "oo7777",
           "score": 0,
-          "duration": 143.5
+          "duration": 148.7
         }
       ]
     },
@@ -138,19 +138,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "abdumuhtor",
           "score": 0,
-          "duration": 76.7
+          "duration": 81.9
         },
         {
           "index": 1,
           "name": "Jasper",
           "score": 1,
-          "duration": 36.1
+          "duration": 41.3
         }
       ]
     },
@@ -161,7 +161,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -177,7 +177,7 @@
           "index": 0,
           "name": "kraken",
           "score": 0,
-          "duration": 893.2
+          "duration": 898.5
         }
       ]
     },
@@ -188,7 +188,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 168,
       "playerList": []
     },
     {
@@ -205,11 +205,18 @@
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 0,
+      "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
-      "playerList": []
+      "playerList": [
+        {
+          "index": 0,
+          "name": "Cristy",
+          "score": 0,
+          "duration": 1.3
+        }
+      ]
     },
     {
       "name": " CSLOVE.UZ [PUBLIC #1]",
