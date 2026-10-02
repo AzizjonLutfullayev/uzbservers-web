@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790971954,
+  "updatedAt": 1790971956,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,7 +8,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 216,
       "playerList": [
         {
           "index": 0,
@@ -61,7 +61,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 214,
       "playerList": [
         {
           "index": 0,
@@ -90,7 +90,7 @@
       "players": 12,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 179,
+      "ping": 171,
       "playerList": [
         {
           "index": 0,
@@ -173,7 +173,7 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -196,7 +196,7 @@
       "players": 4,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 178,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -231,7 +231,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -248,7 +248,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 171,
       "playerList": []
     },
     {
@@ -258,7 +258,7 @@
       "players": 15,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -359,15 +359,9 @@
       "players": 1,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 170,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "f0rest~",
-          "score": 0,
-          "duration": 641.0
-        }
-      ]
+      "ping": 216,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "亗 NUMBERONE UZBEKISTAN 亗",
@@ -376,45 +370,9 @@
       "players": 6,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "Мустафожон",
-          "score": 17,
-          "duration": 494.6
-        },
-        {
-          "index": 1,
-          "name": "TedyyyxXxxxxxxx",
-          "score": 0,
-          "duration": 788.4
-        },
-        {
-          "index": 2,
-          "name": "SaGof0403",
-          "score": 14,
-          "duration": 1403.6
-        },
-        {
-          "index": 3,
-          "name": "-1",
-          "score": 33,
-          "duration": 1702.5
-        },
-        {
-          "index": 4,
-          "name": "axow",
-          "score": 0,
-          "duration": 529.5
-        },
-        {
-          "index": 5,
-          "name": ".:: Lfen ::.",
-          "score": 29,
-          "duration": 3008.4
-        }
-      ]
+      "ping": 213,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -423,7 +381,7 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 218,
       "playerList": [
         {
           "index": 0,
@@ -446,8 +404,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
-      "playerList": []
+      "ping": 216,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "NumberOne[UZ]-Public #2",
@@ -456,7 +415,7 @@
       "players": 8,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 220,
       "playerList": [
         {
           "index": 0,
@@ -515,7 +474,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_aztec_2x2",
-      "ping": 177,
+      "ping": 215,
       "playerList": [
         {
           "index": 0,
@@ -532,8 +491,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_mirage_2x2",
-      "ping": 178,
-      "playerList": []
+      "ping": 219,
+      "playerList": [],
+      "playerError": "timed out"
     }
   ]
 }
