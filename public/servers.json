@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790978451,
+  "updatedAt": 1790978452,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 19401.7
+          "duration": 19403.4
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 19400.4
+          "duration": 19402.1
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 19397.6
+          "duration": 19399.3
         }
       ]
     },
@@ -37,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust_2x2",
-      "ping": 173,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 3097.0
+          "duration": 3098.7
         }
       ]
     },
@@ -54,7 +54,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 169,
+      "ping": 178,
       "playerList": []
     },
     {
@@ -64,19 +64,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 642342.4
+          "duration": 642344.1
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 45386.8
+          "duration": 45388.5
         }
       ]
     },
@@ -87,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 178,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 8410.3
+          "duration": 8412.0
         }
       ]
     },
@@ -110,7 +110,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 14775.8
+          "duration": 14777.5
         }
       ]
     },
@@ -121,13 +121,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_lego_2",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "oo7777",
           "score": 0,
-          "duration": 996.7
+          "duration": 998.4
         }
       ]
     },
@@ -145,16 +145,22 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 1,
+      "players": 2,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
+          "name": "UZB707",
+          "score": 0,
+          "duration": 0.4
+        },
+        {
+          "index": 1,
           "name": "Empte",
           "score": 0,
-          "duration": 89.0
+          "duration": 90.7
         }
       ]
     },
@@ -171,19 +177,19 @@
           "index": 0,
           "name": "020VP",
           "score": 3,
-          "duration": 279.3
+          "duration": 280.9
         },
         {
           "index": 1,
           "name": "-13",
           "score": 2,
-          "duration": 171.0
+          "duration": 172.6
         },
         {
           "index": 2,
           "name": "MoheGRK",
           "score": 0,
-          "duration": 68.4
+          "duration": 70.1
         }
       ]
     },
@@ -204,17 +210,17 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 0,
-      "maxPlayers": 32,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 173,
       "playerList": []
     },
     {
