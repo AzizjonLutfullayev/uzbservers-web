@@ -1081,6 +1081,94 @@ footer{
 @media(max-width:700px){.monitor-stats{grid-template-columns:1fr 1fr}.monitor-server-grid{grid-template-columns:1fr}.monitor-top-server{grid-template-columns:1fr}.monitor-title{display:block}.monitor-live{margin-top:12px;display:inline-flex}}
 @media(max-width:450px){.monitor-stats{grid-template-columns:1fr}.monitor-metrics{grid-template-columns:1fr 1fr}}
 
+
+/* =====================================================
+   PREMIUM UZB SERVERS LOGO
+   Click → page top
+===================================================== */
+
+.logo-link{
+  position:relative;
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  text-decoration:none;
+  cursor:pointer;
+  padding:8px 12px;
+  margin-left:-12px;
+  border-radius:12px;
+  transition:
+    transform .22s ease,
+    background .22s ease,
+    box-shadow .22s ease;
+}
+
+.logo-link::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  border-radius:12px;
+  background:linear-gradient(
+    135deg,
+    rgba(91,140,255,.16),
+    rgba(53,230,160,.08)
+  );
+  opacity:0;
+  transition:opacity .22s ease;
+  pointer-events:none;
+}
+
+.logo-link:hover{
+  transform:translateY(-1px);
+  background:rgba(91,140,255,.07);
+  box-shadow:
+    0 0 18px rgba(91,140,255,.16),
+    inset 0 0 14px rgba(53,230,160,.04);
+}
+
+.logo-link:hover::before{
+  opacity:1;
+}
+
+.logo-link:active{
+  transform:translateY(0) scale(.98);
+}
+
+.logo-link .logo-main,
+.logo-link .logo-accent{
+  position:relative;
+  z-index:1;
+}
+
+.logo-link .logo-main{
+  color:#ffffff;
+  letter-spacing:.8px;
+  text-shadow:
+    0 0 8px rgba(255,255,255,.18);
+}
+
+.logo-link .logo-accent{
+  color:#5b8cff;
+  letter-spacing:1.2px;
+  text-shadow:
+    0 0 8px rgba(91,140,255,.65),
+    0 0 18px rgba(91,140,255,.28);
+}
+
+.logo-link:focus-visible{
+  outline:2px solid #5b8cff;
+  outline-offset:3px;
+}
+
+@media(max-width:700px){
+  .logo-link{
+    padding:7px 9px;
+    margin-left:-9px;
+    gap:4px;
+  }
+}
+
+
 </style>
 </head>
 
@@ -1096,9 +1184,16 @@ footer{
 
 <div class="container nav">
 
-  <div class="logo">
-    UZB <span>SERVERS</span>
-  </div>
+  <a
+    href="#"
+    class="logo logo-link"
+    aria-label="UZB SERVERS — bosh sahifa"
+    onclick="window.scrollTo({top:0,behavior:'smooth'}); return false;">
+
+    <span class="logo-main">UZB</span>
+    <span class="logo-accent">SERVERS</span>
+
+  </a>
 
 
   <nav>
