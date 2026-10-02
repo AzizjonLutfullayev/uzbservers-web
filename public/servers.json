@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790974675,
+  "updatedAt": 1790974679,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,25 +8,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 15625.8
+          "duration": 15630.2
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 15624.5
+          "duration": 15628.9
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 15621.7
+          "duration": 15626.1
         }
       ]
     },
@@ -37,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "$2000$",
-      "ping": 170,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 531.6
+          "duration": 536.0
         }
       ]
     },
@@ -60,25 +60,25 @@
           "index": 0,
           "name": "＃ a1M fERGANA ***",
           "score": 1,
-          "duration": 58.0
+          "duration": 62.4
         },
         {
           "index": 1,
           "name": "!??!",
           "score": 4,
-          "duration": 1384.3
+          "duration": 1388.7
         },
         {
           "index": 2,
           "name": "CFG by Azizchik~",
           "score": 9,
-          "duration": 135.4
+          "duration": 139.8
         },
         {
           "index": 3,
           "name": "qariya",
           "score": 5,
-          "duration": 121.7
+          "duration": 126.1
         }
       ]
     },
@@ -89,19 +89,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 638566.5
+          "duration": 638570.9
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 41610.9
+          "duration": 41615.2
         }
       ]
     },
@@ -109,16 +109,22 @@
       "name": "CSZONE.UZ - Clanwar [#1]",
       "ip": "195.158.11.77:27017",
       "online": true,
-      "players": 1,
+      "players": 2,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 178,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 4634.4
+          "duration": 4638.8
+        },
+        {
+          "index": 1,
+          "name": "HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH",
+          "score": 0,
+          "duration": 3.9
         }
       ]
     },
@@ -129,13 +135,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 10999.9
+          "duration": 11004.3
         }
       ]
     },
@@ -146,7 +152,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_india",
-      "ping": 168,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -166,7 +172,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 169,
+      "ping": 179,
       "playerList": []
     },
     {
@@ -176,7 +182,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 179,
       "playerList": []
     },
     {
@@ -186,7 +192,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 180,
       "playerList": []
     },
     {
@@ -196,13 +202,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_nuke",
-      "ping": 169,
+      "ping": 180,
       "playerList": [
         {
           "index": 0,
           "name": "[IHOST.UZ] Player",
           "score": 0,
-          "duration": 16.1
+          "duration": 20.5
         }
       ]
     },
@@ -213,7 +219,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 179,
       "playerList": []
     },
     {
@@ -223,7 +229,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_aztec_2x2",
-      "ping": 177,
+      "ping": 180,
       "playerList": []
     },
     {
@@ -233,7 +239,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2002_2x2",
-      "ping": 178,
+      "ping": 177,
       "playerList": []
     }
   ]
