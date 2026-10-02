@@ -177,7 +177,7 @@ def build_json():
         }
         out.append(row)
         print(f'{s["name"]}: {"ONLINE" if row["online"] else "OFFLINE"} | {row["players"]}/{row["max_players"]} | {row["map"]} | {row["ping"]} ms')
-return {"updatedAt": checked_at, "servers": out}
+    return {"updatedAt": checked_at, "servers": out}
 
 def main():
     if not TOKEN:
