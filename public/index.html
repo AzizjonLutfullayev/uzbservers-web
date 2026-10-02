@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="google-site-verification" content="S3c8AlsZO5zrsL05Uv-5ZqD1f1On1FGjm7GGjLqEiII" />
 <title>UZB SERVERS — CS 1.6 Uzbekistan Servers</title>
-<meta name="description" content="UZB SERVERS — O‘zbekistondagi CS 1.6 serverlar katalogi. Serverlar, IP manzillar, o‘yinchilar va server holatini ko‘ring.">
+<meta name="generator" content="UZB SERVERS Server Monitoring build 2026-10-02">\n<meta name="description" content="UZB SERVERS — O‘zbekistondagi CS 1.6 serverlar katalogi. Serverlar, IP manzillar, o‘yinchilar va server holatini ko‘ring.">
 <meta name="keywords" content="CS 1.6, Counter Strike 1.6, Uzbekistan servers, Uzbek CS 1.6 servers, UZB servers">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://uzbservers.uzbservers.workers.dev/">
@@ -1103,8 +1103,8 @@ footer{
 
   <nav>
 
-    <a href="#servers">
-      Serverlar
+    <a href="#uzbMonitorDashboard">
+      Server Monitoring
     </a>
 
     <a href="#features">
@@ -1229,9 +1229,9 @@ footer{
 
     <a
       class="btn primary"
-      href="#servers">
+      href="#uzbMonitorDashboard">
 
-      Serverlarni ko‘rish →
+      Server Monitoringni ko‘rish →
 
     </a>
 
@@ -1314,74 +1314,12 @@ footer{
 
 
 <!-- =====================================================
-     SERVERS
+     SERVER MONITORING
 ===================================================== -->
 
 <section
-  id="servers"
+  id="uzbMonitorDashboard"
   class="container">
-
-
-  <div class="section-title">
-
-    <div>
-
-      <h2>
-        CS 1.6 Serverlar
-      </h2>
-
-      <p>
-        ONLINE serverlar avtomatik tepaga chiqariladi
-      </p>
-
-    </div>
-
-
-    <div class="controls">
-
-      <input
-        id="search"
-        class="search"
-        placeholder="Server qidirish...">
-
-
-      <select
-        id="sort"
-        class="sort">
-
-        <option value="online">
-          ONLINE birinchi
-        </option>
-
-        <option value="players">
-          Playerlar bo‘yicha
-        </option>
-
-        <option value="ping">
-          Ping bo‘yicha
-        </option>
-
-        <option value="name">
-          Nom bo‘yicha
-        </option>
-
-      </select>
-
-    </div>
-
-  </div>
-
-
-  <div id="serverList"></div>
-
-
-  <div class="notice">
-
-    📡 Ma’lumotlar GitHub Actions orqali
-    CS 1.6 serverlaridan avtomatik tekshiriladi.
-
-  </div>
-
 </section>
 
 
@@ -2151,6 +2089,10 @@ function esc(value){
 
 function render(){
 
+  if(!list || !search || !sort){
+    return;
+  }
+
   const query =
     search.value
       .toLowerCase()
@@ -2579,7 +2521,9 @@ async function load(){
       "status ok";
 
 
-    render();
+    if(list && search && sort){
+      render();
+    }
 
     if(["admin","gl_admin"].includes(currentUserState?.role)) loadAdminPanel();
 
@@ -3794,16 +3738,20 @@ async function checkAuth(){
    EVENTS
 ===================================================== */
 
-search.addEventListener(
-  "input",
-  render
-);
+if(search){
+  search.addEventListener(
+    "input",
+    render
+  );
+}
 
 
-sort.addEventListener(
-  "change",
-  render
-);
+if(sort){
+  sort.addEventListener(
+    "change",
+    render
+  );
+}
 
 
 document.getElementById("chatForm").addEventListener("submit", sendChatMessage);
@@ -3893,7 +3841,7 @@ setInterval(
     })[0];
 
     root.innerHTML = `
-      <section class="monitor-dashboard">
+      <div class="monitor-dashboard">
         <div class="monitor-title">
           <div>
             <h2>Server Monitoring</h2>
@@ -4035,21 +3983,10 @@ setInterval(
   }
 
   function injectDashboard(){
-    if(document.getElementById(DASHBOARD_ID)){
-      loadDashboard();
+    const root = document.getElementById(DASHBOARD_ID);
+
+    if(!root){
       return;
-    }
-
-    const serverSection = document.getElementById("servers");
-    const root = document.createElement("div");
-    root.id = DASHBOARD_ID;
-
-    if(serverSection){
-      serverSection.insertAdjacentElement("afterend",root);
-    }else{
-      root.className = "container";
-      const main = document.querySelector("main");
-      if(main) main.appendChild(root);
     }
 
     loadDashboard();
