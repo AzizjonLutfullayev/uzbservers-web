@@ -1541,55 +1541,6 @@ footer{
   class="container">
 
 
-  <div class="section-title">
-
-    <div>
-
-      <h2>
-        Server Monitoring
-      </h2>
-
-      <p>
-        O‘zbekiston CS 1.6 serverlari avtomatik monitoringi
-      </p>
-
-    </div>
-
-
-    <div class="controls">
-
-      <input
-        id="search"
-        class="search"
-        placeholder="Server qidirish...">
-
-
-      <select
-        id="sort"
-        class="sort">
-
-        <option value="online">
-          ONLINE birinchi
-        </option>
-
-        <option value="players">
-          Playerlar bo‘yicha
-        </option>
-
-        <option value="ping">
-          Ping bo‘yicha
-        </option>
-
-        <option value="name">
-          Nom bo‘yicha
-        </option>
-
-      </select>
-
-    </div>
-
-  </div>
-
 
   <div id="uzbMonitorDashboard"></div>
 
@@ -4046,10 +3997,7 @@ checkAuth();
   har 60 sekundda yangilanadi.
 */
 
-setInterval(
-  load,
-  60000
-);
+setInterval(load, 60000);
 
 </script>
 
@@ -4148,7 +4096,7 @@ setInterval(
         <div class="monitor-title">
           <div>
             <h2>Server Monitoring</h2>
-            <p>O‘zbekiston CS 1.6 serverlari avtomatik monitoringi</p>
+            <p>O‘zbekiston CS 1.6 serverlari avtomatik monitoringi — har 60 soniyada yangilanadi</p>
           </div>
           <div class="monitor-live"><span class="monitor-live-dot"></span> LIVE MONITOR</div>
         </div>
