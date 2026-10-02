@@ -1,16 +1,16 @@
 {
-  "updatedAt": 1790965040,
+  "updatedAt": 1790965050,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
       "ip": "195.158.11.77",
       "port": 27015,
       "online": true,
-      "players": 24,
+      "players": 25,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 167,
-      "updated_at": 1790965040
+      "ping": 168,
+      "updated_at": 1790965050
     },
     {
       "name": "CSZONE.UZ - Public #2",
@@ -20,8 +20,8 @@
       "players": 5,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 169,
-      "updated_at": 1790965040
+      "ping": 166,
+      "updated_at": 1790965050
     },
     {
       "name": "CSZONE.UZ - Clanwar #1",
@@ -32,18 +32,18 @@
       "max_players": 15,
       "map": "de_dust2",
       "ping": 166,
-      "updated_at": 1790965040
+      "updated_at": 1790965050
     },
     {
       "name": "CSZONE.UZ - Clanwar #2",
       "ip": "195.158.11.77",
       "port": 27018,
       "online": true,
-      "players": 5,
+      "players": 6,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 168,
-      "updated_at": 1790965040
+      "ping": 166,
+      "updated_at": 1790965050
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -54,18 +54,18 @@
       "max_players": 32,
       "map": "de_dust2_2x2",
       "ping": 170,
-      "updated_at": 1790965040
+      "updated_at": 1790965050
     },
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164",
       "port": 27022,
       "online": true,
-      "players": 15,
+      "players": 14,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 171,
-      "updated_at": 1790965040
+      "ping": 170,
+      "updated_at": 1790965050
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
@@ -75,8 +75,8 @@
       "players": 6,
       "max_players": 32,
       "map": "de_train",
-      "ping": 169,
-      "updated_at": 1790965040
+      "ping": 171,
+      "updated_at": 1790965050
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
@@ -86,19 +86,19 @@
       "players": 18,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 170,
-      "updated_at": 1790965040
+      "ping": 169,
+      "updated_at": 1790965050
     },
     {
       "name": "TIMCS.UZ Public #1",
       "ip": "195.158.4.109",
       "port": 27015,
       "online": true,
-      "players": 32,
+      "players": 31,
       "max_players": 32,
       "map": "de_dust2",
       "ping": 167,
-      "updated_at": 1790965040
+      "updated_at": 1790965050
     },
     {
       "name": "UZB ARENA",
@@ -108,19 +108,19 @@
       "players": 12,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 173,
-      "updated_at": 1790965040
+      "ping": 172,
+      "updated_at": 1790965050
     },
     {
       "name": "PROCS.UZ",
       "ip": "195.158.4.108",
       "port": 27777,
       "online": true,
-      "players": 4,
+      "players": 3,
       "max_players": 32,
       "map": "de_nuke",
       "ping": 167,
-      "updated_at": 1790965040
+      "updated_at": 1790965050
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -130,8 +130,8 @@
       "players": 7,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 172,
-      "updated_at": 1790965040
+      "ping": 173,
+      "updated_at": 1790965050
     },
     {
       "name": "IHOST.UZ MIX",
@@ -142,7 +142,7 @@
       "max_players": 14,
       "map": "aim_sk_awp",
       "ping": 171,
-      "updated_at": 1790965040
+      "updated_at": 1790965050
     },
     {
       "name": "WEIT CS Public",
@@ -152,19 +152,19 @@
       "players": 0,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 173,
-      "updated_at": 1790965040
+      "ping": 176,
+      "updated_at": 1790965050
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
       "ip": "84.54.82.234",
       "port": 27015,
       "online": true,
-      "players": 7,
+      "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 183,
-      "updated_at": 1790965040
+      "ping": 177,
+      "updated_at": 1790965050
     }
   ]
 }
