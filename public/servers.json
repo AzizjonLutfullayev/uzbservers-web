@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790900480,
+  "updatedAt": 1790900602,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,7 +10,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900476,
+      "updatedAt": 1790900598,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -22,7 +22,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900476,
+      "updatedAt": 1790900598,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -34,7 +34,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900476,
+      "updatedAt": 1790900599,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -46,7 +46,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900477,
+      "updatedAt": 1790900599,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -58,7 +58,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900477,
+      "updatedAt": 1790900599,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -70,7 +70,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900477,
+      "updatedAt": 1790900599,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -82,7 +82,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900477,
+      "updatedAt": 1790900599,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -94,7 +94,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900477,
+      "updatedAt": 1790900600,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -106,7 +106,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900477,
+      "updatedAt": 1790900600,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -115,17 +115,17 @@
       "online": true,
       "players": 1,
       "maxPlayers": 32,
-      "map": "css_miragewinter_go",
-      "ping": 175,
+      "map": "de_dust2_2x2_unlimited",
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 8451.2
+          "duration": 8573.4
         }
       ],
-      "updatedAt": 1790900478
+      "updatedAt": 1790900600
     },
     {
       "name": "PROCS.UZ",
@@ -134,9 +134,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_india",
-      "ping": 172,
+      "ping": 177,
       "playerList": [],
-      "updatedAt": 1790900478
+      "updatedAt": 1790900600
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -145,9 +145,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 169,
+      "ping": 173,
       "playerList": [],
-      "updatedAt": 1790900479
+      "updatedAt": 1790900601
     },
     {
       "name": "IHOST.UZ MIX",
@@ -158,7 +158,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900479,
+      "updatedAt": 1790900601,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -170,7 +170,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790900479,
+      "updatedAt": 1790900602,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -180,9 +180,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2002_2x2",
-      "ping": 185,
+      "ping": 188,
       "playerList": [],
-      "updatedAt": 1790900479
+      "updatedAt": 1790900602
     }
   ]
 }
