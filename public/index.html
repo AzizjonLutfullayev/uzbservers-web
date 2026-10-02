@@ -2807,7 +2807,7 @@ async function sendChatMessage(event){
 ===================================================== */
 
 async function loadAdminPanel(){
-  if(!currentUserState || !["admin","GL ADMIN"].includes(currentUserState.role)) return;
+  if(!currentUserState || !["admin","gl_admin"].includes(currentUserState.role)) return;
   try{
     const statsResponse = await fetch("/api/admin/stats?x="+Date.now(),{credentials:"same-origin",cache:"no-store"});
     const stats = await statsResponse.json();
