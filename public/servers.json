@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790899064,
+  "updatedAt": 1790900480,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,8 +10,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899059,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900476,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "CSZONE.UZ - Public #2",
@@ -22,8 +22,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899059,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900476,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "CSZONE.UZ - Clanwar #1",
@@ -34,8 +34,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899060,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900476,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "CSZONE.UZ - Clanwar #2",
@@ -46,8 +46,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899060,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900477,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -58,8 +58,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899060,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900477,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "NumberOne[UZ]-Public #2",
@@ -70,8 +70,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899060,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900477,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
@@ -82,8 +82,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899060,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900477,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
@@ -94,8 +94,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899061,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900477,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "TIMCS.UZ Public #1",
@@ -106,8 +106,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899061,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900477,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "UZB ARENA",
@@ -115,17 +115,17 @@
       "online": true,
       "players": 1,
       "maxPlayers": 32,
-      "map": "de_winterdust2",
-      "ping": 207,
+      "map": "css_miragewinter_go",
+      "ping": 175,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 7034.9
+          "duration": 8451.2
         }
       ],
-      "updatedAt": 1790899061
+      "updatedAt": 1790900478
     },
     {
       "name": "PROCS.UZ",
@@ -134,9 +134,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_india",
-      "ping": 219,
+      "ping": 172,
       "playerList": [],
-      "updatedAt": 1790899062
+      "updatedAt": 1790900478
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -144,10 +144,10 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2002_2x2",
-      "ping": 205,
+      "map": "de_inferno_2x2",
+      "ping": 169,
       "playerList": [],
-      "updatedAt": 1790899062
+      "updatedAt": 1790900479
     },
     {
       "name": "IHOST.UZ MIX",
@@ -158,8 +158,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899063,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900479,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "WEIT CS Public",
@@ -170,8 +170,8 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790899063,
-      "error": "invalid A2S_INFO response"
+      "updatedAt": 1790900479,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
@@ -180,9 +180,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2002_2x2",
-      "ping": 221,
+      "ping": 185,
       "playerList": [],
-      "updatedAt": 1790899063
+      "updatedAt": 1790900479
     }
   ]
 }
