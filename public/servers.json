@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790965318,
+  "updatedAt": 1790965324,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -9,8 +9,8 @@
       "players": 21,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 179,
-      "updated_at": 1790965318
+      "ping": 171,
+      "updated_at": 1790965324
     },
     {
       "name": "CSZONE.UZ - Public #2",
@@ -21,7 +21,7 @@
       "max_players": 32,
       "map": "de_dust2",
       "ping": 169,
-      "updated_at": 1790965318
+      "updated_at": 1790965324
     },
     {
       "name": "CSZONE.UZ - Clanwar #1",
@@ -31,8 +31,8 @@
       "players": 13,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 170,
-      "updated_at": 1790965318
+      "ping": 168,
+      "updated_at": 1790965324
     },
     {
       "name": "CSZONE.UZ - Clanwar #2",
@@ -43,7 +43,7 @@
       "max_players": 15,
       "map": "de_dust2",
       "ping": 169,
-      "updated_at": 1790965318
+      "updated_at": 1790965324
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -53,19 +53,19 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 187,
-      "updated_at": 1790965318
+      "ping": 169,
+      "updated_at": 1790965324
     },
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164",
       "port": 27022,
       "online": true,
-      "players": 16,
+      "players": 17,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
-      "updated_at": 1790965318
+      "ping": 181,
+      "updated_at": 1790965324
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
@@ -76,18 +76,18 @@
       "max_players": 32,
       "map": "de_train",
       "ping": 169,
-      "updated_at": 1790965318
+      "updated_at": 1790965324
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
       "ip": "83.69.139.164",
       "port": 27015,
-      "online": true,
-      "players": 20,
-      "max_players": 32,
-      "map": "de_dust2",
-      "ping": 185,
-      "updated_at": 1790965318
+      "online": false,
+      "players": 0,
+      "max_players": 0,
+      "map": "",
+      "ping": null,
+      "updated_at": 1790965324
     },
     {
       "name": "TIMCS.UZ Public #1",
@@ -97,19 +97,19 @@
       "players": 28,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 175,
-      "updated_at": 1790965318
+      "ping": 172,
+      "updated_at": 1790965324
     },
     {
       "name": "UZB ARENA",
       "ip": "157.22.130.26",
       "port": 27015,
-      "online": false,
-      "players": 0,
-      "max_players": 0,
-      "map": "",
-      "ping": null,
-      "updated_at": 1790965318
+      "online": true,
+      "players": 10,
+      "max_players": 32,
+      "map": "de_dust2",
+      "ping": 169,
+      "updated_at": 1790965324
     },
     {
       "name": "PROCS.UZ",
@@ -119,8 +119,8 @@
       "players": 6,
       "max_players": 32,
       "map": "de_nuke",
-      "ping": 168,
-      "updated_at": 1790965318
+      "ping": 179,
+      "updated_at": 1790965324
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -131,7 +131,7 @@
       "max_players": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
-      "updated_at": 1790965318
+      "updated_at": 1790965324
     },
     {
       "name": "IHOST.UZ MIX",
@@ -142,18 +142,18 @@
       "max_players": 14,
       "map": "aim_sk_awp",
       "ping": 169,
-      "updated_at": 1790965318
+      "updated_at": 1790965324
     },
     {
       "name": "WEIT CS Public",
       "ip": "84.54.82.234",
       "port": 27047,
-      "online": true,
+      "online": false,
       "players": 0,
-      "max_players": 32,
-      "map": "de_inferno_2x2",
-      "ping": 195,
-      "updated_at": 1790965318
+      "max_players": 0,
+      "map": "",
+      "ping": null,
+      "updated_at": 1790965324
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
@@ -163,8 +163,8 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
-      "updated_at": 1790965318
+      "ping": 179,
+      "updated_at": 1790965324
     }
   ]
 }
