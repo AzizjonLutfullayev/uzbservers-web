@@ -4,13 +4,13 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="google-site-verification" content="S3c8AlsZO5zrsL05Uv-5ZqD1f1On1FGjm7GGjLqEiII" />
-<title>UZB SERVERS — CS 1.6 Uzbekistan Servers</title>
-<meta name="description" content="UZB SERVERS — O‘zbekistondagi CS 1.6 serverlar katalogi. Serverlar, IP manzillar, o‘yinchilar va server holatini ko‘ring.">
-<meta name="keywords" content="CS 1.6, Counter Strike 1.6, Uzbekistan servers, Uzbek CS 1.6 servers, UZB servers">
-<meta name="robots" content="index, follow">
-<link rel="canonical" href="https://uzbservers.uzbservers.workers.dev/">
 
+<title>UZB SERVERS — CS 1.6 Uzbekistan</title>
+
+<meta
+  name="description"
+  content="O‘zbekiston CS 1.6 serverlari, real-time monitoring, playerlar va server katalogi."
+>
 
 <style>
 
@@ -1014,6 +1014,52 @@ footer{
 .chat-actions{display:flex;justify-content:flex-end;margin-top:7px;}
 .chat-edit-btn{border:1px solid #30415d;background:#172237;color:#9db7ff;padding:5px 8px;border-radius:7px;font-size:11px;cursor:pointer;transition:.2s;}
 .chat-edit-btn:hover{background:#223451;border-color:#5b8cff;color:#fff;box-shadow:0 0 10px #5b8cff44;}
+
+/* ===== UZB SERVERS MODERN MONITOR PATCH ===== */
+.monitor-modern-note{color:#91a0b8;font-size:13px;margin-top:6px}
+.server.monitor-card{
+  position:relative;display:block;overflow:hidden;cursor:pointer;
+  padding:20px;margin:14px 0;border-radius:18px;
+  background:linear-gradient(135deg,#0d1718,#0a1118 55%,#07120e);
+  border:1px solid #1d5d46;
+  box-shadow:0 0 0 1px #0c2b20 inset,0 0 22px rgba(53,230,160,.12);
+  transition:transform .2s,border-color .2s,box-shadow .2s
+}
+.server.monitor-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:#35e6a0;box-shadow:0 0 18px #35e6a0}
+.server.monitor-card:hover{transform:translateY(-2px);border-color:#35e6a0;box-shadow:0 0 0 1px #35e6a044 inset,0 0 34px rgba(53,230,160,.22)}
+.monitor-card-head{display:flex;justify-content:space-between;gap:15px;align-items:flex-start}
+.monitor-card-name{font-size:18px;font-weight:900}
+.monitor-card-ip{font-family:monospace;color:#9ab0c9;margin-top:6px}
+.monitor-online{color:#35e6a0;font-weight:900;white-space:nowrap;text-shadow:0 0 10px #35e6a077}
+.monitor-offline{color:#ff5f6d;font-weight:900;white-space:nowrap}
+.monitor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:16px}
+.monitor-box{padding:12px;border:1px solid #1e3441;border-radius:12px;background:#071018aa}
+.monitor-label{font-size:10px;color:#71859d;letter-spacing:1px;font-weight:800}
+.monitor-value{font-size:16px;font-weight:900;margin-top:5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.monitor-bar-head{display:flex;justify-content:space-between;color:#91a0b8;font-size:12px;margin:15px 0 7px}
+.monitor-bar{height:7px;border-radius:99px;background:#101d26;overflow:hidden}
+.monitor-bar>span{display:block;height:100%;border-radius:99px;background:#35e6a0;box-shadow:0 0 12px #35e6a0;transition:width .4s}
+.monitor-card-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
+.monitor-btn{padding:9px 12px;border-radius:10px;border:1px solid #24415a;background:#101e2d;color:#fff;cursor:pointer;font-weight:800}
+.monitor-btn:hover{border-color:#35e6a0;box-shadow:0 0 12px #35e6a044}
+.monitor-card-time{color:#687d96;font-size:11px;margin-top:12px}
+.monitor-modal-server{margin:12px 0 15px;padding:13px;border:1px solid #1d5d46;border-radius:12px;background:#07120e}
+.monitor-player-row{display:grid;grid-template-columns:36px minmax(0,1fr) 90px 90px;gap:10px;align-items:center;padding:11px;border:1px solid #1b2d3d;background:#09131d;border-radius:10px;margin-top:8px}
+.monitor-player-index{color:#35e6a0;font-weight:900}.monitor-player-name{font-weight:800;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.monitor-player-score,.monitor-player-time{color:#91a0b8;font-size:12px;text-align:right}
+nav a{padding:9px 12px;border:1px solid transparent;border-radius:10px;transition:.2s;font-weight:700}
+nav a:hover{background:#101d2d;border-color:#2c4664;color:#fff;box-shadow:0 0 14px #5b8cff22}
+@media(max-width:700px){
+  nav{display:flex;order:3;width:100%;overflow-x:auto;gap:7px;padding:3px 0 2px;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav a{white-space:nowrap;background:#0c1623;border-color:#203149;font-size:12px}
+  .monitor-grid{grid-template-columns:1fr 1fr}
+  .monitor-card-head{flex-direction:column}
+  .monitor-online,.monitor-offline{align-self:flex-start}
+  .monitor-player-row{grid-template-columns:28px minmax(0,1fr) 70px}
+  .monitor-player-time{display:none}
+}
+@media(max-width:420px){.monitor-grid{grid-template-columns:1fr}.monitor-server-card{padding:16px}}
+
 </style>
 </head>
 
@@ -3765,134 +3811,99 @@ setInterval(
 </script>
 
 
-<!-- =========================================================
- UZB SERVERS — FINAL MOBILE + LIVE PATCH
- Existing site/auth/chat/admin/server UI preserved.
-========================================================= -->
-
-<style id="uzb-final-patch">
-@media(max-width:700px){
-  header .nav{
-    flex-wrap:wrap !important;
-    padding:10px 0 !important;
-  }
-
-  header nav{
-    display:flex !important;
-    order:3 !important;
-    width:100% !important;
-    max-width:100% !important;
-    overflow-x:auto !important;
-    gap:7px !important;
-    padding:7px 0 4px !important;
-    white-space:nowrap !important;
-    scrollbar-width:none;
-  }
-
-  header nav::-webkit-scrollbar{display:none}
-
-  header nav a{
-    display:inline-flex !important;
-    flex:0 0 auto !important;
-    white-space:nowrap !important;
-    padding:8px 11px !important;
-    border:1px solid var(--line) !important;
-    border-radius:9px !important;
-    background:#101827 !important;
-  }
-
-  .chat-layout{
-    grid-template-columns:1fr !important;
-  }
-
-  .chat-panel{
-    width:calc(100% - 20px) !important;
-  }
-
-  .chat-messages{
-    height:45vh !important;
-    min-height:260px !important;
-  }
-
-  .chat-form{
-    display:flex !important;
-    gap:7px !important;
-  }
-
-  .chat-form input{
-    min-width:0 !important;
-    flex:1 !important;
-  }
-
-  .chat-form button{
-    flex:0 0 auto !important;
-  }
-
-  .online-users{
-    width:100% !important;
-  }
-
-  .monitor-toolbar{
-    grid-template-columns:1fr !important;
-  }
-
-  .monitor-server-grid{
-    grid-template-columns:1fr !important;
-  }
-
-  .monitor-top-server{
-    grid-template-columns:1fr !important;
-  }
-
-  .monitor-stats{
-    grid-template-columns:repeat(2,1fr) !important;
-  }
-}
-
-@media(max-width:390px){
-  .monitor-stats{
-    grid-template-columns:1fr !important;
-  }
-}
-</style>
-
-<script id="uzb-final-live-patch">
+<script>
+/* ===== MODERN MONITOR + ONLY MONITORED SERVERS ===== */
 (function(){
+  const MONITORED = new Set([
+    '195.158.11.77:27015','195.158.11.77:27016','195.158.11.77:27017','195.158.11.77:27018',
+    '83.69.139.164:27016','83.69.139.164:27022','83.69.139.164:27020','83.69.139.164:27015','83.69.139.164:27014',
+    '195.158.4.109:27015','157.22.130.26:27015','195.158.4.108:27777','185.228.90.26:27002','84.54.82.234:27047','84.54.82.234:27015'
+  ]);
+  const key=v=>String(v||'').trim().toLowerCase();
+  const monitoredOnly=arr=>arr.filter(s=>MONITORED.has(key(s.ip)));
+  const esc2=v=>typeof esc==='function'?esc(v):String(v??'');
+  function time2(v){if(!v)return '—';const n=Number(v);if(!Number.isFinite(n))return '—';return new Date(n*1000).toLocaleString('uz-UZ');}
 
-  "use strict";
-
-  const LIVE_SERVERS =
-    "https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json";
-
-  const originalFetch = window.fetch.bind(window);
-
-  window.fetch = function(input, init){
-
-    try{
-      const url =
-        typeof input === "string"
-          ? new URL(input, location.href)
-          : new URL(input.url, location.href);
-
-      if(url.pathname === "/servers.json"){
-        return originalFetch(
-          LIVE_SERVERS + "?live=" + Date.now(),
-          {
-            method:"GET",
-            cache:"no-store",
-            headers:{
-              "Accept":"application/json"
-            }
-          }
-        );
-      }
-    }catch(e){
-      console.warn("UZB live fetch:", e);
-    }
-
-    return originalFetch(input, init);
+  window.render=function(){
+    data=monitoredOnly(Array.isArray(data)?data:[]);
+    const q=(document.getElementById('search')?.value||'').toLowerCase().trim();
+    const mode=document.getElementById('sort')?.value||'online';
+    let rows=data.filter(s=>(`${s.name||''} ${s.ip||''} ${s.map||''}`).toLowerCase().includes(q));
+    rows.sort((a,b)=>{
+      if(mode==='players') return (Number(b.players)||0)-(Number(a.players)||0);
+      if(mode==='ping') return (Number(a.ping??9999))-(Number(b.ping??9999));
+      if(mode==='name') return String(a.name||'').localeCompare(String(b.name||''));
+      return Number(b.online)-Number(a.online)||(Number(b.players)||0)-(Number(a.players)||0);
+    });
+    document.getElementById('serverCount').textContent=data.length;
+    document.getElementById('playerCount').textContent=data.reduce((t,s)=>t+(Number(s.players)||0),0);
+    const root=document.getElementById('serverList');
+    if(!rows.length){root.innerHTML='<div class="empty">Monitoring serverlari topilmadi.</div>';return;}
+    root.innerHTML=rows.map(s=>{
+      const i=data.indexOf(s), players=Number(s.players)||0, max=Math.max(Number(s.maxPlayers||s.max_players)||0,1);
+      const pct=Math.min(100,Math.round(players/max*100));
+      const online=!!s.online;
+      return `<article class="server monitor-card" onclick="openPlayers(${i})">
+        <div class="monitor-card-head">
+          <div><div class="monitor-card-name">${esc2(s.name||'Unnamed server')}</div><div class="monitor-card-ip">${esc2(s.ip||'')}</div></div>
+          <div class="${online?'monitor-online':'monitor-offline'}">● ${online?'ONLINE':'OFFLINE'}</div>
+        </div>
+        <div class="monitor-grid">
+          <div class="monitor-box"><div class="monitor-label">PLAYERS</div><div class="monitor-value">${players}/${max}</div></div>
+          <div class="monitor-box"><div class="monitor-label">MAP</div><div class="monitor-value">${esc2(s.map||'—')}</div></div>
+          <div class="monitor-box"><div class="monitor-label">PING</div><div class="monitor-value">${online&&s.ping!=null?esc2(s.ping)+' ms':'—'}</div></div>
+          <div class="monitor-box"><div class="monitor-label">STATUS</div><div class="monitor-value">${online?'LIVE':'OFFLINE'}</div></div>
+        </div>
+        <div class="monitor-bar-head"><span>Server bandligi</span><span>${pct}%</span></div>
+        <div class="monitor-bar"><span style="width:${pct}%"></span></div>
+        <div class="monitor-card-actions">
+          <button class="monitor-btn" onclick="event.stopPropagation();copyIp('${esc2(s.ip||'')}',this)">📋 IP nusxalash</button>
+          <button class="monitor-btn" onclick="event.stopPropagation();openPlayers(${i})">👥 Players ${Array.isArray(s.playerList)?s.playerList.length:players}</button>
+        </div>
+        <div class="monitor-card-time">Oxirgi tekshiruv: ${time2(s.updatedAt||window.__serversUpdatedAt)}</div>
+      </article>`;
+    }).join('');
   };
 
+  window.openPlayers=function(index){
+    const s=data[index]; if(!s)return;
+    document.getElementById('modalTitle').textContent=s.name||'Players';
+    document.getElementById('modalIp').textContent=s.ip||'';
+    const players=Array.isArray(s.playerList)?s.playerList:[];
+    const box=document.getElementById('playerBox');
+    let html=`<div class="monitor-modal-server"><b>${esc2(s.name||'')}</b><div style="color:#91a0b8;margin-top:5px">${esc2(s.ip||'')} · ${s.online?'ONLINE':'OFFLINE'} · ${Number(s.players)||0}/${Number(s.maxPlayers||s.max_players)||0}</div></div>`;
+    if(players.length){
+      html+=players.map((p,n)=>`<div class="monitor-player-row"><div class="monitor-player-index">${n+1}</div><div class="monitor-player-name">${esc2(p.name||'Unnamed')}</div><div class="monitor-player-score">Score: ${Number(p.score)||0}</div><div class="monitor-player-time">${p.duration!=null?Math.round(Number(p.duration))+'s':''}</div></div>`).join('');
+    }else{
+      html+=`<div class="empty">${s.online?'Server online, lekin A2S_PLAYER player ro‘yxatini bermadi yoki monitor hali player ma’lumotini yozmagan.':'Server offline.'}</div>`;
+    }
+    box.innerHTML=html;
+    document.getElementById('playersOverlay').style.display='flex';
+  };
+
+  const originalLoad=window.load;
+  if(typeof originalLoad==='function'){
+    window.load=async function(){
+      await originalLoad();
+      render();
+    };
+  }
+
+  const oldFetch=window.fetch;
+  window.fetch=function(input,init){
+    try{
+      const u=typeof input==='string'?input:(input&&input.url)||'';
+      if(u.includes('/servers.json')){
+        const sep=u.includes('?')?'&':'?';
+        return oldFetch('https://raw.githubusercontent.com/AzizjonLutfullayev/uzbservers-web/main/public/servers.json'+sep+'live='+Date.now(),init);
+      }
+    }catch(e){}
+    return oldFetch(input,init);
+  };
+
+  const oldInterval=setInterval;
+  // Existing 60s timer already calls the original load; the global render override keeps its UI modern.
+  setTimeout(()=>{if(typeof window.load==='function')window.load();},50);
 })();
 </script>
 
