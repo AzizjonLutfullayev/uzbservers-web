@@ -1,16 +1,16 @@
 {
-  "updatedAt": 1790965425,
+  "updatedAt": 1790965437,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
       "ip": "195.158.11.77",
       "port": 27015,
       "online": true,
-      "players": 20,
+      "players": 19,
       "max_players": 32,
       "map": "de_dust2",
       "ping": 171,
-      "updated_at": 1790965425
+      "updated_at": 1790965437
     },
     {
       "name": "CSZONE.UZ - Public #2",
@@ -20,8 +20,8 @@
       "players": 5,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 179,
-      "updated_at": 1790965425
+      "ping": 170,
+      "updated_at": 1790965437
     },
     {
       "name": "CSZONE.UZ - Clanwar #1",
@@ -31,8 +31,8 @@
       "players": 13,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 168,
-      "updated_at": 1790965425
+      "ping": 170,
+      "updated_at": 1790965437
     },
     {
       "name": "CSZONE.UZ - Clanwar #2",
@@ -42,8 +42,8 @@
       "players": 6,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 171,
-      "updated_at": 1790965425
+      "ping": 170,
+      "updated_at": 1790965437
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -53,8 +53,8 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
-      "updated_at": 1790965425
+      "ping": 181,
+      "updated_at": 1790965437
     },
     {
       "name": "NumberOne[UZ]-Public #2",
@@ -64,8 +64,8 @@
       "players": 16,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
-      "updated_at": 1790965425
+      "ping": 177,
+      "updated_at": 1790965437
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
@@ -75,8 +75,8 @@
       "players": 6,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 169,
-      "updated_at": 1790965425
+      "ping": 182,
+      "updated_at": 1790965437
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
@@ -86,19 +86,19 @@
       "players": 18,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 181,
-      "updated_at": 1790965425
+      "ping": 183,
+      "updated_at": 1790965437
     },
     {
       "name": "TIMCS.UZ Public #1",
       "ip": "195.158.4.109",
       "port": 27015,
       "online": true,
-      "players": 28,
+      "players": 27,
       "max_players": 32,
       "map": "35hp_2",
-      "ping": 171,
-      "updated_at": 1790965425
+      "ping": 170,
+      "updated_at": 1790965437
     },
     {
       "name": "UZB ARENA",
@@ -108,8 +108,8 @@
       "players": 10,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 169,
-      "updated_at": 1790965425
+      "ping": 177,
+      "updated_at": 1790965437
     },
     {
       "name": "PROCS.UZ",
@@ -119,8 +119,8 @@
       "players": 6,
       "max_players": 32,
       "map": "de_nuke",
-      "ping": 177,
-      "updated_at": 1790965425
+      "ping": 170,
+      "updated_at": 1790965437
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -130,8 +130,8 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 171,
-      "updated_at": 1790965425
+      "ping": 183,
+      "updated_at": 1790965437
     },
     {
       "name": "IHOST.UZ MIX",
@@ -141,19 +141,19 @@
       "players": 0,
       "max_players": 14,
       "map": "aim_sk_awp",
-      "ping": 176,
-      "updated_at": 1790965425
+      "ping": 175,
+      "updated_at": 1790965437
     },
     {
       "name": "WEIT CS Public",
       "ip": "84.54.82.234",
       "port": 27047,
-      "online": false,
-      "players": 0,
-      "max_players": 0,
-      "map": "",
-      "ping": null,
-      "updated_at": 1790965425
+      "online": true,
+      "players": 1,
+      "max_players": 32,
+      "map": "de_inferno_2x2",
+      "ping": 178,
+      "updated_at": 1790965437
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
@@ -163,8 +163,8 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 195,
-      "updated_at": 1790965425
+      "ping": 168,
+      "updated_at": 1790965437
     }
   ]
 }
