@@ -888,7 +888,62 @@ async function chat(request, env) {
    ONLINE USERS
 ========================================================= */
 
+/* =========================================================
+   ONLINE USERS
+========================================================= */
+
 async function onlineUsers(request, env) {
+  const user = await currentUser(request, env);
+
+  if (!user) {
+    return json({
+      error: "Kirish talab qilinadi."
+    }, 401);
+  }
+
+  const now = Math.floor(Date.now() / 1000);
+
+  // 90 sekund ichida heartbeat yuborganlar online
+  const onlineAfter = now - 90;
+
+  const rows = await env.DB.prepare(`
+    SELECT
+      users.id,
+      users.username,
+      users.role,
+      users.is_banned,
+
+      profiles.first_name,
+      profiles.last_name,
+      profiles.avatar_url,
+
+      user_presence.last_seen
+
+    FROM user_presence
+
+    JOIN users
+      ON users.id = user_presence.user_id
+
+    LEFT JOIN profiles
+      ON profiles.user_id = users.id
+
+    WHERE user_presence.last_seen >= ?
+      AND users.is_banned = 0
+
+    ORDER BY user_presence.last_seen DESC
+
+    LIMIT 200
+  `)
+    .bind(onlineAfter)
+    .all();
+
+  const users = rows.results || [];
+
+  return json({
+    users: users,
+    total: users.length
+  });
+}
   const user = await currentUser(request, env);
 
   if (!user) {
