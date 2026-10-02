@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790964902,
+  "updatedAt": 1790964908,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,7 +10,7 @@
       "max_players": 32,
       "map": "de_dust2",
       "ping": 177,
-      "updated_at": 1790964902
+      "updated_at": 1790964908
     },
     {
       "name": "CSZONE.UZ - Public #2",
@@ -20,8 +20,8 @@
       "players": 5,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 176,
-      "updated_at": 1790964902
+      "ping": 177,
+      "updated_at": 1790964908
     },
     {
       "name": "CSZONE.UZ - Clanwar #1",
@@ -31,8 +31,8 @@
       "players": 13,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 177,
-      "updated_at": 1790964902
+      "ping": 178,
+      "updated_at": 1790964908
     },
     {
       "name": "CSZONE.UZ - Clanwar #2",
@@ -42,8 +42,8 @@
       "players": 5,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 178,
-      "updated_at": 1790964902
+      "ping": 177,
+      "updated_at": 1790964908
     },
     {
       "name": "NumberOne[UZ]-Public #1",
@@ -53,19 +53,19 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
-      "updated_at": 1790964902
+      "ping": 169,
+      "updated_at": 1790964908
     },
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164",
       "port": 27022,
       "online": true,
-      "players": 13,
+      "players": 14,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 180,
-      "updated_at": 1790964902
+      "ping": 170,
+      "updated_at": 1790964908
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
@@ -75,8 +75,8 @@
       "players": 7,
       "max_players": 32,
       "map": "de_train",
-      "ping": 180,
-      "updated_at": 1790964902
+      "ping": 168,
+      "updated_at": 1790964908
     },
     {
       "name": "NUMBERONE UZBEKISTAN",
@@ -86,19 +86,19 @@
       "players": 19,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 179,
-      "updated_at": 1790964902
+      "ping": 170,
+      "updated_at": 1790964908
     },
     {
       "name": "TIMCS.UZ Public #1",
       "ip": "195.158.4.109",
       "port": 27015,
       "online": true,
-      "players": 32,
+      "players": 31,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 178,
-      "updated_at": 1790964902
+      "ping": 185,
+      "updated_at": 1790964908
     },
     {
       "name": "UZB ARENA",
@@ -108,19 +108,19 @@
       "players": 11,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 180,
-      "updated_at": 1790964902
+      "ping": 168,
+      "updated_at": 1790964908
     },
     {
       "name": "PROCS.UZ",
       "ip": "195.158.4.108",
       "port": 27777,
       "online": true,
-      "players": 5,
+      "players": 4,
       "max_players": 32,
       "map": "de_nuke",
-      "ping": 177,
-      "updated_at": 1790964902
+      "ping": 169,
+      "updated_at": 1790964908
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -130,8 +130,8 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 181,
-      "updated_at": 1790964902
+      "ping": 169,
+      "updated_at": 1790964908
     },
     {
       "name": "IHOST.UZ MIX",
@@ -141,8 +141,8 @@
       "players": 0,
       "max_players": 14,
       "map": "aim_sk_awp",
-      "ping": 179,
-      "updated_at": 1790964902
+      "ping": 169,
+      "updated_at": 1790964908
     },
     {
       "name": "WEIT CS Public",
@@ -152,19 +152,19 @@
       "players": 0,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
-      "updated_at": 1790964902
+      "ping": 178,
+      "updated_at": 1790964908
     },
     {
       "name": "CSLOVE.UZ [PUBLIC #1]",
       "ip": "84.54.82.234",
       "port": 27015,
       "online": true,
-      "players": 7,
+      "players": 6,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
-      "updated_at": 1790964902
+      "ping": 180,
+      "updated_at": 1790964908
     }
   ]
 }
