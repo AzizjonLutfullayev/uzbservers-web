@@ -9,7 +9,7 @@
       "players": 20,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 171,
       "updated_at": 1790965425
     },
     {
@@ -20,7 +20,7 @@
       "players": 5,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 179,
       "updated_at": 1790965425
     },
     {
@@ -31,7 +31,7 @@
       "players": 13,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 190,
+      "ping": 168,
       "updated_at": 1790965425
     },
     {
@@ -42,7 +42,7 @@
       "players": 6,
       "max_players": 15,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 171,
       "updated_at": 1790965425
     },
     {
@@ -75,7 +75,7 @@
       "players": 6,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 169,
       "updated_at": 1790965425
     },
     {
@@ -86,7 +86,7 @@
       "players": 18,
       "max_players": 32,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 181,
       "updated_at": 1790965425
     },
     {
@@ -97,7 +97,7 @@
       "players": 28,
       "max_players": 32,
       "map": "35hp_2",
-      "ping": 178,
+      "ping": 171,
       "updated_at": 1790965425
     },
     {
@@ -119,7 +119,7 @@
       "players": 6,
       "max_players": 32,
       "map": "de_nuke",
-      "ping": 188,
+      "ping": 177,
       "updated_at": 1790965425
     },
     {
@@ -130,7 +130,7 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 171,
       "updated_at": 1790965425
     },
     {
@@ -141,18 +141,18 @@
       "players": 0,
       "max_players": 14,
       "map": "aim_sk_awp",
-      "ping": 180,
+      "ping": 176,
       "updated_at": 1790965425
     },
     {
       "name": "WEIT CS Public",
       "ip": "84.54.82.234",
       "port": 27047,
-      "online": true,
-      "players": 1,
-      "max_players": 32,
-      "map": "de_inferno_2x2",
-      "ping": 193,
+      "online": false,
+      "players": 0,
+      "max_players": 0,
+      "map": "",
+      "ping": null,
       "updated_at": 1790965425
     },
     {
@@ -163,7 +163,7 @@
       "players": 8,
       "max_players": 32,
       "map": "de_dust2_2x2",
-      "ping": 193,
+      "ping": 195,
       "updated_at": 1790965425
     }
   ]
