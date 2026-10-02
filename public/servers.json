@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790902906,
+  "updatedAt": 1790904088,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
@@ -10,7 +10,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902901,
+      "updatedAt": 1790904084,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -22,7 +22,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902901,
+      "updatedAt": 1790904084,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -34,7 +34,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902901,
+      "updatedAt": 1790904085,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -46,19 +46,20 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902901,
+      "updatedAt": 1790904085,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "NumberOne[UZ]-Public #1",
       "ip": "83.69.139.164:27016",
-      "online": true,
+      "online": false,
       "players": 0,
-      "maxPlayers": 32,
-      "map": "de_dust2_2x2",
-      "ping": 194,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
       "playerList": [],
-      "updatedAt": 1790902902
+      "updatedAt": 1790904085,
+      "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "NumberOne[UZ]-Public #2",
@@ -69,7 +70,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902902,
+      "updatedAt": 1790904085,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -81,7 +82,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902902,
+      "updatedAt": 1790904085,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -93,7 +94,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902903,
+      "updatedAt": 1790904085,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -105,26 +106,32 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902903,
+      "updatedAt": 1790904086,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
       "name": "UZB ARENA",
       "ip": "157.22.130.26:27015",
       "online": true,
-      "players": 1,
+      "players": 2,
       "maxPlayers": 32,
-      "map": "css_miragewinter_go",
-      "ping": 199,
+      "map": "de_dust2",
+      "ping": 171,
       "playerList": [
         {
           "index": 0,
+          "name": "FERUZA",
+          "score": 0,
+          "duration": 45.5
+        },
+        {
+          "index": 1,
           "name": "player",
           "score": 0,
-          "duration": 10876.7
+          "duration": 12059.5
         }
       ],
-      "updatedAt": 1790902903
+      "updatedAt": 1790904086
     },
     {
       "name": "PROCS.UZ",
@@ -133,9 +140,9 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_india",
-      "ping": 222,
+      "ping": 172,
       "playerList": [],
-      "updatedAt": 1790902904
+      "updatedAt": 1790904086
     },
     {
       "name": "ONECS.UZ Public #1",
@@ -143,10 +150,10 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2002_2x2",
-      "ping": 195,
+      "map": "$2000$",
+      "ping": 168,
       "playerList": [],
-      "updatedAt": 1790902904
+      "updatedAt": 1790904087
     },
     {
       "name": "IHOST.UZ MIX",
@@ -157,7 +164,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902905,
+      "updatedAt": 1790904087,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -169,7 +176,7 @@
       "map": "—",
       "ping": null,
       "playerList": [],
-      "updatedAt": 1790902905,
+      "updatedAt": 1790904087,
       "error": "unexpected A2S_INFO response: 0x6d"
     },
     {
@@ -178,10 +185,10 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_cbble_2x2",
-      "ping": 227,
+      "map": "de_dust2_2x2",
+      "ping": 184,
       "playerList": [],
-      "updatedAt": 1790902905
+      "updatedAt": 1790904088
     }
   ]
 }
