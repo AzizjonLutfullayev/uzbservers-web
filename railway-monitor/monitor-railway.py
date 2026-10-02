@@ -13,7 +13,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # =========================================================
 # UZB SERVERS — RAILWAY LIVE MONITOR
-# CS 1.6 / GoldSrc A2S_INFO + A2S_PLAYER
+# Serverlar har 60 soniyada tekshiriladi
 # =========================================================
 
 GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "").strip()
@@ -28,8 +28,9 @@ GITHUB_BRANCH = os.getenv(
     "main"
 ).strip()
 
+# HAR 60 SONIYA
 INTERVAL = max(
-    30,
+    60,
     int(os.getenv("INTERVAL", "60"))
 )
 
@@ -163,7 +164,7 @@ def cstr(data, pos):
 
 
 # =========================================================
-# A2S_INFO
+# A2S INFO
 # =========================================================
 
 def query_info(server):
@@ -216,7 +217,7 @@ def query_info(server):
 
 
     # -----------------------------------------------------
-    # Source
+    # SOURCE
     # -----------------------------------------------------
 
     if typ == 0x49:
@@ -251,13 +252,11 @@ def query_info(server):
 
         players = data[pos]
 
-        max_players = data[
-            pos + 1
-        ]
+        max_players = data[pos + 1]
 
 
     # -----------------------------------------------------
-    # GoldSrc / CS 1.6
+    # GOLDSRC / CS 1.6
     # -----------------------------------------------------
 
     elif typ == 0x6d:
@@ -297,45 +296,42 @@ def query_info(server):
 
         players = data[pos]
 
-        max_players = data[
-            pos + 1
-        ]
+        max_players = data[pos + 1]
 
 
     else:
 
         raise ValueError(
-            f"unexpected A2S_INFO type "
-            f"0x{typ:02x}"
+            f"unexpected A2S_INFO type 0x{typ:02x}"
         )
 
 
     return {
 
-        "name": (
+        "name":
             name
-            or server["name"]
-        ),
+            or server["name"],
 
-        "map": map_name,
+        "map":
+            map_name,
 
-        "players": int(
-            players
-        ),
+        "players":
+            int(players),
 
-        "maxPlayers": int(
-            max_players
-        ),
+        "maxPlayers":
+            int(max_players),
 
-        "ping": ping,
+        "ping":
+            ping,
 
-        "online": True
+        "online":
+            True
 
     }
 
 
 # =========================================================
-# A2S_PLAYER
+# A2S PLAYER
 # =========================================================
 
 def query_players(server):
@@ -350,10 +346,11 @@ def query_players(server):
         socket.SOCK_DGRAM
     ) as s:
 
-        s.settimeout(TIMEOUT)
+        s.settimeout(
+            TIMEOUT
+        )
 
-        # A2S_PLAYER challenge request
-
+        # First request
         s.sendto(
             b"\xff\xff\xff\xff"
             b"\x55"
@@ -366,8 +363,7 @@ def query_players(server):
         )
 
 
-        # Server challenge yuborsa
-
+        # Challenge received
         if (
             len(data) >= 9
             and data[4] == 0x41
@@ -410,15 +406,10 @@ def query_players(server):
         if pos >= len(data):
             break
 
-
-        # Player index
-
         index = data[pos]
 
         pos += 1
 
-
-        # Player name
 
         name, pos = cstr(
             data,
@@ -430,8 +421,6 @@ def query_players(server):
             break
 
 
-        # Score
-
         score = struct.unpack_from(
             "<i",
             data,
@@ -440,8 +429,6 @@ def query_players(server):
 
         pos += 4
 
-
-        # Duration
 
         duration = struct.unpack_from(
             "<f",
@@ -454,19 +441,23 @@ def query_players(server):
 
         players.append({
 
-            "index": index,
+            "index":
+                index,
 
-            "name": name,
+            "name":
+                name,
 
-            "score": score,
+            "score":
+                score,
 
-            "duration": round(
-                max(
-                    0.0,
-                    duration
-                ),
-                1
-            )
+            "duration":
+                round(
+                    max(
+                        0.0,
+                        duration
+                    ),
+                    1
+                )
 
         })
 
@@ -475,45 +466,46 @@ def query_players(server):
 
 
 # =========================================================
-# SERVER CHECK
+# CHECK ONE SERVER
 # =========================================================
 
 def check(server):
 
     row = {
 
-        "name": server["name"],
+        "name":
+            server["name"],
 
-        "ip": (
-            f'{server["ip"]}:'
-            f'{server["port"]}'
-        ),
+        "ip":
+            f'{server["ip"]}:{server["port"]}',
 
-        "online": False,
+        "online":
+            False,
 
-        "players": 0,
+        "players":
+            0,
 
-        "maxPlayers": 0,
+        "maxPlayers":
+            0,
 
-        "map": "—",
+        "map":
+            "—",
 
-        "ping": None,
+        "ping":
+            None,
 
-        "playerList": []
+        "playerList":
+            []
 
     }
 
 
     try:
 
-        # Server information
-
         row.update(
             query_info(server)
         )
 
-
-        # Player information
 
         try:
 
@@ -521,8 +513,6 @@ def check(server):
                 query_players(server)
             )
 
-
-            # Real player count
 
             row["players"] = max(
 
@@ -596,6 +586,7 @@ def github_request(
             ensure_ascii=False
         ).encode()
 
+
         headers[
             "Content-Type"
         ] = "application/json"
@@ -639,23 +630,19 @@ def publish(snapshot):
     )
 
 
-    # Current GitHub file
-
     current = github_request(
         "GET",
         api
     )
 
 
-    # JSON content
-
     content = {
 
-        "updatedAt": int(
-            time.time()
-        ),
+        "updatedAt":
+            int(time.time()),
 
-        "servers": snapshot
+        "servers":
+            snapshot
 
     }
 
@@ -689,9 +676,13 @@ def publish(snapshot):
 
 
     github_request(
+
         "PUT",
+
         api,
+
         payload
+
     )
 
 
@@ -702,7 +693,7 @@ def publish(snapshot):
 def main():
 
     print(
-        "UZB SERVERS Railway monitor | "
+        f"UZB SERVERS Railway monitor | "
         f"{len(SERVERS)} servers | "
         f"every {INTERVAL}s"
     )
@@ -714,7 +705,6 @@ def main():
 
 
         # Parallel server checking
-
         with ThreadPoolExecutor(
             max_workers=min(
                 16,
@@ -745,8 +735,6 @@ def main():
             ]
 
 
-        # Sort by IP
-
         snapshot.sort(
             key=lambda x: x["ip"]
         )
@@ -774,8 +762,7 @@ def main():
 
                 int(
                     server.get(
-                        "players",
-                        0
+                        "players"
                     )
                     or 0
                 )
@@ -788,12 +775,9 @@ def main():
             print(
 
                 f"[{time.strftime('%H:%M:%S')}] "
-
                 f"published: "
-
-                f"{online}/"
-                f"{len(snapshot)} online, "
-
+                f"{online}/{len(snapshot)} "
+                f"online, "
                 f"{players} players"
 
             )
@@ -806,13 +790,14 @@ def main():
             )
 
 
-        # Wait until next update
+        # =================================================
+        # NEXT CHECK — 60 SECONDS
+        # =================================================
 
         elapsed = (
             time.time()
             - started
         )
-
 
         time.sleep(
             max(
