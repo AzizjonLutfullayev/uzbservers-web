@@ -1,16 +1,16 @@
 {
-  "updatedAt": 1790962645,
+  "updatedAt": 1790962705,
   "servers": [
     {
       "name": "CSZONE.UZ - Public #1",
       "ip": "195.158.11.77",
       "port": 27015,
       "online": true,
-      "players": 13,
+      "players": 14,
       "max_players": 32,
-      "map": "de_dust2",
-      "ping": 195,
-      "updated_at": 1790962645
+      "map": "de_inferno_2x2",
+      "ping": 173,
+      "updated_at": 1790962705
     }
   ]
 }
