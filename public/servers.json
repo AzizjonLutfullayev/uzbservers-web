@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790977559,
+  "updatedAt": 1790977561,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,25 +8,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "css_miragewinter_go",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 18510.3
+          "duration": 18511.9
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 18509.0
+          "duration": 18510.6
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 18506.2
+          "duration": 18507.8
         }
       ]
     },
@@ -37,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_inferno_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 2205.6
+          "duration": 2207.3
         }
       ]
     },
@@ -54,7 +54,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 179,
       "playerList": []
     },
     {
@@ -64,19 +64,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 3,
-          "duration": 641451.0
+          "duration": 641452.6
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 44495.4
+          "duration": 44497.0
         }
       ]
     },
@@ -87,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 177,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 7518.9
+          "duration": 7520.6
         }
       ]
     },
@@ -104,13 +104,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 13884.4
+          "duration": 13886.1
         }
       ]
     },
@@ -121,13 +121,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "awp_lego_2",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "oo7777",
           "score": 0,
-          "duration": 105.3
+          "duration": 106.9
         }
       ]
     },
@@ -138,13 +138,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "abdumuhtor",
           "score": 14,
-          "duration": 1003.5
+          "duration": 1005.1
         }
       ]
     },
@@ -192,7 +192,7 @@
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 2,
+      "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
@@ -201,13 +201,7 @@
           "index": 0,
           "name": "Cristy",
           "score": 0,
-          "duration": 884.4
-        },
-        {
-          "index": 1,
-          "name": "Empte",
-          "score": 3,
-          "duration": 201.4
+          "duration": 886.0
         }
       ]
     },
@@ -218,15 +212,8 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 181,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "puma",
-          "score": -12,
-          "duration": 169.1
-        }
-      ]
+      "ping": 177,
+      "playerList": []
     },
     {
       "name": "WEIT CS | PUBLIC [#1]",
@@ -235,7 +222,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dusferno2",
-      "ping": 177,
+      "ping": 178,
       "playerList": []
     }
   ]
