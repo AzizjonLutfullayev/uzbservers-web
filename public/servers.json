@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790973343,
+  "updatedAt": 1790973382,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,25 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 14294.4
+          "duration": 14332.9
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 14293.1
+          "duration": 14331.6
         },
         {
           "index": 2,
-          "name": "DIMON",
-          "score": 31,
-          "duration": 11698.2
-        },
-        {
-          "index": 3,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 14290.3
+          "duration": 14328.8
         }
       ]
     },
@@ -43,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke_2x2",
-      "ping": 168,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 16404.6
+          "duration": 16443.0
         }
       ]
     },
@@ -60,31 +54,31 @@
       "players": 4,
       "maxPlayers": 32,
       "map": "35hp_2",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "!??!",
-          "score": 0,
-          "duration": 53.0
+          "score": 1,
+          "duration": 91.4
         },
         {
           "index": 1,
           "name": "B1lack_volk",
           "score": 0,
-          "duration": 8998.4
+          "duration": 9036.8
         },
         {
           "index": 2,
           "name": "mapuuuuuuuuuuuuuuuuuuuuuuuuuuuu",
-          "score": 59,
-          "duration": 509.3
+          "score": 68,
+          "duration": 547.7
         },
         {
           "index": 3,
           "name": "qariya",
-          "score": 3,
-          "duration": 142.4
+          "score": 0,
+          "duration": 13.8
         }
       ]
     },
@@ -95,19 +89,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 637235.1
+          "duration": 637273.6
         },
         {
           "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 40279.5
+          "duration": 40318.0
         }
       ]
     },
@@ -124,7 +118,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 3303.1
+          "duration": 3341.5
         }
       ]
     },
@@ -135,13 +129,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 9668.6
+          "duration": 9707.0
         }
       ]
     },
@@ -152,7 +146,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -162,37 +156,37 @@
       "players": 5,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 176,
       "playerList": [
         {
           "index": 0,
           "name": "One_ | ANTIMAT ONEEEN TEWIGIGA",
           "score": 2,
-          "duration": 259.3
+          "duration": 297.7
         },
         {
           "index": 1,
           "name": "p333pp",
           "score": 12,
-          "duration": 1040.5
+          "duration": 1078.9
         },
         {
           "index": 2,
           "name": "TiRs_TiRs",
           "score": 13,
-          "duration": 1040.4
+          "duration": 1078.8
         },
         {
           "index": 3,
           "name": "[ANTIMAT] Player",
-          "score": 105,
-          "duration": 1040.5
+          "score": 109,
+          "duration": 1078.9
         },
         {
           "index": 4,
           "name": "ali",
-          "score": 1,
-          "duration": 1040.0
+          "score": 0,
+          "duration": 1078.5
         }
       ]
     },
@@ -210,22 +204,28 @@
       "name": "亗 NUMBERONE UZBEKISTAN 亗",
       "ip": "83.69.139.164:27015",
       "online": true,
-      "players": 2,
+      "players": 3,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "H1Roo",
-          "score": 2,
-          "duration": 189.1
+          "score": 3,
+          "duration": 227.5
         },
         {
           "index": 1,
+          "name": "Empte",
+          "score": 0,
+          "duration": 7.4
+        },
+        {
+          "index": 2,
           "name": "axow",
           "score": 0,
-          "duration": 1213.6
+          "duration": 1252.0
         }
       ]
     },
@@ -243,8 +243,8 @@
       "name": "NumberOne[UZ]-CSDM #1",
       "ip": "83.69.139.164:27020",
       "online": true,
-      "players": 1,
-      "maxPlayers": 32,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "de_dust2",
       "ping": 168,
       "playerList": [
@@ -252,7 +252,7 @@
           "index": 0,
           "name": "[ U Z ] M A S T E R",
           "score": 0,
-          "duration": 86.4
+          "duration": 124.8
         }
       ]
     },
@@ -269,31 +269,31 @@
           "index": 128,
           "name": "FuryWoW",
           "score": 0,
-          "duration": 838704.7
+          "duration": 838743.1
         },
         {
           "index": 129,
           "name": "01",
           "score": 0,
-          "duration": 838704.7
+          "duration": 838743.1
         },
         {
           "index": 130,
           "name": "Legend",
           "score": 0,
-          "duration": 838704.7
+          "duration": 838743.1
         },
         {
           "index": 131,
           "name": "aSILbek",
           "score": 0,
-          "duration": 838704.7
+          "duration": 838743.1
         },
         {
           "index": 132,
           "name": "1.cmbk",
           "score": 0,
-          "duration": 838704.7
+          "duration": 838743.1
         }
       ]
     },
@@ -304,13 +304,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_aztec_2x2",
-      "ping": 179,
+      "ping": 180,
       "playerList": [
         {
           "index": 0,
           "name": "allayar23",
           "score": 0,
-          "duration": 250.9
+          "duration": 26.4
         }
       ]
     },
@@ -321,7 +321,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_nuke_2x2",
-      "ping": 178,
+      "ping": 177,
       "playerList": []
     }
   ]
