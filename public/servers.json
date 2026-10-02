@@ -1,210 +1,87 @@
 {
-  "updatedAt": 1790981415,
+  "updatedAt": 1790981452,
   "servers": [
     {
-      "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
-      "ip": "157.22.130.26:27015",
-      "online": true,
-      "players": 10,
-      "maxPlayers": 0,
-      "map": "de_winterdust2",
-      "ping": 169,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "player",
-          "score": 0,
-          "duration": 1665.2
-        },
-        {
-          "index": 1,
-          "name": "BOOST-TOP | player",
-          "score": 0,
-          "duration": 22363.1
-        },
-        {
-          "index": 2,
-          "name": "(1)BOOST-TOP | player",
-          "score": 0,
-          "duration": 1663.8
-        }
-      ]
-    },
-    {
-      "name": "█     ONECS.UZ PUBLIC #1   █     ~UZBEKISTAN~  █",
-      "ip": "185.228.90.26:27002",
-      "online": true,
-      "players": 10,
-      "maxPlayers": 0,
-      "map": "$2000$",
-      "ping": 170,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "demo",
-          "score": 0,
-          "duration": 6059.4
-        }
-      ]
-    },
-    {
-      "name": "CSZONE.UZ - Public [#1]",
+      "name": "CSZONE.UZ - Public #1",
       "ip": "195.158.11.77:27015",
       "online": true,
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
-      "playerList": []
+      "ping": 229,
+      "playerList": [],
+      "updatedAt": 1790981442
     },
     {
-      "name": "CSZONE.UZ - Public [#2]",
+      "name": "CSZONE.UZ - Public #2",
       "ip": "195.158.11.77:27016",
       "online": true,
-      "players": 1,
+      "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 1826,
+      "ping": 239,
       "playerList": [
         {
           "index": 0,
+          "name": "CSZONE.UZ",
+          "score": 0,
+          "duration": 645335.2
+        },
+        {
+          "index": 1,
           "name": "633",
           "score": 0,
-          "duration": 48351.2
+          "duration": 48379.5
         }
-      ]
+      ],
+      "updatedAt": 1790981443
     },
     {
-      "name": "CSZONE.UZ - Clanwar [#1]",
+      "name": "CSZONE.UZ - Clanwar #1",
       "ip": "195.158.11.77:27017",
       "online": true,
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 169,
+      "ping": 229,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 11373.1
+          "duration": 11403.8
         }
-      ]
+      ],
+      "updatedAt": 1790981443
     },
     {
-      "name": "CSZONE.UZ - Clanwar [#2]",
+      "name": "CSZONE.UZ - Clanwar #2",
       "ip": "195.158.11.77:27018",
       "online": true,
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 229,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 17738.6
+          "duration": 17770.0
         }
-      ]
-    },
-    {
-      "name": "PROCS.UZ | 1000 FPS UZBEKISTAN",
-      "ip": "195.158.4.108:27777",
-      "online": true,
-      "players": 10,
-      "maxPlayers": 0,
-      "map": "35hp_2",
-      "ping": 177,
-      "playerList": []
-    },
-    {
-      "name": "TIMCS.UZ | [PUBLIC #N1]",
-      "ip": "195.158.4.109:27015",
-      "online": true,
-      "players": 1,
-      "maxPlayers": 32,
-      "map": "de_dust2_2x2",
-      "ping": 179,
-      "playerList": [
-        {
-          "index": 0,
-          "name": ".",
-          "score": 2,
-          "duration": 963.9
-        }
-      ]
-    },
-    {
-      "name": "IHOST.UZ | MIX [UZB/LOW PING]",
-      "ip": "83.69.139.164:27014",
-      "online": true,
-      "players": 10,
-      "maxPlayers": 0,
-      "map": "aim_sk_awp",
-      "ping": 169,
-      "playerList": []
-    },
-    {
-      "name": "亗 NUMBERONE UZBEKISTAN 亗",
-      "ip": "83.69.139.164:27015",
-      "online": true,
-      "players": 5,
-      "maxPlayers": 32,
-      "map": "de_dust2_2x2",
-      "ping": 169,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "020VP",
-          "score": 29,
-          "duration": 3242.0
-        },
-        {
-          "index": 1,
-          "name": "-13",
-          "score": 24,
-          "duration": 3133.7
-        },
-        {
-          "index": 2,
-          "name": "Empte",
-          "score": 30,
-          "duration": 2398.4
-        },
-        {
-          "index": 3,
-          "name": "UZB707",
-          "score": 29,
-          "duration": 2157.5
-        },
-        {
-          "index": 4,
-          "name": "[Fine-Boost] player",
-          "score": 4,
-          "duration": 595.8
-        }
-      ]
+      ],
+      "updatedAt": 1790981444
     },
     {
       "name": "NumberOne[UZ]-Public #1",
       "ip": "83.69.139.164:27016",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
-      "map": "de_dust2_2x2",
-      "ping": 169,
-      "playerList": []
-    },
-    {
-      "name": "NumberOne[UZ]-CSDM #1",
-      "ip": "83.69.139.164:27020",
-      "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2",
-      "ping": 168,
-      "playerList": []
+      "map": "de_dust2_2x2",
+      "ping": 214,
+      "playerList": [],
+      "updatedAt": 1790981445
     },
     {
       "name": "NumberOne[UZ]-Public #2",
@@ -213,28 +90,172 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
-      "playerList": []
+      "ping": 217,
+      "playerList": [],
+      "updatedAt": 1790981445
     },
     {
-      "name": " CSLOVE.UZ [PUBLIC #1]",
-      "ip": "84.54.82.234:27015",
+      "name": "NumberOne[UZ]-CSDM #1",
+      "ip": "83.69.139.164:27020",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
-      "map": "de_train32",
-      "ping": 179,
-      "playerList": []
+      "players": 0,
+      "maxPlayers": 32,
+      "map": "de_dust2",
+      "ping": 213,
+      "playerList": [],
+      "updatedAt": 1790981446
     },
     {
-      "name": "WEIT CS | PUBLIC [#1]",
+      "name": "NUMBERONE UZBEKISTAN",
+      "ip": "83.69.139.164:27015",
+      "online": true,
+      "players": 5,
+      "maxPlayers": 32,
+      "map": "de_dust2_2x2",
+      "ping": 213,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "020VP",
+          "score": 29,
+          "duration": 3276.0
+        },
+        {
+          "index": 1,
+          "name": "-13",
+          "score": 24,
+          "duration": 3167.7
+        },
+        {
+          "index": 2,
+          "name": "Empte",
+          "score": 31,
+          "duration": 2432.4
+        },
+        {
+          "index": 3,
+          "name": "UZB707",
+          "score": 29,
+          "duration": 2191.5
+        },
+        {
+          "index": 4,
+          "name": "[Fine-Boost] player",
+          "score": 4,
+          "duration": 629.8
+        }
+      ],
+      "updatedAt": 1790981447
+    },
+    {
+      "name": "TIMCS.UZ Public #1",
+      "ip": "195.158.4.109:27015",
+      "online": true,
+      "players": 1,
+      "maxPlayers": 32,
+      "map": "de_dust2_2x2",
+      "ping": 230,
+      "playerList": [
+        {
+          "index": 0,
+          "name": ".",
+          "score": 2,
+          "duration": 998.6
+        }
+      ],
+      "updatedAt": 1790981447
+    },
+    {
+      "name": "UZB ARENA",
+      "ip": "157.22.130.26:27015",
+      "online": true,
+      "players": 3,
+      "maxPlayers": 32,
+      "map": "de_winterdust2",
+      "ping": 222,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "player",
+          "score": 0,
+          "duration": 1700.5
+        },
+        {
+          "index": 1,
+          "name": "BOOST-TOP | player",
+          "score": 0,
+          "duration": 22398.5
+        },
+        {
+          "index": 2,
+          "name": "(1)BOOST-TOP | player",
+          "score": 0,
+          "duration": 1699.1
+        }
+      ],
+      "updatedAt": 1790981448
+    },
+    {
+      "name": "PROCS.UZ",
+      "ip": "195.158.4.108:27777",
+      "online": true,
+      "players": 0,
+      "maxPlayers": 32,
+      "map": "35hp_2",
+      "ping": 229,
+      "playerList": [],
+      "updatedAt": 1790981449
+    },
+    {
+      "name": "ONECS.UZ Public #1",
+      "ip": "185.228.90.26:27002",
+      "online": true,
+      "players": 1,
+      "maxPlayers": 32,
+      "map": "$2000$",
+      "ping": 214,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "demo",
+          "score": 0,
+          "duration": 6096.5
+        }
+      ],
+      "updatedAt": 1790981449
+    },
+    {
+      "name": "IHOST.UZ MIX",
+      "ip": "83.69.139.164:27014",
+      "online": true,
+      "players": 0,
+      "maxPlayers": 14,
+      "map": "aim_sk_awp",
+      "ping": 217,
+      "playerList": [],
+      "updatedAt": 1790981450
+    },
+    {
+      "name": "WEIT CS Public",
       "ip": "84.54.82.234:27047",
       "online": true,
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 178,
-      "playerList": []
+      "ping": 230,
+      "playerList": [],
+      "updatedAt": 1790981451
+    },
+    {
+      "name": "CSLOVE.UZ [PUBLIC #1]",
+      "ip": "84.54.82.234:27015",
+      "online": true,
+      "players": 0,
+      "maxPlayers": 32,
+      "map": "de_train32",
+      "ping": 231,
+      "playerList": [],
+      "updatedAt": 1790981451
     }
   ]
 }
