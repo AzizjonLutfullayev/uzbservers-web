@@ -1169,7 +1169,61 @@ footer{
 }
 
 
+
+
+/* =========================================================
+   UZB SERVERS — ALL FEATURES ENHANCEMENT
+========================================================= */
+.monitor-toolbar{display:grid;grid-template-columns:1.5fr .8fr .8fr auto auto;gap:10px;margin:0 0 16px}
+.monitor-control{min-height:44px;padding:0 13px;border:1px solid #26344c;border-radius:12px;background:#0b1422;color:#e8eef8;outline:none}
+.monitor-control:focus{border-color:#5b8cff;box-shadow:0 0 0 3px #5b8cff22}
+.monitor-toolbar button{cursor:pointer;font-weight:800}
+.monitor-refresh{background:#111e34!important}
+.monitor-refresh.is-refreshing{opacity:.7;pointer-events:none}
+.monitor-filter-note{margin:-5px 0 14px;color:#71839e;font-size:12px}
+.monitor-server-card{scroll-margin-top:90px}
+.monitor-card-tools{display:flex;gap:7px;align-items:center}
+.monitor-favorite{width:34px;height:34px;padding:0;border-radius:10px;border:1px solid #26344c;background:#0b1422;color:#71839e;cursor:pointer;font-size:17px}
+.monitor-favorite.active{color:#ffd45c;border-color:#806b2b;background:#2a230d}
+.monitor-action{cursor:pointer}
+.monitor-action:disabled{opacity:.5;cursor:not-allowed}
+.monitor-data-state{display:inline-flex;align-items:center;gap:7px;margin-top:5px;color:#71839e;font-size:11px}
+.monitor-data-state .dot{width:7px;height:7px;border-radius:50%;background:#35e6a0;box-shadow:0 0 8px #35e6a0}
+.monitor-empty-filter{grid-column:1/-1;padding:35px;text-align:center;border:1px dashed #26344c;border-radius:16px;color:#91a0b8}
+.monitor-mini-bar{display:flex;justify-content:space-between;gap:12px;align-items:center;margin:0 0 14px;padding:10px 13px;border:1px solid #26344c;border-radius:12px;background:#0b1422}
+.monitor-mini-bar b{color:#e8eef8}
+.monitor-mini-right{color:#71839e;font-size:12px}
+@media(max-width:1050px){
+  .monitor-stats{grid-template-columns:repeat(3,1fr)}
+  .monitor-toolbar{grid-template-columns:1fr 1fr 1fr}
+}
+@media(max-width:700px){
+  .monitor-title{align-items:flex-start;flex-direction:column}
+  .monitor-title h2{font-size:26px}
+  .monitor-stats{grid-template-columns:repeat(2,1fr)}
+  .monitor-top-server{grid-template-columns:1fr 1fr}
+  .monitor-server-grid{grid-template-columns:1fr}
+  .monitor-toolbar{grid-template-columns:1fr 1fr}
+  .monitor-toolbar .monitor-search{grid-column:1/-1}
+  .monitor-refresh{grid-column:1/-1}
+  .monitor-mini-bar{align-items:flex-start;flex-direction:column}
+}
+@media(max-width:430px){
+  .monitor-stats{grid-template-columns:1fr}
+  .monitor-top-server{grid-template-columns:1fr}
+  .monitor-toolbar{grid-template-columns:1fr}
+  .monitor-toolbar .monitor-search{grid-column:auto}
+}
+
 </style>
+
+<!-- UZB SERVERS SEO / SOCIAL META -->
+<meta name="description" content="UZB SERVERS — O‘zbekiston CS 1.6 serverlarini qidirish, kuzatish va ulanish uchun zamonaviy server monitoring platformasi.">
+<meta property="og:title" content="UZB SERVERS — CS 1.6 Server Monitoring">
+<meta property="og:description" content="O‘zbekiston CS 1.6 serverlari: ONLINE/OFFLINE, players, map va ping monitoringi.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#08111f">
+
 </head>
 
 
@@ -3877,228 +3931,306 @@ setInterval(
 
 
 <script>
-
 /* =========================================================
-   UZB SERVERS — PREMIUM MONITOR DASHBOARD
-   Added at the end so existing site JavaScript remains intact
+   UZB SERVERS — ALL-IN-ONE PREMIUM SERVER MONITOR
+   Preserves existing auth/chat/admin and openPlayers()
 ========================================================= */
 (function(){
   "use strict";
 
   const DASHBOARD_ID = "uzbMonitorDashboard";
-  let dashboardServers = [];
+  const FAVORITES_KEY = "uzbservers:favorites";
+  let allServers = [];
+  let query = "";
+  let status = "all";
+  let sort = "default";
+  let lastUpdated = 0;
 
-  function dEsc(value){
-    return String(value ?? "").replace(/[&<>"']/g,function(m){
+  function esc(v){
+    return String(v ?? "").replace(/[&<>"']/g,function(m){
       return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m];
     });
   }
 
-  function pingClass(ping){
-    ping = Number(ping || 0);
-    if(ping <= 80) return "monitor-ping-good";
-    if(ping <= 160) return "monitor-ping-medium";
+  function pingClass(p){
+    p = Number(p || 0);
+    if(p <= 80) return "monitor-ping-good";
+    if(p <= 160) return "monitor-ping-medium";
     return "monitor-ping-bad";
   }
 
-  function formatTime(timestamp){
-    if(!timestamp) return "—";
-    const n = Number(timestamp);
-    const d = new Date(n < 100000000000 ? n * 1000 : n);
-    return d.toLocaleString("uz-UZ",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit"});
+  function formatTime(ts){
+    if(!ts) return "—";
+    const n = Number(ts);
+    const d = new Date(n < 100000000000 ? n*1000 : n);
+    return d.toLocaleString("uz-UZ",{day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});
   }
 
-  function copyDashboardIP(ip,button){
-    if(navigator.clipboard && window.isSecureContext){
-      navigator.clipboard.writeText(ip).then(function(){
-        const old = button.textContent;
-        button.textContent = "Nusxalandi ✓";
-        setTimeout(function(){button.textContent = old},1200);
-      }).catch(function(){});
+  function getFavorites(){
+    try{
+      return new Set(JSON.parse(localStorage.getItem(FAVORITES_KEY) || "[]"));
+    }catch(e){
+      return new Set();
     }
   }
 
-  function renderDashboard(){
+  function saveFavorites(set){
+    try{ localStorage.setItem(FAVORITES_KEY,JSON.stringify([...set])); }catch(e){}
+  }
+
+  function serverKey(s){
+    return String(s.ip || s.name || "");
+  }
+
+  function copyIP(ip,button){
+    if(!navigator.clipboard || !window.isSecureContext) return;
+    navigator.clipboard.writeText(ip).then(function(){
+      const old = button.textContent;
+      button.textContent = "✓ Nusxalandi";
+      setTimeout(function(){button.textContent=old},1200);
+    }).catch(function(){});
+  }
+
+  function filteredServers(){
+    const q = query.trim().toLowerCase();
+
+    let list = allServers.filter(function(s){
+      const matchesQuery = !q ||
+        String(s.name || "").toLowerCase().includes(q) ||
+        String(s.ip || "").toLowerCase().includes(q) ||
+        String(s.map || "").toLowerCase().includes(q);
+
+      const matchesStatus =
+        status === "all" ||
+        (status === "online" && !!s.online) ||
+        (status === "offline" && !s.online);
+
+      return matchesQuery && matchesStatus;
+    });
+
+    if(sort === "players"){
+      list.sort((a,b)=>Number(b.players||0)-Number(a.players||0));
+    }else if(sort === "ping"){
+      list.sort((a,b)=>Number(a.ping||9999)-Number(b.ping||9999));
+    }else if(sort === "name"){
+      list.sort((a,b)=>String(a.name||"").localeCompare(String(b.name||""),"uz"));
+    }else if(sort === "status"){
+      list.sort((a,b)=>Number(b.online)-Number(a.online));
+    }
+
+    const favs = getFavorites();
+    if(sort === "favorites"){
+      list.sort((a,b)=>{
+        return Number(favs.has(serverKey(b))) - Number(favs.has(serverKey(a)));
+      });
+    }
+
+    return list;
+  }
+
+  function render(){
     const root = document.getElementById(DASHBOARD_ID);
     if(!root) return;
 
-    const total = dashboardServers.length;
-    const online = dashboardServers.filter(function(s){return !!s.online}).length;
-    const offline = total - online;
-    const players = dashboardServers.reduce(function(sum,s){return sum + Number(s.players || 0)},0);
-    const onlineServers = dashboardServers.filter(function(s){return !!s.online});
+    const total = allServers.length;
+    const online = allServers.filter(s=>!!s.online).length;
+    const offline = total-online;
+    const players = allServers.reduce((n,s)=>n+Number(s.players||0),0);
+    const onlineServers = allServers.filter(s=>!!s.online);
     const avgPing = onlineServers.length
-      ? Math.round(onlineServers.reduce(function(sum,s){return sum + Number(s.ping || 0)},0)/onlineServers.length)
+      ? Math.round(onlineServers.reduce((n,s)=>n+Number(s.ping||0),0)/onlineServers.length)
       : 0;
 
-    const topServer = dashboardServers.slice().sort(function(a,b){
-      return Number(b.players || 0) - Number(a.players || 0);
-    })[0];
+    const filtered = filteredServers();
+    const favs = getFavorites();
+
+    const topServer = allServers.slice().sort((a,b)=>Number(b.players||0)-Number(a.players||0))[0];
 
     root.innerHTML = `
       <div class="monitor-dashboard">
         <div class="monitor-title">
           <div>
             <h2>Server Monitoring</h2>
-            <p>O‘zbekiston CS 1.6 serverlari avtomatik monitoringi</p>
+            <p>O‘zbekiston CS 1.6 serverlari — qidiruv, filter, ping va player monitoringi</p>
+            <div class="monitor-data-state"><span class="dot"></span> Ma'lumotlar avtomatik yangilanmoqda</div>
           </div>
           <div class="monitor-live"><span class="monitor-live-dot"></span> LIVE MONITOR</div>
         </div>
 
         <div class="monitor-stats">
-          <div class="monitor-stat">
-            <div class="monitor-stat-label">Jami server</div>
-            <div class="monitor-stat-value monitor-blue">${total}</div>
-            <div class="monitor-stat-sub">monitoringdagi serverlar</div>
-          </div>
-          <div class="monitor-stat">
-            <div class="monitor-stat-label">Online</div>
-            <div class="monitor-stat-value monitor-online">${online}</div>
-            <div class="monitor-stat-sub">faol serverlar</div>
-          </div>
-          <div class="monitor-stat">
-            <div class="monitor-stat-label">Offline</div>
-            <div class="monitor-stat-value monitor-offline">${offline}</div>
-            <div class="monitor-stat-sub">javob bermayotgan serverlar</div>
-          </div>
-          <div class="monitor-stat">
-            <div class="monitor-stat-label">O‘yinchilar</div>
-            <div class="monitor-stat-value monitor-yellow">${players}</div>
-            <div class="monitor-stat-sub">barcha serverlarda</div>
-          </div>
-          <div class="monitor-stat">
-            <div class="monitor-stat-label">O‘rtacha ping</div>
-            <div class="monitor-stat-value monitor-blue">${avgPing} ms</div>
-            <div class="monitor-stat-sub">online serverlar</div>
-          </div>
+          <div class="monitor-stat"><div class="monitor-stat-label">Jami server</div><div class="monitor-stat-value monitor-blue">${total}</div><div class="monitor-stat-sub">monitoringdagi serverlar</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">Online</div><div class="monitor-stat-value monitor-online">${online}</div><div class="monitor-stat-sub">faol serverlar</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">Offline</div><div class="monitor-stat-value monitor-offline">${offline}</div><div class="monitor-stat-sub">javob bermayotgan serverlar</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">O‘yinchilar</div><div class="monitor-stat-value monitor-yellow">${players}</div><div class="monitor-stat-sub">barcha serverlarda</div></div>
+          <div class="monitor-stat"><div class="monitor-stat-label">O‘rtacha ping</div><div class="monitor-stat-value monitor-blue">${avgPing} ms</div><div class="monitor-stat-sub">online serverlar</div></div>
         </div>
 
         ${topServer ? `
         <div class="monitor-top-server">
           <div class="monitor-highlight">
             <div class="monitor-highlight-label">Eng ko‘p o‘yinchili server</div>
-            <div class="monitor-highlight-name">${dEsc(topServer.name)}</div>
-            <div class="monitor-highlight-ip">${dEsc(topServer.ip)}</div>
+            <div class="monitor-highlight-name">${esc(topServer.name)}</div>
+            <div class="monitor-highlight-ip">${esc(topServer.ip)}</div>
           </div>
-          <div class="monitor-highlight">
-            <div class="monitor-highlight-label">Players</div>
-            <div class="monitor-highlight-value monitor-online">${Number(topServer.players || 0)}/${Number(topServer.maxPlayers || 0)}</div>
-          </div>
-          <div class="monitor-highlight">
-            <div class="monitor-highlight-label">Map</div>
-            <div class="monitor-highlight-value">${dEsc(topServer.map || "—")}</div>
-          </div>
-          <div class="monitor-highlight">
-            <div class="monitor-highlight-label">Ping</div>
-            <div class="monitor-highlight-value ${pingClass(topServer.ping)}">${Number(topServer.ping || 0)} ms</div>
-          </div>
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Players</div><div class="monitor-highlight-value monitor-online">${Number(topServer.players||0)}/${Number(topServer.maxPlayers||0)}</div></div>
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Map</div><div class="monitor-highlight-value">${esc(topServer.map||"—")}</div></div>
+          <div class="monitor-highlight"><div class="monitor-highlight-label">Ping</div><div class="monitor-highlight-value ${pingClass(topServer.ping)}">${Number(topServer.ping||0)} ms</div></div>
         </div>` : ""}
 
-        <div class="monitor-server-grid">
-          ${dashboardServers.map(function(server,index){return renderServerCard(server,index)}).join("")}
+        <div class="monitor-toolbar">
+          <input class="monitor-control monitor-search" id="monitorSearch" value="${esc(query)}" placeholder="🔎 Server nomi, IP yoki map..." aria-label="Server qidirish">
+          <select class="monitor-control" id="monitorStatus" aria-label="Status filter">
+            <option value="all" ${status==="all"?"selected":""}>Barcha status</option>
+            <option value="online" ${status==="online"?"selected":""}>🟢 Online</option>
+            <option value="offline" ${status==="offline"?"selected":""}>🔴 Offline</option>
+          </select>
+          <select class="monitor-control" id="monitorSort" aria-label="Server saralash">
+            <option value="default" ${sort==="default"?"selected":""}>Standart</option>
+            <option value="favorites" ${sort==="favorites"?"selected":""}>⭐ Sevimlilar</option>
+            <option value="players" ${sort==="players"?"selected":""}>👥 Playerlar</option>
+            <option value="ping" ${sort==="ping"?"selected":""}>📡 Ping</option>
+            <option value="name" ${sort==="name"?"selected":""}>🔤 Nom</option>
+            <option value="status" ${sort==="status"?"selected":""}>🟢 Status</option>
+          </select>
+          <button class="monitor-control monitor-refresh" id="monitorRefresh" type="button">↻ Yangilash</button>
+          <button class="monitor-control" id="monitorReset" type="button">✕ Tozalash</button>
         </div>
-      </section>
+
+        <div class="monitor-mini-bar">
+          <div><b>${filtered.length}</b> ta server ko‘rsatilmoqda</div>
+          <div class="monitor-mini-right">Oxirgi data: ${lastUpdated ? formatTime(lastUpdated) : "—"}</div>
+        </div>
+
+        <div class="monitor-server-grid">
+          ${filtered.length ? filtered.map(function(s){
+            const originalIndex = allServers.indexOf(s);
+            return card(s,originalIndex,favs);
+          }).join("") : `<div class="monitor-empty-filter">Mos server topilmadi.</div>`}
+        </div>
+      </div>
     `;
 
-    root.querySelectorAll("[data-dashboard-copy]").forEach(function(button){
-      button.addEventListener("click",function(){
-        copyDashboardIP(button.dataset.dashboardCopy,button);
+    const search = root.querySelector("#monitorSearch");
+    const statusEl = root.querySelector("#monitorStatus");
+    const sortEl = root.querySelector("#monitorSort");
+    const refresh = root.querySelector("#monitorRefresh");
+    const reset = root.querySelector("#monitorReset");
+
+    search.addEventListener("input",function(){
+      query=this.value;
+      render();
+      const el=document.getElementById("monitorSearch");
+      if(el){el.focus();el.setSelectionRange(el.value.length,el.value.length);}
+    });
+
+    statusEl.addEventListener("change",function(){status=this.value;render();});
+    sortEl.addEventListener("change",function(){sort=this.value;render();});
+
+    reset.addEventListener("click",function(){
+      query="";
+      status="all";
+      sort="default";
+      render();
+    });
+
+    refresh.addEventListener("click",async function(){
+      refresh.classList.add("is-refreshing");
+      refresh.textContent="⟳ Yuklanmoqda...";
+      await load();
+    });
+
+    root.querySelectorAll("[data-copy-ip]").forEach(function(btn){
+      btn.addEventListener("click",function(){copyIP(btn.dataset.copyIp,btn);});
+    });
+
+    root.querySelectorAll("[data-favorite]").forEach(function(btn){
+      btn.addEventListener("click",function(){
+        const key=btn.dataset.favorite;
+        const set=getFavorites();
+        if(set.has(key)) set.delete(key); else set.add(key);
+        saveFavorites(set);
+        render();
       });
     });
 
-    root.querySelectorAll("[data-dashboard-players]").forEach(function(button){
-      button.addEventListener("click",function(){
-        const index = Number(button.dataset.dashboardPlayers);
-        if(typeof window.openPlayers === "function"){
-          window.openPlayers(index);
-        }
+    root.querySelectorAll("[data-players-index]").forEach(function(btn){
+      btn.addEventListener("click",function(){
+        const i=Number(btn.dataset.playersIndex);
+        if(typeof window.openPlayers==="function") window.openPlayers(i);
       });
     });
   }
 
-  function renderServerCard(server,index){
-    const players = Number(server.players || 0);
-    const maxPlayers = Math.max(Number(server.maxPlayers || 0),1);
-    const percentage = Math.min(100,Math.round(players/maxPlayers*100));
-    const online = !!server.online;
+  function card(s,index,favs){
+    const players=Number(s.players||0);
+    const max=Math.max(Number(s.maxPlayers||0),1);
+    const pct=Math.min(100,Math.round(players/max*100));
+    const online=!!s.online;
+    const key=serverKey(s);
+    const favorite=favs.has(key);
 
     return `
-      <article class="monitor-server-card ${online ? "online-card" : "offline-card"}">
+      <article class="monitor-server-card ${online?"online-card":"offline-card"}">
         <div class="monitor-server-head">
           <div>
-            <div class="monitor-server-name">${dEsc(server.name)}</div>
-            <div class="monitor-server-ip">${dEsc(server.ip)}</div>
+            <div class="monitor-server-name">${esc(s.name||"Unnamed server")}</div>
+            <div class="monitor-server-ip">${esc(s.ip||"")}</div>
           </div>
-          <div class="monitor-status ${online ? "online" : "offline"}">
-            <span class="monitor-status-dot"></span>${online ? "ONLINE" : "OFFLINE"}
+          <div class="monitor-card-tools">
+            <button class="monitor-favorite ${favorite?"active":""}" type="button" data-favorite="${esc(key)}" aria-label="Sevimliga qo‘shish">${favorite?"★":"☆"}</button>
+            <div class="monitor-status ${online?"online":"offline"}"><span class="monitor-status-dot"></span>${online?"ONLINE":"OFFLINE"}</div>
           </div>
         </div>
 
         <div class="monitor-metrics">
-          <div class="monitor-metric">
-            <div class="monitor-metric-label">PLAYERS</div>
-            <div class="monitor-metric-value">${players}/${maxPlayers}</div>
-          </div>
-          <div class="monitor-metric">
-            <div class="monitor-metric-label">MAP</div>
-            <div class="monitor-metric-value">${dEsc(server.map || "—")}</div>
-          </div>
-          <div class="monitor-metric">
-            <div class="monitor-metric-label">PING</div>
-            <div class="monitor-metric-value ${pingClass(server.ping)}">${online ? Number(server.ping || 0)+" ms" : "—"}</div>
-          </div>
+          <div class="monitor-metric"><div class="monitor-metric-label">PLAYERS</div><div class="monitor-metric-value">${players}/${max}</div></div>
+          <div class="monitor-metric"><div class="monitor-metric-label">MAP</div><div class="monitor-metric-value">${esc(s.map||"—")}</div></div>
+          <div class="monitor-metric"><div class="monitor-metric-label">PING</div><div class="monitor-metric-value ${pingClass(s.ping)}">${online?Number(s.ping||0)+" ms":"—"}</div></div>
         </div>
 
         <div class="monitor-player-wrap">
-          <div class="monitor-player-head"><span>Server bandligi</span><span>${percentage}%</span></div>
-          <div class="monitor-player-bar"><div class="monitor-player-fill" style="width:${percentage}%"></div></div>
+          <div class="monitor-player-head"><span>Server bandligi</span><span>${pct}%</span></div>
+          <div class="monitor-player-bar"><div class="monitor-player-fill" style="width:${pct}%"></div></div>
         </div>
 
         <div class="monitor-actions">
-          <button class="monitor-action" type="button" data-dashboard-copy="${dEsc(server.ip)}">📋 IP nusxalash</button>
-          <button class="monitor-action" type="button" data-dashboard-players="${index}">👥 Players ${server.playerList ? server.playerList.length : players}</button>
+          <button class="monitor-action" type="button" data-copy-ip="${esc(s.ip||"")}">📋 IP nusxalash</button>
+          <button class="monitor-action" type="button" data-players-index="${index}">👥 Players ${s.playerList? s.playerList.length : players}</button>
         </div>
 
-        <div class="monitor-update">Oxirgi tekshiruv: ${formatTime(server.updatedAt)}</div>
+        <div class="monitor-update">
+          Oxirgi tekshiruv: ${formatTime(s.updatedAt || lastUpdated)}
+        </div>
       </article>
     `;
   }
 
-  async function loadDashboard(){
+  async function load(){
     try{
-      const response = await fetch("/servers.json?dashboard="+Date.now(),{cache:"no-store"});
-      if(!response.ok) throw new Error("servers.json yuklanmadi");
-      const json = await response.json();
-
-      dashboardServers = Array.isArray(json.servers) ? json.servers : (Array.isArray(json) ? json : []);
-      renderDashboard();
+      const response=await fetch("/servers.json?monitor="+Date.now(),{cache:"no-store"});
+      if(!response.ok) throw new Error("servers.json");
+      const json=await response.json();
+      allServers=Array.isArray(json.servers)?json.servers:(Array.isArray(json)?json:[]);
+      lastUpdated=json.updatedAt ? Number(json.updatedAt)*1000 : Date.now();
+      render();
     }catch(error){
-      console.error("UZB dashboard:",error);
+      console.error("UZB SERVERS monitor:",error);
     }
   }
 
-  function injectDashboard(){
-    const root = document.getElementById(DASHBOARD_ID);
-
-    if(!root){
-      return;
-    }
-
-    loadDashboard();
+  function start(){
+    load();
+    /* Frontend data refresh: 30 sec.
+       Haqiqiy 1-second UDP ping uchun alohida server-side monitor/API kerak. */
+    setInterval(load,30000);
   }
 
-  function startDashboard(){
-    injectDashboard();
-    setInterval(loadDashboard,60000);
-  }
-
-  if(document.readyState === "loading"){
-    document.addEventListener("DOMContentLoaded",startDashboard);
+  if(document.readyState==="loading"){
+    document.addEventListener("DOMContentLoaded",start);
   }else{
-    startDashboard();
+    start();
   }
 })();
-
 </script>
 </body>
 </html>
