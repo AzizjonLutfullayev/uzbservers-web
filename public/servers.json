@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790996178,
+  "updatedAt": 1790996182,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,19 +8,19 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_winterdust2",
-      "ping": 181,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 13975.0
+          "duration": 13978.3
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 37128.0
+          "duration": 37131.3
         }
       ]
     },
@@ -31,25 +31,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_inferno_2x2",
-      "ping": 181,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "Lost Soul",
           "score": 0,
-          "duration": 221.3
+          "duration": 224.6
         },
         {
           "index": 1,
           "name": "AZROYILCHA",
           "score": 0,
-          "duration": 32.4
+          "duration": 35.6
         },
         {
           "index": 2,
           "name": "demo",
           "score": 0,
-          "duration": 2172.8
+          "duration": 2176.0
         }
       ]
     },
@@ -60,7 +60,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -70,13 +70,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 660070.1
+          "duration": 660073.1
         }
       ]
     },
@@ -87,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 176,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 26138.0
+          "duration": 26141.1
         }
       ]
     },
@@ -104,13 +104,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 32503.5
+          "duration": 32506.6
         }
       ]
     },
@@ -121,7 +121,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 177,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -131,25 +131,25 @@
       "players": 3,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "@risq1boyev",
           "score": 16,
-          "duration": 782.2
+          "duration": 785.4
         },
         {
           "index": 1,
           "name": "kasoy",
           "score": 10,
-          "duration": 1033.0
+          "duration": 1036.3
         },
         {
           "index": 2,
           "name": "Rapper",
           "score": 18,
-          "duration": 1517.1
+          "duration": 1520.4
         }
       ]
     },
@@ -157,26 +157,26 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 0,
-      "maxPlayers": 14,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "aim_sk_awp",
-      "ping": 180,
+      "ping": 169,
       "playerList": []
     },
     {
       "name": "亗 NUMBERONE UZBEKISTAN 亗",
       "ip": "83.69.139.164:27015",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 1,
+      "maxPlayers": 32,
       "map": "de_mirage",
-      "ping": 180,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "entsuo",
           "score": 0,
-          "duration": 37.2
+          "duration": 40.1
         }
       ]
     },
@@ -187,23 +187,23 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 169,
       "playerList": []
     },
     {
       "name": "NumberOne[UZ]-CSDM #1",
       "ip": "83.69.139.164:27020",
       "online": true,
-      "players": 2,
+      "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "x7",
           "score": 0,
-          "duration": 38.6
+          "duration": 41.9
         }
       ]
     },
@@ -211,28 +211,34 @@
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 3,
+      "players": 4,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "UZBPrime",
           "score": 9,
-          "duration": 996.9
+          "duration": 1000.0
         },
         {
           "index": 1,
           "name": "Na`Vi ceh9",
           "score": 1,
-          "duration": 280.7
+          "duration": 283.8
         },
         {
           "index": 2,
           "name": "D   -   J  o k",
           "score": 0,
-          "duration": 145.4
+          "duration": 148.5
+        },
+        {
+          "index": 3,
+          "name": "jamPatryk | O.o",
+          "score": 0,
+          "duration": 1.6
         }
       ]
     },
@@ -244,7 +250,14 @@
       "maxPlayers": 0,
       "map": "de_nuke32",
       "ping": 179,
-      "playerList": []
+      "playerList": [
+        {
+          "index": 0,
+          "name": "<<<___Pr0sTA.AziK___>>>",
+          "score": 0,
+          "duration": 1.5
+        }
+      ]
     },
     {
       "name": "WEIT CS | PUBLIC [#1]",
@@ -253,7 +266,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_mirage_2x2",
-      "ping": 177,
+      "ping": 178,
       "playerList": []
     }
   ]
