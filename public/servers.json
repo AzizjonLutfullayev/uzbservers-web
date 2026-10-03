@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 9161.7
+          "duration": 9162.3
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 32314.7
+          "duration": 32315.2
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 9159.3
+          "duration": 9159.8
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 6057.5
+          "duration": 6058.0
         }
       ]
     },
@@ -54,9 +54,8 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_nuke_2x2",
-      "ping": 186,
-      "playerList": [],
-      "playerError": "timed out"
+      "ping": 178,
+      "playerList": []
     },
     {
       "name": "CSZONE.UZ - Public [#2]",
@@ -65,15 +64,9 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "CSZONE.UZ",
-          "score": 1,
-          "duration": 655256.8
-        }
-      ]
+      "ping": 188,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "CSZONE.UZ - Clanwar [#1]",
@@ -83,14 +76,8 @@
       "maxPlayers": 15,
       "map": "de_inferno",
       "ping": 177,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "CSZONE.UZ:28017 - HLTV watch",
-          "score": 0,
-          "duration": 21324.7
-        }
-      ]
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "CSZONE.UZ - Clanwar [#2]",
@@ -99,13 +86,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 185,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 27690.2
+          "duration": 27690.7
         }
       ]
     },
@@ -116,18 +103,19 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 185,
+      "ping": 177,
       "playerList": []
     },
     {
-      "name": "TIMCS.UZ | [PUBLIC #N1]",
+      "name": "TIMCS.UZ Public #1",
       "ip": "195.158.4.109:27015",
-      "online": true,
+      "online": false,
       "players": 0,
-      "maxPlayers": 32,
-      "map": "de_dust2_2x2",
-      "ping": 178,
-      "playerList": []
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "error": "timed out"
     },
     {
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
@@ -146,25 +134,25 @@
       "players": 3,
       "maxPlayers": 32,
       "map": "de_nuke",
-      "ping": 168,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "Sk!rm!sh",
           "score": 0,
-          "duration": 905.0
+          "duration": 905.5
         },
         {
           "index": 1,
           "name": "Katerinka48",
           "score": 0,
-          "duration": 898.6
+          "duration": 899.1
         },
         {
           "index": 2,
           "name": "[PRIME^8E] Vortigaunt",
           "score": 0,
-          "duration": 896.1
+          "duration": 896.6
         }
       ]
     },
@@ -175,7 +163,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -195,7 +183,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -215,7 +203,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_nuke_2x2",
-      "ping": 177,
+      "ping": 178,
       "playerList": []
     }
   ]
