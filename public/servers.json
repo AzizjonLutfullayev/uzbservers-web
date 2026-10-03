@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790991234,
+  "updatedAt": 1790991235,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 9028.9
+          "duration": 9030.2
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 32181.9
+          "duration": 32183.1
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 9026.4
+          "duration": 9027.7
         }
       ]
     },
@@ -37,25 +37,26 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 5924.6
+          "duration": 5925.9
         }
       ]
     },
     {
-      "name": "CSZONE.UZ - Public [#1]",
+      "name": "CSZONE.UZ - Public #1",
       "ip": "195.158.11.77:27015",
-      "online": true,
+      "online": false,
       "players": 0,
-      "maxPlayers": 32,
-      "map": "de_nuke_2x2",
-      "ping": 177,
-      "playerList": []
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "error": "timed out"
     },
     {
       "name": "CSZONE.UZ - Public [#2]",
@@ -64,9 +65,15 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
-      "playerList": [],
-      "playerError": "timed out"
+      "ping": 179,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "CSZONE.UZ",
+          "score": 1,
+          "duration": 655125.2
+        }
+      ]
     },
     {
       "name": "CSZONE.UZ - Clanwar [#1]",
@@ -75,7 +82,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 178,
+      "ping": 177,
       "playerList": [],
       "playerError": "timed out"
     },
@@ -86,7 +93,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 186,
       "playerList": [],
       "playerError": "timed out"
     },
@@ -97,8 +104,9 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 186,
-      "playerList": []
+      "ping": 178,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "TIMCS.UZ | [PUBLIC #N1]",
@@ -107,7 +115,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2002_2x2",
-      "ping": 179,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -133,19 +141,19 @@
           "index": 0,
           "name": "Sk!rm!sh",
           "score": 0,
-          "duration": 772.1
+          "duration": 773.4
         },
         {
           "index": 1,
           "name": "Katerinka48",
           "score": 0,
-          "duration": 765.7
+          "duration": 767.0
         },
         {
           "index": 2,
           "name": "[PRIME^8E] Vortigaunt",
           "score": 0,
-          "duration": 763.2
+          "duration": 764.5
         }
       ]
     },
@@ -186,7 +194,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke32",
-      "ping": 179,
+      "ping": 177,
       "playerList": []
     },
     {
