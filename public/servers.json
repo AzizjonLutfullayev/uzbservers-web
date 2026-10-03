@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791031753,
+  "updatedAt": 1791031754,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,7 +8,7 @@
       "players": 11,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -85,7 +85,7 @@
       "players": 24,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 181,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -441,7 +441,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 176,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
@@ -583,7 +583,7 @@
       "players": 29,
       "maxPlayers": 32,
       "map": "de_dust2002",
-      "ping": 178,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
@@ -768,7 +768,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 180,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -776,9 +776,9 @@
       "ip": "83.69.139.164:27015",
       "online": true,
       "players": 19,
-      "maxPlayers": 32,
+      "maxPlayers": 0,
       "map": "de_nuke",
-      "ping": 180,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -903,7 +903,7 @@
       "players": 15,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -1004,7 +1004,7 @@
       "players": 32,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 180,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
@@ -1207,7 +1207,7 @@
       "players": 29,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -1389,132 +1389,12 @@
       "name": " CSLOVE.UZ [PUBLIC #1]",
       "ip": "84.54.82.234:27015",
       "online": true,
-      "players": 20,
+      "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 180,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "boy",
-          "score": 2,
-          "duration": 731.4
-        },
-        {
-          "index": 1,
-          "name": "kariganb0b~ (pro)",
-          "score": 5,
-          "duration": 3525.8
-        },
-        {
-          "index": 2,
-          "name": "202",
-          "score": 0,
-          "duration": 3165.0
-        },
-        {
-          "index": 3,
-          "name": "Rino",
-          "score": 0,
-          "duration": 1645.7
-        },
-        {
-          "index": 4,
-          "name": "1",
-          "score": 10,
-          "duration": 1527.7
-        },
-        {
-          "index": 5,
-          "name": "Klaus",
-          "score": 6,
-          "duration": 512.9
-        },
-        {
-          "index": 6,
-          "name": "donk666_死",
-          "score": 8,
-          "duration": 368.9
-        },
-        {
-          "index": 7,
-          "name": "def0",
-          "score": 20,
-          "duration": 5050.1
-        },
-        {
-          "index": 8,
-          "name": "Smoke",
-          "score": 3,
-          "duration": 2108.7
-        },
-        {
-          "index": 9,
-          "name": "IBB",
-          "score": 15,
-          "duration": 1642.5
-        },
-        {
-          "index": 10,
-          "name": "nabi",
-          "score": 0,
-          "duration": 16500.8
-        },
-        {
-          "index": 11,
-          "name": "Rapper",
-          "score": 0,
-          "duration": 2875.2
-        },
-        {
-          "index": 12,
-          "name": "Manyak",
-          "score": 3,
-          "duration": 3599.4
-        },
-        {
-          "index": 13,
-          "name": "sh1ro",
-          "score": 1,
-          "duration": 326.4
-        },
-        {
-          "index": 14,
-          "name": "TRZ",
-          "score": 1,
-          "duration": 58.4
-        },
-        {
-          "index": 15,
-          "name": "Remboo",
-          "score": 9,
-          "duration": 596.7
-        },
-        {
-          "index": 16,
-          "name": "L7",
-          "score": 4,
-          "duration": 496.9
-        },
-        {
-          "index": 17,
-          "name": "< RAXM >MOW",
-          "score": 4,
-          "duration": 292.5
-        },
-        {
-          "index": 18,
-          "name": "Drogot",
-          "score": 4,
-          "duration": 290.3
-        },
-        {
-          "index": 19,
-          "name": "odinrazpokazivau",
-          "score": 0,
-          "duration": 40.4
-        }
-      ]
+      "ping": 178,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "WEIT CS | PUBLIC [#1]",
@@ -1523,7 +1403,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_mirage_2x2",
-      "ping": 176,
+      "ping": 177,
       "playerList": []
     }
   ]
