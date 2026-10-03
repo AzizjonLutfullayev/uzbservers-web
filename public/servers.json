@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791006426,
+  "updatedAt": 1791006428,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -186,7 +186,7 @@
       "players": 12,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 171,
       "playerList": [
         {
           "index": 0,
@@ -286,7 +286,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 170,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
@@ -320,21 +320,9 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke",
-      "ping": 169,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "APASNIY",
-          "score": 0,
-          "duration": 412.3
-        },
-        {
-          "index": 1,
-          "name": "-700",
-          "score": 6,
-          "duration": 389.6
-        }
-      ]
+      "ping": 176,
+      "playerList": [],
+      "playerError": "timed out"
     },
     {
       "name": "TIMCS.UZ | [PUBLIC #N1]",
@@ -459,8 +447,8 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 0,
-      "maxPlayers": 14,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "aim_sk_awp",
       "ping": 169,
       "playerList": []
@@ -469,8 +457,8 @@
       "name": "亗 NUMBERONE UZBEKISTAN 亗",
       "ip": "83.69.139.164:27015",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 7,
+      "maxPlayers": 32,
       "map": "de_dust2",
       "ping": 169,
       "playerList": [
@@ -522,8 +510,8 @@
       "name": "NumberOne[UZ]-Public #1",
       "ip": "83.69.139.164:27016",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 7,
+      "maxPlayers": 32,
       "map": "de_dust2_2x2",
       "ping": 169,
       "playerList": [
@@ -578,7 +566,7 @@
       "players": 20,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -709,7 +697,7 @@
       "players": 14,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -804,7 +792,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
