@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791001952,
+  "updatedAt": 1791001953,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,7 +8,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "css_miragewinter_go",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -61,7 +61,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 173,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -114,7 +114,7 @@
       "players": 11,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 167,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
@@ -191,7 +191,7 @@
       "players": 5,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -232,7 +232,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 166,
+      "ping": 174,
       "playerList": [
         {
           "index": 0,
@@ -249,7 +249,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 167,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -266,7 +266,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_aztec",
-      "ping": 167,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -276,7 +276,7 @@
       "players": 13,
       "maxPlayers": 32,
       "map": "de_dust2002",
-      "ping": 168,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -365,76 +365,28 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 171,
+      "ping": 168,
       "playerList": []
     },
     {
-      "name": "亗 NUMBERONE UZBEKISTAN 亗",
+      "name": "NUMBERONE UZBEKISTAN",
       "ip": "83.69.139.164:27015",
-      "online": true,
-      "players": 8,
-      "maxPlayers": 32,
-      "map": "de_dust2_2x2",
-      "ping": 1139,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "B",
-          "score": 0,
-          "duration": 414.6
-        },
-        {
-          "index": 1,
-          "name": "e5",
-          "score": 0,
-          "duration": 404.2
-        },
-        {
-          "index": 2,
-          "name": "Rapper",
-          "score": 0,
-          "duration": 274.4
-        },
-        {
-          "index": 3,
-          "name": "aska",
-          "score": 0,
-          "duration": 150.6
-        },
-        {
-          "index": 4,
-          "name": "d1",
-          "score": 0,
-          "duration": 23.0
-        },
-        {
-          "index": 5,
-          "name": "CS Warrior",
-          "score": 0,
-          "duration": 2117.8
-        },
-        {
-          "index": 6,
-          "name": "ASADBEK",
-          "score": 0,
-          "duration": 1861.1
-        },
-        {
-          "index": 7,
-          "name": "Azmvvv7",
-          "score": 0,
-          "duration": 6.3
-        }
-      ]
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "error": "timed out"
     },
     {
       "name": "NumberOne[UZ]-Public #1",
       "ip": "83.69.139.164:27016",
       "online": true,
-      "players": 8,
-      "maxPlayers": 32,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -493,7 +445,7 @@
       "players": 20,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -624,7 +576,7 @@
       "players": 11,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
@@ -701,7 +653,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 175,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
@@ -742,7 +694,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_lego_2",
-      "ping": 173,
+      "ping": 183,
       "playerList": []
     }
   ]
