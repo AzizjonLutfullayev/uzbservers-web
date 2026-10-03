@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790993305,
+  "updatedAt": 1790993307,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,25 +8,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2_unlimited",
-      "ping": 169,
+      "ping": 172,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 11101.5
+          "duration": 11103.8
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 34254.4
+          "duration": 34256.7
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 11099.0
+          "duration": 11101.3
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 7997.2
+          "duration": 7999.5
         }
       ]
     },
@@ -70,7 +70,7 @@
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 657196.4
+          "duration": 657198.8
         }
       ]
     },
@@ -81,13 +81,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 169,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 23264.2
+          "duration": 23266.7
         }
       ]
     },
@@ -98,13 +98,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 29629.7
+          "duration": 29632.2
         }
       ]
     },
@@ -115,7 +115,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 177,
+      "ping": 167,
       "playerList": []
     },
     {
@@ -125,31 +125,31 @@
       "players": 4,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 171,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "Lord | ＃ брат",
           "score": 7,
-          "duration": 329.2
+          "duration": 331.5
         },
         {
           "index": 1,
           "name": "kurWa -_-",
           "score": 7,
-          "duration": 258.4
+          "duration": 260.7
         },
         {
           "index": 2,
           "name": "Neo",
           "score": 1,
-          "duration": 86.9
+          "duration": 89.2
         },
         {
           "index": 3,
           "name": "s1mple",
           "score": 4,
-          "duration": 442.6
+          "duration": 444.9
         }
       ]
     },
@@ -160,7 +160,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -170,13 +170,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_train",
-      "ping": 168,
+      "ping": 171,
       "playerList": [
         {
           "index": 0,
           "name": "Rustam90/06",
           "score": 0,
-          "duration": 763.2
+          "duration": 765.5
         }
       ]
     },
@@ -186,8 +186,8 @@
       "online": true,
       "players": 0,
       "maxPlayers": 32,
-      "map": "de_dust2",
-      "ping": 169,
+      "map": "de_dust2_2x2",
+      "ping": 677,
       "playerList": []
     },
     {
@@ -197,19 +197,19 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "MUhammadiy",
-          "score": 0,
-          "duration": 37.8
+          "score": 1,
+          "duration": 40.1
         },
         {
           "index": 1,
           "name": "a",
           "score": 0,
-          "duration": 59.9
+          "duration": 62.2
         }
       ]
     },
@@ -226,7 +226,7 @@
           "index": 0,
           "name": "N a Zz a",
           "score": 0,
-          "duration": 746.5
+          "duration": 749.2
         }
       ]
     },
@@ -247,7 +247,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_lego_2",
-      "ping": 177,
+      "ping": 173,
       "playerList": []
     }
   ]
