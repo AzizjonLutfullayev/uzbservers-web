@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791043327,
+  "updatedAt": 1791043329,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,7 +8,7 @@
       "players": 15,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -109,7 +109,7 @@
       "players": 23,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -258,7 +258,7 @@
       "players": 29,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 179,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
@@ -437,15 +437,15 @@
       ]
     },
     {
-      "name": "CSZONE.UZ - Public #2",
+      "name": "CSZONE.UZ - Public [#2]",
       "ip": "195.158.11.77:27016",
-      "online": false,
-      "players": 0,
-      "maxPlayers": 0,
-      "map": "—",
-      "ping": null,
+      "online": true,
+      "players": 1,
+      "maxPlayers": 32,
+      "map": "de_dust2",
+      "ping": 1985,
       "playerList": [],
-      "error": "timed out"
+      "playerError": "timed out"
     },
     {
       "name": "CSZONE.UZ - Clanwar [#1]",
@@ -454,7 +454,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 169,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
@@ -471,7 +471,7 @@
       "players": 6,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
@@ -518,7 +518,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 178,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
@@ -541,7 +541,7 @@
       "players": 30,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -732,7 +732,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_ak_m4",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -753,7 +753,7 @@
       "players": 13,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -1031,9 +1031,9 @@
       "ip": "83.69.139.164:27022",
       "online": true,
       "players": 22,
-      "maxPlayers": 32,
+      "maxPlayers": 0,
       "map": "de_inferno",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -1176,7 +1176,7 @@
       "players": 27,
       "maxPlayers": 0,
       "map": "de_inferno",
-      "ping": 178,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
