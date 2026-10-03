@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790992943,
+  "updatedAt": 1790992950,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,25 +8,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2_unlimited",
-      "ping": 169,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 10740.1
+          "duration": 10747.1
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 33893.1
+          "duration": 33900.1
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 10737.6
+          "duration": 10744.6
         }
       ]
     },
@@ -43,7 +43,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 7635.7
+          "duration": 7642.8
         }
       ]
     },
@@ -54,7 +54,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 169,
+      "ping": 179,
       "playerList": []
     },
     {
@@ -64,13 +64,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 656835.1
+          "duration": 656842.1
         }
       ]
     },
@@ -81,13 +81,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 177,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 22903.1
+          "duration": 22910.0
         }
       ]
     },
@@ -98,13 +98,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 29268.5
+          "duration": 29275.5
         }
       ]
     },
@@ -115,7 +115,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 177,
+      "ping": 168,
       "playerList": []
     },
     {
@@ -125,31 +125,31 @@
       "players": 4,
       "maxPlayers": 32,
       "map": "de_inferno_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "Lord | ＃ брат",
           "score": 0,
-          "duration": 84.8
+          "duration": 91.7
         },
         {
           "index": 1,
           "name": "Rustamovww",
           "score": 0,
-          "duration": 4.9
+          "duration": 11.8
         },
         {
           "index": 2,
           "name": "tn_1",
           "score": 0,
-          "duration": 23.6
+          "duration": 30.6
         },
         {
           "index": 3,
           "name": "s1mple",
           "score": 0,
-          "duration": 81.2
+          "duration": 88.2
         }
       ]
     },
@@ -176,7 +176,7 @@
           "index": 0,
           "name": "Rustam90/06",
           "score": 0,
-          "duration": 401.9
+          "duration": 408.8
         }
       ]
     },
@@ -187,7 +187,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 168,
       "playerList": []
     },
     {
@@ -197,7 +197,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -213,7 +213,7 @@
           "index": 0,
           "name": "N a Zz a",
           "score": 0,
-          "duration": 385.5
+          "duration": 392.5
         }
       ]
     },
@@ -234,7 +234,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "awp_lego_2",
-      "ping": 178,
+      "ping": 181,
       "playerList": []
     }
   ]
