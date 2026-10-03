@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791005321,
+  "updatedAt": 1791005322,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,7 +8,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_oldgods",
-      "ping": 167,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -168,7 +168,7 @@
       "players": 8,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
@@ -227,7 +227,7 @@
       "players": 2,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
@@ -250,7 +250,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 168,
+      "ping": 166,
       "playerList": [
         {
           "index": 0,
@@ -383,7 +383,7 @@
       "players": 5,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 172,
+      "ping": 246,
       "playerList": [
         {
           "index": 0,
@@ -424,7 +424,7 @@
       "players": 10,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 171,
+      "ping": 244,
       "playerList": [
         {
           "index": 0,
@@ -495,7 +495,7 @@
       "players": 5,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 241,
       "playerList": [
         {
           "index": 0,
@@ -536,7 +536,7 @@
       "players": 16,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 171,
+      "ping": 245,
       "playerList": [
         {
           "index": 0,
@@ -639,103 +639,13 @@
     {
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
-      "online": true,
-      "players": 15,
-      "maxPlayers": 32,
-      "map": "de_dust2",
-      "ping": 171,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "MARSHAL",
-          "score": 1,
-          "duration": 75.9
-        },
-        {
-          "index": 1,
-          "name": "Allstars ollemebyssan",
-          "score": 11,
-          "duration": 961.7
-        },
-        {
-          "index": 2,
-          "name": "D   -   J  o k",
-          "score": 8,
-          "duration": 3608.6
-        },
-        {
-          "index": 131,
-          "name": "*771*",
-          "score": 0,
-          "duration": 870682.2
-        },
-        {
-          "index": 132,
-          "name": "aSILbek",
-          "score": 0,
-          "duration": 870682.2
-        },
-        {
-          "index": 5,
-          "name": "ibow",
-          "score": 4,
-          "duration": 537.2
-        },
-        {
-          "index": 6,
-          "name": "boriy777",
-          "score": 12,
-          "duration": 3514.9
-        },
-        {
-          "index": 7,
-          "name": "qasop777",
-          "score": 6,
-          "duration": 3183.7
-        },
-        {
-          "index": 8,
-          "name": "NUKUS2",
-          "score": 16,
-          "duration": 1152.6
-        },
-        {
-          "index": 137,
-          "name": "01",
-          "score": 0,
-          "duration": 870682.2
-        },
-        {
-          "index": 138,
-          "name": "Legend",
-          "score": 0,
-          "duration": 870682.2
-        },
-        {
-          "index": 11,
-          "name": "NUMBER ONE",
-          "score": 24,
-          "duration": 1691.7
-        },
-        {
-          "index": 12,
-          "name": "craz1y",
-          "score": 5,
-          "duration": 1680.5
-        },
-        {
-          "index": 141,
-          "name": "PLissssssssssssssss",
-          "score": 0,
-          "duration": 870682.2
-        },
-        {
-          "index": 14,
-          "name": "BMX",
-          "score": 3,
-          "duration": 1264.8
-        }
-      ]
+      "online": false,
+      "players": 0,
+      "maxPlayers": 0,
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "error": "timed out"
     },
     {
       "name": " CSLOVE.UZ [PUBLIC #1]",
@@ -744,7 +654,7 @@
       "players": 11,
       "maxPlayers": 0,
       "map": "de_dust2_2x2",
-      "ping": 183,
+      "ping": 173,
       "playerList": [
         {
           "index": 0,
@@ -821,7 +731,7 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2002_2x2",
-      "ping": 174,
+      "ping": 182,
       "playerList": [
         {
           "index": 0,
