@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790994617,
+  "updatedAt": 1790994619,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,13 +14,13 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 12413.8
+          "duration": 12415.4
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 35566.8
+          "duration": 35568.4
         }
       ]
     },
@@ -37,7 +37,7 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 611.6
+          "duration": 613.1
         }
       ]
     },
@@ -48,7 +48,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_nuke_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -64,7 +64,7 @@
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 658508.9
+          "duration": 658510.4
         }
       ]
     },
@@ -75,13 +75,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 168,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 24576.8
+          "duration": 24578.3
         }
       ]
     },
@@ -98,7 +98,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 30942.3
+          "duration": 30943.8
         }
       ]
     },
@@ -109,7 +109,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 169,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -125,7 +125,7 @@
           "index": 0,
           "name": "Gold-Player",
           "score": 0,
-          "duration": 39.4
+          "duration": 40.9
         }
       ]
     },
@@ -133,8 +133,8 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 0,
-      "maxPlayers": 14,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "aim_sk_awp",
       "ping": 169,
       "playerList": []
@@ -146,7 +146,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -156,7 +156,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -176,7 +176,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -186,8 +186,15 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke32",
-      "ping": 178,
-      "playerList": []
+      "ping": 179,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "BORZZ",
+          "score": 0,
+          "duration": 0.1
+        }
+      ]
     },
     {
       "name": "WEIT CS | PUBLIC [#1]",
