@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790991448,
+  "updatedAt": 1790991451,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 9242.8
+          "duration": 9246.6
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 32395.8
+          "duration": 32399.6
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 9240.3
+          "duration": 9244.1
         }
       ]
     },
@@ -43,20 +43,20 @@
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 6138.6
+          "duration": 6142.3
         }
       ]
     },
     {
-      "name": "CSZONE.UZ - Public #1",
+      "name": "CSZONE.UZ - Public [#1]",
       "ip": "195.158.11.77:27015",
-      "online": false,
+      "online": true,
       "players": 0,
-      "maxPlayers": 0,
-      "map": "—",
-      "ping": null,
+      "maxPlayers": 32,
+      "map": "de_nuke_2x2",
+      "ping": 186,
       "playerList": [],
-      "error": "timed out"
+      "playerError": "timed out"
     },
     {
       "name": "CSZONE.UZ - Public [#2]",
@@ -65,9 +65,15 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
-      "playerList": [],
-      "playerError": "timed out"
+      "ping": 187,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "CSZONE.UZ",
+          "score": 1,
+          "duration": 655341.6
+        }
+      ]
     },
     {
       "name": "CSZONE.UZ - Clanwar [#1]",
@@ -76,26 +82,32 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 184,
+      "ping": 185,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 21405.8
+          "duration": 21409.5
         }
       ]
     },
     {
-      "name": "CSZONE.UZ - Clanwar #2",
+      "name": "CSZONE.UZ - Clanwar [#2]",
       "ip": "195.158.11.77:27018",
-      "online": false,
-      "players": 0,
-      "maxPlayers": 0,
-      "map": "—",
-      "ping": null,
-      "playerList": [],
-      "error": "timed out"
+      "online": true,
+      "players": 1,
+      "maxPlayers": 15,
+      "map": "de_dust2",
+      "ping": 186,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "CSZONE.UZ:28018 - HLTV watch",
+          "score": 0,
+          "duration": 27775.0
+        }
+      ]
     },
     {
       "name": "PROCS.UZ | 1000 FPS UZBEKISTAN",
@@ -140,19 +152,19 @@
           "index": 0,
           "name": "Sk!rm!sh",
           "score": 0,
-          "duration": 986.0
+          "duration": 989.8
         },
         {
           "index": 1,
           "name": "Katerinka48",
           "score": 0,
-          "duration": 979.6
+          "duration": 983.4
         },
         {
           "index": 2,
           "name": "[PRIME^8E] Vortigaunt",
           "score": 0,
-          "duration": 977.1
+          "duration": 980.9
         }
       ]
     },
@@ -173,7 +185,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -183,7 +195,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -193,7 +205,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke32",
-      "ping": 178,
+      "ping": 179,
       "playerList": []
     },
     {
@@ -203,7 +215,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2002",
-      "ping": 179,
+      "ping": 177,
       "playerList": []
     }
   ]
