@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790988021,
+  "updatedAt": 1790988027,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -14,19 +14,19 @@
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 5817.8
+          "duration": 5824.1
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 28970.8
+          "duration": 28977.1
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 5815.3
+          "duration": 5821.6
         }
       ]
     },
@@ -37,13 +37,13 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_inferno_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "demo",
           "score": 0,
-          "duration": 2713.6
+          "duration": 2719.8
         }
       ]
     },
@@ -61,11 +61,18 @@
       "name": "CSZONE.UZ - Public [#2]",
       "ip": "195.158.11.77:27016",
       "online": true,
-      "players": 0,
+      "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
-      "playerList": []
+      "ping": 170,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "CSZONE.UZ",
+          "score": 0,
+          "duration": 651919.1
+        }
+      ]
     },
     {
       "name": "CSZONE.UZ - Clanwar [#1]",
@@ -80,7 +87,7 @@
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 17980.7
+          "duration": 17987.0
         }
       ]
     },
@@ -91,13 +98,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 24346.2
+          "duration": 24352.5
         }
       ]
     },
@@ -118,7 +125,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -128,7 +135,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -148,7 +155,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 168,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -165,10 +172,10 @@
       "name": "NumberOne[UZ]-Public #2",
       "ip": "83.69.139.164:27022",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 0,
+      "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 169,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -178,7 +185,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke32",
-      "ping": 178,
+      "ping": 181,
       "playerList": []
     },
     {
@@ -188,7 +195,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 179,
       "playerList": []
     }
   ]
