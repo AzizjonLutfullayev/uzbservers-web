@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1790991710,
+  "updatedAt": 1790991714,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,25 +8,25 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_oldgods",
-      "ping": 179,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "player",
           "score": 0,
-          "duration": 9506.7
+          "duration": 9510.4
         },
         {
           "index": 1,
           "name": "BOOST-TOP | player",
           "score": 0,
-          "duration": 32659.7
+          "duration": 32663.4
         },
         {
           "index": 2,
           "name": "(1)BOOST-TOP | player",
           "score": 0,
-          "duration": 9504.2
+          "duration": 9508.0
         }
       ]
     },
@@ -37,13 +37,19 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "$2000$",
-      "ping": 180,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
+          "name": "xxx",
+          "score": 0,
+          "duration": 0.2
+        },
+        {
+          "index": 1,
           "name": "demo",
           "score": 0,
-          "duration": 6402.5
+          "duration": 6406.2
         }
       ]
     },
@@ -54,7 +60,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_nuke_2x2",
-      "ping": 177,
+      "ping": 168,
       "playerList": []
     },
     {
@@ -64,13 +70,13 @@
       "players": 1,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 178,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 1,
-          "duration": 655601.8
+          "duration": 655605.4
         }
       ]
     },
@@ -81,13 +87,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 177,
+      "ping": 166,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 21669.7
+          "duration": 21673.4
         }
       ]
     },
@@ -98,13 +104,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 177,
+      "ping": 167,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 28035.1
+          "duration": 28038.8
         }
       ]
     },
@@ -115,7 +121,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "35hp_2",
-      "ping": 177,
+      "ping": 167,
       "playerList": []
     },
     {
@@ -125,7 +131,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 177,
+      "ping": 166,
       "playerList": []
     },
     {
@@ -135,17 +141,17 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 180,
+      "ping": 171,
       "playerList": []
     },
     {
       "name": "亗 NUMBERONE UZBEKISTAN 亗",
       "ip": "83.69.139.164:27015",
       "online": true,
-      "players": 0,
-      "maxPlayers": 32,
+      "players": 10,
+      "maxPlayers": 0,
       "map": "de_mirage",
-      "ping": 180,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -155,7 +161,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 179,
+      "ping": 172,
       "playerList": []
     },
     {
@@ -165,7 +171,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 180,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -175,7 +181,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 180,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -185,7 +191,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_nuke32",
-      "ping": 178,
+      "ping": 174,
       "playerList": []
     },
     {
@@ -195,7 +201,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2002_2x2",
-      "ping": 177,
+      "ping": 174,
       "playerList": []
     }
   ]
