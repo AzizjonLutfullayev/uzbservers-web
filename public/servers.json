@@ -1,88 +1,16 @@
 {
-  "updatedAt": 1791032627,
+  "updatedAt": 1791032629,
   "servers": [
     {
-      "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
+      "name": "UZB ARENA",
       "ip": "157.22.130.26:27015",
-      "online": true,
-      "players": 12,
+      "online": false,
+      "players": 0,
       "maxPlayers": 0,
-      "map": "de_winterdust2",
-      "ping": 167,
-      "playerList": [
-        {
-          "index": 0,
-          "name": "UZBEKISTAN",
-          "score": 0,
-          "duration": 596.1
-        },
-        {
-          "index": 1,
-          "name": "LIPSINSKIL",
-          "score": 1,
-          "duration": 259.0
-        },
-        {
-          "index": 2,
-          "name": "НеПрофИ",
-          "score": 0,
-          "duration": 593.9
-        },
-        {
-          "index": 3,
-          "name": "morfi24",
-          "score": 2,
-          "duration": 596.2
-        },
-        {
-          "index": 4,
-          "name": "SVB>28rus<",
-          "score": 0,
-          "duration": 592.5
-        },
-        {
-          "index": 5,
-          "name": "ДИМА.",
-          "score": 11,
-          "duration": 596.3
-        },
-        {
-          "index": 6,
-          "name": "shox",
-          "score": 12,
-          "duration": 594.8
-        },
-        {
-          "index": 7,
-          "name": "roll",
-          "score": 8,
-          "duration": 595.7
-        },
-        {
-          "index": 8,
-          "name": ".:: [CSB] | dobrO ::.",
-          "score": 3,
-          "duration": 594.5
-        },
-        {
-          "index": 9,
-          "name": "TERRORIST",
-          "score": 0,
-          "duration": 595.2
-        },
-        {
-          "index": 10,
-          "name": "BOOST-TOP | player",
-          "score": 0,
-          "duration": 471.3
-        },
-        {
-          "index": 11,
-          "name": "Kal_akam_mani",
-          "score": 13,
-          "duration": 592.7
-        }
-      ]
+      "map": "—",
+      "ping": null,
+      "playerList": [],
+      "error": "timed out"
     },
     {
       "name": "█     ONECS.UZ PUBLIC #1   █     ~UZBEKISTAN~  █",
@@ -91,7 +19,7 @@
       "players": 19,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 167,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -216,7 +144,7 @@
       "players": 25,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
@@ -377,7 +305,7 @@
       "players": 4,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 167,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -412,7 +340,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 166,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -429,7 +357,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 166,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
@@ -446,7 +374,7 @@
       "players": 12,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 170,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
@@ -529,7 +457,7 @@
       "players": 31,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 168,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -723,8 +651,8 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 0,
+      "maxPlayers": 14,
       "map": "aim_sk_awp",
       "ping": 170,
       "playerList": []
@@ -736,7 +664,7 @@
       "players": 17,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -849,7 +777,7 @@
       "players": 14,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -944,7 +872,7 @@
       "players": 32,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -1147,7 +1075,7 @@
       "players": 16,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -1254,7 +1182,7 @@
       "players": 18,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 173,
+      "ping": 180,
       "playerList": [
         {
           "index": 0,
@@ -1373,7 +1301,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dust2_2x2",
-      "ping": 174,
+      "ping": 177,
       "playerList": []
     }
   ]
