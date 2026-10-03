@@ -1,5 +1,5 @@
 {
-  "updatedAt": 1791007821,
+  "updatedAt": 1791007823,
   "servers": [
     {
       "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
@@ -8,7 +8,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2_2x2_unlimited",
-      "ping": 168,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -55,7 +55,7 @@
       "players": 25,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 172,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
@@ -216,7 +216,7 @@
       "players": 14,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
@@ -328,7 +328,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 170,
+      "ping": 178,
       "playerList": [
         {
           "index": 0,
@@ -345,7 +345,7 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 171,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -362,7 +362,7 @@
       "players": 10,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 177,
       "playerList": []
     },
     {
@@ -372,7 +372,7 @@
       "players": 16,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 171,
       "playerList": [
         {
           "index": 0,
@@ -476,10 +476,10 @@
       "name": "IHOST.UZ | MIX [UZB/LOW PING]",
       "ip": "83.69.139.164:27014",
       "online": true,
-      "players": 10,
-      "maxPlayers": 0,
+      "players": 0,
+      "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 171,
+      "ping": 170,
       "playerList": []
     },
     {
@@ -489,7 +489,7 @@
       "players": 12,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 172,
+      "ping": 169,
       "playerList": [
         {
           "index": 0,
@@ -647,7 +647,7 @@
       "ip": "83.69.139.164:27020",
       "online": true,
       "players": 14,
-      "maxPlayers": 0,
+      "maxPlayers": 32,
       "map": "de_dust2",
       "ping": 170,
       "playerList": [
@@ -742,7 +742,7 @@
       "ip": "83.69.139.164:27022",
       "online": true,
       "players": 14,
-      "maxPlayers": 0,
+      "maxPlayers": 32,
       "map": "de_dust2",
       "ping": 169,
       "playerList": [
@@ -839,7 +839,7 @@
       "players": 13,
       "maxPlayers": 0,
       "map": "de_inferno_2x2",
-      "ping": 173,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
@@ -928,7 +928,7 @@
       "players": 0,
       "maxPlayers": 32,
       "map": "de_dusferno2",
-      "ping": 173,
+      "ping": 177,
       "playerList": []
     }
   ]
