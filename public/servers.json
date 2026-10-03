@@ -1,139 +1,205 @@
 {
-  "updatedAt": 1791032629,
+  "updatedAt": 1791032633,
   "servers": [
     {
-      "name": "UZB ARENA",
+      "name": "▅   █   UZB ARENA UZBEKISTAN █   ▅   █    FREE VIP  █",
       "ip": "157.22.130.26:27015",
-      "online": false,
-      "players": 0,
+      "online": true,
+      "players": 12,
       "maxPlayers": 0,
-      "map": "—",
-      "ping": null,
-      "playerList": [],
-      "error": "timed out"
+      "map": "de_winterdust2",
+      "ping": 168,
+      "playerList": [
+        {
+          "index": 0,
+          "name": "UZBEKISTAN",
+          "score": 0,
+          "duration": 601.7
+        },
+        {
+          "index": 1,
+          "name": "LIPSINSKIL",
+          "score": 1,
+          "duration": 264.6
+        },
+        {
+          "index": 2,
+          "name": "НеПрофИ",
+          "score": 0,
+          "duration": 599.5
+        },
+        {
+          "index": 3,
+          "name": "morfi24",
+          "score": 2,
+          "duration": 601.9
+        },
+        {
+          "index": 4,
+          "name": "SVB>28rus<",
+          "score": 0,
+          "duration": 598.1
+        },
+        {
+          "index": 5,
+          "name": "ДИМА.",
+          "score": 11,
+          "duration": 602.0
+        },
+        {
+          "index": 6,
+          "name": "shox",
+          "score": 12,
+          "duration": 600.4
+        },
+        {
+          "index": 7,
+          "name": "roll",
+          "score": 8,
+          "duration": 601.3
+        },
+        {
+          "index": 8,
+          "name": ".:: [CSB] | dobrO ::.",
+          "score": 3,
+          "duration": 600.2
+        },
+        {
+          "index": 9,
+          "name": "TERRORIST",
+          "score": 0,
+          "duration": 600.8
+        },
+        {
+          "index": 10,
+          "name": "BOOST-TOP | player",
+          "score": 0,
+          "duration": 476.9
+        },
+        {
+          "index": 11,
+          "name": "Kal_akam_mani",
+          "score": 13,
+          "duration": 598.4
+        }
+      ]
     },
     {
       "name": "█     ONECS.UZ PUBLIC #1   █     ~UZBEKISTAN~  █",
       "ip": "185.228.90.26:27002",
       "online": true,
-      "players": 19,
+      "players": 18,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "oygul",
           "score": 13,
-          "duration": 1573.5
+          "duration": 1579.2
         },
         {
           "index": 1,
           "name": "-1",
           "score": 0,
-          "duration": 1006.8
+          "duration": 1012.5
         },
         {
           "index": 2,
           "name": "kyousuke-_-",
           "score": 2,
-          "duration": 410.3
+          "duration": 416.0
         },
         {
           "index": 3,
           "name": "freshball",
           "score": 1,
-          "duration": 205.8
+          "duration": 211.5
         },
         {
           "index": 4,
           "name": "4ABUSER",
           "score": 23,
-          "duration": 4152.8
+          "duration": 4158.5
         },
         {
           "index": 5,
           "name": "GER",
           "score": 44,
-          "duration": 2066.1
+          "duration": 2071.7
         },
         {
           "index": 6,
           "name": "Samurai",
           "score": 10,
-          "duration": 1071.9
+          "duration": 1077.6
         },
         {
           "index": 7,
           "name": "A.Jonibek",
           "score": 0,
-          "duration": 159.2
+          "duration": 164.9
         },
         {
           "index": 8,
           "name": "FOResT",
           "score": 0,
-          "duration": 7131.9
+          "duration": 7137.6
         },
         {
           "index": 9,
           "name": "Burgut",
           "score": 13,
-          "duration": 751.1
+          "duration": 756.8
         },
         {
           "index": 10,
           "name": "anor bank",
           "score": 3,
-          "duration": 604.1
+          "duration": 609.8
         },
         {
           "index": 11,
           "name": "[B] K o H T p E",
-          "score": 5,
-          "duration": 384.8
+          "score": 6,
+          "duration": 390.5
         },
         {
           "index": 12,
           "name": "SAIYAJIN",
           "score": 23,
-          "duration": 1324.0
+          "duration": 1329.7
         },
         {
           "index": 13,
-          "name": "deadpool(donk)",
-          "score": 28,
-          "duration": 1195.7
+          "name": "Apex 无敌",
+          "score": 40,
+          "duration": 2355.6
         },
         {
           "index": 14,
-          "name": "Apex 无敌",
-          "score": 40,
-          "duration": 2349.9
+          "name": "(2)[B] K o H T p E",
+          "score": 1,
+          "duration": 1593.6
         },
         {
           "index": 15,
-          "name": "(2)[B] K o H T p E",
-          "score": 1,
-          "duration": 1588.0
+          "name": "abdusalom",
+          "score": 20,
+          "duration": 1170.0
         },
         {
           "index": 16,
-          "name": "abdusalom",
-          "score": 20,
-          "duration": 1164.3
+          "name": "APC_301",
+          "score": 30,
+          "duration": 1409.0
         },
         {
           "index": 17,
-          "name": "APC_301",
-          "score": 30,
-          "duration": 1403.3
-        },
-        {
-          "index": 18,
           "name": "(3)[B] K o H T p E",
           "score": 5,
-          "duration": 1322.2
+          "duration": 1327.8
         }
       ]
     },
@@ -144,157 +210,157 @@
       "players": 25,
       "maxPlayers": 32,
       "map": "de_dust2",
-      "ping": 179,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "!??!",
           "score": 8,
-          "duration": 426.7
+          "duration": 432.4
         },
         {
           "index": 1,
           "name": "FERMER",
           "score": 5,
-          "duration": 4185.5
+          "duration": 4191.2
         },
         {
           "index": 2,
           "name": "! 23(no prime)",
           "score": 0,
-          "duration": 8.9
+          "duration": 14.6
         },
         {
           "index": 3,
           "name": "Ali >3",
           "score": 0,
-          "duration": 2377.3
+          "duration": 2383.0
         },
         {
           "index": 4,
           "name": "Ergashev",
           "score": 0,
-          "duration": 23029.5
+          "duration": 23035.2
         },
         {
           "index": 5,
           "name": "R O Y",
           "score": 7,
-          "duration": 6240.0
+          "duration": 6245.7
         },
         {
           "index": 6,
           "name": "Pun1sheR",
           "score": 0,
-          "duration": 3999.4
+          "duration": 4005.1
         },
         {
           "index": 7,
           "name": "TEDDDDDDDDDDDDDDDDDDDDDDDDDDDDD",
           "score": 4,
-          "duration": 5727.3
+          "duration": 5733.0
         },
         {
           "index": 8,
           "name": "shaxzod",
           "score": 0,
-          "duration": 4524.5
+          "duration": 4530.2
         },
         {
           "index": 9,
           "name": "adolat",
           "score": 2,
-          "duration": 2679.8
+          "duration": 2685.4
         },
         {
           "index": 10,
           "name": "1",
           "score": 2,
-          "duration": 210.4
+          "duration": 216.1
         },
         {
           "index": 11,
           "name": "xorazm guch",
           "score": 6,
-          "duration": 1359.0
+          "duration": 1364.7
         },
         {
           "index": 12,
           "name": "McLareen",
           "score": 8,
-          "duration": 249.3
+          "duration": 255.0
         },
         {
           "index": 13,
           "name": "XD",
           "score": 4,
-          "duration": 676.9
+          "duration": 682.6
         },
         {
           "index": 14,
           "name": "Z",
           "score": 8,
-          "duration": 527.8
+          "duration": 533.4
         },
         {
           "index": 15,
           "name": "SHAVKATOV＆",
           "score": 12,
-          "duration": 367.2
+          "duration": 372.9
         },
         {
           "index": 16,
           "name": "yusuf",
           "score": 0,
-          "duration": 1843.6
+          "duration": 1849.3
         },
         {
           "index": 17,
           "name": "Tilaaa_akennnnnn",
           "score": 0,
-          "duration": 4873.7
+          "duration": 4879.4
         },
         {
           "index": 18,
           "name": "saidolim",
           "score": 0,
-          "duration": 2759.8
+          "duration": 2765.5
         },
         {
           "index": 19,
           "name": "w",
           "score": 1,
-          "duration": 1026.6
+          "duration": 1032.3
         },
         {
           "index": 20,
           "name": "3",
           "score": 8,
-          "duration": 561.3
+          "duration": 567.0
         },
         {
           "index": 21,
           "name": "herson666",
           "score": 0,
-          "duration": 1958.3
+          "duration": 1964.0
         },
         {
           "index": 22,
           "name": "s7",
           "score": 0,
-          "duration": 73.4
+          "duration": 79.1
         },
         {
           "index": 23,
           "name": "PREMIUM",
           "score": 10,
-          "duration": 938.5
+          "duration": 944.2
         },
         {
           "index": 24,
           "name": "amerikano",
           "score": 0,
-          "duration": 3867.7
+          "duration": 3873.4
         }
       ]
     },
@@ -311,25 +377,25 @@
           "index": 0,
           "name": "CSZONE.UZ",
           "score": 0,
-          "duration": 696519.1
+          "duration": 696524.8
         },
         {
           "index": 1,
           "name": "Azizbek",
-          "score": 3,
-          "duration": 717.0
+          "score": 4,
+          "duration": 722.7
         },
         {
           "index": 2,
           "name": "XenonPulse!!",
           "score": 3,
-          "duration": 173.9
+          "duration": 179.6
         },
         {
           "index": 3,
           "name": "Muradullayev",
           "score": 8,
-          "duration": 326.1
+          "duration": 331.8
         }
       ]
     },
@@ -340,13 +406,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_inferno",
-      "ping": 169,
+      "ping": 168,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28017 - HLTV watch",
           "score": 0,
-          "duration": 62587.0
+          "duration": 62592.7
         }
       ]
     },
@@ -357,13 +423,13 @@
       "players": 1,
       "maxPlayers": 15,
       "map": "de_dust2",
-      "ping": 168,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "CSZONE.UZ:28018 - HLTV watch",
           "score": 0,
-          "duration": 68952.5
+          "duration": 68958.2
         }
       ]
     },
@@ -374,79 +440,79 @@
       "players": 12,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 178,
+      "ping": 177,
       "playerList": [
         {
           "index": 0,
           "name": "Alkawwwwwwwwwwwwwwwwwwwwwwwwwww",
           "score": 4,
-          "duration": 279.1
+          "duration": 284.8
         },
         {
           "index": 1,
           "name": "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@",
           "score": 5,
-          "duration": 256.6
+          "duration": 262.2
         },
         {
           "index": 2,
           "name": "PABLO",
           "score": 3,
-          "duration": 1530.8
+          "duration": 1536.5
         },
         {
           "index": 3,
           "name": "104",
           "score": 2,
-          "duration": 359.7
+          "duration": 365.4
         },
         {
           "index": 4,
           "name": "HD",
           "score": 0,
-          "duration": 358.1
+          "duration": 363.7
         },
         {
           "index": 5,
           "name": "maktybro",
-          "score": 12,
-          "duration": 1530.7
+          "score": 13,
+          "duration": 1536.4
         },
         {
           "index": 6,
           "name": "kuku",
           "score": 7,
-          "duration": 1530.9
+          "duration": 1536.6
         },
         {
           "index": 7,
           "name": "2008",
           "score": 5,
-          "duration": 1530.7
+          "duration": 1536.4
         },
         {
           "index": 8,
           "name": "_2013_",
           "score": 1,
-          "duration": 1530.6
+          "duration": 1536.3
         },
         {
           "index": 9,
           "name": "ANONYMOUS",
           "score": 0,
-          "duration": 359.3
+          "duration": 365.0
         },
         {
           "index": 10,
           "name": "upg 007",
           "score": 0,
-          "duration": 347.9
+          "duration": 353.6
         },
         {
           "index": 11,
           "name": "_X_Xaoc",
           "score": 3,
-          "duration": 946.2
+          "duration": 951.9
         }
       ]
     },
@@ -457,193 +523,193 @@
       "players": 31,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 170,
+      "ping": 173,
       "playerList": [
         {
           "index": 0,
           "name": "a",
           "score": 3,
-          "duration": 209.6
+          "duration": 215.3
         },
         {
           "index": 1,
           "name": "PALMA",
           "score": 5,
-          "duration": 202.7
+          "duration": 208.4
         },
         {
           "index": 2,
           "name": "donk666",
           "score": 4,
-          "duration": 209.0
+          "duration": 214.7
         },
         {
           "index": 3,
           "name": "WE | VIP",
           "score": 2,
-          "duration": 196.8
+          "duration": 202.4
         },
         {
           "index": 4,
           "name": "Tim",
           "score": 13,
-          "duration": 209.6
+          "duration": 215.3
         },
         {
           "index": 5,
           "name": "DANTE",
           "score": 1,
-          "duration": 210.3
+          "duration": 215.9
         },
         {
           "index": 6,
           "name": "Izana",
           "score": 2,
-          "duration": 210.6
+          "duration": 216.3
         },
         {
           "index": 7,
           "name": "mepo",
-          "score": 6,
-          "duration": 210.0
+          "score": 7,
+          "duration": 215.7
         },
         {
           "index": 8,
           "name": "ALI",
-          "score": 2,
-          "duration": 210.9
+          "score": 3,
+          "duration": 216.6
         },
         {
           "index": 9,
           "name": "kambahal",
-          "score": 4,
-          "duration": 210.6
+          "score": 5,
+          "duration": 216.3
         },
         {
           "index": 10,
           "name": "zenit",
           "score": 3,
-          "duration": 210.6
+          "duration": 216.3
         },
         {
           "index": 11,
           "name": "fariborz",
-          "score": 3,
-          "duration": 76.0
+          "score": 4,
+          "duration": 81.6
         },
         {
           "index": 12,
           "name": "nato    1",
           "score": 7,
-          "duration": 210.6
+          "duration": 216.3
         },
         {
           "index": 13,
           "name": "Nosferatu",
           "score": 0,
-          "duration": 57.1
+          "duration": 62.8
         },
         {
           "index": 14,
           "name": "kasoy",
           "score": 0,
-          "duration": 207.9
+          "duration": 213.5
         },
         {
           "index": 15,
           "name": "Nevermore",
           "score": 0,
-          "duration": 12.6
+          "duration": 18.3
         },
         {
           "index": 16,
           "name": "WAXE",
           "score": 6,
-          "duration": 211.0
+          "duration": 216.6
         },
         {
           "index": 17,
           "name": "bexa",
           "score": 5,
-          "duration": 209.6
+          "duration": 215.3
         },
         {
           "index": 18,
           "name": "Neo",
           "score": 2,
-          "duration": 209.9
+          "duration": 215.6
         },
         {
           "index": 19,
           "name": "One_",
           "score": 4,
-          "duration": 210.6
+          "duration": 216.3
         },
         {
           "index": 20,
           "name": "MUSTANG GTR",
           "score": 0,
-          "duration": 123.4
+          "duration": 129.1
         },
         {
           "index": 21,
           "name": "cs  P U L A T O V",
           "score": 0,
-          "duration": 207.9
+          "duration": 213.5
         },
         {
           "index": 22,
           "name": "W.W]Shadow_fire",
           "score": 4,
-          "duration": 210.6
+          "duration": 216.3
         },
         {
           "index": 23,
           "name": "A7",
-          "score": 4,
-          "duration": 210.0
+          "score": 5,
+          "duration": 215.7
         },
         {
           "index": 24,
           "name": "(1)M7",
           "score": 0,
-          "duration": 198.0
+          "duration": 203.7
         },
         {
           "index": 25,
           "name": "E R R O R 4 0 4",
           "score": 4,
-          "duration": 211.0
+          "duration": 216.6
         },
         {
           "index": 26,
           "name": "m0rshteel~",
           "score": 8,
-          "duration": 205.0
+          "duration": 210.6
         },
         {
           "index": 27,
           "name": "NAVI_markellof",
           "score": 1,
-          "duration": 210.6
+          "duration": 216.3
         },
         {
           "index": 28,
           "name": "l",
           "score": 0,
-          "duration": 56.5
+          "duration": 62.2
         },
         {
           "index": 29,
           "name": "354",
           "score": 1,
-          "duration": 210.3
+          "duration": 216.0
         },
         {
           "index": 30,
           "name": "yovuz",
           "score": 2,
-          "duration": 210.3
+          "duration": 215.9
         }
       ]
     },
@@ -654,7 +720,7 @@
       "players": 0,
       "maxPlayers": 14,
       "map": "aim_sk_awp",
-      "ping": 170,
+      "ping": 169,
       "playerList": []
     },
     {
@@ -670,103 +736,103 @@
           "index": 0,
           "name": "PANAMA",
           "score": 7,
-          "duration": 3637.8
+          "duration": 3643.3
         },
         {
           "index": 1,
           "name": "PINGVINNNNNNN",
           "score": 15,
-          "duration": 1083.1
+          "duration": 1088.6
         },
         {
           "index": 2,
           "name": "bess",
           "score": 0,
-          "duration": 10.7
+          "duration": 16.2
         },
         {
           "index": 3,
           "name": "AAAAAAAAAAAAAAAAAAAAAA",
           "score": 2,
-          "duration": 1389.4
+          "duration": 1394.8
         },
         {
           "index": 4,
           "name": "roziyaa",
           "score": 4,
-          "duration": 1504.9
+          "duration": 1510.4
         },
         {
           "index": 5,
           "name": "SSR",
           "score": 0,
-          "duration": 130.9
+          "duration": 136.4
         },
         {
           "index": 6,
           "name": "z1",
           "score": 0,
-          "duration": 1256.6
+          "duration": 1262.1
         },
         {
           "index": 7,
           "name": "22",
           "score": 8,
-          "duration": 697.5
+          "duration": 703.0
         },
         {
           "index": 8,
           "name": "Hin",
           "score": 0,
-          "duration": 234.2
+          "duration": 239.7
         },
         {
           "index": 9,
           "name": "urmanov",
           "score": 9,
-          "duration": 438.7
+          "duration": 444.2
         },
         {
           "index": 10,
           "name": "Terrorists",
           "score": 23,
-          "duration": 676.4
+          "duration": 681.9
         },
         {
           "index": 11,
           "name": "800",
           "score": 14,
-          "duration": 2659.9
+          "duration": 2665.4
         },
         {
           "index": 12,
           "name": "baxa",
           "score": 8,
-          "duration": 1267.5
+          "duration": 1273.0
         },
         {
           "index": 13,
           "name": "77",
           "score": 2,
-          "duration": 1659.4
+          "duration": 1664.9
         },
         {
           "index": 14,
           "name": "nera",
           "score": 7,
-          "duration": 569.2
+          "duration": 574.7
         },
         {
           "index": 15,
           "name": "SPARTA",
           "score": 10,
-          "duration": 1578.2
+          "duration": 1583.7
         },
         {
           "index": 16,
           "name": "TRZ",
           "score": 8,
-          "duration": 791.0
+          "duration": 796.4
         }
       ]
     },
@@ -783,85 +849,85 @@
           "index": 0,
           "name": "MEKE",
           "score": 9,
-          "duration": 239.8
+          "duration": 245.5
         },
         {
           "index": 1,
           "name": "$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$",
           "score": 1,
-          "duration": 205.6
+          "duration": 211.3
         },
         {
           "index": 2,
           "name": "f0reveR~",
           "score": 13,
-          "duration": 767.0
+          "duration": 772.7
         },
         {
           "index": 3,
           "name": "ARDA GULER",
           "score": 28,
-          "duration": 1522.0
+          "duration": 1527.7
         },
         {
           "index": 4,
           "name": "(1)killer",
           "score": 2,
-          "duration": 251.7
+          "duration": 257.4
         },
         {
           "index": 5,
           "name": "JERRY",
           "score": 5,
-          "duration": 249.9
+          "duration": 255.6
         },
         {
           "index": 6,
           "name": "Smoke",
           "score": 0,
-          "duration": 2757.2
+          "duration": 2762.9
         },
         {
           "index": 7,
           "name": "MuFti",
           "score": 18,
-          "duration": 1107.0
+          "duration": 1112.7
         },
         {
           "index": 8,
           "name": "1xBet",
           "score": 16,
-          "duration": 1633.3
+          "duration": 1639.0
         },
         {
           "index": 9,
           "name": "saidaxror",
           "score": 3,
-          "duration": 50.8
+          "duration": 56.5
         },
         {
           "index": 10,
           "name": "AZIZJON",
           "score": 0,
-          "duration": 5313.0
+          "duration": 5318.7
         },
         {
           "index": 11,
           "name": "Moset Bet",
           "score": 28,
-          "duration": 1600.9
+          "duration": 1606.6
         },
         {
           "index": 12,
           "name": "JAGERRRRRRRRRRRRRRRRRRRRRRRRRRR",
           "score": 13,
-          "duration": 1438.2
+          "duration": 1443.9
         },
         {
           "index": 13,
           "name": "011",
           "score": 3,
-          "duration": 871.4
+          "duration": 877.1
         }
       ]
     },
@@ -872,199 +938,199 @@
       "players": 32,
       "maxPlayers": 32,
       "map": "de_inferno",
-      "ping": 169,
+      "ping": 170,
       "playerList": [
         {
           "index": 0,
           "name": "[Xash3D]ADF",
           "score": 5,
-          "duration": 273.9
+          "duration": 279.6
         },
         {
           "index": 1,
           "name": "pvp",
           "score": 10,
-          "duration": 198.2
+          "duration": 203.9
         },
         {
           "index": 2,
           "name": "danger",
-          "score": 30,
-          "duration": 412.3
+          "score": 31,
+          "duration": 418.0
         },
         {
           "index": 3,
           "name": "TOM",
           "score": 0,
-          "duration": 7271.2
+          "duration": 7276.8
         },
         {
           "index": 4,
           "name": "2",
           "score": 6,
-          "duration": 78.3
+          "duration": 84.0
         },
         {
           "index": 5,
           "name": "jhfghhg",
           "score": 16,
-          "duration": 412.2
+          "duration": 417.9
         },
         {
           "index": 6,
           "name": "DADAM",
           "score": 0,
-          "duration": 411.2
+          "duration": 416.9
         },
         {
           "index": 7,
           "name": "wtfuck",
-          "score": 37,
-          "duration": 412.0
+          "score": 38,
+          "duration": 417.6
         },
         {
           "index": 8,
           "name": "MUhammadiy",
           "score": 0,
-          "duration": 72.0
+          "duration": 77.7
         },
         {
           "index": 9,
           "name": "hojaka",
           "score": 4,
-          "duration": 8511.6
+          "duration": 8517.3
         },
         {
           "index": 10,
           "name": "dobby_hogwars",
           "score": 15,
-          "duration": 355.3
+          "duration": 361.0
         },
         {
           "index": 11,
           "name": "001",
           "score": 21,
-          "duration": 411.1
+          "duration": 416.8
         },
         {
           "index": 12,
           "name": "x7",
           "score": 1,
-          "duration": 409.8
+          "duration": 415.5
         },
         {
           "index": 13,
           "name": "markeloff.A",
           "score": 42,
-          "duration": 412.4
+          "duration": 418.1
         },
         {
           "index": 14,
           "name": "bikbost.",
-          "score": 16,
-          "duration": 379.8
+          "score": 17,
+          "duration": 385.5
         },
         {
           "index": 15,
           "name": "IDIOT",
           "score": 23,
-          "duration": 412.8
+          "duration": 418.5
         },
         {
           "index": 16,
           "name": "ustoz",
-          "score": 5,
-          "duration": 108.6
+          "score": 6,
+          "duration": 114.3
         },
         {
           "index": 17,
           "name": "hunter",
-          "score": 38,
-          "duration": 375.9
+          "score": 39,
+          "duration": 381.5
         },
         {
           "index": 18,
           "name": "sultonov",
           "score": 0,
-          "duration": 412.5
+          "duration": 418.1
         },
         {
           "index": 19,
           "name": "soyaman",
           "score": 15,
-          "duration": 412.6
+          "duration": 418.3
         },
         {
           "index": 20,
           "name": "ms",
           "score": 0,
-          "duration": 399.7
+          "duration": 405.3
         },
         {
           "index": 21,
           "name": "NiKo",
-          "score": 34,
-          "duration": 412.3
+          "score": 35,
+          "duration": 418.0
         },
         {
           "index": 22,
           "name": "moonbek",
           "score": 19,
-          "duration": 412.0
+          "duration": 417.7
         },
         {
           "index": 23,
           "name": "kil",
           "score": 2,
-          "duration": 94.8
+          "duration": 100.5
         },
         {
           "index": 24,
           "name": "grizzly__",
           "score": 0,
-          "duration": 412.5
+          "duration": 418.2
         },
         {
           "index": 25,
           "name": "GARGAMEL",
           "score": 24,
-          "duration": 412.8
+          "duration": 418.4
         },
         {
           "index": 26,
           "name": "400kg",
-          "score": 4,
-          "duration": 412.3
+          "score": 7,
+          "duration": 418.0
         },
         {
           "index": 27,
           "name": "NaGi",
-          "score": 42,
-          "duration": 412.2
+          "score": 43,
+          "duration": 417.9
         },
         {
           "index": 28,
           "name": "JVR",
           "score": 0,
-          "duration": 411.1
+          "duration": 416.8
         },
         {
           "index": 29,
           "name": "avgan",
           "score": 0,
-          "duration": 411.9
+          "duration": 417.6
         },
         {
           "index": 30,
           "name": "shox",
-          "score": 30,
-          "duration": 412.6
+          "score": 31,
+          "duration": 418.3
         },
         {
           "index": 31,
           "name": "Strax",
           "score": 18,
-          "duration": 412.7
+          "duration": 418.4
         }
       ]
     },
@@ -1081,97 +1147,97 @@
           "index": 0,
           "name": "-1",
           "score": 0,
-          "duration": 42.8
+          "duration": 48.6
         },
         {
           "index": 1,
           "name": "fcku",
           "score": 10,
-          "duration": 1566.9
+          "duration": 1572.7
         },
         {
           "index": 2,
           "name": "shayx",
           "score": 5,
-          "duration": 1091.1
+          "duration": 1096.8
         },
         {
           "index": 3,
           "name": "Texas",
           "score": 33,
-          "duration": 3383.5
+          "duration": 3389.3
         },
         {
           "index": 4,
           "name": "001",
           "score": 9,
-          "duration": 1701.7
+          "duration": 1707.4
         },
         {
           "index": 5,
           "name": "d_bivol",
           "score": 4,
-          "duration": 863.9
+          "duration": 869.7
         },
         {
           "index": 6,
           "name": ".1",
           "score": 14,
-          "duration": 1243.5
+          "duration": 1249.3
         },
         {
           "index": 7,
           "name": "Alishka",
           "score": 0,
-          "duration": 1635.3
+          "duration": 1641.1
         },
         {
           "index": 8,
           "name": "--",
           "score": 9,
-          "duration": 1883.0
+          "duration": 1888.7
         },
         {
           "index": 9,
           "name": "Allstars ollemebyssan",
           "score": 11,
-          "duration": 1215.7
+          "duration": 1221.4
         },
         {
           "index": 10,
           "name": "ZERO777",
-          "score": 23,
-          "duration": 3106.4
+          "score": 24,
+          "duration": 3112.1
         },
         {
           "index": 11,
           "name": "r",
           "score": 2,
-          "duration": 1924.7
+          "duration": 1930.5
         },
         {
           "index": 12,
           "name": "IT OTAR",
           "score": 4,
-          "duration": 205.1
+          "duration": 210.8
         },
         {
           "index": 13,
           "name": "k",
           "score": 12,
-          "duration": 2182.0
+          "duration": 2187.7
         },
         {
           "index": 14,
           "name": "shox_killer",
           "score": 12,
-          "duration": 826.5
+          "duration": 832.2
         },
         {
           "index": 15,
           "name": "Dagi",
           "score": 10,
-          "duration": 733.3
+          "duration": 739.0
         }
       ]
     },
@@ -1182,115 +1248,115 @@
       "players": 18,
       "maxPlayers": 0,
       "map": "de_dust2",
-      "ping": 180,
+      "ping": 179,
       "playerList": [
         {
           "index": 0,
           "name": "илхомов",
           "score": 2,
-          "duration": 501.8
+          "duration": 507.5
         },
         {
           "index": 1,
           "name": "kariganb0b~ (pro)",
           "score": 9,
-          "duration": 4400.3
+          "duration": 4406.0
         },
         {
           "index": 2,
           "name": "loss",
-          "score": 21,
-          "duration": 576.0
+          "score": 22,
+          "duration": 581.7
         },
         {
           "index": 3,
           "name": "Rino",
           "score": 0,
-          "duration": 2520.2
+          "duration": 2525.9
         },
         {
           "index": 4,
           "name": "2x",
           "score": 5,
-          "duration": 562.2
+          "duration": 567.8
         },
         {
           "index": 5,
           "name": "Klaus",
           "score": 19,
-          "duration": 1387.3
+          "duration": 1393.0
         },
         {
           "index": 6,
           "name": "puma",
           "score": 15,
-          "duration": 621.4
+          "duration": 627.0
         },
         {
           "index": 7,
           "name": "tf_shoes",
-          "score": 7,
-          "duration": 425.8
+          "score": 8,
+          "duration": 431.5
         },
         {
           "index": 8,
           "name": "Smoke",
           "score": 16,
-          "duration": 2983.2
+          "duration": 2988.8
         },
         {
           "index": 9,
           "name": "s224",
           "score": 1,
-          "duration": 124.4
+          "duration": 130.1
         },
         {
           "index": 10,
           "name": "nabi",
           "score": 0,
-          "duration": 17375.3
+          "duration": 17381.0
         },
         {
           "index": 11,
           "name": "dp",
           "score": 7,
-          "duration": 297.0
+          "duration": 302.7
         },
         {
           "index": 12,
           "name": "Manyak",
           "score": 26,
-          "duration": 4473.8
+          "duration": 4479.5
         },
         {
           "index": 13,
           "name": "Patron",
           "score": 22,
-          "duration": 793.9
+          "duration": 799.5
         },
         {
           "index": 14,
           "name": "Remboo",
           "score": 33,
-          "duration": 1471.2
+          "duration": 1476.9
         },
         {
           "index": 15,
           "name": "L7",
           "score": 21,
-          "duration": 1371.4
+          "duration": 1377.1
         },
         {
           "index": 16,
           "name": "< RAXM >MOW",
           "score": 19,
-          "duration": 1167.0
+          "duration": 1172.7
         },
         {
           "index": 17,
           "name": "Drogot",
-          "score": 25,
-          "duration": 1164.8
+          "score": 26,
+          "duration": 1170.4
         }
       ]
     },
